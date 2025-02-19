@@ -1,3 +1,10 @@
+## Version: [1.2.1]
+## Fecha: 2025-02-18
+## Autor: Carlos Padilla
+#### Cambios:
+- Modificación de prueba a CHANGELOG
+
+
 ## Version: [1.0.0]
 ## Fecha: 2025-02-18
 ## Autor: Carlos Sanchez
