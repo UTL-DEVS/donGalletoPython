@@ -1,3 +1,14 @@
+
+## Version: [1.0.3]
+## Fecha: 2025-03-01
+## Autor: Joel Briones
+#### Cambios:
+- Creacion de carpetas y arquitectura del proyecto
+- Implementacion de blueprints
+- Coneccion a la base de datos
+- Librerias actualizadas
+
+
 ## Version: [1.0.2]
 ## Fecha: 2025-02-18
 ## Autor: Carlos Padilla
@@ -18,6 +29,4 @@
 - Corregido el error de cálculo en el módulo de facturación.
 - Mejorado el rendimiento de la carga de datos en la base de datos.
 - Actualizadas las dependencias de seguridad.
-
-
 

@@ -1,0 +1,21 @@
+el contexto de una aplicacion es lo siguiente:
+
+
+@app.route('/)
+def index():
+    aqui el contexto de la app esta utilizable
+return render_template('index.html')
+
+el contexto son esas 'variables globales' dentro de la app de flask
+    Configuración (app.config)
+    Base de datos (db.engine, db.session)
+    Archivos estáticos, templates, etc.
+
+Contexto de solicitud (request_context)
+Solo existe durante una petición HTTP:
+
+    request (los datos de la petición)
+    session (datos de la sesión del usuario)
+    g (variables globales temporales)
+
+Es como si, al iniciar la app, le dieras a Flask un conjunto de variables globales con toda esta información, y Flask sabe cómo usar esas "variables globales" durante el ciclo de vida de la app.
