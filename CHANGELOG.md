@@ -1,3 +1,12 @@
+## Version: [1.1.0]
+## Fecha: 2025-03-01
+## Autor: Joel Briones
+#### Cambios:
+- Agregado del ORM
+- Definicion de rutas y sus accesos
+- Mejora en la arquitectura
+
+
 
 ## Version: [1.0.3]
 ## Fecha: 2025-03-01
