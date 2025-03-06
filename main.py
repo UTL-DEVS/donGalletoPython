@@ -1,40 +1,41 @@
-from flask import Flask, render_template
-from flask_sqlalchemy import SQLAlchemy
-from routes.route_login import login_bp
+from utils import *
+from routes import *
+from forms import *
+from connection import *
+from models import Usuario
 
-from connection.config import Config
-
-db = SQLAlchemy()
-
-# el blue a registrar, y el prefijo por el que aparece, login/login_user
-
-def crearApp():
+def crear_app():
     app = Flask(__name__)
-    app.config.from_object(Config)
-    db.init_app(app)
+    app.secret_key = 'clave secreta de la app'
     
-    #Esta línea carga la configuración de la aplicación Flask desde una clase (en este caso Config)
-    app.register_blueprint(login_bp, url_prefix='/login')
-    # crear el contexto de la app y meterlo al hilo actual
-    app.app_context().push()
-    try:
-        # corroboral la coneccion
-        db.engine.connect()
-        print("Conectado a la base de datos")
-    except Exception as e:
-        print("Error al conectar a la base de datos: ", e)
-    return app
+    csrf = CSRFProtect()
+    app.config.from_object(Config)
 
-app = crearApp()
+    db.init_app(app)
+    app.register_blueprint(registro_bp)
+    app.register_blueprint(login_bp)
+    return app, csrf
 
+app, csrf = crear_app()
+
+
+
+#usuario = Usuario()
 @app.route('/')
-def main():
-    return render_template('login/login.html')
+def init():
+    form = login_form()
+    if form.validate_on_submit():
+        usuario=form.usuario.data
+        contrasenia=form.contrasenia.data
+        
+    return render_template('pages/login.html', form=form)
 
-@app.errorhandler(404)
-def page_not_found(e):
-    return render_template('404.html'), 404
+
+
+        
 
 if __name__ == '__main__':
+    csrf.init_app(app=app)
+    with app.app_context():
+        db.create_all()
     app.run(debug=True, port=8080)
-
