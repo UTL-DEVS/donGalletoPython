@@ -1,0 +1,9 @@
+{%macro render_login(field, icono)%}
+<div class="input-group mb-3">
+    <label for="{{field.id}}" class="input-group-text">
+        <span class="p2">{{icono | safe}}</span>
+    </label>
+    {{field(class="form-control", placeholder=field.label.text)}}
+
+</div>
+{%endmacro%}
