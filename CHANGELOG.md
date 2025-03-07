@@ -4,7 +4,7 @@
 #### Cambios:
 - Agregado logica de logeo
 - Agregado logica de tokens
-- agregando valores por default
+- agregando valores por defaul_t
 
 ## Version: [1.1.0]
 ## Fecha: 2025-03-01
