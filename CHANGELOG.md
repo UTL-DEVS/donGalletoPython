@@ -1,3 +1,11 @@
+## Version: [1.1.1]
+## Fecha: 2025-03-01
+## Autor: Joel Briones
+#### Cambios:
+- Agregado logica de logeo
+- Agregado logica de tokens
+- agregando valores por default
+
 ## Version: [1.1.0]
 ## Fecha: 2025-03-01
 ## Autor: Joel Briones
