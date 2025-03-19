@@ -9,6 +9,8 @@ def dao_login(usuario, contrasenia):
         rol_usuario = usuario_local.rol
         usuario_local.generar_token()  # Genera el token y lo guarda
         token_usuario = usuario_local.token
+        usuario_local.generar_ultimo_acceso()
+        usuario_local.dentro_sistema()
         
         return [nombre_usuario, rol_usuario, token_usuario]
     else:
