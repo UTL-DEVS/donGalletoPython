@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, EmailField
+from wtforms import StringField, PasswordField, EmailField, IntegerField
 from wtforms.validators import DataRequired, length, number_range
 
 class login_form(FlaskForm):
@@ -9,4 +9,7 @@ class login_form(FlaskForm):
     contrasenia = PasswordField('contrasenia', [
         DataRequired('Contrasenia necesaria'),
         length(min=8, message='La contraseña debe tener minimo 8 caracteres') 
+    ])
+    captcha = IntegerField('Captcha', [
+        DataRequired('Captcha necesario'),
     ])

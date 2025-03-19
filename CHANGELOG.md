@@ -1,3 +1,11 @@
+## Version: [1.1.2]
+## Fecha: 2025-03-019
+## Autor: Joel Briones
+#### Cambios:
+- Agregado captcha
+- Agregado vista captcha
+- agregando logica captcha 
+
 ## Version: [1.1.1]
 ## Fecha: 2025-03-01
 ## Autor: Joel Briones
