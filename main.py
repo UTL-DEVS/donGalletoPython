@@ -50,8 +50,6 @@ def init():
     print(numeros)
     # Renderizar la plantilla con la imagen en Base64
     return render_template('pages/login.html', form=form, captcha_base64=captcha_base64)
-
-
         
 
 if __name__ == '__main__':

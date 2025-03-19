@@ -32,8 +32,6 @@ class Usuario(db.Model):
     def fuera_sistema(self):
         self.sistema = 0
         db.session.commit()
-        
-        
     
     @classmethod
     def validar_token(cls, token):
