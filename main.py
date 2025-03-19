@@ -8,6 +8,7 @@ from captcha.image import ImageCaptcha
 import random
 import base64
 import io
+import os
 
 def crear_app():
     app = Flask(__name__)
@@ -43,7 +44,10 @@ def init():
     captcha_image.save(img_io, 'PNG')
     img_io.seek(0)
     captcha_base64 = base64.b64encode(img_io.getvalue()).decode('utf-8')
-
+    os.system('cls')
+    print('/'*5)
+    numeros= session['captcha_txt']
+    print(numeros)
     # Renderizar la plantilla con la imagen en Base64
     return render_template('pages/login.html', form=form, captcha_base64=captcha_base64)
 
