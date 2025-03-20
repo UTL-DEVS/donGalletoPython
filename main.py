@@ -15,6 +15,7 @@ def crear_app():
     app.register_blueprint(registro_bp)
     app.register_blueprint(login_bp)
     app.register_blueprint(proveedor_bp)
+    app.register_blueprint(cocina_bp)
     return app, csrf
 
 app, csrf = crear_app()
