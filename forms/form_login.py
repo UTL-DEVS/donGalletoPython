@@ -10,6 +10,7 @@ class login_form(FlaskForm):
         DataRequired('Contrasenia necesaria'),
         length(min=8, message='La contraseña debe tener minimo 8 caracteres') 
     ])
-    captcha = IntegerField('Captcha', [
+    captcha = StringField('Captcha', [
         DataRequired('Captcha necesario'),
+        length(min=5, max=5, message='Caracteres fuere del rango')
     ])
