@@ -1,3 +1,10 @@
+## Version: [2.0.0]
+## Fecha: 2025-03-25
+## Autor: Carlos Sanchez
+#### Cambios:
+- Se agrega y se arregla el sidebar
+- Se modifica la estructura del login
+
 ## Version: [1.1.1]
 ## Fecha: 2025-03-01
 ## Autor: Joel Briones
