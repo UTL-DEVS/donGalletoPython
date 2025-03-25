@@ -15,6 +15,7 @@ def crear_app():
     app = Flask(__name__)
     app.secret_key = 'clave secreta de la app'
     
+    
     csrf = CSRFProtect()
     app.config.from_object(Config)
 
