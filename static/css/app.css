@@ -1,0 +1,105 @@
+/* Estilos base para el layout */
+body {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+}
+
+html {
+    height: -webkit-fill-available;
+}
+
+main {
+    height: 100vh;
+    height: -webkit-fill-available;
+    max-height: 100vh;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+/* Estilos para dropdowns */
+.dropdown-toggle {
+    outline: 0;
+}
+
+/* Estilos para botones toggle - Corregidos para no interferir con Bootstrap */
+.btn-toggle {
+    padding: .25rem .5rem;
+    font-weight: 600;
+    color: var(--bs-emphasis-color);
+    background-color: transparent;
+    border: none; /* Asegura que no tenga bordes que puedan interferir */
+    transition: color .15s ease; /* Solo transición para el color */
+}
+
+.btn-toggle:hover,
+.btn-toggle:focus {
+    color: rgba(var(--bs-emphasis-color-rgb), .85);
+    background-color: var(--bs-tertiary-bg);
+}
+
+/* Flecha del toggle - Estilo corregido */
+.btn-toggle::before {
+    display: inline-block;
+    width: 1.25em;
+    line-height: 0;
+    content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='rgba%280,0,0,.5%29' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 14l6-6-6-6'/%3e%3c/svg%3e");
+    transition: transform 0.35s ease;
+    transform-origin: 0.5em 50%;
+    vertical-align: -0.125em; /* Mejor alineación */
+}
+
+/* Versión dark mode */
+[data-bs-theme="dark"] .btn-toggle::before {
+    content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='rgba%28255,255,255,.5%29' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 14l6-6-6-6'/%3e%3c/svg%3e");
+}
+
+/* Estado expandido - Corregido */
+.btn-toggle[aria-expanded="true"] {
+    color: rgba(var(--bs-emphasis-color-rgb), .85);
+}
+
+.btn-toggle[aria-expanded="true"]::before {
+    transform: rotate(90deg);
+}
+
+/* Estilos para los items del menú colapsable */
+.btn-toggle-nav a {
+    padding: .1875rem .5rem;
+    margin-top: .125rem;
+    margin-left: 1.25rem;
+    display: inline-block; /* Mejor comportamiento */
+    transition: background-color 0.15s ease; /* Transición suave */
+}
+
+.btn-toggle-nav a:hover,
+.btn-toggle-nav a:focus {
+    background-color: var(--bs-tertiary-bg);
+}
+
+/* Scroll area */
+.scrollarea {
+    overflow-y: auto;
+}
+
+/* Correcciones específicas para el componente collapse */
+.collapse:not(.show) {
+    display: none;
+}
+
+.collapsing {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.35s ease;
+    will-change: height;
+}
+
+/* Asegura que el contenido colapsado no afecte el layout cuando está oculto */
+.collapse {
+    visibility: hidden;
+    height: 0;
+}
+
+.collapse.show {
+    visibility: visible;
+    height: auto;
+}
