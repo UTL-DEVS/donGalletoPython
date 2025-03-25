@@ -1,10 +1,17 @@
-## Version: [1.1.2]
+## Version: [3.0.0]
 ## Fecha: 2025-03-019
 ## Autor: Joel Briones
 #### Cambios:
 - Agregado captcha
 - Agregado vista captcha
 - agregando logica captcha 
+
+## Version: [2.0.0]
+## Fecha: 2025-03-25
+## Autor: Carlos Sanchez
+#### Cambios:
+- Se agrega y se arregla el sidebar
+- Se modifica la estructura del login
 
 ## Version: [1.1.1]
 ## Fecha: 2025-03-01
