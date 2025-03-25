@@ -7,6 +7,7 @@ from utils import redirect
 
 from funcs import delate_captcha_session
 
+
 def dao_login(usuario, contrasenia, captcha_data):
     os.system('cls')
     if not captcha_data:
