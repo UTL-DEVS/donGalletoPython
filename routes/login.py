@@ -11,8 +11,8 @@ def login():
     if form.validate_on_submit():
         usuario = form.usuario.data
         contrasenia = form.contrasenia.data
-        respuesta = controller_login(usuario, contrasenia)
-        if respuesta != None:
-            return respuesta
-        else:
-            return 'Error al iniciar sesión'
+        captcha_data = form.captcha.data
+        result =  controller_login(usuario, contrasenia,captcha_data)
+        if result == 1:
+            return redirect('/client')
+    return redirect('/')

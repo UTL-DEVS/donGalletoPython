@@ -19,3 +19,7 @@ Solo existe durante una petición HTTP:
     g (variables globales temporales)
 
 Es como si, al iniciar la app, le dieras a Flask un conjunto de variables globales con toda esta información, y Flask sabe cómo usar esas "variables globales" durante el ciclo de vida de la app.
+
+
+para poder declara variables por default en el model de tu ORM usa el server_default, eso lo que hace esque por medio de mysql definas el default
+
