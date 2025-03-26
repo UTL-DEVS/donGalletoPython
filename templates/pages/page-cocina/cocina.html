@@ -2,8 +2,7 @@
 {%block titulo%}Login{%endblock%}
 {%block contenido%}
 {% import 'components/_macro_login.html' as macros%}
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
 <div class="container d-flex aling-center justify-content-center flex-column align-center w-50 mt-5">
     <div class="menu d-flex aling-center justify-content-center flex-column align-center">
         <div class="sub-header d-flex justify-content-between">
@@ -11,13 +10,14 @@
                 <h1>Stock</h1>
             </div>
             <div class="sub-header-buttons d-flex align-items-center">
-                <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalPedidos">Pedidos <i class="bi bi-exclamation-diamond-fill"></i></button>
+                <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalPedidos">Pedidos <i
+                        class="bi bi-exclamation-diamond-fill"></i></button>
             </div>
         </div>
         <hr>
         <div class="data d-flex aling-center justify-content-center flex-column">
             <div class="table">
-                <table class="table table-hover">
+                <table class="table table-light table-hover">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
@@ -32,7 +32,9 @@
                             <td>Vainilla</td>
                             <td>23</td>
                             <td>
-                                <div class="estatus-stock" style="height: 30px; width: 30px; border-radius: 50%; background-color: greenyellow;"></div>
+                                <div class="estatus-stock"
+                                    style="height: 30px; width: 30px; border-radius: 50%; background-color: greenyellow;">
+                                </div>
                             </td>
                         </tr>
                         <tr>
@@ -40,7 +42,9 @@
                             <td>Chocolate</td>
                             <td>13</td>
                             <td>
-                                <div class="estatus-stock" style="height: 30px; width: 30px; border-radius: 50%; background-color: yellow;"></div>
+                                <div class="estatus-stock"
+                                    style="height: 30px; width: 30px; border-radius: 50%; background-color: yellow;">
+                                </div>
                             </td>
                         </tr>
                         <tr>
@@ -48,7 +52,8 @@
                             <td>Red Velvet</td>
                             <td>3</td>
                             <td>
-                                <div class="estatus-stock" style="height: 30px; width: 30px; border-radius: 50%; background-color: red;"></div>
+                                <div class="estatus-stock"
+                                    style="height: 30px; width: 30px; border-radius: 50%; background-color: red;"></div>
                             </td>
                         </tr>
                     </tbody>
@@ -62,8 +67,8 @@
         </div>
     </div>
 
-    <!-- Modal produccion -->
-    <div class="modal fade" id="modalProduccion" tabindex="-1" aria-labelledby="modalProduccion" style="display: none;" aria-hidden="true">
+    <div class="modal fade" id="modalProduccion" tabindex="-1" aria-labelledby="modalProduccion" style="display: none;"
+        aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
@@ -85,16 +90,20 @@
                                 <td style="align-content: center;">Chocolate</td>
                                 <td class="text-center">
                                     <div class="opcion d-flex justify-content-center align-items-center">
-                                        <button class="btn btn-danger" style="margin-right: 10px;"><i class="bi bi-dash-circle-fill"></i></button>
-                                        <div class="data-produccion d-flex flex-column" style="width: 30%; padding-top: 13px;">
+                                        <button class="btn btn-danger" style="margin-right: 10px;"><i
+                                                class="bi bi-dash-circle-fill"></i></button>
+                                        <div class="data-produccion d-flex flex-column"
+                                            style="width: 30%; padding-top: 13px;">
                                             <div class="data-produccion-principal">
                                                 <p><b>1</b></p>
                                             </div>
-                                            <div class="data-produccion-secundaria" style="margin-top: -20px; opacity: 70%;">
+                                            <div class="data-produccion-secundaria"
+                                                style="margin-top: -20px; opacity: 70%;">
                                                 <p>10 Galletas</p>
                                             </div>
                                         </div>
-                                        <button class="btn btn-success" style="margin-left: 10px;"><i class="bi bi-plus-circle-fill"></i></button>
+                                        <button class="btn btn-success" style="margin-left: 10px;"><i
+                                                class="bi bi-plus-circle-fill"></i></button>
                                     </div>
                                 </td>
                             </tr>
@@ -103,16 +112,20 @@
                                 <td style="align-content: center;">Vainilla</td>
                                 <td class="text-center">
                                     <div class="opcion d-flex justify-content-center align-items-center">
-                                        <button class="btn btn-danger" style="margin-right: 10px;"><i class="bi bi-dash-circle-fill"></i></button>
-                                        <div class="data-produccion d-flex flex-column" style="width: 30%; padding-top: 13px;">
+                                        <button class="btn btn-danger" style="margin-right: 10px;"><i
+                                                class="bi bi-dash-circle-fill"></i></button>
+                                        <div class="data-produccion d-flex flex-column"
+                                            style="width: 30%; padding-top: 13px;">
                                             <div class="data-produccion-principal">
                                                 <p><b>1</b></p>
                                             </div>
-                                            <div class="data-produccion-secundaria" style="margin-top: -20px; opacity: 70%;">
+                                            <div class="data-produccion-secundaria"
+                                                style="margin-top: -20px; opacity: 70%;">
                                                 <p>10 Galletas</p>
                                             </div>
                                         </div>
-                                        <button class="btn btn-success" style="margin-left: 10px;"><i class="bi bi-plus-circle-fill"></i></button>
+                                        <button class="btn btn-success" style="margin-left: 10px;"><i
+                                                class="bi bi-plus-circle-fill"></i></button>
                                     </div>
                                 </td>
                             </tr>
@@ -121,16 +134,20 @@
                                 <td style="align-content: center;">Red Velvet</td>
                                 <td class="text-center">
                                     <div class="opcion d-flex justify-content-center align-items-center">
-                                        <button class="btn btn-danger" style="margin-right: 10px;"><i class="bi bi-dash-circle-fill"></i></button>
-                                        <div class="data-produccion d-flex flex-column" style="width: 30%; padding-top: 13px;">
+                                        <button class="btn btn-danger" style="margin-right: 10px;"><i
+                                                class="bi bi-dash-circle-fill"></i></button>
+                                        <div class="data-produccion d-flex flex-column"
+                                            style="width: 30%; padding-top: 13px;">
                                             <div class="data-produccion-principal">
                                                 <p><b>1</b></p>
                                             </div>
-                                            <div class="data-produccion-secundaria" style="margin-top: -20px; opacity: 70%;">
+                                            <div class="data-produccion-secundaria"
+                                                style="margin-top: -20px; opacity: 70%;">
                                                 <p>10 Galletas</p>
                                             </div>
                                         </div>
-                                        <button class="btn btn-success" style="margin-left: 10px;"><i class="bi bi-plus-circle-fill"></i></button>
+                                        <button class="btn btn-success" style="margin-left: 10px;"><i
+                                                class="bi bi-plus-circle-fill"></i></button>
                                     </div>
                                 </td>
                             </tr>
@@ -145,8 +162,8 @@
         </div>
     </div>
 
-    <!-- Modal pedidos -->
-    <div class="modal fade" id="modalPedidos" tabindex="-1" aria-labelledby="modalPedidos" style="display: none;" aria-hidden="true">
+    <div class="modal fade" id="modalPedidos" tabindex="-1" aria-labelledby="modalPedidos" style="display: none;"
+        aria-hidden="true">
         <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
@@ -170,21 +187,27 @@
                                 <td>Gabriel Sanchez</td>
                                 <td>14/03/2025</td>
                                 <td>21/03/2025</td>
-                                <td><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDetallesPedidos"><i class="bi bi-eye-fill"></i></button></td>
+                                <td><button class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#modalDetallesPedidos"><i class="bi bi-eye-fill"></i></button>
+                                </td>
                             </tr>
                             <tr>
                                 <th scope="row">2</th>
                                 <td>Gabriel Sanchez</td>
                                 <td>14/03/2025</td>
                                 <td>21/03/2025</td>
-                                <td><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDetallesPedidos"><i class="bi bi-eye-fill"></i></button></td>
+                                <td><button class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#modalDetallesPedidos"><i class="bi bi-eye-fill"></i></button>
+                                </td>
                             </tr>
                             <tr>
                                 <th scope="row">3</th>
                                 <td>Gabriel Sanchez</td>
                                 <td>14/03/2025</td>
                                 <td>21/03/2025</td>
-                                <td><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDetallesPedidos"><i class="bi bi-eye-fill"></i></button></td>
+                                <td><button class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#modalDetallesPedidos"><i class="bi bi-eye-fill"></i></button>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -196,8 +219,8 @@
         </div>
     </div>
 
-    <!-- Modal detalles pedido -->
-    <div class="modal fade" id="modalDetallesPedidos" tabindex="-2" aria-labelledby="modalDetallesPedidos" style="display: none;" aria-hidden="true">
+    <div class="modal fade" id="modalDetallesPedidos" tabindex="-2" aria-labelledby="modalDetallesPedidos"
+        style="display: none;" aria-hidden="true">
         <div class="modal-dialog modal-m modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
@@ -243,5 +266,4 @@
         </div>
     </div>
 </div>
-
 {%endblock%}
