@@ -3,15 +3,17 @@
 {%block contenido%}
 {% import 'components/_macro_login.html' as macros%}
 
-<div class="container d-flex aling-center justify-content-center flex-column align-center w-50 mt-5">
+<title>Cocina</title>
+
+<div class="container d-flex aling-center justify-content-center flex-column align-center mt-5" style="width: 90%;">
     <div class="menu d-flex aling-center justify-content-center flex-column align-center">
         <div class="sub-header d-flex justify-content-between">
             <div class="sub-header-title">
-                <h1>Stock</h1>
+                <h1 id="tituloHistorial">Historial</h1>
             </div>
-            <div class="sub-header-buttons d-flex align-items-center">
-                <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalPedidos">Pedidos <i
-                        class="bi bi-exclamation-diamond-fill"></i></button>
+            <div class="sub-header-buttons d-flex align-items-center" style="width: 33%;">
+                <p class="w-100 m-0 fw-bold">Seleccione una fecha: </p>
+                <input id="inpFecha" type="date" class="form-control" aria-describedby="basic-addon2" onchange="actualizarTituloHistorial()">
             </div>
         </div>
         <hr>
@@ -22,39 +24,28 @@
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Galleta</th>
-                            <th scope="col">Stock</th>
-                            <th scope="col"></th>
+                            <th scope="col">Total</th>
+                            <th scope="col">Vendidas</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <th scope="row">1</th>
                             <td>Vainilla</td>
-                            <td>23</td>
-                            <td>
-                                <div class="estatus-stock"
-                                    style="height: 30px; width: 30px; border-radius: 50%; background-color: greenyellow;">
-                                </div>
-                            </td>
+                            <td>120</td>
+                            <td>115</td>
                         </tr>
                         <tr>
                             <th scope="row">2</th>
                             <td>Chocolate</td>
                             <td>13</td>
-                            <td>
-                                <div class="estatus-stock"
-                                    style="height: 30px; width: 30px; border-radius: 50%; background-color: yellow;">
-                                </div>
-                            </td>
+                            <td>10</td>
                         </tr>
                         <tr>
                             <th scope="row">3</th>
                             <td>Red Velvet</td>
                             <td>3</td>
-                            <td>
-                                <div class="estatus-stock"
-                                    style="height: 30px; width: 30px; border-radius: 50%; background-color: red;"></div>
-                            </td>
+                            <td>3</td>
                         </tr>
                     </tbody>
                 </table>
