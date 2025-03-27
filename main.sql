@@ -1,5 +1,6 @@
-CREATE DATABASE casaGalleta;
+CREATE DATABASE casaGalleta; 
 #drop DATABASE casaGalleta;
+
 use casaGalleta;
 SHOW TABLES;
 DESCRIBE usuario;
