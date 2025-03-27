@@ -1,4 +1,11 @@
 ## Version: [2.0.0]
+## Fecha: 2025-03-27
+## Autor: Christian Arrona
+#### Cambios:
+- se agregaron 3 html para el apartado de cliente
+- se agrego en la bada la galleta
+
+## Version: [2.0.0]
 ## Fecha: 2025-03-25
 ## Autor: Carlos Sanchez
 #### Cambios:

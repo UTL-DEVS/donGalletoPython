@@ -1,0 +1,111 @@
+{% extends 'components/estructura.html' %}
+{% block titulo %}Inicio Cliente{% endblock %}
+{% block contenido %}
+{% import 'components/_macro_login.html' as macros %}
+
+<style>
+    .custom-container {
+        width: 90% !important;
+        margin: 0 auto;
+        padding-top: 20px;
+    }
+    .card-img-container {
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        background-color: #dfe2e6;
+    }
+    .card-img-container img {
+        width: 80%;
+        height: 100%;
+        object-fit: contain;
+        padding: 15px;
+    }
+    .card {
+        transition: all 0.3s ease;
+        margin-bottom: 25px;
+        height: 100%;
+        border-radius: 10px;
+        border: none;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+    .card-body {
+        padding: 0px;
+        text-align: center;
+    }
+    .card-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #2c3e50;
+        margin-bottom: 15px;
+    }
+    .card-text {
+        color: #7f8c8d;
+        font-size: 1rem;
+    }
+    h1 {
+        color: #2c3e50;
+        margin-bottom: 30px !important;
+        font-weight: 600;
+    }
+</style>
+
+<div class="custom-container ">
+    <h1 class="text-center">Pedidos</h1>
+    
+    <div class="row g-4">
+        <div class="col-md-6 ">
+            <a href="{{ url_for('cliente.pedido') }}" style="text-decoration: none;" > 
+            <div class="card">
+                <div class="card-img-container">
+                    <img src="{{ url_for('static', filename='img/dinero_menu.png') }}" alt="Dinero">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Dinero</h5>
+                </div>
+            </div>
+        </a>
+        </div>
+        
+        <div class="col-md-6 ">
+            <div class="card">
+                <div class="card-img-container">
+                    <img src="{{ url_for('static', filename='img/paquete_menu.png') }}" alt="Paquete">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Paquete</h5>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6 ">
+            <div class="card">
+                <div class="card-img-container">
+                    <img src="{{ url_for('static', filename='img/buscula_menu.png') }}" alt="Peso">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Peso</h5>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6 ">
+            <div class="card">
+                <div class="card-img-container">
+                    <img src="{{ url_for('static', filename='img/galleta_menu.png') }}" alt="Galleta">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Galleta</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'components/estructura.html' %}
+{% block titulo %}Inicio - Galletas Premium{% endblock %}
+{% block contenido %}
+
+<style>
+    .custom-container {
+        width: 90% !important;
+        margin: 0 auto;
+        padding-top: 20px;
+    }
+    .fondo {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('{{ url_for("static", filename="img/casa-cliente.jpg") }}');
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 120px 0;
+        margin-bottom: 50px;
+    }
+   
+</style>
+<div class="custom-container">
+<section class="fondo text-center">
+    <div class="container">
+        <h1 class="display-4 fw-bold mb-4">La Casa de la Galleta</h1>
+        <p class="lead mb-5">Hechas con ingredientes premium y horneadas con pasión</p>
+        <a href="{{ url_for('cliente.menu') }}" class="btn btn-warning btn-lg px-4 py-2 fw-bold">Ordenar Ahora</a>
+    </div>
+</section>
+</div>
+
+
+
+{% endblock %}

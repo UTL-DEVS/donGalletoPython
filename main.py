@@ -3,7 +3,7 @@ from routes import *
 from forms import *
 from connection import *
 from models import Usuario
-
+from models import Galleta
 def crear_app():
     app = Flask(__name__)
     app.secret_key = 'clave secreta de la app'
@@ -15,6 +15,7 @@ def crear_app():
     app.register_blueprint(registro_bp)
     app.register_blueprint(login_bp)
     app.register_blueprint(cocina_bp)
+    app.register_blueprint(cliente_bp)
     return app, csrf
 
 app, csrf = crear_app()
