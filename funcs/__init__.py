@@ -1,2 +1,2 @@
-from .captcha_generate import captcha_info
-from .captcha_generate import delate_captcha_session
+from .captcha import *
+from .mail import *
