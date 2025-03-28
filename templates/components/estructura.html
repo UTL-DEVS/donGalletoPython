@@ -92,9 +92,59 @@
     }
 </style>
 
+<style>
+    .sidebar {
+        width: 15%; 
+        background-color: #e7e7e747;
+        transition: 'background-color';
+        transition-duration: 0.3s;
+    }
+
+    .sidebar:hover {
+        box-shadow: none;
+        box-shadow: 5px 0px 10px 0px rgba(0, 0, 0, 0.3);
+        background-color: white;
+    }
+
+    .container-principal {
+        width: 85%; 
+        background-color: #e7e7e747;
+        transition: 'background-color', 'box-shadow';
+        transition-duration: 0.3s;
+    }
+
+    .table-light {
+        --bs-table-bg: #e7e7e700 !important;
+        transition: 'background-color';
+        transition-duration: 0.3s;
+    }
+
+    .table-light:hover {
+        --bs-table-bg: white !important;
+        background-color: white !important;
+    }
+
+    .table {
+        --bs-table-bg: #e7e7e700 !important;
+        transition: 'background-color';
+        transition-duration: 0.3s;
+    }
+
+    .table:hover {
+        --bs-table-bg: white !important;
+        background-color: white !important;
+    }
+
+    .container-principal:hover {
+        background-color: white;
+        box-shadow: -5px 0px 10px 0px rgba(0, 0, 0, 0.3);
+    }
+
+</style>
+
 <body>
     <div class="d-flex" style="height: 100vh !important;">
-        <div class="sidebar" style="width: 15%; box-shadow: 5px 0px 10px 0px rgba(0, 0, 0, 0.3);">
+        <div class="sidebar">
             <div class="flex-shrink-0 p-3">
                 <a href="/"
                     class="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none border-bottom">
@@ -109,13 +159,10 @@
                         </button>
                         <div class="collapse" id="home-collapse">
                             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                <li><a href="#"
+                                <li><a href="/produccion-stock"
                                         class="link-body-emphasis d-inline-flex text-decoration-none rounded">Stock</a>
                                 </li>
-                                <li><a href="#"
-                                        class="link-body-emphasis d-inline-flex text-decoration-none rounded">Agregar</a>
-                                </li>
-                                <li><a href="#"
+                                <li><a href="/produccion-historial"
                                         class="link-body-emphasis d-inline-flex text-decoration-none rounded">Historial</a>
                                 </li>
                             </ul>
@@ -128,16 +175,13 @@
                         </button>
                         <div class="collapse" id="dashboard-collapse">
                             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                <li><a href="#"
+                                <li><a href="/cocina-pedidos"
                                         class="link-body-emphasis d-inline-flex text-decoration-none rounded">Solicitudes</a>
                                 </li>
-                                <li><a href="#"
+                                <li><a href="/working-page"
                                         class="link-body-emphasis d-inline-flex text-decoration-none rounded">Procesados</a>
                                 </li>
-                                <li><a href="#"
-                                        class="link-body-emphasis d-inline-flex text-decoration-none rounded">Entregados</a>
-                                </li>
-                                <li><a href="#"
+                                <li><a href="/working-page"
                                         class="link-body-emphasis d-inline-flex text-decoration-none rounded">Historial</a>
                                 </li>
                             </ul>
@@ -150,16 +194,16 @@
                         </button>
                         <div class="collapse" id="orders-collapse">
                             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                <li><a href="#"
+                                <li><a href="/working-page"
                                         class="link-body-emphasis d-inline-flex text-decoration-none rounded">Stock</a>
                                 </li>
-                                <li><a href="#"
+                                <li><a href="/working-page"
                                         class="link-body-emphasis d-inline-flex text-decoration-none rounded">Solicitar</a>
                                 </li>
-                                <li><a href="#"
+                                <li><a href="/working-page"
                                         class="link-body-emphasis d-inline-flex text-decoration-none rounded">Mermas</a>
                                 </li>
-                                <li><a href="#"
+                                <li><a href="/working-page"
                                         class="link-body-emphasis d-inline-flex text-decoration-none rounded">Historial</a>
                                 </li>
                             </ul>
@@ -189,7 +233,7 @@
                 </ul>
             </div>
         </div>
-        <div class="container" style="width: 85%; outline: 160px solid #e7e7e747; background-color: #e7e7e747;">
+        <div class="container-principal">
             {%block contenido%}
 
             {%endblock%}
@@ -197,6 +241,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="../../static/js/app.js"></script>
 </body>
 

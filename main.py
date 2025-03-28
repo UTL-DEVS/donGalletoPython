@@ -23,7 +23,8 @@ def crear_app():
     mail.init_app(app)
     app.register_blueprint(registro_bp)
     app.register_blueprint(login_bp)
-    app.register_blueprint(cocina_bp)
+    app.register_blueprint(cocina_produccion_bp)
+    app.register_blueprint(cocina_pedidos_bp)
     app.register_blueprint(cliente_bp)
     
     return app, csrf
