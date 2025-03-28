@@ -7,3 +7,7 @@ def obtener_proveedores():
 
 def obtener_proveedor_especifico(id_proveedor):
     return db.session.query(Proveedor).filter(Proveedor.id_proveedor==id_proveedor).first()
+
+def actualizar_proveedor(prov):
+    db.session.add(prov)
+    db.session.commit()

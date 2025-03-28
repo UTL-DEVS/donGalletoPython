@@ -14,6 +14,16 @@
   </div>
 {%endmacro%}
 
+{%macro macro_campo_upd_proveedor(field)%}
+    <div class="d-flex">
+        <h5 class="col-5 m-2 ">{{field.label}}:</h5>
+        <div class="d-flex col-7">
+            {{field}}
+        </div>
+    </div>
+    <hr>
+{%endmacro%}
+
 {%macro macro_btn_detalles(nombre_modal)%}
     <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#{{nombre_modal}}">
         <i class="bi bi-eye-fill"></i>

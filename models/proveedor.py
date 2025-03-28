@@ -13,7 +13,9 @@ class Proveedor(db.Model):
             return {
                 "id_proveedor": self.id_proveedor,
                 "nombre": self.nombre_proveedor,
-                "representante": f'{self.persona.nombre} {self.persona.primerApellido} {self.persona.segundoApellido}',
+                "nombreRepresentante": self.persona.nombre,
+                "primerApellidoRepresentante": self.persona.primerApellido,
+                "segundoApellidoRepresentante": self.persona.segundoApellido,
                 "correo": self.persona.correo,
                 "telefono": self.persona.telefono,
                 "direccion": self.persona.direccion

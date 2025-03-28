@@ -12,7 +12,7 @@
 <script src="{{url_for('static', filename='js/proveedores.js')}}"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-<div class="container d-flex aling-center justify-content-center flex-column align-center w-50 mt-5">
+<div class="container d-flex aling-center justify-content-center flex-column align-center w-90 mt-5">
     <div class="menu d-flex aling-center justify-content-center flex-column align-center">
         <div class="sub-header d-flex justify-content-between">
             <div class="sub-header-title">
@@ -42,11 +42,11 @@
                             <td>{{proveedor.nombre_proveedor}}</td>
                             <td>{{proveedor.persona.direccion}}</td>
                             <td class="">
-                                <a onclick=mostrarConsultaDetallesProveedor({{loop.index}})><button class="btn btn-primary"
+                                <a onclick=mostrarConsultaDetallesProveedor({{proveedor.id_proveedor}})><button class="btn btn-primary"
                                         data-bs-toggle="modal" data-bs-target="#modalDetallesProveedor">
                                         <i class="bi bi-eye-fill"></i>
                                 </button></a>
-                                    <a onclick=mostrarDetallesProveedorModificar({{loop.index}})><button class="btn btn-primary bg-warning" data-bs-target="#modalEditarProveedor"
+                                    <a onclick=mostrarDetallesProveedorModificar({{proveedor.id_proveedor}})><button class="btn btn-primary bg-warning" data-bs-target="#modalEditarProveedor"
                                     data-bs-toggle="modal">
                                     <i class="bi bi-pencil-square"></i>
                                 </button></a>
@@ -68,40 +68,34 @@
     <div class="shadow modal fade" id="modalEditarProveedor" style="display: none;" tabindex="-1" aria-hidden="true"
         aria-labelledby="modalEditarProveedor">
         <div class="modal-dialog modal-m modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content">
+            <form class="modal-content" id="modificarProveedor" method="POST">
+                {{form_persona.csrf_token}}
+
                 <div class="modal-header">
-                    <h5 class="modal-title" id="tituloModalEditarProveedor">Modificar proveedor</h5>
+                    <h4 class="modal-title" id="tituloModalEditarProveedor">Modificar proveedor</h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="d-flex modal-body">
-                    <div class="col-4">
-                            <h5 class="m-2 d-flex">Proveedor:</h5>
+                <div class="modal-body">
+                        <div class="d-flex">
+                            <h5 class="col-4 m-2 ">Proveedor:</h5>
+                            <div class=" m-2 col-8" id="nombreProveedor"></div>
+                        </div>
                         <hr>
-                            <h5 class="d-flex mt-3 m-2">Representante:</h5>
-                        <hr>
-                            <h5 class="d-flex m-2">Correo:</h5>
-                        <hr>
-                            <h5 class="d-flex m-2">Teléfono:</h5>
-                        <hr>
-                            <h5 class="d-flex m-2">Dirección:</h5>
+                        {{macros.macro_campo_upd_proveedor(form_persona.direccion)}}
+                        {{macros.macro_campo_upd_proveedor(form_persona.telefono)}}
+                        {{macros.macro_campo_upd_proveedor(form_persona.correo)}}
+                        <h5 class="m-4 justify-text-center ">Datos del representante:</h5>
+                        {{macros.macro_campo_upd_proveedor(form_persona.nombre)}}
+                        {{macros.macro_campo_upd_proveedor(form_persona.primer_apellido)}}
+                        {{macros.macro_campo_upd_proveedor(form_persona.segundo_apellido)}}
+
+                    
                     </div>
-                    <div class="col-8">
-                            <div class="d-flex m-2 col-10" id="editNombreProveedorSel"></div>
-                        <hr>
-                            <input type="text" class="d-flex col-10" id="editNombreRepresentanteProveedorSel">
-                        <hr>
-                            <input type="email" class="d-flex  col-10" id="editCorreoProveedorSel">
-                        <hr>
-                            <input type="tel" class="d-flex  col-10" id="editTelefonoProveedorSel">
-                        <hr>
-                            <input type="text" class="d-flex  col-10" id="editDireccionProveedorSel">
-                    </div>
-                </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary">Guardar</button>
+                    <button type="submit" onsubmit="return confirmarModificacionProveedor()" class="btn btn-primary">Guardar cambios</button>
                 </div>
-            </div>
+            </form>
         </div>
 
     </div>

@@ -1,5 +1,5 @@
-function detallesProveedor(posicionProvSel, callback) {
-    url = "/detallesProveedor?posicionProvSel=" + posicionProvSel;
+function detallesProveedor(idProv, callback) {
+    url = "/proveedor/detallesProveedor?id_prov=" + idProv;
     fetch(url)
         .then(response => response.json())
         .then(data => {
@@ -12,14 +12,17 @@ function detallesProveedor(posicionProvSel, callback) {
 }
 
 function mostrarDetallesProveedorModificar(posicionProvSel) {
-    console.log('Posicion en modificar');
     detallesProveedor(posicionProvSel, function(proveedorSel){
         if (proveedorSel != null && proveedorSel != '') {
-            $("#editNombreProveedorSel").html(proveedorSel.nombre);
-            $("#editNombreRepresentanteProveedorSel").val(proveedorSel.representante);
-            $("#editCorreoProveedorSel").val(proveedorSel.correo);
-            $("#editTelefonoProveedorSel").val(proveedorSel.telefono);
-            $("#editDireccionProveedorSel").val(proveedorSel.direccion);
+            $("#modificarProveedor  #nombreProveedor").html(proveedorSel.nombre);
+            $("#modificarProveedor  .nombrePersona").val(proveedorSel.nombreRepresentante);
+            $("#modificarProveedor  .primerApellidoPersona").val(proveedorSel.primerApellidoRepresentante);
+            $("#modificarProveedor  .segundoApellidoPersona").val(proveedorSel.segundoApellidoRepresentante);
+            $("#modificarProveedor  .direccionPersona").val(proveedorSel.direccion);
+            $("#modificarProveedor  .correoPersona").val(proveedorSel.correo);
+            $("#modificarProveedor  .telefonoPersona").val(proveedorSel.telefono);
+            $("#modificarProveedor").attr('action','/proveedor/actualizarProveedor?id_prov_upd='+proveedorSel.id_proveedor);
+
         } else {
             alert('Error al obtener los detalles de proveedor')
         }
@@ -27,12 +30,11 @@ function mostrarDetallesProveedorModificar(posicionProvSel) {
     });
 }
 
-function mostrarConsultaDetallesProveedor(posicionProvSel) {
-    console.log('Posicion en consultar');
-    detallesProveedor(posicionProvSel, function (proveedorSel) {
+function mostrarConsultaDetallesProveedor(idProv) {
+    detallesProveedor(idProv, function (proveedorSel) {
         if (proveedorSel != null && proveedorSel != '') {
             $("#nombreProveedorSel").html(proveedorSel.nombre);
-            $("#nombreRepresentanteProveedorSel").html(proveedorSel.representante);
+            $("#nombreRepresentanteProveedorSel").html(proveedorSel.nombreRepresentante+' '+proveedorSel.primerApellidoRepresentante+' '+proveedorSel.segundoApellidoRepresentante );
             $("#correoProveedorSel").html(proveedorSel.correo);
             $("#telefonoProveedorSel").html(proveedorSel.telefono);
             $("#direccionProveedorSel").html(proveedorSel.direccion);
@@ -41,4 +43,35 @@ function mostrarConsultaDetallesProveedor(posicionProvSel) {
         }
     });
 }
+
+function confirmarModificacionProveedor(){
+    Swal.fire({
+        title: "¿Estás segur@ de modificar este proveedor?",
+        text: "Se realizarán cambios en la base de datos",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Continuar",
+        cancelButtonText: ""
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+            title: "Hecho!",
+            icon: "success"
+          });
+          return true;
+        }
+      });
+      return false;
+}
+
+function mostrarAlerta(tipo,titulo,mensaje,pieVentana){
+    Swal.fire({
+        icon: tipo,
+        title: titulo,
+        text: mensaje,
+        footer: '<p>'+pieVentana+'</p>'
+      });
+ }
 
