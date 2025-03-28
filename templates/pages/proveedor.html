@@ -68,7 +68,7 @@
     <div class="shadow modal fade" id="modalEditarProveedor" style="display: none;" tabindex="-1" aria-hidden="true"
         aria-labelledby="modalEditarProveedor">
         <div class="modal-dialog modal-m modal-dialog-centered modal-dialog-scrollable">
-            <form class="modal-content" id="modificarProveedor" method="POST">
+            <form class="modal-content" id="modificarProveedor" method="POST" >
                 {{form_persona.csrf_token}}
 
                 <div class="modal-header">
@@ -93,7 +93,7 @@
                     </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="submit" onsubmit="return confirmarModificacionProveedor()" class="btn btn-primary">Guardar cambios</button>
+                    <button type="submit"  class="btn btn-primary">Guardar cambios</button>
                 </div>
             </form>
         </div>

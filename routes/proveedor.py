@@ -19,15 +19,13 @@ def detalles_proveedor():
     proveedor_seleccionado=controller_proveedor.obtener_proveedor_especifico(int(request.args.get('id_prov')))
     return json.dumps(proveedor_seleccionado.to_dict())
 
-@proveedor_bp.route('/actualizarProveedor', methods=['POST','GET'])
+@proveedor_bp.route('/actualizarProveedor', methods=['POST'])
 def actualizar_proveedor():
     form_proveedor_obj = form_proveedor()
     form_persona_obj = form_persona(request.form)
     lista_proveedores=controller_proveedor.obtener_proveedores()
     if request.method=='POST':
-        print(f'S: {form}')
-        controller_proveedor.actualizar_proveedor(int(request.args.get('id_prov_upd')),form_persona)
-
+        controller_proveedor.actualizar_proveedor(int(request.args.get('id_prov_upd')),form_persona_obj)
     return render_template('pages/proveedor.html',form_persona=form_persona_obj,form_proveedor=form_proveedor_obj,lista_proveedores=lista_proveedores)
 
 

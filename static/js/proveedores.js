@@ -45,25 +45,28 @@ function mostrarConsultaDetallesProveedor(idProv) {
 }
 
 function confirmarModificacionProveedor(){
-    Swal.fire({
-        title: "¿Estás segur@ de modificar este proveedor?",
-        text: "Se realizarán cambios en la base de datos",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Continuar",
-        cancelButtonText: ""
-      }).then((result) => {
-        if (result.isConfirmed) {
-          Swal.fire({
-            title: "Hecho!",
-            icon: "success"
+    $("#modificarProveedor").addEventListener('submit',function(evento){
+        Swal.fire({
+            title: "¿Estás segur@ de modificar este proveedor?",
+            text: "Se realizarán cambios en la base de datos",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Continuar",
+            cancelButtonText: "Cancelar"
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire({
+                title: "Hecho!",
+                icon: "success"
+              });
+              console.log('Apunto de retornar');
+              return;
+            }
           });
-          return true;
-        }
-      });
-      return false;
+          evento.preventDefault(); // Detiene el envío si no se presionó Continuar
+    });
 }
 
 function mostrarAlerta(tipo,titulo,mensaje,pieVentana){
