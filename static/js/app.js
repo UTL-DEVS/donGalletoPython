@@ -11,7 +11,7 @@ $(document).ready(function() {
     $('.sidebar a').on('click', function(e) {
         e.preventDefault();
         const url = $(this).attr('href');
-
+        
         if (url != '/') {
             $.get(url, function(data) {
                 $('.container').html($(data).find('.container').html());
@@ -20,7 +20,6 @@ $(document).ready(function() {
         } else {
             window.location.href = url; 
         }
-
     });
 });
 

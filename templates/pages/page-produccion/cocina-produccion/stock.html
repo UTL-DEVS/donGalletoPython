@@ -79,7 +79,7 @@
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">Galleta</th>
-                                <th scope="col" class="text-center">Cantidad</th>
+                                <th scope="col" class="text-center">Cantidad Ordenes</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -88,64 +88,20 @@
                                 <td style="align-content: center;">Chocolate</td>
                                 <td class="text-center">
                                     <div class="opcion d-flex justify-content-center align-items-center">
-                                        <button class="btn btn-danger" style="margin-right: 10px;"><i
-                                                class="bi bi-dash-circle-fill"></i></button>
-                                        <div class="data-produccion d-flex flex-column"
-                                            style="width: 30%; padding-top: 13px;">
+                                        <button class="btn btn-danger minus-btn" style="margin-right: 10px;" onclick="updateQuantity(this, false)">
+                                            <i class="bi bi-dash-circle-fill"></i>
+                                        </button>
+                                        <div class="data-produccion d-flex flex-column" style="width: 30%; padding-top: 13px; cursor: default; user-select: none;">
                                             <div class="data-produccion-principal">
-                                                <p><b>1</b></p>
+                                                <p><b class="quantity">1</b></p>
                                             </div>
-                                            <div class="data-produccion-secundaria"
-                                                style="margin-top: -20px; opacity: 70%;">
-                                                <p>10 Galletas</p>
+                                            <div class="data-produccion-secundaria" style="margin-top: -20px; opacity: 70%;">
+                                                <p class="cookies-count">10 Galletas</p>
                                             </div>
                                         </div>
-                                        <button class="btn btn-success" style="margin-left: 10px;"><i
-                                                class="bi bi-plus-circle-fill"></i></button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th style="align-content: center;" scope="row">2</th>
-                                <td style="align-content: center;">Vainilla</td>
-                                <td class="text-center">
-                                    <div class="opcion d-flex justify-content-center align-items-center">
-                                        <button class="btn btn-danger" style="margin-right: 10px;"><i
-                                                class="bi bi-dash-circle-fill"></i></button>
-                                        <div class="data-produccion d-flex flex-column"
-                                            style="width: 30%; padding-top: 13px;">
-                                            <div class="data-produccion-principal">
-                                                <p><b>1</b></p>
-                                            </div>
-                                            <div class="data-produccion-secundaria"
-                                                style="margin-top: -20px; opacity: 70%;">
-                                                <p>10 Galletas</p>
-                                            </div>
-                                        </div>
-                                        <button class="btn btn-success" style="margin-left: 10px;"><i
-                                                class="bi bi-plus-circle-fill"></i></button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th style="align-content: center;" scope="row">3</th>
-                                <td style="align-content: center;">Red Velvet</td>
-                                <td class="text-center">
-                                    <div class="opcion d-flex justify-content-center align-items-center">
-                                        <button class="btn btn-danger" style="margin-right: 10px;"><i
-                                                class="bi bi-dash-circle-fill"></i></button>
-                                        <div class="data-produccion d-flex flex-column"
-                                            style="width: 30%; padding-top: 13px;">
-                                            <div class="data-produccion-principal">
-                                                <p><b>1</b></p>
-                                            </div>
-                                            <div class="data-produccion-secundaria"
-                                                style="margin-top: -20px; opacity: 70%;">
-                                                <p>10 Galletas</p>
-                                            </div>
-                                        </div>
-                                        <button class="btn btn-success" style="margin-left: 10px;"><i
-                                                class="bi bi-plus-circle-fill"></i></button>
+                                        <button class="btn btn-success plus-btn" style="margin-left: 10px;" onclick="updateQuantity(this, true)">
+                                            <i class="bi bi-plus-circle-fill"></i>
+                                        </button>
                                     </div>
                                 </td>
                             </tr>
@@ -160,4 +116,6 @@
         </div>
     </div>
 </div>
+
+<script src="../../../../static/js/page-produccion/cocina.js"></script>
 {%endblock%}
