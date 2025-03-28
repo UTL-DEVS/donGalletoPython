@@ -1,3 +1,10 @@
+## Version: [3.0.0]
+## Fecha: 2025-03-25
+## Autor: Carlos Sanchez
+#### Cambios:
+- Agregando logica de Verificacion
+- Se completa el logeo
+
 ## Version: [2.0.0]
 ## Fecha: 2025-03-25
 ## Autor: Carlos Sanchez

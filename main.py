@@ -2,7 +2,15 @@ from utils import *
 from routes import *
 from forms import *
 from connection import *
-from models import Usuario
+from models import *
+
+import hashlib
+import random
+import base64
+import io
+import os
+from datetime import timedelta
+from funcs import captcha_info
 
 def crear_app():
     app = Flask(__name__)
@@ -12,25 +20,29 @@ def crear_app():
     app.config.from_object(Config)
 
     db.init_app(app)
+    mail.init_app(app)
     app.register_blueprint(registro_bp)
     app.register_blueprint(login_bp)
     app.register_blueprint(cocina_produccion_bp)
     app.register_blueprint(cocina_pedidos_bp)
+    app.register_blueprint(cliente_bp)
+    
     return app, csrf
 
 app, csrf = crear_app()
 
 
 
-#usuario = Usuario()
 @app.route('/')
 def init():
-    form = login_form()
-    if form.validate_on_submit():
-        usuario=form.usuario.data
-        contrasenia=form.contrasenia.data
+    form = login_form()  
+
+    
+    captcha_base64 = captcha_info()
+    
+    # Renderizar la plantilla con la imagen en Base64
+    return render_template('pages/login.html', form=form, captcha_base64=captcha_base64)
         
-    return render_template('pages/login.html', form=form)
 
 
 
