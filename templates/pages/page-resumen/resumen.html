@@ -1,0 +1,14 @@
+{% extends "components/estructura.html" %} {% block titulo %}Resumen de Venta{%
+endblock %} {% block contenido %} {% import
+'pages/page-resumen/_macros_resumen.html' as macros %}
+
+<div class="container">
+  <h2>Resumen del Pedido</h2>
+  <div class="row">
+    <div class="col-md-8">{{ macros.render_tabla_carrito() }}</div>
+    <div class="col-md-4">{{ macros.render_total_section() }}</div>
+  </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/page-ventas/ventas.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% macro render_tabla_carrito() %}
+<table class="table" id="tablaCarrito">
+  <thead>
+    <tr>
+      <th>Producto</th>
+      <th>Cantidad</th>
+      <th>Precio</th>
+      <th>Total</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody id="carritoBody"></tbody>
+</table>
+{% endmacro %} {% macro render_total_section() %}
+<div class="total-section">
+  <h4>Resumen</h4>
+  <p>Subtotal: $<span id="subtotal">0.00</span></p>
+  <p>Total: $<span id="total">0.00</span></p>
+  <div class="btn-container">
+    <button class="btn btn-success btn-terminar" id="btnTerminar">
+      Terminar
+    </button>
+    <button class="btn btn-danger btn-cancelar" id="btnCancelar">
+      Cancelar
+    </button>
+    <button class="btn btn-info btn-corte" id="btnCorte">
+      Corte de Ventas
+    </button>
+  </div>
+</div>
+{% endmacro %}

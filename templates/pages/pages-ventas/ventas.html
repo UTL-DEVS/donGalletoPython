@@ -1,0 +1,96 @@
+{% extends 'components/estructura.html' %} {% block titulo %}Inicio - Galletas
+Premium{% endblock %} {% block contenido %}
+
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/page-ventas/ventas.css') }}"
+/>
+
+{% macro render_tarjeta_producto(producto) %}
+<div class="col-md-6 col-lg-4">
+  <div class="card">
+    <div class="card-img-container">
+      {% if producto.imagen %}
+      <img
+        src="data:image/png;base64,{{ producto.imagen }}"
+        class="card-img-top"
+        alt="{{ producto.nombre }}"
+      />
+      {% else %}
+      <div class="bg-secondary text-white p-5 text-center">No hay imagen</div>
+      {% endif %}
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{ producto.nombre }}</h5>
+      <p class="card-text">${{ "%.2f"|format(producto.precio) }}</p>
+      <form
+        class="formulario-agregar"
+        data-producto-id="{{ producto.id }}"
+        data-producto-nombre="{{ producto.nombre }}"
+        data-producto-precio="{{ producto.precio }}"
+        data-stock="{{ producto.cantidad }}"
+      >
+        <input
+          type="number"
+          name="cantidad"
+          value="1"
+          min="1"
+          max="{{ producto.cantidad }}"
+          class="form-control mb-2"
+          oninput="validarCantidad(this)"
+          required
+        />
+        <button type="submit" class="btn btn-warning w-100">
+          Agregar al carrito
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endmacro %} {% macro render_item_carrito(item) %}
+<li class="list-group-item d-flex justify-content-between align-items-center">
+  {{ item.nombre }} (x{{ item.cantidad }}) - ${{ "%.2f"|format(item.subtotal) }}
+  <button
+    class="btn btn-danger btn-sm remover-item"
+    data-producto-id="{{ item.producto_id }}"
+  >
+    ❌
+  </button>
+</li>
+{% endmacro %}
+
+<div id="overlay"></div>
+<button id="btn-carrito">
+  🛒 <span id="contador-carrito">{{ carrito|length }}</span>
+</button>
+<div id="carrito">
+  <h4>🛒 Tu Carrito</h4>
+  <ul class="list-group">
+    {% for item in carrito %} {{ render_item_carrito(item) }} {% endfor %}
+  </ul>
+  <p class="text-end mt-3">
+    <strong>Total: ${{ "%.2f"|format(total) }}</strong>
+  </p>
+
+  <button id="vaciar-carrito" class="btn btn-danger w-100 mt-2">
+    Vaciar Carrito
+  </button>
+  <button id="procesar-venta" class="btn btn-success w-100 mt-3">
+    Procesar Venta
+  </button>
+</div>
+
+<div class="custom-container">
+  <h2>Menú de Galletas</h2>
+  <div class="row g-4">
+    {% for producto in galletas %} {{ render_tarjeta_producto(producto) }} {%
+    endfor %}
+  </div>
+</div>
+
+{% endblock %}
+
+<script
+  src="{{ url_for('static', filename='js/page-ventas/ventas.js') }}"
+  defer
+></script>

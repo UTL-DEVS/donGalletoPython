@@ -1,1 +1,3 @@
 from dao.dao_login import dao_login
+from dao.dao_ventas import *
+from dao.dao_resumen import *

@@ -15,6 +15,8 @@ def crear_app():
     app.register_blueprint(registro_bp)
     app.register_blueprint(login_bp)
     app.register_blueprint(cocina_bp)
+    app.register_blueprint(venta_bp)
+    app.register_blueprint(resumen_bp)
     return app, csrf
 
 app, csrf = crear_app()
@@ -33,7 +35,7 @@ def init():
 
 
 
-        
+
 
 if __name__ == '__main__':
     csrf.init_app(app=app)
