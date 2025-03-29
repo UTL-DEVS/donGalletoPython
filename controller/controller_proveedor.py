@@ -15,5 +15,4 @@ def actualizar_proveedor(id_proveedor, form_persona):
     prov_sel.correo=str(form_persona.correo.data)
     prov_sel.direccion=str(form_persona.direccion.data)
     prov_sel.telefono=str(form_persona.telefono.data)
-    print(f'Correo: {prov_sel.correo}')
     return dao_proveedor.actualizar_proveedor(prov_sel)
