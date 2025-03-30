@@ -6,7 +6,7 @@ from models import Usuario
 
 def crear_app():
     app = Flask(__name__)
-    app.secret_key = 'clave secreta de la app'
+    app.secret_key = 'Uq8vG3m!zR#X9jKpT7@dY5bNw$C4oL2F'
     
     csrf = CSRFProtect()
     app.config.from_object(Config)

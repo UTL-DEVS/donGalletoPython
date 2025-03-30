@@ -1,4 +1,4 @@
-from dao import dao_resumen
+from dao import dao_resumen, dao_ventas
 from cqrs import cqrs_resumen
 from datetime import datetime
 from fpdf import FPDF
@@ -8,7 +8,21 @@ def procesar_venta(total, usuario_id, items):
         if not cqrs_resumen.validar_item_carrito(item):
             return None
     
-    return dao_resumen.crear_venta(total, usuario_id, items)
+    for item in items:
+        producto = dao_ventas.obtener_producto_por_id(item['producto_id'])
+        if not producto or producto.cantidad < item['cantidad']:
+            return None
+    
+    venta = dao_resumen.crear_venta(total, usuario_id, items)
+    
+    if venta:
+        for item in items:
+            producto = dao_ventas.obtener_producto_por_id(item['producto_id'])
+            if producto:
+                producto.cantidad -= item['cantidad']
+                db.session.commit()
+    
+    return venta
 
 def generar_reporte_diario():
     ventas = dao_resumen.obtener_ventas_del_dia()

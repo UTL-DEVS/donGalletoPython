@@ -1,12 +1,19 @@
-from flask import Blueprint, render_template, request, jsonify, session, redirect, url_for, flash  
+from flask import Blueprint, render_template, request, jsonify, session, redirect, url_for, flash, send_file
 from datetime import datetime
-from models.ventas import Producto
+from models import Producto
 from forms.form_ventas import ProductoForm
 from controller import controller_ventas
 from controller import controller_resumen
 from utils.db import db
+from cqrs import cqrs_resumen, cqrs_ventas
+from flask_wtf.csrf import validate_csrf
+
 
 venta_bp = Blueprint('venta', __name__, template_folder='templates')
+
+@venta_bp.route('/tipo_venta')
+def tipo_venta():
+    return render_template('pages/pages-ventas/tipo_venta.html')
 
 @venta_bp.before_request
 def antes_de_peticion():
@@ -15,6 +22,7 @@ def antes_de_peticion():
 
 @venta_bp.route('/ventas')
 def ventas():
+    tipo_venta = request.args.get('tipo', 'unidad')
     productos = Producto.query.filter_by(activo=True).all()
     
     carrito = session.get('carrito', [])
@@ -23,117 +31,209 @@ def ventas():
     return render_template('pages/pages-ventas/ventas.html', 
                          galletas=productos, 
                          carrito=carrito, 
-                         total=total)
+                         total=total,
+                         tipo_venta=tipo_venta)
+
+
 
 @venta_bp.route('/api/agregar_carrito', methods=['POST'])
 def agregar_carrito():
-    datos = request.get_json()
-    if not datos or 'producto_id' not in datos:
-        return jsonify({'exito': False, 'error': 'Datos inválidos'}), 400
-    
     try:
-        producto_id = datos['producto_id']
-        cantidad = int(datos['cantidad'])
-        
-        if cantidad < 1:
-            return jsonify({'exito': False, 'error': 'La cantidad debe ser al menos 1'}), 400
-            
-        producto = Producto.query.get(producto_id)
-        if not producto or not producto.activo:
-            return jsonify({'exito': False, 'error': 'Producto no disponible'}), 404
-        
-        if cantidad > producto.cantidad:
+        validate_csrf(request.headers.get('X-CSRFToken'))
+        if not request.is_json:
             return jsonify({
                 'exito': False,
-                'error': f'Solo hay {producto.cantidad} unidades disponibles'
+                'error': 'Se esperaba JSON'
             }), 400
-            
-        carrito = session.get('carrito', [])
-        item_existente = next((item for item in carrito if item['producto_id'] == producto_id), None)
+
+        datos = request.get_json()
         
-        if item_existente:
-            nueva_cantidad = item_existente['cantidad'] + cantidad
-            if nueva_cantidad > producto.cantidad:
+        campos_requeridos = ['producto_id', 'cantidad', 'producto_nombre', 'precio', 'tipo_venta']
+        for campo in campos_requeridos:
+            if campo not in datos:
                 return jsonify({
                     'exito': False,
-                    'error': f'No puedes agregar {cantidad} más. Máximo disponible: {producto.cantidad - item_existente["cantidad"]}'
+                    'error': f'Falta el campo requerido: {campo}'
                 }), 400
-            
-            item_existente['cantidad'] = nueva_cantidad
-            item_existente['subtotal'] = nueva_cantidad * producto.precio
+
+        try:
+            producto_id = int(datos['producto_id'])
+            cantidad = int(datos['cantidad'])
+            precio = float(datos['precio'])
+            unidades = int(datos.get('unidades', cantidad))
+            producto_nombre = str(datos['producto_nombre'])
+            tipo_venta = str(datos['tipo_venta'])
+        except (ValueError, TypeError) as e:
+            return jsonify({
+                'exito': False,
+                'error': 'Tipos de datos inválidos'
+            }), 400
+
+        carrito = session.get('carrito', [])
+        
+        item_existente = next(
+            (item for item in carrito 
+             if (item['producto_id'] == producto_id and 
+                 item['nombre'] == producto_nombre and
+                 item.get('tipo_venta') == tipo_venta)), 
+            None
+        )
+        
+        if item_existente:
+            if tipo_venta == 'unidad':
+                item_existente['cantidad'] += cantidad
+                item_existente['subtotal'] = item_existente['cantidad'] * (item_existente['precio'] / item_existente['cantidad'])
+            else: 
+                item_existente['unidades'] += unidades
+                item_existente['subtotal'] += precio
         else:
-            carrito.append({
-                'producto_id': producto.id,
-                'nombre': producto.nombre,
-                'precio': float(producto.precio),
+            nuevo_item = {
+                'producto_id': producto_id,
+                'nombre': producto_nombre,
+                'precio': precio,
                 'cantidad': cantidad,
-                'subtotal': float(producto.precio) * cantidad
-            })
+                'unidades': unidades,
+                'subtotal': precio,
+                'tipo_venta': tipo_venta
+            }
+            carrito.append(nuevo_item)
         
         session['carrito'] = carrito
+        session.modified = True
+        
         return jsonify({
             'exito': True,
             'carrito': carrito,
-            'nuevo_total': sum(item['subtotal'] for item in carrito)
+            'nuevo_total': sum(item['subtotal'] for item in carrito),
+            'mensaje': 'Producto agregado al carrito'
         })
         
-    except (ValueError, TypeError):
-        return jsonify({'exito': False, 'error': 'Cantidad inválida'}), 400
+    except Exception as e:
+        return jsonify({
+            'exito': False,
+            'error': str(e)
+        }), 500
 
 @venta_bp.route('/api/eliminar_del_carrito/<int:producto_id>', methods=['DELETE'])
 def eliminar_del_carrito(producto_id):
-    carrito = session.get('carrito', [])
-    carrito = [item for item in carrito if item['producto_id'] != producto_id]
-    session['carrito'] = carrito
-    return jsonify({'exito': True, 'carrito': carrito})
-
-@venta_bp.route('/api/vaciar_carrito', methods=['POST'])
-def vaciar_carrito():
-    session['carrito'] = []
-    return jsonify({'exito': True})
-
-@venta_bp.route('/api/procesar_venta', methods=['POST'])
-def procesar_venta():
-    carrito = session.get('carrito', [])
-    if not carrito:
-        return jsonify({'exito': False, 'error': 'El carrito está vacío'})
-    
-    usuario_id = session.get('usuario_id')
-    if not usuario_id:
-        return jsonify({'exito': False, 'error': 'Usuario no autenticado'})
-    
-    total = sum(item['subtotal'] for item in carrito)
-    items = [{
-        'producto_id': item['producto_id'],
-        'cantidad': item['cantidad']
-    } for item in carrito]
-    
-    resultado = controller_resumen.procesar_venta(total, usuario_id, items)
-    
-    if resultado:
-        nombre_archivo = controller_resumen.generar_ticket(resultado)
+    try:
+        data = request.get_json()
+        producto_nombre = data.get('producto_nombre')
+        tipo_venta = data.get('tipo_venta')
         
-        session['carrito'] = []
+        if not producto_nombre or not tipo_venta:
+            return jsonify({
+                'exito': False,
+                'error': 'Faltan datos para identificar el producto'
+            }), 400
+        
+        carrito = session.get('carrito', [])
+        nuevo_carrito = [
+            item for item in carrito 
+            if not (item['producto_id'] == producto_id and 
+                   item['nombre'] == producto_nombre and
+                   item.get('tipo_venta') == tipo_venta)
+        ]
+        
+        session['carrito'] = nuevo_carrito
+        session.modified = True
         
         return jsonify({
             'exito': True,
-            'mensaje': 'Venta procesada con éxito',
-            'url_ticket': f'/descargar_ticket/{resultado.id}'
+            'carrito': nuevo_carrito,
+            'nuevo_total': sum(item['subtotal'] for item in nuevo_carrito)
         })
-    else:
-        return jsonify({'exito': False, 'error': 'Error al procesar la venta'})
+    except Exception as e:
+        return jsonify({
+            'exito': False,
+            'error': str(e)
+        }), 500
+
+@venta_bp.route('/api/vaciar_carrito', methods=['POST'])
+def vaciar_carrito():
+    try:
+        session['carrito'] = []
+        session.modified = True
+        return jsonify({
+            'exito': True,
+            'mensaje': 'Carrito vaciado correctamente'
+        })
+    except Exception as e:
+        return jsonify({
+            'exito': False,
+            'error': str(e)
+        }), 500
+
+@venta_bp.route('/api/procesar_venta', methods=['POST'])
+def procesar_venta():
+    try:
+        carrito = session.get('carrito', [])
+        if not carrito:
+            return jsonify({'exito': False, 'error': 'El carrito está vacío'}), 400
+        
+        usuario_id = session.get('usuario_id')
+        if not usuario_id:
+            return jsonify({'exito': False, 'error': 'Usuario no autenticado'}), 401
+        
+        total = sum(item['subtotal'] for item in carrito)
+        items = []
+        
+        for item in carrito:
+            # Manejar tanto cantidad directa como unidades por peso/paquete
+            unidades = item.get('unidades', item['cantidad'])
+            items.append({
+                'producto_id': item['producto_id'],
+                'cantidad': unidades,
+                'precio_unitario': item['precio'] / unidades if 'unidades' in item else item['precio']
+            })
+        
+        resultado = controller_resumen.procesar_venta(total, usuario_id, items)
+        
+        if resultado:
+            # Actualizar stock de productos
+            for item in carrito:
+                producto = Producto.query.get(item['producto_id'])
+                if producto:
+                    unidades_vendidas = item.get('unidades', item['cantidad'])
+                    producto.cantidad -= unidades_vendidas
+                    db.session.commit()
+            
+            nombre_archivo = controller_resumen.generar_ticket(resultado)
+            
+            session['carrito'] = []
+            session.modified = True
+            
+            return jsonify({
+                'exito': True,
+                'mensaje': 'Venta procesada con éxito',
+                'url_ticket': url_for('venta.descargar_ticket', venta_id=resultado.id)
+            })
+        else:
+            return jsonify({'exito': False, 'error': 'Error al procesar la venta'}), 500
+            
+    except Exception as e:
+        print(f"Error en procesar_venta: {str(e)}")
+        return jsonify({
+            'exito': False,
+            'error': 'Error interno del servidor'
+        }), 500
 
 @venta_bp.route('/api/corte_ventas', methods=['GET'])
 def corte_ventas():
-    reporte = controller_resumen.generar_reporte_diario()
-    
-    nombre_archivo = controller_resumen.generar_reporte_pdf(reporte)
-    
-    return jsonify({
-        'exito': True,
-        'reporte': reporte,
-        'url_pdf': f'/descargar_reporte/{datetime.now().strftime("%Y%m%d")}'
-    })
+    try:
+        reporte = controller_resumen.generar_reporte_diario()
+        nombre_archivo = controller_resumen.generar_reporte_pdf(reporte)
+        
+        return jsonify({
+            'exito': True,
+            'reporte': reporte,
+            'url_pdf': f'/descargar_reporte/{datetime.now().strftime("%Y%m%d")}'
+        })
+    except Exception as e:
+        return jsonify({
+            'exito': False,
+            'error': str(e)
+        }), 500
 
 @venta_bp.route('/descargar_ticket/<int:venta_id>')
 def descargar_ticket(venta_id):
@@ -171,17 +271,24 @@ def agregar_producto():
 
 @venta_bp.route('/api/productos')
 def api_productos():
-    productos = controller_ventas.obtener_productos()
-    productos_data = []
-    
-    for producto in productos:
-        productos_data.append({
-            'id': producto.id,
-            'nombre': producto.nombre,
-            'precio': producto.precio,
-            'imagen': producto.imagen if producto.imagen else None,
-            'descripcion': producto.descripcion,
-            'cantidad': producto.cantidad
-        })
-    
-    return jsonify(productos_data)
+    try:
+        productos = controller_ventas.obtener_productos()
+        productos_data = []
+        
+        for producto in productos:
+            productos_data.append({
+                'id': producto.id,
+                'nombre': producto.nombre,
+                'precio': producto.precio,
+                'imagen': producto.imagen if producto.imagen else None,
+                'descripcion': producto.descripcion,
+                'cantidad': producto.cantidad,
+                'activo': producto.activo
+            })
+        
+        return jsonify(productos_data)
+    except Exception as e:
+        return jsonify({
+            'exito': False,
+            'error': str(e)
+        }), 500

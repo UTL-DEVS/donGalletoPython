@@ -1,0 +1,125 @@
+{% extends 'components/estructura.html' %} {% block titulo %}Inicio Cliente{%
+endblock %} {% block contenido %} {% import 'components/_macro_login.html' as
+macros %}
+
+<style>
+  .custom-container {
+    width: 90% !important;
+    margin: 0 auto;
+    padding-top: 20px;
+  }
+  .card-img-container {
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #ffffff;
+    box-shadow: 10px 10px 15px rgba(168, 168, 168, 0.3);
+  }
+  .card-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 15px;
+  }
+  .card {
+    transition: all 0.3s ease;
+    margin-bottom: 25px;
+    height: 100%;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+  .card-body {
+    padding: 0px;
+    text-align: center;
+  }
+  .card-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2c3e50;
+  }
+  .card-text {
+    color: #7f8c8d;
+    font-size: 1rem;
+  }
+  h1 {
+    color: #2c3e50;
+    margin-bottom: 30px !important;
+    font-weight: 600;
+  }
+</style>
+
+<div class="custom-container mt-5">
+  <h1 class="text-center">Seleccione método de compra</h1>
+
+  <div class="row mt-5">
+    <div class="col-md-4">
+      <a
+        href="{{ url_for('venta.ventas', tipo='unidad') }}"
+        style="text-decoration: none"
+      >
+        <div class="card">
+          <div class="card-img-container">
+            <img
+              src="{{ url_for('static', filename='img/galleta_menu.png') }}"
+              alt="Galletas"
+            />
+          </div>
+          <div class="card-body">
+            <h5 class="card-title mt-4">Por Unidad</h5>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-md-4">
+      <a
+        href="{{ url_for('venta.ventas', tipo='paquete') }}"
+        style="text-decoration: none"
+      >
+        <div class="card">
+          <div class="card-img-container">
+            <img
+              src="{{ url_for('static', filename='img/paquete_menu.png') }}"
+              alt="Paquete"
+            />
+          </div>
+          <div class="card-body">
+            <h5 class="card-title mt-4">Por Paquete</h5>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-md-4">
+      <a
+        href="{{ url_for('venta.ventas', tipo='peso') }}"
+        style="text-decoration: none"
+      >
+        <div class="card">
+          <div class="card-img-container">
+            <img
+              src="{{ url_for('static', filename='img/buscula_menu.png') }}"
+              alt="Peso"
+            />
+          </div>
+          <div class="card-body">
+            <h5 class="card-title mt-4">Por Peso</h5>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+<script
+  src="{{ url_for('static', filename='js/page-ventas/ventas.js') }}"
+  defer
+></script>

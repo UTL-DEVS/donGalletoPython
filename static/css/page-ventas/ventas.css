@@ -116,3 +116,32 @@ h2 {
     font-size: 14px;
     padding: 5px 8px;
 }
+
+/* Nuevas clases agregadas */
+.mostrar {
+    display: block !important;
+}
+
+.notificacion {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 5px;
+    color: white;
+    transform: translateX(200%);
+    transition: transform 0.3s ease;
+    z-index: 1100;
+}
+
+.notificacion.mostrar {
+    transform: translateX(0);
+}
+
+.notificacion.success {
+    background-color: #28a745;
+}
+
+.notificacion.error {
+    background-color: #dc3545;
+}
