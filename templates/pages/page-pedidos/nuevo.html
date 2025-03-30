@@ -1,0 +1,35 @@
+{% extends "components/estructura.html" %}
+
+{% block contenido %}
+<div class="container">
+    <h2 class="mt-4">Nuevo Pedido</h2>
+  
+    <form method="post">
+      {{ form.hidden_tag() }}
+  
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Galleta</th>
+            <th>Cantidad</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for subform in form.galletas %}
+          <tr>
+            <td>
+              {{ galletas[loop.index0].galleta }}
+              {{ subform.galleta_id(value=galletas[loop.index0].id_galleta) }}
+            </td>
+            <td>
+              {{ subform.cantidad(class="form-control") }}
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+  
+      {{ form.submit(class="btn btn-primary") }}
+    </form>
+  </div>
+{% endblock %}
