@@ -1,4 +1,5 @@
 from connection.config import db
+from utils.db import db
 
 class RecetaInsumo(db.Model):
     __tablename__ = 'receta_insumo'
