@@ -10,7 +10,7 @@ class Usuario(db.Model):
     rol=db.Column(db.Integer, nullable=False)
     # verificacion dos pasos
     email = db.Column(db.String(100), nullable=False)
-    token = db.Column(db.Text, nullable=False, sever_default=0)
+    token = db.Column(db.Text, nullable=False, server_default='0')
     
     ultimo_acceso = db.Column(db.DateTime, server_default=db.func.current_timestamp())
     usuario = db.Column(db.String(80), unique=True, nullable=False)

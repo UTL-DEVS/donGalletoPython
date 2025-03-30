@@ -14,7 +14,7 @@ from funcs import captcha_info
 
 def crear_app():
     app = Flask(__name__)
-    app.secret_key = 'clave secreta de la app'
+    app.secret_key = 'Uq8vG3m!zR#X9jKpT7@dY5bNw$C4oL2F'
     
     csrf = CSRFProtect()
     app.config.from_object(Config)
@@ -24,6 +24,8 @@ def crear_app():
     app.register_blueprint(registro_bp)
     app.register_blueprint(login_bp)
     app.register_blueprint(cocina_bp)
+    app.register_blueprint(venta_bp)
+    app.register_blueprint(resumen_bp)
     app.register_blueprint(cliente_bp)
     
     return app, csrf
@@ -45,7 +47,7 @@ def init():
 
 
 
-        
+
 
 if __name__ == '__main__':
     csrf.init_app(app=app)
