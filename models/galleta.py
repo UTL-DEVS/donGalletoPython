@@ -1,4 +1,3 @@
-from connection.config import db
 from utils.db import db
 
 class Galleta(db.Model):

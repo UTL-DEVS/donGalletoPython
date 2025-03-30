@@ -1,4 +1,4 @@
-from connection.config import db
+#from connection.config import db
 from utils.db import db
 
 class Receta(db.Model):

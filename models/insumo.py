@@ -1,4 +1,4 @@
-from connection.config import db
+#from connection.config import db
 from utils.db import db
 
 class Insumo(db.Model):
@@ -10,4 +10,5 @@ class Insumo(db.Model):
     cantidad = db.Column(db.Integer, nullable=False)
     total = db.Column(db.Float, nullable=False)
     fecha = db.Column(db.Date, nullable=False)
-    id_proveedor = db.Column(db.Integer, db.ForeignKey('proveedores.id_proveedor'), nullable=False)
+    id_proveedor = db.Column(db.Integer, db.ForeignKey('Proveedor.id_proveedor'), nullable=False)
+    proveedor = db.relationship('Proveedor', backref=db.backref('Insumos', uselist=False))

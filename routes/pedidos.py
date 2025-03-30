@@ -1,7 +1,7 @@
 from flask import Blueprint, request, render_template, redirect, url_for, flash, session
 from flask_login import login_required, current_user
 from sqlalchemy import text
-from connection.config import db
+#from connection.config import db
 import json
 
 pedido_bp = Blueprint('pedido', __name__, template_folder='templates')
