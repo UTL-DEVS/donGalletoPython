@@ -9,8 +9,8 @@ class Usuario(db.Model):
     # cliente, admin, cocina, ventas
     rol=db.Column(db.Integer, nullable=False)
     # verificacion dos pasos
-    email = db.Column(db.String(30), nullable=False)
-    token = db.Column(db.Text, nullable=False)
+    email = db.Column(db.String(100), nullable=False)
+    token = db.Column(db.Text, nullable=False, sever_default=0)
     
     ultimo_acceso = db.Column(db.DateTime, server_default=db.func.current_timestamp())
     usuario = db.Column(db.String(80), unique=True, nullable=False)
@@ -20,8 +20,17 @@ class Usuario(db.Model):
     def generar_token(self):
         token_bytes = secrets.token_bytes(32)
         self.token = base64.b64encode(token_bytes).decode('utf-8')
+        
+        db.session.commit()
+    def generar_ultimo_acceso(self):
         self.ultimo_acceso = datetime.now(timezone.utc)
         self.sistema = 1
+        db.session.commit()
+    def dentro_sistema(self):
+        self.sistema = 1
+        db.session.commit()
+    def fuera_sistema(self):
+        self.sistema = 0
         db.session.commit()
     
     @classmethod
