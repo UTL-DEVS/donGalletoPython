@@ -1,6 +1,13 @@
+## Version: [3.0.1]
+## Fecha: 2025-03-25
+## Autor: Joel Briones
+#### Cambios:
+- Agregado logica verificacion
+- Se completa la verificacion y el flujo del login
+
 ## Version: [3.0.0]
 ## Fecha: 2025-03-25
-## Autor: Carlos Sanchez
+## Autor: Joel Briones
 #### Cambios:
 - Agregando logica de Verificacion
 - Se completa el logeo

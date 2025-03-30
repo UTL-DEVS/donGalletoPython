@@ -14,5 +14,5 @@ def login():
         result =  controller_login(usuario, contrasenia,captcha_data)
         if result:
             return result
-        return redirect('/')
+    return redirect('/')
         
