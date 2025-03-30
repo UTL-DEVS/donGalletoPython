@@ -1,10 +1,6 @@
 {%extends 'components/estructura.html'%}
 {%block titulo%}Economía{%endblock%}
 {%block contenido%}
-
-
-
-
  <!-- Barra de navegación inferior -->
     <nav class="navbar navbar-dark bg-dark fixed-bottom">
         <div class="container-fluid d-flex justify-content-around">
@@ -13,6 +9,7 @@
             <a class="nav-link text-light" href="#"><i class="bi bi-person"></i> Gastos</a>
         </div>
     </nav>
+    
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script src="{{url_for('static',filename='js/page-economia/dashboard.js')}}"></script>
 {%endblock%}
