@@ -1,8 +1,15 @@
-## Version: [3.0.1]
+## Version: [3.0.2]
 ## Fecha: 2025-03-27
 ## Autor: Carlos Padilla
 #### Cambios:
-- Se hizo medio CRUD de módulo de proveedores (ver proveedores)
+- Se hizo CRUD de módulo de proveedores
+
+## Version: [3.0.1]
+## Fecha: 2025-03-25
+## Autor: Joel Briones
+#### Cambios:
+- Agregado logica verificacion
+- Se completa la verificacion y el flujo del login
 
 ## Version: [3.0.0]
 ## Fecha: 2025-03-25
