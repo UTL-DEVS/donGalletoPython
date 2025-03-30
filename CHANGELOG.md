@@ -1,3 +1,9 @@
+## Version: [3.0.2]
+## Fecha: 2025-03-27
+## Autor: Carlos Padilla
+#### Cambios:
+- Se hizo CRUD de módulo de proveedores
+
 ## Version: [3.0.1]
 ## Fecha: 2025-03-25
 ## Autor: Joel Briones
