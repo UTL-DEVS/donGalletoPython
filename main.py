@@ -31,8 +31,6 @@ def crear_app():
 
 app, csrf = crear_app()
 
-
-
 @app.route('/')
 def init():
     form = login_form()  
@@ -42,11 +40,6 @@ def init():
     
     # Renderizar la plantilla con la imagen en Base64
     return render_template('pages/login.html', form=form, captcha_base64=captcha_base64)
-        
-
-
-
-        
 
 if __name__ == '__main__':
     csrf.init_app(app=app)
