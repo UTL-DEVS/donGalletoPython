@@ -1,8 +1,8 @@
 from flask import Blueprint, render_template, request, jsonify, session, send_file
-from controller import controller_resumen
 import os
 from models import Usuario
 from datetime import datetime
+from controller import controller_resumen
 
 resumen_bp = Blueprint('resumen', __name__, template_folder='templates')
 

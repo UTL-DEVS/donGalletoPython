@@ -10,37 +10,37 @@ Premium{% endblock %} {% block contenido %}
   defer
 ></script>
 <meta name="csrf-token" content="{{ csrf_token() }}" />
-{% macro render_tarjeta_producto(producto) %}
+{% macro render_tarjeta_galleta(galleta) %}
 <div class="col-md-6 col-lg-4">
   <div class="card">
     <div class="card-img-container">
-      {% if producto.imagen %}
+      {% if galleta.imagen_galleta %}
       <img
-        src="data:image/png;base64,{{ producto.imagen }}"
+        src="data:image/png;base64,{{ galleta.imagen_galleta }}"
         class="card-img-top"
-        alt="{{ producto.nombre }}"
+        alt="{{ galleta.nombre_galleta }}"
       />
       {% else %}
       <div class="bg-secondary text-white p-5 text-center">No hay imagen</div>
       {% endif %}
     </div>
     <div class="card-body">
-      <h5 class="card-title">{{ producto.nombre }}</h5>
-      <p class="card-text">${{ "%.2f"|format(producto.precio) }}</p>
-      <p class="card-text">Stock: {{ producto.cantidad }}</p>
+      <h5 class="card-title">{{ galleta.nombre_galleta }}</h5>
+      <p class="card-text">${{ "%.2f"|format(galleta.precio_galleta) }}</p>
+      <p class="card-text">Stock: {{ galleta.cantidad_galleta }}</p>
       <form
         class="formulario-agregar"
-        data-producto-id="{{ producto.id }}"
-        data-producto-nombre="{{ producto.nombre }}"
-        data-producto-precio="{{ producto.precio }}"
-        data-stock="{{ producto.cantidad }}"
+        data-galleta-id="{{ galleta.id_galleta }}"
+        data-galleta-nombre="{{ galleta.nombre_galleta }}"
+        data-galleta-precio="{{ galleta.precio_galleta }}"
+        data-stock="{{ galleta.cantidad_galleta }}"
       >
         <input
           type="number"
           name="cantidad"
           value="1"
           min="1"
-          max="{{ producto.cantidad }}"
+          max="{{ galleta.cantidad_galleta }}"
           class="form-control mb-2"
           required
         />
@@ -59,59 +59,63 @@ Premium{% endblock %} {% block contenido %}
   ${{ "%.2f"|format(item.subtotal) }}
   <button
     class="btn btn-danger btn-sm remover-item"
-    data-producto-id="{{ item.producto_id }}"
-    data-producto-nombre="{{ item.nombre }}"
+    data-galleta-id="{{ item.galleta_id }}"
+    data-galleta-nombre="{{ item.nombre }}"
     data-tipo-venta="{{ item.tipo_venta }}"
   >
     ❌
   </button>
 </li>
-{% endmacro %} {% macro render_form_peso(producto) %}
+{% endmacro %} {% macro render_form_peso(galleta) %}
 <div class="col-md-6 col-lg-4">
   <div class="card">
     <div class="card-img-container">
-      {% if producto.imagen %}
+      {% if galleta.imagen_galleta %}
       <img
-        src="data:image/png;base64,{{ producto.imagen }}"
+        src="data:image/png;base64,{{ galleta.imagen_galleta }}"
         class="card-img-top"
-        alt="{{ producto.nombre }}"
+        alt="{{ galleta.nombre_galleta }}"
       />
       {% else %}
       <div class="bg-secondary text-white p-5 text-center">No hay imagen</div>
       {% endif %}
     </div>
     <div class="card-body">
-      <h5 class="card-title">{{ producto.nombre }}</h5>
-      <p class="card-text">${{ "%.2f"|format(producto.precio) }} por unidad</p>
+      <h5 class="card-title">{{ galleta.nombre_galleta }}</h5>
       <p class="card-text">
-        Stock: {{ producto.cantidad }} unidades ({{ producto.cantidad * 10 }}g)
+        ${{ "%.2f"|format(galleta.precio_galleta) }} por unidad
+      </p>
+      <p class="card-text">
+        Stock: {{ galleta.cantidad_galleta }} unidades ({{
+        galleta.cantidad_galleta * 10 }}g)
       </p>
       <form
         class="formulario-agregar-peso"
-        data-producto-id="{{ producto.id }}"
-        data-producto-nombre="{{ producto.nombre }}"
-        data-producto-precio="{{ producto.precio }}"
-        data-stock="{{ producto.cantidad }}"
+        data-galleta-id="{{ galleta.id_galleta }}"
+        data-galleta-nombre="{{ galleta.nombre_galleta }}"
+        data-galleta-precio="{{ galleta.precio_galleta }}"
+        data-stock="{{ galleta.cantidad_galleta }}"
       >
         <div class="form-group mb-2">
-          <label for="peso-{{ producto.id }}">Peso (gramos):</label>
+          <label for="peso-{{ galleta.id_galleta }}">Peso (gramos):</label>
           <input
             type="number"
-            id="peso-{{ producto.id }}"
+            id="peso-{{ galleta.id_galleta }}"
             name="peso"
             value="10"
             min="10"
             step="10"
-            max="{{ producto.cantidad * 10 }}"
+            max="{{ galleta.cantidad_galleta * 10 }}"
             class="form-control"
-            oninput="validarPeso(this, {{ producto.cantidad }})"
+            oninput="validarPeso(this, {{ galleta.cantidad_galleta }})"
             required
           />
         </div>
         <div class="form-group mb-2">
           <label
             >Equivale a:
-            <span id="unidades-{{ producto.id }}">1</span> unidades</label
+            <span id="unidades-{{ galleta.id_galleta }}">1</span>
+            unidades</label
           >
         </div>
         <button type="submit" class="btn btn-warning w-100">
@@ -122,28 +126,24 @@ Premium{% endblock %} {% block contenido %}
   </div>
 </div>
 {% endmacro %} {% macro render_form_paquete() %}
-<script
-  src="{{ url_for('static', filename='js/page-ventas/ventas.js') }}"
-  defer
-></script>
 <div class="col-md-6 col-lg-4">
   <div class="card">
     <div class="card-body">
       <h5 class="card-title">Paquetes disponibles</h5>
       <form id="form-paquete">
         <div class="form-group mb-3">
-          <label for="producto-paquete">Seleccione producto:</label>
-          <select class="form-control" id="producto-paquete" required>
+          <label for="galleta-paquete">Seleccione galleta:</label>
+          <select class="form-control" id="galleta-paquete" required>
             <option value="">-- Seleccione --</option>
-            {% for producto in galletas %}
+            {% for galleta in galletas %}
             <option
-              value="{{ producto.id }}"
-              data-producto-id="{{ producto.id }}"
-              data-producto-nombre="{{ producto.nombre }}"
-              data-producto-precio="{{ producto.precio }}"
-              data-stock="{{ producto.cantidad }}"
+              value="{{ galleta.id_galleta }}"
+              data-galleta-id="{{ galleta.id_galleta }}"
+              data-galleta-nombre="{{ galleta.nombre_galleta }}"
+              data-galleta-precio="{{ galleta.precio_galleta }}"
+              data-stock="{{ galleta.cantidad_galleta }}"
             >
-              {{ producto.nombre }}
+              {{ galleta.nombre_galleta }}
             </option>
             {% endfor %}
           </select>
@@ -237,14 +237,14 @@ Premium{% endblock %} {% block contenido %}
   {% if tipo_venta == 'unidad' %}
   <h2>Venta por Unidad</h2>
   <div class="row g-4">
-    {% for producto in galletas %} {{ render_tarjeta_producto(producto) }} {%
+    {% for galleta in galletas %} {{ render_tarjeta_galleta(galleta) }} {%
     endfor %}
   </div>
 
   {% elif tipo_venta == 'peso' %}
   <h2>Venta por Peso</h2>
   <div class="row g-4">
-    {% for producto in galletas %} {{ render_form_peso(producto) }} {% endfor %}
+    {% for galleta in galletas %} {{ render_form_peso(galleta) }} {% endfor %}
   </div>
 
   {% elif tipo_venta == 'paquete' %}

@@ -1,29 +1,36 @@
-from models import Venta, DetalleVenta, Producto
+from models import Venta, DetalleVenta, Galleta
 from utils.db import db
 from datetime import datetime
 
 def crear_venta(total, usuario_id, items):
-    nueva_venta = Venta(
-        total=total,
-        usuario_id=usuario_id
-    )
-    
-    db.session.add(nueva_venta)
-    
-    for item in items:
-        producto = Producto.query.get(item['producto_id'])
-        if producto:
-            detalle = DetalleVenta(
-                venta=nueva_venta,
-                producto_id=item['producto_id'],
-                cantidad=item['cantidad'],
-                precio_unitario=producto.precio,
-                subtotal=producto.precio * item['cantidad']
-            )
-            db.session.add(detalle)
-    
-    db.session.commit()
-    return nueva_venta
+    try:
+        nueva_venta = Venta(
+            total=total,
+            usuario_id=usuario_id,
+            fecha=datetime.utcnow(),
+            estado='completada'
+        )
+        
+        db.session.add(nueva_venta)
+        
+        for item in items:
+            galleta = Galleta.query.get(item['galleta_id'])
+            if galleta:
+                detalle = DetalleVenta(
+                    venta=nueva_venta,
+                    galleta_id=item['galleta_id'],
+                    cantidad=item['cantidad'],
+                    precio_unitario=item['precio_unitario'],
+                    subtotal=item['subtotal']
+                )
+                db.session.add(detalle)
+        
+        db.session.commit()
+        return nueva_venta
+    except Exception as e:
+        print(f"Error al crear venta: {str(e)}")
+        db.session.rollback()
+        return None
 
 def obtener_ventas_del_dia():
     hoy = datetime.now().date()
@@ -45,7 +52,7 @@ def generar_reporte_ventas(ventas):
             'fecha': venta.fecha.strftime('%Y-%m-%d %H:%M:%S'),
             'total': venta.total,
             'items': [{
-                'producto': detalle.producto.nombre,
+                'galleta': detalle.galleta.nombre_galleta,
                 'cantidad': detalle.cantidad,
                 'precio_unitario': detalle.precio_unitario,
                 'subtotal': detalle.subtotal

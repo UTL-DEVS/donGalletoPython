@@ -1,3 +1,3 @@
 from .usuario import Usuario
-from .ventas import Producto
+from .ventas import Galleta
 from .resumen import Venta, DetalleVenta

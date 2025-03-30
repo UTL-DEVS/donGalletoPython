@@ -1,8 +1,8 @@
-def validar_producto(data):
-    if not data.get('nombre') or not data.get('precio'):
+def validar_galleta(data):
+    if not data.get('nombre_galleta') or not data.get('precio_galleta'):
         return False
     try:
-        precio = float(data['precio'])
+        precio = float(data['precio_galleta'])
         if precio <= 0:
             return False
     except ValueError:

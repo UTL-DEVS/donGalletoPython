@@ -1,13 +1,12 @@
 from flask import Blueprint, render_template, request, jsonify, session, redirect, url_for, flash, send_file
 from datetime import datetime
-from models import Producto
-from forms.form_ventas import ProductoForm
+from models import Galleta
+from forms.form_ventas import GalletaForm
 from controller import controller_ventas
 from controller import controller_resumen
 from utils.db import db
 from cqrs import cqrs_resumen, cqrs_ventas
 from flask_wtf.csrf import validate_csrf
-
 
 venta_bp = Blueprint('venta', __name__, template_folder='templates')
 
@@ -23,18 +22,16 @@ def antes_de_peticion():
 @venta_bp.route('/ventas')
 def ventas():
     tipo_venta = request.args.get('tipo', 'unidad')
-    productos = Producto.query.filter_by(activo=True).all()
+    galletas = Galleta.query.filter_by(activo=True).all()
     
     carrito = session.get('carrito', [])
     total = sum(item['subtotal'] for item in carrito)
     
     return render_template('pages/pages-ventas/ventas.html', 
-                         galletas=productos, 
+                         galletas=galletas, 
                          carrito=carrito, 
                          total=total,
                          tipo_venta=tipo_venta)
-
-
 
 @venta_bp.route('/api/agregar_carrito', methods=['POST'])
 def agregar_carrito():
@@ -48,7 +45,7 @@ def agregar_carrito():
 
         datos = request.get_json()
         
-        campos_requeridos = ['producto_id', 'cantidad', 'producto_nombre', 'precio', 'tipo_venta']
+        campos_requeridos = ['galleta_id', 'cantidad', 'galleta_nombre', 'precio', 'tipo_venta']
         for campo in campos_requeridos:
             if campo not in datos:
                 return jsonify({
@@ -57,11 +54,11 @@ def agregar_carrito():
                 }), 400
 
         try:
-            producto_id = int(datos['producto_id'])
+            galleta_id = int(datos['galleta_id'])
             cantidad = int(datos['cantidad'])
             precio = float(datos['precio'])
             unidades = int(datos.get('unidades', cantidad))
-            producto_nombre = str(datos['producto_nombre'])
+            galleta_nombre = str(datos['galleta_nombre'])
             tipo_venta = str(datos['tipo_venta'])
         except (ValueError, TypeError) as e:
             return jsonify({
@@ -73,8 +70,8 @@ def agregar_carrito():
         
         item_existente = next(
             (item for item in carrito 
-             if (item['producto_id'] == producto_id and 
-                 item['nombre'] == producto_nombre and
+             if (item['galleta_id'] == galleta_id and 
+                 item['nombre'] == galleta_nombre and
                  item.get('tipo_venta') == tipo_venta)), 
             None
         )
@@ -88,8 +85,8 @@ def agregar_carrito():
                 item_existente['subtotal'] += precio
         else:
             nuevo_item = {
-                'producto_id': producto_id,
-                'nombre': producto_nombre,
+                'galleta_id': galleta_id,
+                'nombre': galleta_nombre,
                 'precio': precio,
                 'cantidad': cantidad,
                 'unidades': unidades,
@@ -105,7 +102,7 @@ def agregar_carrito():
             'exito': True,
             'carrito': carrito,
             'nuevo_total': sum(item['subtotal'] for item in carrito),
-            'mensaje': 'Producto agregado al carrito'
+            'mensaje': 'Galleta agregada al carrito'
         })
         
     except Exception as e:
@@ -114,24 +111,24 @@ def agregar_carrito():
             'error': str(e)
         }), 500
 
-@venta_bp.route('/api/eliminar_del_carrito/<int:producto_id>', methods=['DELETE'])
-def eliminar_del_carrito(producto_id):
+@venta_bp.route('/api/eliminar_del_carrito/<int:galleta_id>', methods=['DELETE'])
+def eliminar_del_carrito(galleta_id):
     try:
         data = request.get_json()
-        producto_nombre = data.get('producto_nombre')
+        galleta_nombre = data.get('galleta_nombre')
         tipo_venta = data.get('tipo_venta')
         
-        if not producto_nombre or not tipo_venta:
+        if not galleta_nombre or not tipo_venta:
             return jsonify({
                 'exito': False,
-                'error': 'Faltan datos para identificar el producto'
+                'error': 'Faltan datos para identificar la galleta'
             }), 400
         
         carrito = session.get('carrito', [])
         nuevo_carrito = [
             item for item in carrito 
-            if not (item['producto_id'] == producto_id and 
-                   item['nombre'] == producto_nombre and
+            if not (item['galleta_id'] == galleta_id and 
+                   item['nombre'] == galleta_nombre and
                    item.get('tipo_venta') == tipo_venta)
         ]
         
@@ -167,6 +164,10 @@ def vaciar_carrito():
 @venta_bp.route('/api/procesar_venta', methods=['POST'])
 def procesar_venta():
     try:
+        data = request.get_json()
+        if not data:
+            return jsonify({'exito': False, 'error': 'Datos no proporcionados'}), 400
+        
         carrito = session.get('carrito', [])
         if not carrito:
             return jsonify({'exito': False, 'error': 'El carrito está vacío'}), 400
@@ -175,38 +176,22 @@ def procesar_venta():
         if not usuario_id:
             return jsonify({'exito': False, 'error': 'Usuario no autenticado'}), 401
         
-        total = sum(item['subtotal'] for item in carrito)
-        items = []
+        venta = controller_resumen.procesar_venta(
+            total=data.get('total'),
+            usuario_id=usuario_id,
+            items=data.get('items', [])
+        )
         
-        for item in carrito:
-            # Manejar tanto cantidad directa como unidades por peso/paquete
-            unidades = item.get('unidades', item['cantidad'])
-            items.append({
-                'producto_id': item['producto_id'],
-                'cantidad': unidades,
-                'precio_unitario': item['precio'] / unidades if 'unidades' in item else item['precio']
-            })
-        
-        resultado = controller_resumen.procesar_venta(total, usuario_id, items)
-        
-        if resultado:
-            # Actualizar stock de productos
-            for item in carrito:
-                producto = Producto.query.get(item['producto_id'])
-                if producto:
-                    unidades_vendidas = item.get('unidades', item['cantidad'])
-                    producto.cantidad -= unidades_vendidas
-                    db.session.commit()
-            
-            nombre_archivo = controller_resumen.generar_ticket(resultado)
+        if venta:
+            ticket_path = controller_resumen.generar_ticket(venta)
             
             session['carrito'] = []
             session.modified = True
             
             return jsonify({
                 'exito': True,
-                'mensaje': 'Venta procesada con éxito',
-                'url_ticket': url_for('venta.descargar_ticket', venta_id=resultado.id)
+                'mensaje': 'Venta procesada correctamente',
+                'url_ticket': url_for('venta.descargar_ticket', venta_id=venta.id)
             })
         else:
             return jsonify({'exito': False, 'error': 'Error al procesar la venta'}), 500
@@ -215,7 +200,7 @@ def procesar_venta():
         print(f"Error en procesar_venta: {str(e)}")
         return jsonify({
             'exito': False,
-            'error': 'Error interno del servidor'
+            'error': f'Error interno del servidor: {str(e)}'
         }), 500
 
 @venta_bp.route('/api/corte_ventas', methods=['GET'])
@@ -245,48 +230,48 @@ def descargar_reporte(fecha):
     reporte_path = f"corte_ventas_{fecha}.pdf"
     return send_file(reporte_path, as_attachment=True)
 
-@venta_bp.route('/agregar_producto', methods=['GET', 'POST'])
-def agregar_producto():
-    form = ProductoForm()
+@venta_bp.route('/agregar_galleta', methods=['GET', 'POST'])
+def agregar_galleta():
+    form = GalletaForm()
     
     if form.validate_on_submit():
-        imagen_file = request.files.get('imagen')
+        imagen_file = request.files.get('imagen_galleta')
         
-        producto_data = {
-            'nombre': form.nombre.data.strip(),
-            'precio': form.precio.data,
-            'descripcion': form.descripcion.data.strip(),
-            'cantidad': form.cantidad.data
+        galleta_data = {
+            'nombre_galleta': form.nombre_galleta.data.strip(),
+            'precio_galleta': form.precio_galleta.data,
+            'descripcion_galleta': form.descripcion_galleta.data.strip(),
+            'cantidad_galleta': form.cantidad_galleta.data
         }
         
-        producto = controller_ventas.agregar_producto(producto_data, imagen_file)
+        galleta = controller_ventas.agregar_galleta(galleta_data, imagen_file)
         
-        if producto:
-            flash('Producto agregado correctamente', 'success')
+        if galleta:
+            flash('Galleta agregada correctamente', 'success')
             return redirect(url_for('venta.ventas'))
         else:
-            flash('Error: Verifica los datos del producto (nombre, precio, cantidad e imagen válida)', 'danger')
+            flash('Error: Verifica los datos de la galleta (nombre, precio, cantidad e imagen válida)', 'danger')
     
-    return render_template('pages/pages-ventas/agregar_producto.html', form=form)
+    return render_template('pages/pages-ventas/agregar_galleta.html', form=form)
 
-@venta_bp.route('/api/productos')
-def api_productos():
+@venta_bp.route('/api/galletas')
+def api_galletas():
     try:
-        productos = controller_ventas.obtener_productos()
-        productos_data = []
+        galletas = controller_ventas.obtener_galletas()
+        galletas_data = []
         
-        for producto in productos:
-            productos_data.append({
-                'id': producto.id,
-                'nombre': producto.nombre,
-                'precio': producto.precio,
-                'imagen': producto.imagen if producto.imagen else None,
-                'descripcion': producto.descripcion,
-                'cantidad': producto.cantidad,
-                'activo': producto.activo
+        for galleta in galletas:
+            galletas_data.append({
+                'id': galleta.id_galleta,
+                'nombre': galleta.nombre_galleta,
+                'precio': galleta.precio_galleta,
+                'imagen': galleta.imagen_galleta if galleta.imagen_galleta else None,
+                'descripcion': galleta.descripcion_galleta,
+                'cantidad': galleta.cantidad_galleta,
+                'activo': galleta.activo
             })
         
-        return jsonify(productos_data)
+        return jsonify(galletas_data)
     except Exception as e:
         return jsonify({
             'exito': False,

@@ -1,5 +1,5 @@
 def validar_item_carrito(data):
-    if not data.get('producto_id') or not data.get('cantidad'):
+    if not data.get('galleta_id') or not data.get('cantidad'):
         return False
     try:
         cantidad = int(data['cantidad'])

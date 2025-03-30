@@ -40,8 +40,8 @@ function actualizarVistaCarrito(carrito, total) {
         li.innerHTML = `
             ${item.nombre} (${cantidadTexto}) - $${item.subtotal.toFixed(2)}
             <button class="btn btn-danger btn-sm remover-item" 
-                data-producto-id="${item.producto_id}"
-                data-producto-nombre="${item.nombre}"
+                data-galleta-id="${item.galleta_id}"
+                data-galleta-nombre="${item.nombre}"
                 data-tipo-venta="${item.tipo_venta}">
                 ❌
             </button>
@@ -79,7 +79,7 @@ async function agregarAlCarrito(item) {
         
         if (data.exito) {
             actualizarVistaCarrito(data.carrito, data.nuevo_total);
-            mostrarNotificacion(data.mensaje || 'Producto agregado al carrito');
+            mostrarNotificacion(data.mensaje || 'Galleta agregada al carrito');
         } else {
             throw new Error(data.error || 'Error en el servidor');
         }
@@ -91,33 +91,33 @@ async function agregarAlCarrito(item) {
 
 async function removerItemCarrito() {
     try {
-        const productoId = this.dataset.productoId;
-        const productoNombre = this.dataset.productoNombre;
+        const galletaId = this.dataset.galletaId;
+        const galletaNombre = this.dataset.galletaNombre;
         const tipoVenta = this.dataset.tipoVenta;
         
         const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
         
-        const response = await fetch(`/api/eliminar_del_carrito/${productoId}`, {
+        const response = await fetch(`/api/eliminar_del_carrito/${galletaId}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
                 'X-CSRFToken': csrfToken
             },
             body: JSON.stringify({
-                producto_nombre: productoNombre,
+                galleta_nombre: galletaNombre,
                 tipo_venta: tipoVenta
             })
         });
         
         if (!response.ok) {
-            throw new Error('Error al eliminar el producto');
+            throw new Error('Error al eliminar la galleta');
         }
         
         const data = await response.json();
         
         if (data.exito) {
             actualizarVistaCarrito(data.carrito, data.nuevo_total);
-            mostrarNotificacion('Producto eliminado del carrito');
+            mostrarNotificacion('Galleta eliminada del carrito');
             if (data.carrito.length === 0) {
                 toggleCarrito();
             }
@@ -175,8 +175,8 @@ function toggleCarrito() {
 
 function validarPeso(input, stock) {
     const peso = parseInt(input.value);
-    const productoId = input.id.split('-')[1];
-    const unidadesSpan = document.getElementById(`unidades-${productoId}`);
+    const galletaId = input.id.split('-')[1];
+    const unidadesSpan = document.getElementById(`unidades-${galletaId}`);
     
     if (isNaN(peso)) {
         input.value = 10;
@@ -243,9 +243,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 boton.disabled = true;
                 boton.innerHTML = '<span class="spinner-border spinner-border-sm"></span> Procesando...';
                 
-                const productoId = this.dataset.productoId;
-                const productoNombre = this.dataset.productoNombre;
-                const productoPrecio = parseFloat(this.dataset.productoPrecio);
+                const galletaId = this.dataset.galletaId;
+                const galletaNombre = this.dataset.galletaNombre;
+                const galletaPrecio = parseFloat(this.dataset.galletaPrecio);
                 const cantidad = parseInt(this.querySelector('input[name="cantidad"]').value);
                 const stock = parseInt(this.dataset.stock);
                 
@@ -254,10 +254,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 
                 await agregarAlCarrito({
-                    producto_id: productoId,
+                    galleta_id: galletaId,
                     cantidad: cantidad,
-                    producto_nombre: productoNombre,
-                    precio: productoPrecio * cantidad,
+                    galleta_nombre: galletaNombre,
+                    precio: galletaPrecio * cantidad,
                     tipo_venta: 'unidad'
                 });
                 
@@ -288,9 +288,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 boton.disabled = true;
                 boton.innerHTML = '<span class="spinner-border spinner-border-sm"></span> Procesando...';
                 
-                const productoId = this.dataset.productoId;
-                const productoNombre = this.dataset.productoNombre;
-                const productoPrecio = parseFloat(this.dataset.productoPrecio);
+                const galletaId = this.dataset.galletaId;
+                const galletaNombre = this.dataset.galletaNombre;
+                const galletaPrecio = parseFloat(this.dataset.galletaPrecio);
                 const peso = parseInt(this.querySelector('input[name="peso"]').value);
                 const stock = parseInt(this.dataset.stock);
                 
@@ -299,16 +299,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 
                 await agregarAlCarrito({
-                    producto_id: productoId,
+                    galleta_id: galletaId,
                     cantidad: 1,
                     unidades: peso / 10,
-                    producto_nombre: `${productoNombre} (${peso}g)`,
-                    precio: calcularPrecioPorPeso(peso, productoPrecio),
+                    galleta_nombre: `${galletaNombre} (${peso}g)`,
+                    precio: calcularPrecioPorPeso(peso, galletaPrecio),
                     tipo_venta: 'peso'
                 });
                 
                 this.querySelector('input[name="peso"]').value = 10;
-                this.querySelector(`#unidades-${productoId}`).textContent = '1';
+                this.querySelector(`#unidades-${galletaId}`).textContent = '1';
             } catch (error) {
                 mostrarNotificacion(error.message, 'error');
             } finally {
@@ -320,11 +320,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const formPaquete = document.getElementById('form-paquete');
     if (formPaquete) {
-        const selectProducto = formPaquete.querySelector('#producto-paquete');
-        selectProducto.addEventListener('change', function() {
+        const selectGalleta = formPaquete.querySelector('#galleta-paquete');
+        selectGalleta.addEventListener('change', function() {
             const option = this.options[this.selectedIndex];
             if (option && option.value) {
-                const precio = parseFloat(option.dataset.productoPrecio);
+                const precio = parseFloat(option.dataset.galletaPrecio);
                 document.getElementById('precio-1kg').textContent = (precio * 100).toFixed(2);
                 document.getElementById('precio-700g').textContent = (precio * 70).toFixed(2);
                 document.getElementById('precio-500g').textContent = (precio * 50).toFixed(2);
@@ -341,16 +341,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 boton.disabled = true;
                 boton.innerHTML = '<span class="spinner-border spinner-border-sm"></span> Procesando...';
                 
-                const select = this.querySelector('#producto-paquete');
-                const productoId = select.value;
+                const select = this.querySelector('#galleta-paquete');
+                const galletaId = select.value;
                 const option = select.options[select.selectedIndex];
                 
-                if (!productoId) {
-                    throw new Error('Seleccione un producto');
+                if (!galletaId) {
+                    throw new Error('Seleccione una galleta');
                 }
                 
-                const productoNombre = option.dataset.productoNombre;
-                const productoPrecio = parseFloat(option.dataset.productoPrecio);
+                const galletaNombre = option.dataset.galletaNombre;
+                const galletaPrecio = parseFloat(option.dataset.galletaPrecio);
                 const stock = parseInt(option.dataset.stock);
                 const tipoPaquete = this.querySelector('input[name="tipo-paquete"]:checked');
                 const unidades = parseInt(tipoPaquete.dataset.unidades);
@@ -361,11 +361,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 
                 await agregarAlCarrito({
-                    producto_id: productoId,
+                    galleta_id: galletaId,
                     cantidad: 1,
                     unidades: unidades,
-                    producto_nombre: `${productoNombre} (Paquete ${peso}g)`,
-                    precio: productoPrecio * unidades,
+                    galleta_nombre: `${galletaNombre} (Paquete ${peso}g)`,
+                    precio: galletaPrecio * unidades,
                     tipo_venta: 'paquete'
                 });
             } catch (error) {

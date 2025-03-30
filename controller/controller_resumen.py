@@ -2,28 +2,35 @@ from dao import dao_resumen, dao_ventas
 from cqrs import cqrs_resumen
 from datetime import datetime
 from fpdf import FPDF
+from utils.db import db
 
 def procesar_venta(total, usuario_id, items):
-    for item in items:
-        if not cqrs_resumen.validar_item_carrito(item):
-            return None
-    
-    for item in items:
-        producto = dao_ventas.obtener_producto_por_id(item['producto_id'])
-        if not producto or producto.cantidad < item['cantidad']:
-            return None
-    
-    venta = dao_resumen.crear_venta(total, usuario_id, items)
-    
-    if venta:
+    try:
         for item in items:
-            producto = dao_ventas.obtener_producto_por_id(item['producto_id'])
-            if producto:
-                producto.cantidad -= item['cantidad']
-                db.session.commit()
+            if not cqrs_resumen.validar_item_carrito(item):
+                return None
+            
+            galleta = dao_ventas.obtener_galleta_por_id(item['galleta_id'])
+            cantidad = item['cantidad']
+            
+            if not galleta or galleta.cantidad_galleta < cantidad:
+                return None
+        
+        venta = dao_resumen.crear_venta(total, usuario_id, items)
+        
+        if venta:
+            for item in items:
+                galleta = dao_ventas.obtener_galleta_por_id(item['galleta_id'])
+                if galleta:
+                    galleta.cantidad_galleta -= item['cantidad']
+                    db.session.commit()
+        
+        return venta
+    except Exception as e:
+        print(f"Error en procesar_venta: {str(e)}")
+        db.session.rollback()
+        return None
     
-    return venta
-
 def generar_reporte_diario():
     ventas = dao_resumen.obtener_ventas_del_dia()
     return dao_resumen.generar_reporte_ventas(ventas)
@@ -39,13 +46,13 @@ def generar_ticket(venta):
     pdf.cell(200, 10, txt=f"Venta ID: {venta.id}", ln=1)
     pdf.ln(5)
     
-    pdf.cell(100, 10, txt="Producto", border=1)
+    pdf.cell(100, 10, txt="Galleta", border=1)
     pdf.cell(30, 10, txt="Cantidad", border=1)
     pdf.cell(30, 10, txt="Precio", border=1)
     pdf.cell(30, 10, txt="Subtotal", border=1, ln=1)
     
     for detalle in venta.detalles:
-        pdf.cell(100, 10, txt=detalle.producto.nombre, border=1)
+        pdf.cell(100, 10, txt=detalle.galleta.nombre_galleta, border=1)
         pdf.cell(30, 10, txt=str(detalle.cantidad), border=1)
         pdf.cell(30, 10, txt=f"${detalle.precio_unitario:.2f}", border=1)
         pdf.cell(30, 10, txt=f"${detalle.subtotal:.2f}", border=1, ln=1)
