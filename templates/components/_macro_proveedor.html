@@ -13,12 +13,20 @@
   </div>
 {%endmacro%}
 
-{%macro macro_campo_upd_proveedor(field)%}
+{%macro macro_campo_upd_proveedor(field,data)%}
     <div class="d-flex">
-        <h5 class="col-5 m-2 ">{{field.label}}:</h5>
-        <div class="d-flex col-7">
+        {%if field.id =='nombre_proveedor'%}
+            <h5 class="col-5 m-2 ">{{field.label}}:</h5><p class=" align-text-start text-danger">*</p>
+            <div class="d-flex col-7">
             {{field(required=false)}}
-            {% if field.errors %}
+        {%else%}    
+                <h5 class="col-5 m-2 ">{{field.label}}:</h5>
+                <div class="d-flex col-7">
+                {{field(required=false,value=data)}}
+        {%endif%}
+        </div>
+    </div>
+    {% if field.errors %}
                 <div class="text-danger">
                     <ul>
                         {% for error in field.errors %}
@@ -27,10 +35,9 @@
                     </ul>
                 </div>
             {% endif %}
-        </div>
-    </div>
     <hr>
 {%endmacro%}
+
 
 {%macro macro_btn_detalles(nombre_modal)%}
     <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#{{nombre_modal}}">

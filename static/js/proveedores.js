@@ -1,80 +1,67 @@
-function detallesProveedor(idProv, callback) {
-    url = "/proveedor/detallesProveedor?id_prov=" + idProv;
-    fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            callback(data);
-        })
-    .catch(error=>{
-        console.error("Error al obtener datos:", error)
-        callback(null)
-    })
+
+//const modalesAbiertos = {{ modales|safe }};
+function revisarModalesAbiertos() {
+    d = new Boolean(modalesAbiertos.detalles);
+    e = new Boolean(modalesAbiertos.editar);
+    a = new Boolean(modalesAbiertos.agregar);
+    console.log('Detalles: ' + d);
+    console.log('Editar: ' + e);
+    console.log('Add: ' + a);
+    if (parseInt(modalesAbiertos.detalles)) {
+        $('#modalDetallesProveedor').modal('show');
+        console.log('detalles');
+    }
+    if (parseInt(modalesAbiertos.editar)) {
+        $('#modalEditarProveedor').modal('show');
+    }
+    if (parseInt(modalesAbiertos.agregar)) {
+        $('#modalAgregarProveedor').modal('show');
+    }
 }
 
-function mostrarDetallesProveedorModificar(posicionProvSel) {
-    detallesProveedor(posicionProvSel, function(proveedorSel){
-        if (proveedorSel != null && proveedorSel != '') {
-            $("#modificarProveedor  #nombreProveedor").html(proveedorSel.nombre);
-            $("#modificarProveedor  .nombrePersona").val(proveedorSel.nombreRepresentante);
-            $("#modificarProveedor  .primerApellidoPersona").val(proveedorSel.primerApellidoRepresentante);
-            $("#modificarProveedor  .segundoApellidoPersona").val(proveedorSel.segundoApellidoRepresentante);
-            $("#modificarProveedor  .direccionPersona").val(proveedorSel.direccion);
-            $("#modificarProveedor  .correoPersona").val(proveedorSel.correo);
-            $("#modificarProveedor  .telefonoPersona").val(proveedorSel.telefono);
-            $("#modificarProveedor").attr('action','/proveedor/actualizarProveedor?id_prov_upd='+proveedorSel.id_proveedor);
-
-        } else {
-            alert('Error al obtener los detalles de proveedor')
-        }
-       
-    });
+function ventanaConfirmarEliminacion(idProveedor){
+    $('#confirmarEliminarProveedor').modal('show');
+    $('#btnEliminarProveedor').attr('href','/proveedor/eliminarProveedor?id_prov_del='+idProveedor);
 }
 
-function mostrarConsultaDetallesProveedor(idProv) {
-    detallesProveedor(idProv, function (proveedorSel) {
-        if (proveedorSel != null && proveedorSel != '') {
-            $("#nombreProveedorSel").html(proveedorSel.nombre);
-            $("#nombreRepresentanteProveedorSel").html(proveedorSel.nombreRepresentante+' '+proveedorSel.primerApellidoRepresentante+' '+proveedorSel.segundoApellidoRepresentante );
-            $("#correoProveedorSel").html(proveedorSel.correo);
-            $("#telefonoProveedorSel").html(proveedorSel.telefono);
-            $("#direccionProveedorSel").html(proveedorSel.direccion);
-        } else {
-            alert('Error al obtener los detalles de proveedor')
-        }
-    });
+function ventanaConfirmarReactivacion(idProveedor){
+    $('#confirmarReactivarProveedor').modal('show');
+    $('#btnReactivarProveedor').attr('href','/proveedor/reactivarProveedor?id_prov_rea='+idProveedor);
 }
 
-function confirmarModificacionProveedor(){
-    $("#modificarProveedor").addEventListener('submit',function(evento){
-        Swal.fire({
-            title: "¿Estás segur@ de modificar este proveedor?",
-            text: "Se realizarán cambios en la base de datos",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Continuar",
-            cancelButtonText: "Cancelar"
-          }).then((result) => {
-            if (result.isConfirmed) {
-              Swal.fire({
+$('#formularioEditarProveedor').submit(function (event) {
+    event.preventDefault();  // Evita el envío del formulario
+    Swal.fire({
+        title: "¿Estás segur@ de modificar este proveedor?",
+        text: "Se realizarán cambios en la base de datos",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Continuar",
+        cancelButtonText: "Cancelar"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire({
                 title: "Hecho!",
                 icon: "success"
-              });
-              console.log('Apunto de retornar');
-              return;
-            }
-          });
-          evento.preventDefault(); // Detiene el envío si no se presionó Continuar
+            }).then(() => {
+                event.target.submit(); // Envía el formulario
+            });
+        }
     });
-}
+});
 
-function mostrarAlerta(tipo,titulo,mensaje,pieVentana){
+
+function mostrarAlerta(tipo, titulo, mensaje, pieVentana) {
     Swal.fire({
         icon: tipo,
         title: titulo,
         text: mensaje,
-        footer: '<p>'+pieVentana+'</p>'
-      });
- }
+        footer: '<p>' + pieVentana + '</p>'
+    });
+}
 
+window.onload = function () {
+    revisarModalesAbiertos();
+};

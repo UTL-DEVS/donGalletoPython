@@ -5,5 +5,5 @@ from wtforms.validators import DataRequired, length, number_range
 class form_proveedor(FlaskForm):
     nombre_proveedor = StringField('Proveedor', [
         DataRequired('Ingrese el nombre de la empresa proveedora')
-    ])
+    ],render_kw={'id': 'nombreProveedor'})
     

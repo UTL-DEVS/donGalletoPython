@@ -5,7 +5,7 @@ class Proveedor(db.Model):
     __tablename__ = 'Proveedor'
     id_proveedor = db.Column(db.Integer, primary_key=True)
     nombre_proveedor = db.Column(db.String(80), unique=True, nullable=False)
-    persona_id = db.Column(db.Integer, db.ForeignKey('Persona.id_persona'), nullable=False)  # Persona 
+    id_persona = db.Column(db.Integer, db.ForeignKey('Persona.id_persona'), nullable=False)  # Persona 
     
     persona = db.relationship('Persona', backref=db.backref('Proveedor', uselist=False))
 

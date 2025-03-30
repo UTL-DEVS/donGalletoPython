@@ -10,6 +10,6 @@ class Persona(db.Model):
     correo = db.Column(db.String(30), nullable=True)
     direccion = db.Column(db.String(80), nullable=True)
     telefono = db.Column(db.String(15),nullable=True)
-    
+    estatus = db.Column(db.Integer, nullable=False, default=1)
     fecha_registro = db.Column(db.DateTime, server_default=db.func.current_timestamp())
     
