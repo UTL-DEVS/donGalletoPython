@@ -31,3 +31,11 @@ class regis_form(FlaskForm):
         DataRequired('Captcha necesario'),
         length(min=5, max=5, message='Caracteres fuere del rango')
     ])
+    
+class conf_form(FlaskForm):
+    email = EmailField('email', [
+        DataRequired('Email necesario'),
+    ])
+    token = StringField('token', [
+        DataRequired('Token necesario'),
+    ])
