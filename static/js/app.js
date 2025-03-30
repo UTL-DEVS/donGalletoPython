@@ -11,10 +11,10 @@ $(document).ready(function() {
     $('.sidebar a').on('click', function(e) {
         e.preventDefault();
         const url = $(this).attr('href');
-        
+
         if (url != '/') {
             $.get(url, function(data) {
-                $('.container').html($(data).find('.container').html());
+                $('.container-principal').html($(data).find('.container-principal').html());
                 history.pushState(null, null, url);
             });
         } else {
