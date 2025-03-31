@@ -11,3 +11,5 @@ from routes.recetas import recetas_bp
 from routes.resum import resumen_bp
 from routes.gallet import galleta_bp
 from routes.resum import resumen_bp
+from routes.cliente import cliente_bp
+from routes.usuario import usuario_bp

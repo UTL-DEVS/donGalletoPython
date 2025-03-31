@@ -8,3 +8,6 @@ from forms.form_resumen import *
 from forms.form_receta import DetalleRecetaForm, RecetaForm
 from forms.form_galleta import *
 from forms.form_resumen import *
+from forms.form_cliente import *
+from forms.form_empleado import *
+from forms.form_usuario import *
