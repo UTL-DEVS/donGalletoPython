@@ -7,3 +7,4 @@ from .galleta import Galleta
 from .receta import Receta, detalleReceta
 from .galleta import Galleta
 from .resumen import Venta, DetalleVenta
+from .empleado import Empleado

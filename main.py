@@ -31,6 +31,7 @@ def crear_app():
     app.register_blueprint(recetas_bp)
     app.register_blueprint(galleta_bp)
     app.register_blueprint(resumen_bp)
+    app.register_blueprint(usuario_bp)
 
     
     
