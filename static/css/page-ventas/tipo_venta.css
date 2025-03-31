@@ -1,0 +1,103 @@
+  #corte-ventas {
+    background: linear-gradient(135deg, #17a2b8 0%, #138496 100%);
+    border: none;
+    border-radius: 30px;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: white;
+    box-shadow: 0 4px 15px rgba(23, 162, 184, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    margin: 20px auto;
+    display: block;
+    max-width: 300px;
+    width: auto;
+  }
+
+  #corte-ventas:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(23, 162, 184, 0.4);
+    background: linear-gradient(135deg, #138496 0%, #117a8b 100%);
+  }
+
+  #corte-ventas:active {
+    transform: translateY(1px);
+  }
+
+  #corte-ventas::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    transition: 0.5s;
+  }
+
+  #corte-ventas:hover::before {
+    left: 100%;
+  }
+
+  #corte-ventas i {
+    margin-right: 8px;
+  }
+  .custom-container {
+    width: 90% !important;
+    margin: 0 auto;
+    padding-top: 20px;
+  }
+  .card-img-container {
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #ffffff;
+    box-shadow: 10px 10px 15px rgba(168, 168, 168, 0.3);
+  }
+  .card-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 15px;
+  }
+  .card {
+    transition: all 0.3s ease;
+    margin-bottom: 25px;
+    height: 100%;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+  .card-body {
+    padding: 0px;
+    text-align: center;
+  }
+  .card-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2c3e50;
+  }
+  .card-text {
+    color: #7f8c8d;
+    font-size: 1rem;
+  }
+  h1 {
+    color: #2c3e50;
+    margin-bottom: 30px !important;
+    font-weight: 600;
+  }

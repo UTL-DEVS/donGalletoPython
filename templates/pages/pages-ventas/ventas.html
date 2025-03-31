@@ -6,7 +6,7 @@ Premium{% endblock %} {% block contenido %}
   href="{{ url_for('static', filename='css/page-ventas/ventas.css') }}"
 />
 <script
-  src="{{ url_for('static', filename='js/page-ventas/ventas.js') }}"
+  src="{{ url_for('static', filename='js/page-ventas/galleta.js') }}"
   defer
 ></script>
 <meta name="csrf-token" content="{{ csrf_token() }}" />
@@ -89,6 +89,7 @@ Premium{% endblock %} {% block contenido %}
         Stock: {{ galleta.cantidad_galleta }} unidades ({{
         galleta.cantidad_galleta * 10 }}g)
       </p>
+
       <form
         class="formulario-agregar-peso"
         data-galleta-id="{{ galleta.id_galleta }}"
@@ -227,10 +228,6 @@ Premium{% endblock %} {% block contenido %}
   </button>
   <button id="procesar-venta" class="btn btn-success w-100 mt-3">
     Procesar Venta
-  </button>
-
-  <button id="corte-ventas" class="btn btn-info w-100 mt-2">
-    Corte de Ventas
   </button>
 </div>
 
