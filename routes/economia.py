@@ -15,8 +15,7 @@ def dashboard():
     else:
         mes_venta = ((request.args.get('mes_ventas')))
         dias =((request.args.get('dias_ventas')))
-    print(f'M: {mes_venta}')
-    print(f'D: {dias}')
+   
     lista_ventas = controller_economia.obtener_ventas_diarias(mes_venta, dias)
     lista_ventas_json = json.dumps([
         {

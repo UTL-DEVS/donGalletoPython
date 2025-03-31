@@ -1,0 +1,46 @@
+{% extends 'components/_estructura_admin.html' %}
+{% block titulo %}Detalle de Receta{% endblock %}
+{% block contenido %}
+<div class="container">
+    <h2>Detalle de la Receta: {{ receta.nombre_receta }}</h2>
+
+    <table class="table table-striped">
+        <thead>
+            <th scope="col">#</th>
+            <th scope="col">Materia Prima</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Acciones</th>
+        </thead>
+        <tbody>
+            {% for detalle in detalles %}
+            <tr>
+                <th scope="row">{{ loop.index }}</th>
+                <td>{{ detalle.materia_prima.nombre_materia }}</td>
+                <td>{{ detalle.cantidad_insumo }}</td>
+                <td>
+                    <!-- Agregar acciones si necesitas eliminar o editar detalles -->
+                    <a href="#" class="btn btn-danger">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h3>Agregar nueva materia prima</h3>
+    <form method="POST">
+        {{form.csrf_token}}
+
+        <div class="form-group">
+            {{ form.id_materia.label }}
+            {{ form.id_materia(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.cantidad_insumo.label }}
+            {{ form.cantidad_insumo(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.submit(class="btn btn-primary") }}
+        </div>
+    </form>
+</div>
+{% endblock %}
