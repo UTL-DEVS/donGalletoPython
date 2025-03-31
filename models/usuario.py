@@ -3,7 +3,8 @@ import secrets
 from flask_sqlalchemy import SQLAlchemy
 from utils.db import db
 from datetime import datetime, timezone, timedelta
-class Usuario(db.Model):
+from utils import UserMixin
+class Usuario(db.Model, UserMixin):
     __tablename__ = 'usuario'
     id = db.Column(db.Integer, primary_key=True)
     id_persona = db.Column(db.Integer, db.ForeignKey('Persona.id_persona'), nullable=True)
