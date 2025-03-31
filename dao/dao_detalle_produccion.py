@@ -1,6 +1,6 @@
 from utils import db
 from models.produccion import Produccion
-from models.ventas import Galleta
+from models.galleta import Galleta
 from models.detalle_produccion import DetalleProduccion
 from datetime import date
 

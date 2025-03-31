@@ -8,7 +8,6 @@ from routes.economia import economia_bp
 from routes.produccion import produccion_bp
 from routes.detalle_produccion import detalle_produccion_bp
 from routes.recetas import recetas_bp
-from routes.venta import venta_bp
 from routes.resum import resumen_bp
 from routes.gallet import galleta_bp
 from routes.resum import resumen_bp

@@ -1,15 +1,11 @@
-<<<<<<< HEAD
-from utils import db
 from models import Galleta
+from utils.db import db
+import base64
 
 def getAllGalletas():
     galletas = Galleta.query.filter_by(activo=1).all()
     print(f'gallletas: {galletas}')
     return galletas
-=======
-from models import Galleta
-from utils.db import db
-import base64
 
 def crear_galleta(nombre_galleta, precio_galleta, descripcion_galleta, imagen_file, cantidad_galleta):
     imagen_base64 = None
@@ -41,4 +37,3 @@ def actualizar_stock(galleta_id, cantidad):
         db.session.commit()
         return True
     return False
->>>>>>> de663afde78f9baa9fb483a188868191b8174ef7
