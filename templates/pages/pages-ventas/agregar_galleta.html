@@ -1,5 +1,6 @@
-{% extends "components/estructura.html" %} {% block titulo %}Agregar Galleta{%
-endblock %} {% block contenido %}
+{% extends 'components/_estructura_admin.html' %}
+{% block titulo %}Agregar Galleta{% endblock %}
+{% block contenido %}
 <link
   rel="stylesheet"
   href="{{ url_for('static', filename='css/page-ventas/agregar.css') }}"
