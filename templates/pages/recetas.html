@@ -1,0 +1,43 @@
+{%extends 'components/_estructura_admin.html'%}
+{%block titulo%}Recetas{%endblock%}
+{%block contenido%}
+<div class="container">
+
+    <table class="table table-f¿">
+        <thead>
+            <th scope="col">#</th>
+            <th scope="col">Nombre Receta</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col">
+                <a href="/receta/agregar" class="btn btn-primary">AgregarReceta</a>
+            </th>
+        </thead>
+        <tbody class="table-group-divider">
+            {%for receta in recetas%}
+            <tr>
+                <th scope="row">
+                    {{loop.index}}
+                </th>
+                <td>
+                    {{receta.nombre_receta}}
+                </td>
+                <td>
+                    <a href="/receta/{{receta.id_receta}}" class="btn btn-warning">Ver detalles</a>
+                </td>
+                {%if receta.estado == '0'%}
+                <td>
+                    <a href="/receta/activar/{{receta.id_receta}}" class="btn btn-success">Activar</a>
+                </td>
+                {%else%}
+                <td>
+                    <a href="/receta/deactivar/{{receta.id_receta}}" class="btn btn-danger">eliminar</a>
+                </td>
+                {%endif%}
+            </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+</div>
+    
+    {%endblock%}
