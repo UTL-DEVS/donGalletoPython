@@ -1,11 +1,15 @@
 CREATE DATABASE casaGalleta; 
-#drop DATABASE casaGalleta;
+drop DATABASE casaGalleta;
 
 use casaGalleta;
 SHOW TABLES;
 
 SELECT * FROM usuario;
 SELECT * FROM pre_registro;
+
+select * from galletas;
+
+DESCRIBE galletas;
 INSERT INTO usuario(rol_user, email,usuario, contrasenia,token) VALUES (0,'joelbriones@gmail.com', 'adminadmin', '12345678','00');
 
 
