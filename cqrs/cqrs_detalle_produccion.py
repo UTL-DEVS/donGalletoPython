@@ -3,7 +3,7 @@ from dao import dao_detalle_produccion
 def validarDatos(detalleProduccion):
     if detalleProduccion.id_produccion == '':
         return 'Hubo un problema al agregar la produccion, intentelo de nuevo!'
-    if detalleProduccion.id_receta == '':
+    if detalleProduccion.id_galleta == '':
         return 'Hubo un problema al relacionar la receta, intentelo de nuevo!'
     
     return ''

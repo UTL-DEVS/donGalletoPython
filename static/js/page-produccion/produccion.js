@@ -25,35 +25,49 @@ function updateQuantity(button, isIncrement) {
 }
 
 document.getElementById('enviarDatos').addEventListener('click', function () {
-    const filas = document.querySelectorAll('#tablaDinamica tbody tr');
+    const filas = document.querySelectorAll('#tblAgregarProduccion tbody tr');
+    const datosGalletas = [];
 
-    const datos = Array.from(filas).map(fila => {
-        const celdas = fila.querySelectorAll('td');
+    filas.forEach(fila => {
+        const th = fila.querySelector('th[id]');
+        const idGalleta = th ? th.id : null;
 
-        return {
-            campo1: celdas[0].querySelector('input').value,
-            campo2: celdas[1].querySelector('input').value
-        };
+        const pCantidad = fila.querySelector('b[name="cantidad"]');
+        const cantidad = pCantidad ? parseInt(pCantidad.textContent) : 0;
+
+        if (idGalleta && !isNaN(cantidad)) {
+            datosGalletas.push({
+                id_galleta: idGalleta,
+                cantidad: cantidad
+            });
+        }
     });
 
-    console.log(datos);
-
-    enviarAlServicio(datos);
+    console.log(datosGalletas)
+    enviarAlServicio(datosGalletas)
 });
 
 function enviarAlServicio(datos) {
-    fetch('url-de-tu-servicio', {
+    const csrfToken = document.querySelector('input[name="csrf_token"]').value;
+
+    fetch('/agregarProduccion', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'X-CSRFToken': csrfToken  // ¡Agrega el token aquí!
         },
-        body: JSON.stringify({ items: datos })
+        body: JSON.stringify({ lstDetalleProduccion: datos })
     })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Éxito:', data);
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
+    .then(response => response.json())
+    .then(data => {
+        console.log(data)
+        if (data.success)
+            alert(data.message)
+            window.location = '/produccion-stock'
+        if (data.error)
+            alert(data.message)
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
 }

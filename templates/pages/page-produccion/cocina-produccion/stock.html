@@ -25,35 +25,16 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Vainilla</td>
-                            <td>23</td>
-                            <td>
-                                <div class="estatus-stock"
-                                    style="height: 30px; width: 30px; border-radius: 50%; background-color: greenyellow;">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Chocolate</td>
-                            <td>13</td>
-                            <td>
-                                <div class="estatus-stock"
-                                    style="height: 30px; width: 30px; border-radius: 50%; background-color: yellow;">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Red Velvet</td>
-                            <td>3</td>
-                            <td>
-                                <div class="estatus-stock"
-                                    style="height: 30px; width: 30px; border-radius: 50%; background-color: red;"></div>
-                            </td>
-                        </tr>
+                        {% for galleta in lstGalletas %}
+                            <tr>
+                                <th scope="row">{{ galleta.id_galleta }}</th>
+                                <td>{{ galleta.nombre_galleta }}</td>
+                                <td>{{ galleta.cantidad_galleta }}</td>
+                                <td>
+                                    <div class="estatus-stock" style="height: 30px; width: 30px; border-radius: 50%; background-color: greenyellow;"></div>
+                                </td>
+                            </tr>
+                        {% endfor %}
                     </tbody>
                 </table>
             </div>
@@ -69,51 +50,55 @@
         aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalCenteredScrollableTitle">Agregar Produccion</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form action="/agregarGalleta" method="post">
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Galleta</th>
-                                    <th scope="col" class="text-center">Cantidad Ordenes</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th style="align-content: center;" scope="row">1</th>
-                                    <td name="id_receta" style="align-content: center;">Chocolate</td>
-                                    <td class="text-center">
-                                        <div class="opcion d-flex justify-content-center align-items-center">
-                                            <button class="btn btn-danger minus-btn" style="margin-right: 10px;" onclick="updateQuantity(this, false)">
-                                                <i class="bi bi-dash-circle-fill"></i>
-                                            </button>
-                                            <div class="data-produccion d-flex flex-column" style="width: 30%; padding-top: 13px; cursor: default; user-select: none;">
-                                                <div class="data-produccion-principal">
-                                                    <p><b name="cantidad" class="quantity">1</b></p>
+                <form action="/agregarGalleta" method="post">
+                    {{form.csrf_token}}
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalCenteredScrollableTitle">Agregar Produccion</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        
+                            <table class="table table-hover" id="tblAgregarProduccion">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Galleta</th>
+                                        <th scope="col" class="text-center">Cantidad Ordenes</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for galleta in lstGalletas %}
+                                        <tr>
+                                            <th style="align-content: center;" id="{{ galleta.id_galleta }}" scope="row">{{ galleta.id_galleta }}</th>
+                                            <td name="id_receta" style="align-content: center;">{{ galleta.nombre_galleta }}</td>
+                                            <td class="text-center">
+                                                <div class="opcion d-flex justify-content-center align-items-center">
+                                                    <button type="button" class="btn btn-danger minus-btn" style="margin-right: 10px;" onclick="updateQuantity(this, false)">
+                                                        <i class="bi bi-dash-circle-fill"></i>
+                                                    </button>
+                                                    <div class="data-produccion d-flex flex-column" style="width: 30%; padding-top: 13px; cursor: default; user-select: none;">
+                                                        <div class="data-produccion-principal">
+                                                            <p><b name="cantidad" class="quantity">1</b></p>
+                                                        </div>
+                                                        <div class="data-produccion-secundaria" style="margin-top: -20px; opacity: 70%;">
+                                                            <p class="cookies-count">10 Galletas</p>
+                                                        </div>
+                                                    </div>
+                                                    <button type="button" class="btn btn-success plus-btn" style="margin-left: 10px;" onclick="updateQuantity(this, true)">
+                                                        <i class="bi bi-plus-circle-fill"></i>
+                                                    </button>
                                                 </div>
-                                                <div class="data-produccion-secundaria" style="margin-top: -20px; opacity: 70%;">
-                                                    <p class="cookies-count">10 Galletas</p>
-                                                </div>
-                                            </div>
-                                            <button class="btn btn-success plus-btn" style="margin-left: 10px;" onclick="updateQuantity(this, true)">
-                                                <i class="bi bi-plus-circle-fill"></i>
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-warning" onclick="agregarProduccion()">Procesar<i class="bi bi-fire ms-1"></i></i></button>
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                </div>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-warning" id="enviarDatos">Procesar<i class="bi bi-fire ms-1"></i></i></button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

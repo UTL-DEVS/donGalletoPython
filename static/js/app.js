@@ -26,7 +26,7 @@ $(document).ready(function() {
 function actualizarTituloHistorial() {
     const fechaSeleccionada = document.getElementById('inpFecha').value;
     const tituloHistorial = document.getElementById('tituloHistorial');
-    
+
     if (fechaSeleccionada) {
         const [anio, mes, dia] = fechaSeleccionada.split('-');
         const fechaFormateada = `${dia}/${mes}/${anio}`;
@@ -34,4 +34,6 @@ function actualizarTituloHistorial() {
     } else {
         tituloHistorial.textContent = 'Historial';
     }
+
+    document.getElementById("formHistorial").submit()
 }

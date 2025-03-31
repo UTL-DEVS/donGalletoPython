@@ -34,8 +34,6 @@ def crear_app():
     app.register_blueprint(venta_bp)
     app.register_blueprint(resumen_bp)
 
-    
-    
     return app, csrf
 
 app, csrf = crear_app()

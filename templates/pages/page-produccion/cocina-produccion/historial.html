@@ -9,11 +9,13 @@
     <div class="menu d-flex aling-center justify-content-center flex-column align-center">
         <div class="sub-header d-flex justify-content-between">
             <div class="sub-header-title">
-                <h1 id="tituloHistorial">Historial</h1>
+                <h1 id="tituloHistorial">Historial{% if fecha %} - {{ fecha }}{% endif %}</h1>
             </div>
             <div class="sub-header-buttons d-flex align-items-center" style="width: 33%;">
-                <p class="w-100 m-0 fw-bold">Seleccione una fecha: </p>
-                <input id="inpFecha" type="date" class="form-control" aria-describedby="basic-addon2" onchange="actualizarTituloHistorial()">
+                <form action="produccion-historial" id="formHistorial">
+                    <p class="w-100 m-0 fw-bold">Seleccione una fecha: </p>
+                    <input id="inpFecha" type="date" name="fecha" class="form-control" aria-describedby="basic-addon2" onchange="actualizarTituloHistorial()" value="{{ fecha if fecha else '' }}">
+                </form>
             </div>
         </div>
         <hr>
@@ -25,28 +27,18 @@
                             <th scope="col">#</th>
                             <th scope="col">Galleta</th>
                             <th scope="col">Total</th>
-                            <th scope="col">Vendidas</th>
+                            <th scope="col">Hora</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Vainilla</td>
-                            <td>120</td>
-                            <td>115</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Chocolate</td>
-                            <td>13</td>
-                            <td>10</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Red Velvet</td>
-                            <td>3</td>
-                            <td>3</td>
-                        </tr>
+                        {% for galleta in lstGalletas %}
+                            <tr>
+                                <th scope="row">{{ loop.index }}</th>
+                                <td>{{ galleta.nombre_galleta }}</td>
+                                <td>{{ galleta.cantidad_galleta * 10 }} Galletas</td>
+                                <td>{{ galleta.hora_produccion }}</td>
+                            </tr>
+                        {% endfor %}
                     </tbody>
                 </table>
             </div>

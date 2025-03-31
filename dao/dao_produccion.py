@@ -15,4 +15,4 @@ def getAllProduccion():
 def agregarProduccion(produccion):
     db.session.add(produccion)
     db.session.commit()
-    return produccion.id_produccion != None
+    return produccion.id_produccion 

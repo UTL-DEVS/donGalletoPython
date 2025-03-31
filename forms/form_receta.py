@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import IntegerField, FloatField, SelectField, SubmitField
 from wtforms.validators import DataRequired
-from models import MateriaPrima, Galleta
+from models import MateriaPrima
 
 class DetalleRecetaForm(FlaskForm):
     id_materia = SelectField('Materia Prima', coerce=int, validators=[DataRequired()])
