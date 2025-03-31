@@ -6,6 +6,7 @@ from datetime import datetime, timezone, timedelta
 class Usuario(db.Model):
     __tablename__ = 'usuario'
     id = db.Column(db.Integer, primary_key=True)
+    id_persona = db.Column(db.Integer, db.ForeignKey('Persona.id_persona'), nullable=False)
     # cliente, admin, cocina, ventas
     rol_user=db.Column(db.Integer, nullable=False)
     # verificacion dos pasos

@@ -1,7 +1,6 @@
 from flask import Blueprint, render_template,request,redirect,url_for
 import json
 from forms import *
-from models import Proveedor
 from controller import controller_proveedor
 
 proveedor_bp = Blueprint('proveedor', __name__,url_prefix='/proveedor', template_folder='templates')

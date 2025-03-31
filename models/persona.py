@@ -1,4 +1,3 @@
-from flask_sqlalchemy import SQLAlchemy
 from utils.db import db
 
 class Persona(db.Model):
@@ -13,3 +12,4 @@ class Persona(db.Model):
     estatus = db.Column(db.Integer, nullable=False, default=1)
     fecha_registro = db.Column(db.DateTime, server_default=db.func.current_timestamp())
     
+    usuarios = db.relationship('Usuario', backref='persona', lazy=True)
