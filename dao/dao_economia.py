@@ -11,21 +11,21 @@ def obtener_ventas_por_mes(mes, dias):
 
         return (
             db.session.query(Venta)
-            .filter(Venta.fecha_venta.between(primer_dia, ultimo_dia))
-            .filter(Venta.estatus != 0)  # Solo Ventas activas
+            .filter(Venta.fecha.between(primer_dia, ultimo_dia))
+            #.filter(Venta.estatus != 0)  # Solo Ventas activas
             .all()
         )
 
 def obtener_primera_fecha_venta():
-    primera_fecha_venta = (db.session.query(func.date_format(Venta.fecha_venta,  "%m/%Y"))
-            .order_by(Venta.fecha_venta.asc())
+    primera_fecha_venta = (db.session.query(func.date_format(Venta.fecha,  "%m/%Y"))
+            .order_by(Venta.fecha.asc())
             .limit(1)
             .scalar())
     return primera_fecha_venta
         
 def obtener_ultima_fecha_venta():
-    ultima_fecha_venta = (db.session.query(func.date_format(Venta.fecha_venta,  "%m/%Y"))
-        .order_by(Venta.fecha_venta.desc())
+    ultima_fecha_venta = (db.session.query(func.date_format(Venta.fecha,  "%m/%Y"))
+        .order_by(Venta.fecha.desc())
         .limit(1)
         .scalar()
         )

@@ -19,11 +19,14 @@ def dashboard():
     lista_ventas = controller_economia.obtener_ventas_diarias(mes_venta, dias)
     lista_ventas_json = json.dumps([
         {
-            "fecha_venta": venta.fecha_venta.strftime("%Y-%m-%d"),  # Convertir datetime a string
-            "total_venta": venta.total_venta,
-            "estatus": venta.estatus
+            "fecha_venta": venta.fecha.strftime("%Y-%m-%d"),  # Convertir datetime a string
+            "total": venta.total,
+            "estatus": venta.estado
         }
         for venta in lista_ventas
     ])
+    for v in lista_ventas:
+        print(f'F: {v.fecha}')
+        print(f't: {v.total}')
 
     return render_template('pages/page-economia/dashboard.html',rango_fechas_ventas=fechas_ventas,lista_ventas=lista_ventas_json)

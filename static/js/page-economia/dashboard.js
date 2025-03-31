@@ -19,7 +19,7 @@ document.getElementById("mesGraficaVentasDiarias").addEventListener("input", fun
     this.value = ""; // Borra la selección
   } else {
     let mesVentas = ('0' + (mesSeleccionado.getMonth() + 1)).slice(-2) + '/' + mesSeleccionado.getFullYear();
-    window.location.assign('/economia/?mes_ventas=' + mesVentas + '&dias_ventas=' + 30);
+    window.location.assign('/economia/?mes_ventas=' + mesVentas + '&dias_ventas=' + 28);
   }
 });
 function cambiarFechaGrafica() {
@@ -76,8 +76,8 @@ function obtenerDatosParaGrafica() {
     let fecha = new Date(venta.fecha_venta);  // Convierte la fecha en objeto Date
     return fecha.getDate();  // Devuelve solo el día del mes
   });
-  let totalesVentas = listasVentasDiarias.map(venta => venta.total_venta);  // Extrae los totales
-  console.log('totalv: ' + listasVentasDiarias[0].total_venta)
+  let totalesVentas = listasVentasDiarias.map(venta => venta.total);  // Extrae los totales
+  console.log('totalv: ' + listasVentasDiarias[0].total)
   console.log('fechas_' + fechasVentas);
   console.log('totasles: ' + totalesVentas);
   cargarGrafica(fechasVentas, totalesVentas);
