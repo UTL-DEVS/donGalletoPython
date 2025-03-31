@@ -1,4 +1,4 @@
-from utils import Blueprint, render_template, redirect, flash, db, url_for, request
+from utils import Blueprint, render_template, redirect, flash, db, url_for, request, login_required, current_user
 from models import Receta, detalleReceta, MateriaPrima, Galleta
 from forms import DetalleRecetaForm, RecetaForm
 import os
@@ -6,13 +6,19 @@ import os
 recetas_bp = Blueprint('receta', __name__, template_folder='templates')
 
 @recetas_bp.route('/receta')
+@login_required
 def receta_index():
+    if current_user.rol_user != 0:
+        return redirect('/')
     recetas = Receta.query.all()
     return render_template('/pages/recetas.html', recetas=recetas)
 
 
 @recetas_bp.route('/receta/<int:id_receta>', methods=['GET', 'POST'])
+@login_required
 def receta_detalle(id_receta):
+    if current_user.rol_user != 0:
+        return redirect('/')
     receta = Receta.query.get_or_404(id_receta)  # Cargar la receta por ID
     detalles = detalleReceta.query.filter_by(receta_id=id_receta).all()  # Obtener los detalles de la receta
     form = DetalleRecetaForm()
@@ -49,21 +55,30 @@ def receta_detalle(id_receta):
     return render_template('pages/receta_detalle.html', receta=receta, detalles=detalles, form=form, nombre_galleta=nombre_galleta_local)
 
 @recetas_bp.route('/receta/desactivar/<int:id_receta>')
+@login_required
 def receta_deactivar(id_receta):
+    if current_user.rol_user != 0:
+        return redirect('/')
     receta = Receta.query.get_or_404(id_receta)
     receta.estado = '0'
     db.session.commit()
     return redirect('/receta')
 
 @recetas_bp.route('/receta/activar/<int:id_receta>')
+@login_required
 def receta_activar(id_receta):
+    if current_user.rol_user != 0:
+        return redirect('/')
     receta = Receta.query.get_or_404(id_receta)
     receta.estado = '1'
     db.session.commit()
     return redirect('/receta')
 
 @recetas_bp.route('/receta/agregar', methods=['GET', 'POST'])
+@login_required
 def agregar_receta():
+    if current_user.rol_user != 0:
+        return redirect('/')
     
     form = RecetaForm()
     form.id_galleta.choices = [(g.id_galleta, g.nombre_galleta) for g in Galleta.query.filter_by(activo=True).all()]
@@ -101,7 +116,10 @@ def agregar_receta():
 
 
 @recetas_bp.route('/receta/<int:id_receta>/detalle/eliminar/<int:id_detalle>', methods=['POST'])
+@login_required
 def eliminar_detalle(id_receta, id_detalle):
+    if current_user.rol_user != 0:
+        return redirect('/')
     receta = Receta.query.get_or_404(id_receta)
     detalles = detalleReceta.query.filter_by(receta_id=id_receta).all()
 
@@ -115,3 +133,5 @@ def eliminar_detalle(id_receta, id_detalle):
     flash('Detalle eliminado exitosamente.', 'success')
     return redirect(url_for('receta.receta_detalle', id_receta=id_receta))
 
+
+    

@@ -21,6 +21,7 @@ def crear_app():
 
     db.init_app(app)
     mail.init_app(app)
+    
     app.register_blueprint(registro_bp)
     app.register_blueprint(login_bp)
     app.register_blueprint(cocina_produccion_bp)
@@ -38,6 +39,13 @@ def crear_app():
 
 app, csrf = crear_app()
 
+
+login_manager = LoginManager()
+login_manager.init_app(app)
+login_manager.login_view = "login.login"
+
+
+
 @app.route('/')
 def init():
     form = login_form()  
@@ -47,6 +55,14 @@ def init():
     
     # Renderizar la plantilla con la imagen en Base64
     return render_template('pages/login.html', form=form, captcha_base64=captcha_base64)
+        
+
+
+@login_manager.user_loader
+def load_user(user_id):
+    return Usuario.query.get(int(user_id))
+
+        
 
 if __name__ == '__main__':
     csrf.init_app(app=app)

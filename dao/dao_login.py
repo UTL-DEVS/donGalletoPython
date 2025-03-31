@@ -28,7 +28,7 @@ def dao_login(usuario, contrasenia, captcha_data):
                 return False
             
 def verify_user(usuario, contrasenia):
-        usuario_local = db.session.query(Usuario).filter(Usuario.usuario == usuario, Usuario.contrasenia == contrasenia).first()
+        usuario_local = db.session.query(Usuario).filter(Usuario.usuario == usuario, Usuario.contrasenia == contrasenia, Usuario.sistema == 0).first()
         if usuario_local:
                 nombre_usuario = usuario_local.usuario
                 rol_usuario = usuario_local.rol_user
