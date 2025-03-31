@@ -2,28 +2,18 @@ from utils import db, session, redirect, flash
 from models import Usuario, PreRegistro
 import os
 from datetime import datetime, timezone
-import re
 import base64
 import secrets
 from funcs import delate_captcha_session, verificar_captcha,  enviar_correo
 import random
 
 
-password_regex = r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$'
-
-def validar_contrasenia(contrasenia):
-    return bool(re.fullmatch(password_regex, contrasenia))
-
 def dao_registro(email_local, usuario, contrasenia, captcha):
     if not captcha:
         return False
 
     
-    if not validar_contrasenia(contrasenia):
-        print("Contraseña no válida")
-        flash('Contraseña incorrecta. Debe tener al menos 8 caracteres, una mayúscula, una minúscula, un número y un carácter especial.', 'error')
-        
-        return False
+   
     
     dato, captcha_txt = verificar_captcha()
     if dato > 120: # segundos
