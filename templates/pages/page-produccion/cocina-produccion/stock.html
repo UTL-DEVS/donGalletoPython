@@ -27,7 +27,7 @@
                     <tbody>
                         {% for galleta in lstGalletas %}
                             <tr>
-                                <th scope="row">{{ galleta.id_galleta }}</th>
+                                <th scope="row">{{ loop.index }}</th>
                                 <td>{{ galleta.nombre_galleta }}</td>
                                 <td>{{ galleta.cantidad_galleta }}</td>
                                 <td>
@@ -38,8 +38,8 @@
                                             yellow
                                         {% elif galleta.cantidad_galleta > 40 %}
                                             orange
-                                        {% elif galleta.cantidad_galleta >= 20 and galleta < 40 %}
-                                            green
+                                        {% elif galleta.cantidad_galleta >= 20 and galleta.cantidad_galleta < 40 %}
+                                            greenyellow
                                         {% endif %};"></div>
                                 </td>
                             </tr>
