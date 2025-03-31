@@ -6,3 +6,5 @@ from routes.cliente import cliente_bp
 from routes.proveedor import proveedor_bp
 from routes.cliente import cliente_bp
 from routes.economia import economia_bp
+from routes.produccion import produccion_bp
+from routes.detalle_produccion import detalle_produccion_bp
