@@ -1,0 +1,120 @@
+{% extends 'components/estructura.html' %}
+
+{% block titulo %}Cancelar Ventas - Don Galleto{% endblock %}
+
+{% block contenido %}
+<meta name="csrf-token" content="{{ csrf_token() }}">
+<div class="container d-flex align-items-center justify-content-center flex-column w-90 mt-5">
+    <div class="menu d-flex align-items-center justify-content-center flex-column w-100">
+        <div class="sub-header d-flex justify-content-between w-100">
+            <div class="sub-header-title">
+                <h1>Ventas Registradas</h1>
+            </div>
+            <div class="sub-header-buttons d-flex align-items-center">
+                <a href="{{ url_for('venta.tipo_venta') }}" class="btn btn-warning">
+                    Realizar Venta <i class="bi bi-plus-circle-fill"></i>
+                </a>
+            </div>
+        </div>
+        <hr class="w-100">
+        
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                <div class="alert alert-{{ category }} alert-dismissible fade show w-100">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        
+        <div class="data d-flex align-items-center justify-content-center flex-column w-100">
+            <div class="table-responsive w-100">
+                <table id="tablaVentas" class="table table-hover">
+                    <thead>
+                        <tr class="table-light">
+                            <th scope="col">#</th>
+                            <th scope="col">ID Venta</th>
+                            <th scope="col">Total</th>
+                            <th scope="col">Fecha</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for venta in lista_ventas %}
+                        <tr {% if venta.estado == 'cancelada' %}class="table-danger"{% endif %}>
+                            <th scope="row">{{ loop.index }}</th>
+                            <td>{{ venta.id }}</td>
+                            <td>${{ "%.2f"|format(venta.total) }}</td>
+                            <td>{{ venta.fecha.strftime('%Y-%m-%d %H:%M') }}</td>
+                            <td>
+                                {% if venta.estado == 'cancelada' %}
+                                <span class="badge bg-danger">Cancelada</span>
+                                {% else %}
+                                <span class="badge bg-success">Completada</span>
+                                {% endif %}
+                            </td>
+                            <td class="d-flex justify-content-start">
+                                <a href="{{ url_for('venta.descargar_ticket', venta_id=venta.id) }}" 
+                                   class="btn btn-primary me-2"
+                                   title="Descargar ticket">
+                                    <i class="bi bi-download"></i>
+                                </a>
+                                {% if venta.estado != 'cancelada' %}
+                                <button onclick="confirmarCancelacion({{ venta.id }});"
+                                    class="btn btn-danger"
+                                    title="Cancelar venta"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#confirmarCancelarVenta">
+                                    <i class="bi bi-x-circle"></i>
+                                </button>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="confirmarCancelarVenta" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-danger text-white">
+                <h5 class="modal-title">Confirmar Cancelación de Venta</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form id="formCancelarVenta" method="POST">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+                <div class="modal-body">
+                    <div class="alert alert-warning">
+                        <i class="bi bi-exclamation-triangle-fill"></i> Esta acción no se puede deshacer
+                    </div>
+                    <div id="ventaDetalles"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        <i class="bi bi-x-circle"></i> Cerrar
+                    </button>
+                    <button type="submit" class="btn btn-danger">
+                        <i class="bi bi-trash-fill"></i> Confirmar Cancelación
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script
+  src="{{ url_for('static', filename='js/page-ventas/eliminar_venta.js') }}"
+  defer
+></script>
+
+{% endblock %}

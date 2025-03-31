@@ -61,17 +61,18 @@ def api_corte_ventas():
         if error:
             return jsonify({'success': False, 'error': error}), 400
             
+        filename = os.path.basename(filepath)
         return jsonify({
             'success': True,
-            'url': f'/descargar_corte/{os.path.basename(filepath)}'
+            'url': f'/descargar_corte/{filename}'
         })
         
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)}), 500
-    
+
 @resumen_bp.route('/descargar_corte/<filename>')
 def descargar_corte(filename):
-    filepath = os.path.join(CORTE_FOLDER, filename)
+    filepath = os.path.join(controller_resumen.CORTE_FOLDER, filename)
     if os.path.exists(filepath):
-        return send_file(filepath, as_attachment=True)
+        return send_file(filepath, as_attachment=True, mimetype='application/pdf')
     return "Archivo no encontrado", 404

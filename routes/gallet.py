@@ -267,29 +267,6 @@ def vaciar_carrito():
         }), 500
 
 
-
-@galleta_bp.route('/api/corte_ventas', methods=['GET'])
-def corte_ventas():
-    try:
-        reporte = controller_resumen.generar_reporte_diario()
-        nombre_archivo = controller_resumen.generar_reporte_pdf(reporte)
-        
-        return jsonify({
-            'exito': True,
-            'reporte': reporte,
-            'url_pdf': f'/descargar_reporte/{datetime.now().strftime("%Y%m%d")}'
-        })
-    except Exception as e:
-        return jsonify({
-            'exito': False,
-            'error': str(e)
-        }), 500
-
-@galleta_bp.route('/descargar_reporte/<fecha>')
-def descargar_reporte(fecha):
-    reporte_path = f"corte_ventas_{fecha}.pdf"
-    return send_file(reporte_path, as_attachment=True)
-
 @galleta_bp.route('/agregar_galleta', methods=['GET', 'POST'])
 def agregar_galleta():
     form = GalletaForm()
@@ -337,3 +314,58 @@ def api_galletas():
             'exito': False,
             'error': str(e)
         }), 500
+    
+@galleta_bp.route('/listar_ventas')
+def listar_ventas():
+    from models.resumen import Venta
+    
+    ventas = Venta.query.order_by(Venta.fecha.desc()).all()
+    return render_template('pages/pages-ventas/cancelar_venta.html', lista_ventas=ventas)
+
+@galleta_bp.route('/eliminar_venta/<int:venta_id>', methods=['POST'])
+def eliminar_venta(venta_id):
+    try:
+        from models.resumen import Venta
+        from models import DetalleVenta 
+        
+        DetalleVenta.query.filter_by(venta_id=venta_id).delete()
+        
+        venta = Venta.query.get_or_404(venta_id)
+        db.session.delete(venta)
+        
+        ticket_path = os.path.join(TICKETS_FOLDER, f'ticket_{venta_id}.pdf')
+        if os.path.exists(ticket_path):
+            os.remove(ticket_path)
+            
+        db.session.commit()
+        flash('Venta cancelada exitosamente', 'success')
+    except Exception as e:
+        db.session.rollback()
+        flash(f'Error al cancelar venta: {str(e)}', 'danger')
+        app.logger.error(f"Error eliminando venta {venta_id}: {str(e)}")
+    
+    return redirect(url_for('venta.listar_ventas'))
+
+@galleta_bp.route('/api/venta/<int:venta_id>')
+def get_venta(venta_id):
+    try:
+        from models.resumen import Venta, DetalleVenta
+        from models import Galleta  
+        
+        venta = Venta.query.get_or_404(venta_id)
+        
+        return jsonify({
+            'id': venta.id,
+            'total': venta.total,
+            'fecha': venta.fecha.isoformat(),
+            'estado': venta.estado,
+            'detalles': [{
+                'galleta_nombre': detalle.galleta.nombre_galleta if detalle.galleta else 'No disponible',
+                'cantidad': detalle.cantidad,
+                'precio_unitario': detalle.precio_unitario,
+                'subtotal': detalle.subtotal,
+                'tipo_venta': detalle.tipo_venta
+            } for detalle in venta.detalles]
+        })
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
