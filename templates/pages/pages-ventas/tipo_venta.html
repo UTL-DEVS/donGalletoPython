@@ -1,59 +1,24 @@
 {% extends 'components/estructura.html' %} {% block titulo %}Inicio Cliente{%
 endblock %} {% block contenido %} {% import 'components/_macro_login.html' as
 macros %}
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+/>
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/page-ventas/tipo_venta.css') }}"
+/>
+<script
+  src="{{ url_for('static', filename='js/page-ventas/resumen.js') }}"
+  defer
+></script>
+<br />
 
-<style>
-  .custom-container {
-    width: 90% !important;
-    margin: 0 auto;
-    padding-top: 20px;
-  }
-  .card-img-container {
-    height: 450px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    background-color: #ffffff;
-    box-shadow: 10px 10px 15px rgba(168, 168, 168, 0.3);
-  }
-  .card-img-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    padding: 15px;
-  }
-  .card {
-    transition: all 0.3s ease;
-    margin-bottom: 25px;
-    height: 100%;
-    border-radius: 10px;
-    border: none;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-  }
-  .card-body {
-    padding: 0px;
-    text-align: center;
-  }
-  .card-title {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #2c3e50;
-  }
-  .card-text {
-    color: #7f8c8d;
-    font-size: 1rem;
-  }
-  h1 {
-    color: #2c3e50;
-    margin-bottom: 30px !important;
-    font-weight: 600;
-  }
-</style>
+<meta name="csrf-token" content="{{ csrf_token() }}" />
+<button id="corte-ventas" class="btn">
+  <i class="fas fa-file-alt"></i> Corte de Ventas
+</button>
 
 <div class="custom-container mt-5">
   <h1 class="text-center">Seleccione método de compra</h1>
@@ -118,8 +83,7 @@ macros %}
   </div>
 </div>
 
+<br />
+<br />
+
 {% endblock %}
-<script
-  src="{{ url_for('static', filename='js/page-ventas/ventas.js') }}"
-  defer
-></script>

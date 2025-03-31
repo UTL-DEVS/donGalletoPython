@@ -1,27 +1,53 @@
-from flask import Blueprint, render_template, request, jsonify, session, redirect, url_for, flash, send_file
+from flask import Blueprint, render_template, request, jsonify, session, redirect, url_for, flash, send_file, send_from_directory
 from datetime import datetime
-from models import Galleta, usuario
+from models import Galleta, resumen
 from models.usuario import Usuario
-from forms.form_ventas import GalletaForm
-from controller import controller_ventas
+from forms.form_galleta import GalletaForm
+from controller import controller_galleta
 from controller import controller_resumen
 from utils.db import db
-from cqrs import cqrs_resumen, cqrs_ventas
+from cqrs import cqrs_galleta, cqrs_resumen
 from flask_wtf.csrf import validate_csrf
 import traceback
+import os
 
-venta_bp = Blueprint('venta', __name__, template_folder='templates')
+galleta_bp = Blueprint('venta', __name__, template_folder='templates')
 
-@venta_bp.route('/tipo_venta')
+TICKETS_FOLDER = 'tickets'
+if not os.path.exists(TICKETS_FOLDER):
+    os.makedirs(TICKETS_FOLDER)
+
+@galleta_bp.route('/tickets/<int:venta_id>')
+def descargar_ticket(venta_id):
+    try:
+        filename = f'ticket_{venta_id}.pdf'
+        filepath = os.path.join(TICKETS_FOLDER, filename)
+        
+        if not os.path.exists(filepath):
+            from controller import controller_resumen
+            venta = resumen.query.get_or_404(venta_id)
+            controller_resumen.generar_ticket(venta)
+            
+        return send_from_directory(
+            TICKETS_FOLDER,
+            filename,
+            as_attachment=True,
+            mimetype='application/pdf'
+        )
+    except Exception as e:
+        print(f"Error al descargar ticket: {str(e)}")
+        return "Error al generar el ticket", 500
+    
+@galleta_bp.route('/tipo_venta')
 def tipo_venta():
     return render_template('pages/pages-ventas/tipo_venta.html')
 
-@venta_bp.before_request
+@galleta_bp.before_request
 def antes_de_peticion():
     if 'carrito' not in session:
         session['carrito'] = []
 
-@venta_bp.route('/api/procesar_venta', methods=['POST'])
+@galleta_bp.route('/api/procesar_venta', methods=['POST'])
 def procesar_venta():
     try:
         validate_csrf(request.headers.get('X-CSRFToken'))
@@ -44,12 +70,20 @@ def procesar_venta():
         items = data['items']
         total = float(data['total'])
 
-        item_required_fields = ['galleta_id', 'cantidad', 'precio_unitario', 'subtotal']
+        item_required_fields = {
+            'unidad': ['galleta_id', 'cantidad', 'precio_unitario', 'subtotal'],
+            'peso': ['galleta_id', 'unidades', 'precio_unitario', 'subtotal', 'tipo_venta'],
+            'paquete': ['galleta_id', 'unidades', 'precio_unitario', 'subtotal', 'tipo_venta']
+        }
+
         for i, item in enumerate(items):
-            if not all(field in item for field in item_required_fields):
+            tipo = item.get('tipo_venta', 'unidad')
+            required = item_required_fields.get(tipo, item_required_fields['unidad'])
+            
+            if not all(field in item for field in required):
                 return jsonify({
                     'exito': False,
-                    'error': f'Item {i} incompleto. Campos requeridos: {item_required_fields}'
+                    'error': f'Item {i} incompleto para tipo {tipo}. Campos requeridos: {required}'
                 }), 400
 
         venta = controller_resumen.procesar_venta(total, items)
@@ -60,24 +94,37 @@ def procesar_venta():
                 'error': 'No se pudo crear la venta en la base de datos'
             }), 500
 
-        return jsonify({
-            'exito': True,
-            'mensaje': 'Venta procesada exitosamente',
-            'venta_id': venta.id,
-            'url_ticket': f'/tickets/{venta.id}'
-        })
+        try:
+            ticket_path = controller_resumen.generar_ticket(venta)
+            
+            if not os.path.exists(ticket_path):
+                raise FileNotFoundError("El archivo del ticket no se creó correctamente")
+                
+            return jsonify({
+                'exito': True,
+                'mensaje': 'Venta completada exitosamente',
+                'venta_id': venta.id,
+                'url_ticket': f'/tickets/{venta.id}'
+            })
+            
+        except Exception as e:
+            print(f"Error generando ticket: {str(e)}")
+            return jsonify({
+                'exito': True,
+                'mensaje': 'Venta completada (pero no se generó el ticket)',
+                'venta_id': venta.id,
+                'error_ticket': str(e)
+            })
 
     except Exception as e:
-        print(f"Error en ruta /api/procesar_venta: {str(e)}")
-        print(traceback.format_exc())
-        
+        print(f"Error en procesar_venta: {str(e)}")
         return jsonify({
             'exito': False,
-            'error': 'Error interno del servidor al procesar la venta',
-            'detalle': str(e)
+            'error': str(e),
+            'detalle': 'Error al procesar la venta'
         }), 500
     
-@venta_bp.route('/ventas')
+@galleta_bp.route('/ventas')
 def ventas():
     tipo_venta = request.args.get('tipo', 'unidad')
     galletas = Galleta.query.filter_by(activo=True).all()
@@ -91,7 +138,7 @@ def ventas():
                          total=total,
                          tipo_venta=tipo_venta)
 
-@venta_bp.route('/api/agregar_carrito', methods=['POST'])
+@galleta_bp.route('/api/agregar_carrito', methods=['POST'])
 def agregar_carrito():
     try:
         validate_csrf(request.headers.get('X-CSRFToken'))
@@ -169,7 +216,7 @@ def agregar_carrito():
             'error': str(e)
         }), 500
 
-@venta_bp.route('/api/eliminar_del_carrito/<int:galleta_id>', methods=['DELETE'])
+@galleta_bp.route('/api/eliminar_del_carrito/<int:galleta_id>', methods=['DELETE'])
 def eliminar_del_carrito(galleta_id):
     try:
         data = request.get_json()
@@ -204,7 +251,7 @@ def eliminar_del_carrito(galleta_id):
             'error': str(e)
         }), 500
 
-@venta_bp.route('/api/vaciar_carrito', methods=['POST'])
+@galleta_bp.route('/api/vaciar_carrito', methods=['POST'])
 def vaciar_carrito():
     try:
         session['carrito'] = []
@@ -221,7 +268,7 @@ def vaciar_carrito():
 
 
 
-@venta_bp.route('/api/corte_ventas', methods=['GET'])
+@galleta_bp.route('/api/corte_ventas', methods=['GET'])
 def corte_ventas():
     try:
         reporte = controller_resumen.generar_reporte_diario()
@@ -238,17 +285,12 @@ def corte_ventas():
             'error': str(e)
         }), 500
 
-@venta_bp.route('/descargar_ticket/<int:venta_id>')
-def descargar_ticket(venta_id):
-    ticket_path = f"ticket_{venta_id}.pdf"
-    return send_file(ticket_path, as_attachment=True)
-
-@venta_bp.route('/descargar_reporte/<fecha>')
+@galleta_bp.route('/descargar_reporte/<fecha>')
 def descargar_reporte(fecha):
     reporte_path = f"corte_ventas_{fecha}.pdf"
     return send_file(reporte_path, as_attachment=True)
 
-@venta_bp.route('/agregar_galleta', methods=['GET', 'POST'])
+@galleta_bp.route('/agregar_galleta', methods=['GET', 'POST'])
 def agregar_galleta():
     form = GalletaForm()
     
@@ -262,7 +304,7 @@ def agregar_galleta():
             'cantidad_galleta': form.cantidad_galleta.data
         }
         
-        galleta = controller_ventas.agregar_galleta(galleta_data, imagen_file)
+        galleta = controller_galleta.agregar_galleta(galleta_data, imagen_file)
         
         if galleta:
             flash('Galleta agregada correctamente', 'success')
@@ -272,10 +314,10 @@ def agregar_galleta():
     
     return render_template('pages/pages-ventas/agregar_galleta.html', form=form)
 
-@venta_bp.route('/api/galletas')
+@galleta_bp.route('/api/galletas')
 def api_galletas():
     try:
-        galletas = controller_ventas.obtener_galletas()
+        galletas = controller_galleta.obtener_galletas()
         galletas_data = []
         
         for galleta in galletas:

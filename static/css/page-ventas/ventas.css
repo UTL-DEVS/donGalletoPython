@@ -1,0 +1,147 @@
+.custom-container {
+    width: 90% !important;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+.card-img-container {
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #f8f9fa;
+}
+.card-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 15px;
+}
+.card {
+    transition: all 0.3s ease;
+    margin-bottom: 25px;
+    height: 100%;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+.card-body {
+    padding: 20px;
+    text-align: center;
+}
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+.card-text {
+    color: #ff9800;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+h2 {
+    color: #2c3e50;
+    margin-bottom: 30px !important;
+    font-weight: 600;
+    text-align: center;
+}
+/* Estilos para el carrito flotante */
+#btn-carrito {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #ff9800;
+    color: white;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    z-index: 1001;
+}
+#btn-carrito:hover {
+    background: #e68900;
+}
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 1000;
+}
+#carrito {
+    position: fixed;
+    top: 0;
+    right: -350px;
+    width: 350px;
+    height: 100%;
+    background: #fff;
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    transition: right 0.3s ease-in-out;
+    z-index: 1002;
+}
+#carrito.mostrar {
+    right: 0;
+}
+#overlay.mostrar {
+    display: block;
+}
+#carrito h4 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+#carrito ul {
+    max-height: 400px;
+    overflow-y: auto;
+}
+#carrito .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#carrito .btn-danger {
+    font-size: 14px;
+    padding: 5px 8px;
+}
+
+/* Nuevas clases agregadas */
+.mostrar {
+    display: block !important;
+}
+
+.notificacion {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 5px;
+    color: white;
+    transform: translateX(200%);
+    transition: transform 0.3s ease;
+    z-index: 1100;
+}
+
+.notificacion.mostrar {
+    transform: translateX(0);
+}
+
+.notificacion.success {
+    background-color: #28a745;
+}
+
+.notificacion.error {
+    background-color: #dc3545;
+}

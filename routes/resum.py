@@ -6,6 +6,10 @@ from controller import controller_resumen
 
 resumen_bp = Blueprint('resumen', __name__, template_folder='templates')
 
+CORTE_FOLDER = 'cortes'
+if not os.path.exists(CORTE_FOLDER):
+    os.makedirs(CORTE_FOLDER)
+
 @resumen_bp.route('/resumen')
 def resumen():
     return render_template('pages/page-resumen/resumen.html')
@@ -41,18 +45,6 @@ def agregar_carrito():
     else:
         return jsonify({'success': False, 'error': 'Error al procesar la venta'})
 
-@resumen_bp.route('/api/corte_ventas')
-def corte_ventas():
-    reporte = controller_resumen.generar_reporte_diario()
-    
-    pdf_path = controller_resumen.generar_reporte_pdf(reporte)
-    
-    return send_file(
-        pdf_path,
-        as_attachment=True,
-        download_name=f"corte_ventas_{datetime.now().strftime('%Y%m%d')}.pdf",
-        mimetype='application/pdf'
-    )
 
 @resumen_bp.route('/descargar_ticket/<int:venta_id>')
 def descargar_ticket(venta_id):
@@ -60,3 +52,26 @@ def descargar_ticket(venta_id):
     if os.path.exists(ticket_path):
         return send_file(ticket_path, as_attachment=True)
     return "Ticket no encontrado", 404
+
+@resumen_bp.route('/api/corte_ventas', methods=['GET'])
+def api_corte_ventas():
+    try:
+        filepath, error = controller_resumen.corte_ventas()
+        
+        if error:
+            return jsonify({'success': False, 'error': error}), 400
+            
+        return jsonify({
+            'success': True,
+            'url': f'/descargar_corte/{os.path.basename(filepath)}'
+        })
+        
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
+    
+@resumen_bp.route('/descargar_corte/<filename>')
+def descargar_corte(filename):
+    filepath = os.path.join(CORTE_FOLDER, filename)
+    if os.path.exists(filepath):
+        return send_file(filepath, as_attachment=True)
+    return "Archivo no encontrado", 404

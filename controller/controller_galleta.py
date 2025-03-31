@@ -1,14 +1,14 @@
-from dao import dao_ventas
-from cqrs import cqrs_ventas
+from dao import dao_galleta
+from cqrs import cqrs_galleta
 from models import Galleta
 from fpdf import FPDF
 from datetime import datetime
 
 def agregar_galleta(form_data, imagen_file):
-    if not cqrs_ventas.validar_galleta(form_data):
+    if not cqrs_galleta.validar_galleta(form_data):
         return None
     
-    return dao_ventas.crear_galleta(
+    return dao_galleta.crear_galleta(
         nombre_galleta=form_data['nombre_galleta'],
         precio_galleta=form_data['precio_galleta'],
         descripcion_galleta=form_data.get('descripcion_galleta', ''),
@@ -17,10 +17,10 @@ def agregar_galleta(form_data, imagen_file):
     )
 
 def obtener_galletas():
-    return dao_ventas.obtener_galletas_activas()
+    return dao_galleta.obtener_galletas_activas()
 
 def obtener_galleta(galleta_id):
-    return dao_ventas.obtener_galleta_por_id(galleta_id)
+    return dao_galleta.obtener_galleta_por_id(galleta_id)
 
 def generar_reporte_pdf(reporte):
     pdf = FPDF()
