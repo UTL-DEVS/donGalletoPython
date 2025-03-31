@@ -5,3 +5,5 @@ from routes.proveedor import proveedor_bp
 from routes.cliente import cliente_bp
 from routes.economia import economia_bp
 from routes.recetas import recetas_bp
+from routes.venta import venta_bp
+from routes.resum import resumen_bp

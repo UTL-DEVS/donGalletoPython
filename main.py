@@ -28,6 +28,9 @@ def crear_app():
     app.register_blueprint(cliente_bp)
     app.register_blueprint(economia_bp)
     app.register_blueprint(recetas_bp)
+    app.register_blueprint(venta_bp)
+    app.register_blueprint(resumen_bp)
+
     
     
     return app, csrf
