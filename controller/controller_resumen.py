@@ -74,6 +74,8 @@ def generar_reporte_diario():
     return dao_resumen.generar_reporte_ventas(ventas)
 
 def corte_ventas():
+    from fpdf import FPDF
+    import os
     try:
         hoy = datetime.now().date()
         ventas = Venta.query.filter(
@@ -155,6 +157,9 @@ def corte_ventas():
         filepath = os.path.join(CORTE_FOLDER, nombre_archivo)
         pdf.output(filepath)
         
+        if not os.path.exists(filepath):
+            raise Exception("No se pudo generar el archivo PDF")
+            
         return filepath, None
         
     except Exception as e:
