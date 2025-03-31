@@ -31,7 +31,7 @@ def crear_app():
     app.register_blueprint(produccion_bp)
     app.register_blueprint(detalle_produccion_bp)
     app.register_blueprint(recetas_bp)
-    app.register_blueprint(venta_bp)
+    app.register_blueprint(galleta_bp)
     app.register_blueprint(resumen_bp)
 
     return app, csrf

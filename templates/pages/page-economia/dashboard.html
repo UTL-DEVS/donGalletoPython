@@ -1,15 +1,49 @@
 {%extends 'components/estructura.html'%}
 {%block titulo%}Economía{%endblock%}
 {%block contenido%}
+<h2 class=" m-3 text-center">Ventas Diarias</h2>
+
+<div class="my-3 d-flex justify-content-center">
+    <label for="mes mx-2">Selecciona un mes:</label>
+    <input type="month" id="mesGraficaVentasDiarias" name="mes">
+</div>
+
+    <div id="ventasDiarias"></div>
+    <h4 id="fechaGrafica"></h4>
+
+
+    <!-- modal fecha no disponible -->
+    <div class="modal" tabindex="-1" id="alertaMesFueraDeRango">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Mes fuera de rango</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>El mes seleccionado está fuera de rango.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" data-bs-dismiss="modal" class="btn btn-primary">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
  <!-- Barra de navegación inferior -->
     <nav class="navbar navbar-dark bg-dark fixed-bottom">
         <div class="container-fluid d-flex justify-content-around">
             <a class="nav-link text-light" href="#"><i class="bi bi-house-door"></i> Estadísticas</a>
-            <a class="nav-link text-light" href="#"><i class="bi bi-search"></i> Dashboard</a>
+            <a class="nav-link text-light" href="#"><i class="bi bi-search"></i> Ventas Diarias</a>
             <a class="nav-link text-light" href="#"><i class="bi bi-person"></i> Gastos</a>
         </div>
     </nav>
     
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{{url_for('static',filename='js/page-economia/dashboard.js')}}"></script>
-{%endblock%}
+    <script>
+        let rangosFechasVentas = {{ rango_fechas_ventas| safe }};
+        let listasVentasDiarias = {{ lista_ventas|safe }};
+    </script>
+    {%endblock%}

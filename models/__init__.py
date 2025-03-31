@@ -4,5 +4,5 @@ from .persona import Persona
 from .proveedor import Proveedor
 from .materiaPrima import MateriaPrima
 from .receta import Receta, detalleReceta
-from .ventas import Galleta
+from .galleta import Galleta
 from .resumen import Venta, DetalleVenta

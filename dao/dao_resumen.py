@@ -2,10 +2,11 @@ from models import Venta, DetalleVenta, Galleta
 from utils.db import db
 from datetime import datetime
 
-def crear_venta(total, items):
+def crear_venta(total, usuario_id, items):
     try:
         nueva_venta = Venta(
             total=total,
+            usuario_id=usuario_id,
             fecha=datetime.utcnow(),
             estado='completada'
         )

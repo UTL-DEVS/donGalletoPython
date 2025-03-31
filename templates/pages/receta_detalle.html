@@ -3,6 +3,25 @@
 {% block contenido %}
 <div class="container">
     <h2>Detalle de la Receta: {{ receta.nombre_receta }}</h2>
+    <h2>Nombre Galleta: {{ nombre_galleta }}</h2>
+
+     <!-- Flash Messages (solo errores) -->
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+    {% for category, message in messages %}
+        {% if category == "danger" or category == "error" %}
+            <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        {% endif %}
+    {% endfor %}
+{% endif %}
+{% endwith %}
+
+    <!-- Fin Flash Messages -->
 
     <table class="table table-striped">
         <thead>
@@ -18,8 +37,11 @@
                 <td>{{ detalle.materia_prima.nombre_materia }}</td>
                 <td>{{ detalle.cantidad_insumo }}</td>
                 <td>
-                    <!-- Agregar acciones si necesitas eliminar o editar detalles -->
-                    <a href="#" class="btn btn-danger">Eliminar</a>
+                    <form method="POST" action="{{ url_for('receta.eliminar_detalle', id_receta=receta.id_receta, id_detalle=detalle.id_detalle_receta) }}">
+                        {{ form.csrf_token }}
+                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                    </form>
+                    
                 </td>
             </tr>
             {% endfor %}

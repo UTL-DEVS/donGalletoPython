@@ -165,32 +165,50 @@ async function vaciarCarrito() {
     }
 }
 
-async function procesarVenta() {
+async function procesarVenta(event) {
+    if (event) event.preventDefault();
+    
     const btnProcesar = document.getElementById('procesar-venta');
-    if (btnProcesar) {
-        btnProcesar.disabled = true;
-        btnProcesar.innerHTML = '<span class="spinner-border spinner-border-sm"></span> Procesando...';
-    }
+    if (!btnProcesar) return;
 
     try {
-        const carrito = JSON.parse(sessionStorage.getItem('carrito') || '[]');
+        btnProcesar.disabled = true;
+        btnProcesar.innerHTML = '<span class="spinner-border spinner-border-sm"></span> Procesando...';
         
+        const carritoStr = sessionStorage.getItem('carrito') || '[]';
+        const carrito = JSON.parse(carritoStr);
+
         if (!carrito.length) {
             mostrarNotificacion('El carrito está vacío', 'error');
             return;
         }
 
-        const items = carrito.map(item => ({
-            galleta_id: item.galleta_id,
-            cantidad: item.cantidad || item.unidades || 1,
-            precio_unitario: item.precio_unitario || (item.subtotal / (item.cantidad || item.unidades || 1)),
-            subtotal: item.subtotal,
-            tipo_venta: item.tipo_venta || 'unidad'
-        }));
+        const items = carrito.map(item => {
+            const baseItem = {
+                galleta_id: item.galleta_id,
+                precio_unitario: item.precio_unitario || (item.subtotal / (item.cantidad || item.unidades || 1)),
+                subtotal: item.subtotal,
+                tipo_venta: item.tipo_venta || 'unidad'
+            };
+
+            if (item.tipo_venta === 'peso' || item.tipo_venta === 'paquete') {
+                return {
+                    ...baseItem,
+                    unidades: item.unidades,
+                    cantidad: 1  
+                };
+            } else {
+                return {
+                    ...baseItem,
+                    cantidad: item.cantidad,
+                    unidades: item.cantidad  
+                };
+            }
+        });
 
         const total = items.reduce((sum, item) => sum + item.subtotal, 0);
         const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
-
+        
         const response = await fetch('/api/procesar_venta', {
             method: 'POST',
             headers: {
@@ -200,39 +218,51 @@ async function procesarVenta() {
             body: JSON.stringify({ items, total })
         });
 
-        let data;
-        try {
-            data = await response.json(); // Intenta parsear la respuesta JSON
-        } catch (e) {
-            // Si falla el parseo JSON, muestra el texto de la respuesta
-            const errorText = await response.text();
-            throw new Error(`Respuesta inválida del servidor: ${errorText}`);
-        }
+        const data = await response.json();
 
         if (!response.ok) {
-            // Muestra detalles del error del servidor
-            const errorMsg = data.error || data.message || 'Error desconocido del servidor';
-            console.error('Detalles del error:', {
-                status: response.status,
-                statusText: response.statusText,
-                error: data.error,
-                stack: data.stack // si está disponible
-            });
-            throw new Error(`Error ${response.status}: ${errorMsg}`);
+            throw new Error(data.error || 'Error al procesar la venta');
         }
 
-        // ... (resto del código para éxito)
+        mostrarNotificacion(data.mensaje, 'success');
+        sessionStorage.setItem('carrito', '[]');
+        actualizarVistaCarrito([], 0);
+
+        if (data.url_ticket) {
+            window.open(data.url_ticket, '_blank');
+        }
 
     } catch (error) {
-        console.error('Error completo:', error);
+        console.error("Error:", error);
         mostrarNotificacion(error.message, 'error');
     } finally {
-        if (btnProcesar) {
-            btnProcesar.disabled = false;
-            btnProcesar.innerHTML = 'Procesar Venta';
-        }
+        btnProcesar.disabled = false;
+        btnProcesar.innerHTML = 'Procesar Venta';
     }
 }
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const btn = document.getElementById('procesar-venta');
+    if (btn) {
+        btn.addEventListener('click', function(e) {
+            procesarVenta(e);
+        });
+        console.log("Evento click asignado correctamente al botón");
+    } else {
+        console.error("No se encontró el botón 'procesar-venta'");
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const btn = document.getElementById('procesar-venta');
+    if (btn) {
+        btn.addEventListener('click', procesarVenta);
+        console.log("Evento click asignado al botón"); // Debug
+    } else {
+        console.error("No se encontró el botón 'procesar-venta'");
+    }
+});
 
 function toggleCarrito() {
     const carritoElement = document.getElementById('carrito');

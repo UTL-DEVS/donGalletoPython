@@ -1,0 +1,36 @@
+{% extends 'components/_estructura_admin.html' %}
+{% block titulo %}Agregar Receta{% endblock %}
+{% block contenido %}
+
+<div class="container">
+    <h2>Agregar Nueva Receta</h2>
+    <form method="POST">
+        {{ form.csrf_token }}
+
+        <div class="form-group">
+            {{ form.nombre_receta.label }}
+            {{ form.nombre_receta(class="form-control") }}
+        </div>
+        
+        <div class="form-group">
+            {{ form.id_galleta.label }}
+            {{ form.id_galleta(class="form-control") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.id_materia.label }}
+            {{ form.id_materia(class="form-control") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.cantidad_insumo.label }}
+            {{ form.cantidad_insumo(class="form-control") }}
+        </div>
+
+        <div class="form-group mt-3">
+            {{ form.submit(class="btn btn-primary") }}
+        </div>
+    </form>
+</div>
+
+{% endblock %}
