@@ -285,7 +285,7 @@ def agregar_galleta():
         
         if galleta:
             flash('Galleta agregada correctamente', 'success')
-            return redirect(url_for('venta.ventas'))
+            return redirect(url_for('receta.receta_index'))
         else:
             flash('Error: Verifica los datos de la galleta (nombre, precio, cantidad e imagen válida)', 'danger')
     
