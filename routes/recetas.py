@@ -136,7 +136,3 @@ def eliminar_detalle(id_receta, id_detalle):
     db.session.commit()
     flash('Detalle eliminado exitosamente.', 'success')
     return redirect(url_for('receta.receta_detalle', id_receta=id_receta))
-
-
-    
-    

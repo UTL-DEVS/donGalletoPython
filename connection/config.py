@@ -5,7 +5,7 @@ import os
 #load_dotenv()
 
 class Config(object):
-    SQLALCHEMY_DATABASE_URI='mysql+pymysql://root:root@127.0.0.1/casaGalleta'
+    SQLALCHEMY_DATABASE_URI='mysql+pymysql://root:admin@127.0.0.1/casaGalleta'
     SQLALCHEMY_TRACK_MODIFICATIONS=False
 
     MAIL_SERVER='smtp.gmail.com'
