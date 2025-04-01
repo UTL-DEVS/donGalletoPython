@@ -11,8 +11,10 @@ import os
 def captcha_info():
     numero = random.randrange(11111, 99999)
     captcha_txt = str(numero)
+    print(captcha_txt)
     session['captcha_txt'] = captcha_txt  # Guardamos el texto del CAPTCHA en la sesión
     captcha_time = datetime.now()
+    
     session['captcha_time'] = captcha_time
     
     # Crear la imagen del CAPTCHA

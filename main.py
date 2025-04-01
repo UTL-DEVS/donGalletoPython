@@ -31,11 +31,17 @@ def crear_app():
     app.register_blueprint(economia_bp)
     app.register_blueprint(produccion_bp)
     app.register_blueprint(detalle_produccion_bp)
+    app.register_blueprint(proveedor_bp)
+    app.register_blueprint(cocina_bp)
+    app.register_blueprint(cliente_bp)
+    app.register_blueprint(economia_bp)
     app.register_blueprint(recetas_bp)
     app.register_blueprint(galleta_bp)
     app.register_blueprint(resumen_bp)
     app.register_blueprint(usuario_bp)
 
+    
+    
     return app, csrf
 
 app, csrf = crear_app()

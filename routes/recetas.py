@@ -8,7 +8,9 @@ recetas_bp = Blueprint('receta', __name__, template_folder='templates')
 @recetas_bp.route('/receta')
 @login_required
 def receta_index():
-    if current_user.rol_user != 0:
+    os.system('cls')
+    print(current_user.rol_user)
+    if current_user.rol_user == 1:
         return redirect('/')
     recetas = Receta.query.all()
     return render_template('/pages/recetas.html', recetas=recetas)
@@ -17,6 +19,7 @@ def receta_index():
 @recetas_bp.route('/receta/<int:id_receta>', methods=['GET', 'POST'])
 @login_required
 def receta_detalle(id_receta):
+    print(current_user.rol_user)
     if current_user.rol_user != 0:
         return redirect('/')
     receta = Receta.query.get_or_404(id_receta)  # Cargar la receta por ID
@@ -26,12 +29,10 @@ def receta_detalle(id_receta):
     detalle_receta_obj = detalleReceta.query.filter_by(receta_id=id_receta).first()
     id_galleta_local = detalle_receta_obj.id_galleta if detalle_receta_obj else None
     if id_galleta_local is None:
-        os.system('cls')
         print('nulo')
         return redirect('/receta/agregar')
     nombre_galleta_local = Galleta.query.filter_by(id_galleta=id_galleta_local).first().nombre_galleta
     if request.method == 'POST':
-        os.system('cls')
         print('creado')
         # Crear un nuevo detalleReceta si el formulario fue enviado correctamente
         """
@@ -59,6 +60,7 @@ def receta_detalle(id_receta):
 def receta_deactivar(id_receta):
     if current_user.rol_user != 0:
         return redirect('/')
+    
     receta = Receta.query.get_or_404(id_receta)
     receta.estado = '0'
     db.session.commit()
@@ -69,6 +71,7 @@ def receta_deactivar(id_receta):
 def receta_activar(id_receta):
     if current_user.rol_user != 0:
         return redirect('/')
+    
     receta = Receta.query.get_or_404(id_receta)
     receta.estado = '1'
     db.session.commit()
@@ -79,6 +82,7 @@ def receta_activar(id_receta):
 def agregar_receta():
     if current_user.rol_user != 0:
         return redirect('/')
+    
     
     form = RecetaForm()
     form.id_galleta.choices = [(g.id_galleta, g.nombre_galleta) for g in Galleta.query.filter_by(activo=True).all()]
@@ -120,6 +124,7 @@ def agregar_receta():
 def eliminar_detalle(id_receta, id_detalle):
     if current_user.rol_user != 0:
         return redirect('/')
+    
     receta = Receta.query.get_or_404(id_receta)
     detalles = detalleReceta.query.filter_by(receta_id=id_receta).all()
 
@@ -132,6 +137,3 @@ def eliminar_detalle(id_receta, id_detalle):
     db.session.commit()
     flash('Detalle eliminado exitosamente.', 'success')
     return redirect(url_for('receta.receta_detalle', id_receta=id_receta))
-
-
-    

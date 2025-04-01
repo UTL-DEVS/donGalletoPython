@@ -41,6 +41,7 @@ def dao_registro(email_local, usuario, contrasenia, captcha):
         contrasenia = contrasenia
     )
 
+    print(nuevo_usuario.contrasenia)
     enviar_correo(cuerpo=f'{token_local} \n para poder confirmar ingresar a: http://localhost:8080/confirmar', destino=email_local)
     db.session.add(nuevo_usuario)
     db.session.commit()
