@@ -26,12 +26,10 @@ def receta_detalle(id_receta):
     detalle_receta_obj = detalleReceta.query.filter_by(receta_id=id_receta).first()
     id_galleta_local = detalle_receta_obj.id_galleta if detalle_receta_obj else None
     if id_galleta_local is None:
-        os.system('cls')
         print('nulo')
         return redirect('/receta/agregar')
     nombre_galleta_local = Galleta.query.filter_by(id_galleta=id_galleta_local).first().nombre_galleta
     if request.method == 'POST':
-        os.system('cls')
         print('creado')
         # Crear un nuevo detalleReceta si el formulario fue enviado correctamente
         """

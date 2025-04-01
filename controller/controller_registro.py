@@ -1,13 +1,10 @@
 from cqrs import  cqrs_registro,  cqrs_conf
 import bcrypt
 import re
+import os
 from utils import  redirect, flash
 
 
-def hash_password(password):
-    salt = bcrypt.gensalt()
-    hashed = bcrypt.hashpw(password.encode('utf-8'), salt)
-    return hashed.decode('utf-8')
 
 
 
@@ -22,8 +19,9 @@ def controller_registro(email, usuario, contrasenia, captcha):
         flash('Contraseña incorrecta. Debe tener al menos 8 caracteres, una mayúscula, una minúscula, un número y un carácter especial.', 'error')
         
         return False
-    hashed_password = hash_password(contrasenia)
-    return cqrs_registro(email, usuario, hashed_password, captcha)
+    print('contrasenia controller_login')
+    print(contrasenia)
+    return cqrs_registro(email, usuario, contrasenia, captcha)
 
 def controller_conf(email, token):
     return cqrs_conf(email, token)

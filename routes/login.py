@@ -11,6 +11,7 @@ def login():
         usuario = form.usuario.data
         contrasenia = form.contrasenia.data
         captcha_data = form.captcha.data
+        print(captcha_data)
         result =  controller_login(usuario, contrasenia,captcha_data)
         if result:
             return result

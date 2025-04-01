@@ -7,6 +7,8 @@ def cqrs_login(*args):
             return False
     usuario = args[0]
     contrasenia = args[1]
+    print(contrasenia)
     captcha_data = args[2]
+    print(captcha_data)
     result = dao_login(usuario, contrasenia, captcha_data)
     return result
