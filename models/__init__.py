@@ -6,3 +6,4 @@ from .materiaPrima import MateriaPrima
 from .receta import Receta, detalleReceta
 from .resumen import Venta, DetalleVenta
 from .empleado import Empleado
+from .galleta import Galleta

@@ -65,3 +65,7 @@ class dao_cliente:
     @staticmethod
     def obtener_pedido_por_id(id_pedido):
         return Pedido.query.get(id_pedido)
+    
+    @staticmethod
+    def obtenerPedidos():
+        return Pedido.query.all()

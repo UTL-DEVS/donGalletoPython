@@ -1,5 +1,7 @@
 from utils import db
 from models import produccion
+from models.pedido import Pedido
+from models.usuario import Usuario
 
 def getAllProduccion():
     produccion = produccion.query.all()
@@ -16,3 +18,10 @@ def agregarProduccion(produccion):
     db.session.add(produccion)
     db.session.commit()
     return produccion.id_produccion 
+
+def obtenerPedidos():
+    pedidos = db.session.query(
+        Pedido.fecha_pedido, Pedido.estatus
+    ).select_from(Pedido)\
+    .all()
+    return pedidos

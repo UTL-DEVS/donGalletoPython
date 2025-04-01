@@ -24,11 +24,14 @@ def dao_login(usuario, contrasenia, captcha_data):
                 rol_user = datos[1]
                 if rol_user == 1:
                     return redirect('/cliente')
+                elif rol_user == 777:
+                    return redirect('/cocina-produccion')
+                
             else:
                 return False
             
 def verify_user(usuario, contrasenia):
-        usuario_local = db.session.query(Usuario).filter(Usuario.usuario == usuario, Usuario.contrasenia == contrasenia, Usuario.sistema == 0).first()
+        usuario_local = db.session.query(Usuario).filter(Usuario.usuario == usuario, Usuario.contrasenia == contrasenia).first()
         if usuario_local:
                 nombre_usuario = usuario_local.usuario
                 rol_usuario = usuario_local.rol_user

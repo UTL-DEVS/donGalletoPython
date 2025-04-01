@@ -123,7 +123,6 @@ def vaciar_carrito():
         flash("El carrito ya estaba vacío", "info")
     return redirect(url_for('cliente.piezas'))
 
-
 @cliente_bp.route('/mis-pedidos')
 def mis_pedidos():
     id_usuario = session.get('id_usuario', 1)

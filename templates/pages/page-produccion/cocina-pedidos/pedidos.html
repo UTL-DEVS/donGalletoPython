@@ -25,30 +25,16 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row" style="align-content: center;">1</th>
-                            <td style="align-content: center;">Carlos Sanchez</td>
-                            <td style="align-content: center;">01/04/2025</td>
-                            <td style="align-content: center;">
-                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDetallesPedidos"><i class="bi bi-list"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row" style="align-content: center;">2</th>
-                            <td style="align-content: center;">Milton Pina</td>
-                            <td style="align-content: center;">30/03/2025</td>
-                            <td style="align-content: center;">
-                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDetallesPedidos"><i class="bi bi-list"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row" style="align-content: center;">3</th>
-                            <td style="align-content: center;">Rogelio Medina</td>
-                            <td style="align-content: center;">04/04/2025</td>
-                            <td style="align-content: center;">
-                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDetallesPedidos"><i class="bi bi-list"></i></button>
-                            </td>
-                        </tr>
+                        {% for pedido in lstPedidos %}
+                            <tr>
+                                <th scope="row" style="align-content: center;">{{ loop.index }}</th>
+                                <td style="align-content: center;">{{ pedido.estatus }}</td>
+                                <td style="align-content: center;">{{ pedido.fecha_pedido }}</td>
+                                <td style="align-content: center;">
+                                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDetallesPedidos"><i class="bi bi-list"></i></button>
+                                </td>
+                            </tr>
+                        {% endfor %}
                     </tbody>
                 </table>
             </div>
