@@ -10,6 +10,12 @@ cocina_produccion_bp = Blueprint('cocina-produccion', __name__, template_folder=
 def working():
     return render_template('pages/page-produccion/working-page.html')
 
+@cocina_produccion_bp.route('/produccion')
+def produccion():
+    form = DetalleRecetaForm()
+    lstGalletas = dao_galleta.getAllGalletas()
+    return render_template('pages/page-produccion/cocina-produccion/stock.html', lstGalletas = lstGalletas, form = form)
+
 @cocina_produccion_bp.route('/produccion-stock')
 def stock():
     form = DetalleRecetaForm()

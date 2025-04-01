@@ -4,10 +4,6 @@ import re
 import os
 from utils import  redirect, flash
 
-
-
-
-
 password_regex = r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$'
 
 def validar_contrasenia(contrasenia):

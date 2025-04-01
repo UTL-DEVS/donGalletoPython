@@ -38,6 +38,8 @@ def dao_login(usuario, contrasenia, captcha_data):
                     return redirect('/cliente')
                 elif rol_user == 0:
                     return redirect('/receta')
+                elif rol_user == 3:
+                    return redirect('/produccion')
             else:
                 return False
             
