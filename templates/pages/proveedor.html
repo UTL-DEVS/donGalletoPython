@@ -1,0 +1,251 @@
+{%extends 'components/_estructura_admin.html'%}
+{%block titulo%}Proveedores{%endblock%}
+{%block contenido%}
+{% import 'components/_macro_proveedor.html' as macros%}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="{{url_for('static', filename='js/proveedores.js')}}"></script>
+
+<div class="container d-flex aling-center justify-content-center flex-column align-center w-90 mt-5">
+    <div class="menu d-flex aling-center justify-content-center flex-column align-center">
+        <div class="sub-header d-flex justify-content-between">
+            <div class="sub-header-title">
+                <h1>Proveedores</h1>
+            </div>
+            <div class="sub-header-buttons d-flex align-items-center">
+                <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalAgregarProveedor">Nuevo
+                    proveedor <i class="bi bi-plus-circle-fill"></i></button>
+            </div>
+        </div>
+        <hr>
+        <div class="data d-flex aling-center justify-content-center flex-column">
+            <div class="table">
+                <table class="table table-hover">
+                    <thead>
+                        <tr class="table-light">
+                            <th scope="col">#</th>
+                            <th scope="col">Nombre proveedor</th>
+                            <th scope="col">Dirección</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {%for proveedor in lista_proveedores%}
+                        <tr {%if(proveedor.persona.estatus==0)%}class="table-danger"{%endif%}>
+                            <th scope="row">{{loop.index}}</th>
+                            <td>{{proveedor.nombre_proveedor}}</td>
+                            <td>{{proveedor.persona.direccion}}</td>
+                            <td class="">
+                                <a href="/proveedor/detallesProveedor?id_prov={{proveedor.id_proveedor}}&modal=detalle"><button
+                                        class="btn btn-primary">
+                                        <i class="bi bi-eye-fill"></i>
+                                    </button></a>
+                                <a href="/proveedor/detallesProveedor?id_prov={{proveedor.id_proveedor}}&modal=edit"><button
+                                        class="btn btn-primary bg-warning">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </button></a>
+                                    {%if(proveedor.persona.estatus!=0)%}                              
+                                        <button onclick="ventanaConfirmarEliminacion({{proveedor.id_proveedor}});"
+                                            class="btn btn-primary bg-danger" data-bs-toggle="modal"
+                                            data-bs-target="#confirmarEliminarProveedor">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    {%else%}
+                                        <button onclick="ventanaConfirmarReactivacion({{proveedor.id_proveedor}});"
+                                            class="btn btn-primary bg-success" data-bs-toggle="modal"
+                                            data-bs-target="#confirmarEliminarProveedor">
+                                            <i class="bi bi-check-square"></i>
+                                        </button>
+                                    {%endif%}  
+                            </td>
+                        </tr>
+                        {%endfor%}
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modal agregar proveedor -->
+    <div class="shadow modal fade" id="modalAgregarProveedor" style="display: none;" tabindex="-1" aria-hidden="true"
+        aria-labelledby="modalAgregarProveedor">
+        <div class="modal-dialog modal-m modal-dialog-centered modal-dialog-scrollable">
+            {%if (form_proveedor!=None)%}
+
+            <form class="modal-content" id="agregarProveedor" method="POST" action="/proveedor/agregarProveedor">
+                {{form_persona.csrf_token}}
+
+                <div class="modal-header">
+                    <h4 class="modal-title" id="tituloModalAgregarProveedor">Agregar proveedor</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    {{macros.macro_campo_upd_proveedor(form_proveedor.nombre_proveedor)}}
+
+                    {{macros.macro_campo_upd_proveedor(form_persona.direccion)}}
+                    {{macros.macro_campo_upd_proveedor(form_persona.telefono)}}
+                    {{macros.macro_campo_upd_proveedor(form_persona.correo)}}
+                    <h5 class="m-4 justify-text-center ">Datos del representante:</h5>
+                    {{macros.macro_campo_upd_proveedor(form_persona.nombre)}}
+                    {{macros.macro_campo_upd_proveedor(form_persona.primer_apellido)}}
+                    {{macros.macro_campo_upd_proveedor(form_persona.segundo_apellido)}}
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+            </form>
+            {%endif%}
+
+        </div>
+
+    </div>
+
+    <!-- Modal editar proveedor-->
+    <div class="shadow modal fade" id="modalEditarProveedor" style="display: none;" tabindex="-1" aria-hidden="true"
+        aria-labelledby="modalEditarProveedor">
+        <div class="modal-dialog modal-m modal-dialog-centered modal-dialog-scrollable">
+            {%if(prov_sel != Undefined)%}
+            <form method="POST" id="formularioEditarProveedor" class="modal-content" id="modificarProveedor"
+                action="/proveedor/actualizarProveedor?id_prov_upd={{prov_sel.id_proveedor}}">
+                {{form_persona.csrf_token}}
+                <div class="modal-header">
+                    <h4 class="modal-title" id="tituloModalEditarProveedor">Modificar proveedor</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="d-flex">
+                        <h5 class="col-4 m-2 ">Proveedor:</h5>
+                        <div class=" m-2 col-8" id="nombreProveedor">{{prov_sel.nombre_proveedor}}</div>
+                    </div>
+                    <hr>
+                    {{macros.macro_campo_upd_proveedor(form_persona.direccion,prov_sel.persona.direccion)}}
+                    {{macros.macro_campo_upd_proveedor(form_persona.telefono,prov_sel.persona.telefono)}}
+                    {{macros.macro_campo_upd_proveedor(form_persona.correo,prov_sel.persona.correo)}}
+                    <h5 class="m-4 justify-text-center ">Datos del representante:</h5>
+                    {{macros.macro_campo_upd_proveedor(form_persona.nombre,prov_sel.persona.nombre)}}
+                    {{macros.macro_campo_upd_proveedor(form_persona.primer_apellido,prov_sel.persona.primerApellido)}}
+                    {{macros.macro_campo_upd_proveedor(form_persona.segundo_apellido,prov_sel.persona.segundoApellido)}}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button class="btn btn-primary" type="submit">Guardar cambios</button>
+                </div>
+            </form>
+            {%endif%}
+        </div>
+    </div>
+
+    <!-- modalEliminarProveedor -->
+    <div class="modal" tabindex="-1" id="confirmarEliminarProveedor">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Eliminación de proveedor</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>¿Está segur@ de inhabilitar a este proveedor?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, cancelar</button>
+                    <a id="btnEliminarProveedor"><button type="button" class="btn btn-primary">Si,
+                            desactivar</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal reactivar Proveedor -->
+    <div class="modal" tabindex="-1" id="confirmarReactivarProveedor">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Reactivación de proveedor</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>¿Está segur@ de reactivar a este proveedor?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, cancelar</button>
+                    <a id="btnReactivarProveedor"><button type="button" class="btn btn-primary">Si,
+                            reactivar</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal detalles de proveedor -->
+    <div class="shadow modal fade" id="modalDetallesProveedor" tabindex="-1" aria-labelledby="modalDetallesProveedor"
+        style="display: none;" aria-hidden="true">
+        <div class="modal-dialog modal-m modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalCenteredScrollableTitle">Datos del proveedor</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class=" modal-body">
+                    <div class="d-flex">
+                        {%if (prov_sel)%}
+                        <p class="fw-bold col-4 mx-2 d-flex">Proveedor:</p>
+                        <div class="d-flex col-7">
+                            <div class="mx-2" id="nombreProveedorSel">{{prov_sel.nombre_proveedor}}</div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="d-flex">
+                        <p class="fw-bold col-4 d-flex mx-2">Representante:</p>
+                        <div class="d-flex col-7">
+                            <div class="mx-2" id="nombreRepresentanteProveedorSel">{{prov_sel.persona.nombre}}
+                                {{prov_sel.persona.primerApellido}} {{prov_sel.persona.segundoApellido}}</div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="d-flex">
+                        <p class="fw-bold col-4 d-flex mx-2">Correo:</p>
+                        <div class="d-flex col-7">
+                            <div class=" mx-1" id="correoProveedorSel">{{prov_sel.persona.correo}}</div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="d-flex">
+                        <p class="fw-bold col-4 d-flex mx-2">Teléfono:</p>
+                        <div class="d-flex col-7">
+                            <div class="mx-2" id="telefonoProveedorSel">{{prov_sel.persona.telefono}}</div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="d-flex">
+                        <p class="fw-bold col-4 d-flex mx-2">Dirección:</p>
+                        <div class="d-flex col-7">
+                            <div class="mx-2" id="direccionProveedorSel">{{prov_sel.persona.direccion}}</div>
+                        </div>
+                    </div>
+                    <hr>
+                    {%endif%}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+ 
+</div>
+
+
+<script>
+    const modalesAbiertos = {{ modales| safe }};
+</script>
+{%endblock%}

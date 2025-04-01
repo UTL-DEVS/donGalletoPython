@@ -10,3 +10,32 @@ class login_form(FlaskForm):
         DataRequired('Contrasenia necesaria'),
         length(min=8, message='La contraseña debe tener minimo 8 caracteres') 
     ])
+    captcha = StringField('Captcha', [
+        DataRequired('Captcha necesario'),
+        length(min=5, max=5, message='Caracteres fuere del rango')
+    ])
+    
+class regis_form(FlaskForm):
+    email = EmailField('email', [
+        DataRequired('Email necesario'),
+    ])
+    usuario = StringField('usuario',[
+        DataRequired('Usuario necesario'),
+        length(min=10, max=100, message='Caracteres fuera del rango')
+    ])
+    contrasenia = PasswordField('contrasenia', [
+        DataRequired('Contrasenia necesaria'),
+        length(min=8, message='La contraseña debe tener minimo 8 caracteres')
+        ])
+    captcha = StringField('Captcha', [
+        DataRequired('Captcha necesario'),
+        length(min=5, max=5, message='Caracteres fuere del rango')
+    ])
+    
+class conf_form(FlaskForm):
+    email = EmailField('email', [
+        DataRequired('Email necesario'),
+    ])
+    token = StringField('token', [
+        DataRequired('Token necesario'),
+    ])

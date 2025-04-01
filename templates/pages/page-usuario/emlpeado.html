@@ -1,0 +1,130 @@
+{%extends 'components/_estructura_admin.html'%}
+{%block titulo%}Empleados{%endblock%}
+{%block contenido%}
+{% import 'components/macro_usuario.html' as macros%}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="{{url_for('static', filename='js/empleado.js')}}"></script>
+
+<div class="container d-flex aling-center justify-content-center flex-column align-center w-90 mt-5">
+    <div class="menu d-flex aling-center justify-content-center flex-column align-center">
+        <div class="sub-header d-flex justify-content-between">
+            <div class="sub-header-title">
+                <h1>Empleados</h1>
+            </div>
+            <div class="sub-header-buttons d-flex align-items-center">
+                <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalAgregarEmpleado">Nuevo
+                    empleado <i class="bi bi-plus-circle-fill"></i></button>
+            </div>
+        </div>
+        <hr>
+        <div class="data d-flex aling-center justify-content-center flex-column">
+            <div class="table">
+                <table class="table table-hover">
+                    <thead>
+                        <tr class="table-light">
+                            <th scope="col">#</th>
+                            <th scope="col">Nombre Empleado</th>
+                            <th scope="col">Rol</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {%for empleado in lista_empleados%}
+                        <tr {%if(empleado.persona.estatus==0)%}class="table-danger"{%endif%}>
+                            <th scope="row">{{loop.index}}</th>
+                            <td>{{empleado.persona.nombre}}</td>
+
+                            <td>
+                            {%if (empleado.usuario.rol_user == 2)%}
+                                Administardor
+                            {%elif (empleado.usuario.rol_user == 3)%}
+                                Cocinero
+                            {%elif (empleado.usuario.rol_user == 4)%}
+                                Cajero
+                            {%else%}
+                                Desconocido
+                            {%endif%}
+                            </td>
+                            <td class="">
+                                <a href="/empleado/detallesEmpleado?id_prov={{empleado.id_empleado}}&modal=detalle"><button
+                                        class="btn btn-primary">
+                                        <i class="bi bi-eye-fill"></i>
+                                    </button></a>
+                                <a href="/empleado/detallesEmpleado?id_prov={{empleado.id_empleado}}&modal=edit"><button
+                                        class="btn btn-primary bg-warning">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </button></a>
+                                    {%if(empleado.persona.estatus!=0)%}                              
+                                        <button onclick="ventanaConfirmarEliminacion({{empleado.id_empleado}});"
+                                            class="btn btn-primary bg-danger" data-bs-toggle="modal"
+                                            data-bs-target="#confirmarEliminarempleado">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    {%else%}
+                                        <button onclick="ventanaConfirmarReactivacion({{empleado.id_empleado}});"
+                                            class="btn btn-primary bg-success" data-bs-toggle="modal"
+                                            data-bs-target="#confirmarEliminarempleado">
+                                            <i class="bi bi-check-square"></i>
+                                        </button>
+                                    {%endif%}  
+                            </td>
+                        </tr>
+                        {%endfor%}
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modal editar empleado-->
+    <div class="shadow modal fade" id="modalEditarProveedor" style="display: none;" tabindex="-1" aria-hidden="true"
+        aria-labelledby="modalEditarProveedor">
+        <div class="modal-dialog modal-m modal-dialog-centered modal-dialog-scrollable">
+            {%if(prov_sel != Undefined)%}
+            <form method="POST" id="formularioEditarProveedor" class="modal-content" id="modificarProveedor"
+                action="/proveedor/actualizarProveedor?id_prov_upd={{prov_sel.id_proveedor}}">
+                {{form_persona.csrf_token}}
+                <div class="modal-header">
+                    <h4 class="modal-title" id="tituloModalEditarProveedor">Modificar proveedor</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="d-flex">
+                        <h5 class="col-4 m-2 ">Proveedor:</h5>
+                        <div class=" m-2 col-8" id="nombreProveedor">{{prov_sel.nombre_proveedor}}</div>
+                    </div>
+                    <hr>
+                    {{macros.macro_campo_upd_proveedor(form_persona.direccion,prov_sel.persona.direccion)}}
+                    {{macros.macro_campo_upd_proveedor(form_persona.telefono,prov_sel.persona.telefono)}}
+                    {{macros.macro_campo_upd_proveedor(form_persona.correo,prov_sel.persona.correo)}}
+                    <h5 class="m-4 justify-text-center ">Datos del representante:</h5>
+                    {{macros.macro_campo_upd_proveedor(form_persona.nombre,prov_sel.persona.nombre)}}
+                    {{macros.macro_campo_upd_proveedor(form_persona.primer_apellido,prov_sel.persona.primerApellido)}}
+                    {{macros.macro_campo_upd_proveedor(form_persona.segundo_apellido,prov_sel.persona.segundoApellido)}}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button class="btn btn-primary" type="submit">Guardar cambios</button>
+                </div>
+            </form>
+            {%endif%}
+        </div>
+    </div>
+
+
+ 
+</div>
+
+
+<script>
+    const modalesAbiertos = {{ modales| safe }};
+</script>
+{%endblock%}

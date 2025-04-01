@@ -1,0 +1,254 @@
+{% extends 'components/estructura.html' %} {% block titulo %}Inicio - Galletas
+Premium{% endblock %} {% block contenido %}
+
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/page-ventas/ventas.css') }}"
+/>
+<script
+  src="{{ url_for('static', filename='js/page-ventas/galleta.js') }}"
+  defer
+></script>
+<meta name="csrf-token" content="{{ csrf_token() }}" />
+{% macro render_tarjeta_galleta(galleta) %}
+<div class="col-md-6 col-lg-4">
+  <div class="card">
+    <div class="card-img-container">
+      {% if galleta.imagen_galleta %}
+      <img
+        src="data:image/png;base64,{{ galleta.imagen_galleta }}"
+        class="card-img-top"
+        alt="{{ galleta.nombre_galleta }}"
+      />
+      {% else %}
+      <div class="bg-secondary text-white p-5 text-center">No hay imagen</div>
+      {% endif %}
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{ galleta.nombre_galleta }}</h5>
+      <p class="card-text">${{ "%.2f"|format(galleta.precio_galleta) }}</p>
+      <p class="card-text">Stock: {{ galleta.cantidad_galleta }}</p>
+      <form
+        class="formulario-agregar"
+        data-galleta-id="{{ galleta.id_galleta }}"
+        data-galleta-nombre="{{ galleta.nombre_galleta }}"
+        data-galleta-precio="{{ galleta.precio_galleta }}"
+        data-stock="{{ galleta.cantidad_galleta }}"
+      >
+        <input
+          type="number"
+          name="cantidad"
+          value="1"
+          min="1"
+          max="{{ galleta.cantidad_galleta }}"
+          class="form-control mb-2"
+          required
+        />
+        <button type="submit" class="btn btn-warning w-100">
+          Agregar al carrito
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endmacro %} {% macro render_item_carrito(item) %}
+<li class="list-group-item d-flex justify-content-between align-items-center">
+  {{ item.nombre }} {% if item.tipo_venta == 'unidad' %} (x{{ item.cantidad }})
+  {% elif item.tipo_venta == 'peso' %} ({{ item.unidades * 10 }}g) {% elif
+  item.tipo_venta == 'paquete' %} ({{ item.unidades }} unidades) {% endif %} -
+  ${{ "%.2f"|format(item.subtotal) }}
+  <button
+    class="btn btn-danger btn-sm remover-item"
+    data-galleta-id="{{ item.galleta_id }}"
+    data-galleta-nombre="{{ item.nombre }}"
+    data-tipo-venta="{{ item.tipo_venta }}"
+  >
+    ❌
+  </button>
+</li>
+{% endmacro %} {% macro render_form_peso(galleta) %}
+<div class="col-md-6 col-lg-4">
+  <div class="card">
+    <div class="card-img-container">
+      {% if galleta.imagen_galleta %}
+      <img
+        src="data:image/png;base64,{{ galleta.imagen_galleta }}"
+        class="card-img-top"
+        alt="{{ galleta.nombre_galleta }}"
+      />
+      {% else %}
+      <div class="bg-secondary text-white p-5 text-center">No hay imagen</div>
+      {% endif %}
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{ galleta.nombre_galleta }}</h5>
+      <p class="card-text">
+        ${{ "%.2f"|format(galleta.precio_galleta) }} por unidad
+      </p>
+      <p class="card-text">
+        Stock: {{ galleta.cantidad_galleta }} unidades ({{
+        galleta.cantidad_galleta * 10 }}g)
+      </p>
+
+      <form
+        class="formulario-agregar-peso"
+        data-galleta-id="{{ galleta.id_galleta }}"
+        data-galleta-nombre="{{ galleta.nombre_galleta }}"
+        data-galleta-precio="{{ galleta.precio_galleta }}"
+        data-stock="{{ galleta.cantidad_galleta }}"
+      >
+        <div class="form-group mb-2">
+          <label for="peso-{{ galleta.id_galleta }}">Peso (gramos):</label>
+          <input
+            type="number"
+            id="peso-{{ galleta.id_galleta }}"
+            name="peso"
+            value="10"
+            min="10"
+            step="10"
+            max="{{ galleta.cantidad_galleta * 10 }}"
+            class="form-control"
+            oninput="validarPeso(this, {{ galleta.cantidad_galleta }})"
+            required
+          />
+        </div>
+        <div class="form-group mb-2">
+          <label
+            >Equivale a:
+            <span id="unidades-{{ galleta.id_galleta }}">1</span>
+            unidades</label
+          >
+        </div>
+        <button type="submit" class="btn btn-warning w-100">
+          Agregar al carrito
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endmacro %} {% macro render_form_paquete() %}
+<div class="col-md-6 col-lg-4">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Paquetes disponibles</h5>
+      <form id="form-paquete">
+        <div class="form-group mb-3">
+          <label for="galleta-paquete">Seleccione galleta:</label>
+          <select class="form-control" id="galleta-paquete" required>
+            <option value="">-- Seleccione --</option>
+            {% for galleta in galletas %}
+            <option
+              value="{{ galleta.id_galleta }}"
+              data-galleta-id="{{ galleta.id_galleta }}"
+              data-galleta-nombre="{{ galleta.nombre_galleta }}"
+              data-galleta-precio="{{ galleta.precio_galleta }}"
+              data-stock="{{ galleta.cantidad_galleta }}"
+            >
+              {{ galleta.nombre_galleta }}
+            </option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <div class="form-group mb-3">
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="tipo-paquete"
+              id="paquete-1kg"
+              value="1000"
+              data-unidades="100"
+              checked
+            />
+            <label class="form-check-label" for="paquete-1kg">
+              Caja de 1kg (100 unidades) - $<span id="precio-1kg">0.00</span>
+            </label>
+          </div>
+
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="tipo-paquete"
+              id="paquete-700g"
+              value="700"
+              data-unidades="70"
+            />
+            <label class="form-check-label" for="paquete-700g">
+              Caja de 700g (70 unidades) - $<span id="precio-700g">0.00</span>
+            </label>
+          </div>
+
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="tipo-paquete"
+              id="paquete-500g"
+              value="500"
+              data-unidades="50"
+            />
+            <label class="form-check-label" for="paquete-500g">
+              Media caja de 500g (50 unidades) - $<span id="precio-500g"
+                >0.00</span
+              >
+            </label>
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          id="agregarAlCarrito"
+          class="btn btn-warning w-100"
+        >
+          Agregar al carrito
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endmacro %}
+
+<div id="overlay"></div>
+<button id="btn-carrito">
+  🛒 <span id="contador-carrito">{{ carrito|length }}</span>
+</button>
+<div id="carrito">
+  <h4>🛒 Tu Carrito</h4>
+  <ul class="list-group">
+    {% for item in carrito %} {{ render_item_carrito(item) }} {% endfor %}
+  </ul>
+  <p class="text-end mt-3">
+    <strong>Total: ${{ "%.2f"|format(total) }}</strong>
+  </p>
+
+  <button id="vaciar-carrito" class="btn btn-danger w-100 mt-2">
+    Vaciar Carrito
+  </button>
+  <button id="procesar-venta" class="btn btn-success w-100 mt-3">
+    Procesar Venta
+  </button>
+</div>
+
+<div class="custom-container">
+  {% if tipo_venta == 'unidad' %}
+  <h2>Venta por Unidad</h2>
+  <div class="row g-4">
+    {% for galleta in galletas %} {{ render_tarjeta_galleta(galleta) }} {%
+    endfor %}
+  </div>
+
+  {% elif tipo_venta == 'peso' %}
+  <h2>Venta por Peso</h2>
+  <div class="row g-4">
+    {% for galleta in galletas %} {{ render_form_peso(galleta) }} {% endfor %}
+  </div>
+
+  {% elif tipo_venta == 'paquete' %}
+  <h2>Venta por Paquete</h2>
+  <div class="row g-4">{{ render_form_paquete() }}</div>
+  {% endif %}
+</div>
+
+{% endblock %}
