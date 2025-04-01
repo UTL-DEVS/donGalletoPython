@@ -1,0 +1,89 @@
+{% extends 'components/estructura.html' %} {% block titulo %}Inicio Cliente{%
+endblock %} {% block contenido %} {% import 'components/_macro_login.html' as
+macros %}
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+/>
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/page-ventas/tipo_venta.css') }}"
+/>
+<script
+  src="{{ url_for('static', filename='js/page-ventas/resumen.js') }}"
+  defer
+></script>
+<br />
+
+<meta name="csrf-token" content="{{ csrf_token() }}" />
+<button id="corte-ventas" class="btn">
+  <i class="fas fa-file-alt"></i> Corte de Ventas
+</button>
+
+<div class="custom-container mt-5">
+  <h1 class="text-center">Seleccione método de compra</h1>
+
+  <div class="row mt-5">
+    <div class="col-md-4">
+      <a
+        href="{{ url_for('venta.ventas', tipo='unidad') }}"
+        style="text-decoration: none"
+      >
+        <div class="card">
+          <div class="card-img-container">
+            <img
+              src="{{ url_for('static', filename='img/galleta_menu.png') }}"
+              alt="Galletas"
+            />
+          </div>
+          <div class="card-body">
+            <h5 class="card-title mt-4">Por Unidad</h5>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-md-4">
+      <a
+        href="{{ url_for('venta.ventas', tipo='paquete') }}"
+        style="text-decoration: none"
+      >
+        <div class="card">
+          <div class="card-img-container">
+            <img
+              src="{{ url_for('static', filename='img/paquete_menu.png') }}"
+              alt="Paquete"
+            />
+          </div>
+          <div class="card-body">
+            <h5 class="card-title mt-4">Por Paquete</h5>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-md-4">
+      <a
+        href="{{ url_for('venta.ventas', tipo='peso') }}"
+        style="text-decoration: none"
+      >
+        <div class="card">
+          <div class="card-img-container">
+            <img
+              src="{{ url_for('static', filename='img/buscula_menu.png') }}"
+              alt="Peso"
+            />
+          </div>
+          <div class="card-body">
+            <h5 class="card-title mt-4">Por Peso</h5>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<br />
+<br />
+
+{% endblock %}
