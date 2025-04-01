@@ -13,6 +13,7 @@ def registro():
         usuario = form.usuario.data
         contrasenia = form.contrasenia.data
         captcha = form.captcha.data
+        
         resultado = controller_registro(email, usuario, contrasenia, captcha)
         if resultado is False:
             return redirect('/registro')

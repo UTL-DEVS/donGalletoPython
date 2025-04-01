@@ -19,6 +19,10 @@ class Usuario(db.Model, UserMixin):
     contrasenia = db.Column(db.String(120), nullable=False)
     sistema = db.Column(db.Integer, nullable=False, server_default='0' )
     
+    
+    def get_id(self):
+        return str(self.id) 
+    
     def generar_token(self):
         token_bytes = secrets.token_bytes(32)
         self.token = base64.b64encode(token_bytes).decode('utf-8')

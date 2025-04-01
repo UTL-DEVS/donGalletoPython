@@ -4,6 +4,7 @@ from utils import session
 import os
 from datetime import datetime
 from utils import redirect
+from utils import login_user
 
 
 from funcs import delate_captcha_session, verificar_captcha
@@ -35,6 +36,7 @@ def dao_login(usuario, contrasenia, captcha_data):
 def verify_user(usuario, contrasenia):
         usuario_local = db.session.query(Usuario).filter(Usuario.usuario == usuario, Usuario.contrasenia == contrasenia).first()
         if usuario_local:
+                login_user(usuario_local)
                 nombre_usuario = usuario_local.usuario
                 rol_usuario = usuario_local.rol_user
                 usuario_local.generar_token()  # Genera el token y lo guarda

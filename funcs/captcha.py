@@ -36,12 +36,12 @@ def delate_captcha_session(captcha):
 def verificar_captcha():
     captcha_txt = session.get('captcha_txt')
     captcha_time = session.get('captcha_time')
-    
+    print(captcha_txt)
     if captcha_time.tzinfo is not None:
         captcha_time = captcha_time.replace(tzinfo=None)  # Convertirlo a naive (sin zona horaria)
 
     actual = datetime.now()
-
+    
 
     captcha_time_minute = captcha_time.replace(second=0, microsecond=0)
     actual_minute = actual.replace(second=0, microsecond=0)
