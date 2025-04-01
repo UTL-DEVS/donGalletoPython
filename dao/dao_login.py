@@ -5,6 +5,7 @@ import os
 from datetime import datetime
 from utils import redirect
 
+
 from funcs import delate_captcha_session, verificar_captcha
 
 def dao_login(usuario, contrasenia, captcha_data):
@@ -26,6 +27,8 @@ def dao_login(usuario, contrasenia, captcha_data):
                 rol_user = datos[1]
                 if rol_user == 1:
                     return redirect('/cliente')
+                elif rol_user == 0:
+                    return redirect('/receta')
             else:
                 return False
             
