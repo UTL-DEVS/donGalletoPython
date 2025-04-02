@@ -1,53 +1,52 @@
 {% extends 'components/_estructura_admin.html' %}
 {% block titulo %}Agregar Receta{% endblock %}
 {% block contenido %}
-    <div class="container mt-5 text-center">
+<div class="container mt-5 text-center">
 
-        <table class="table table-striped shadow ">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Imagen</th>
-                    <th scope="col">Nombre Galleta</th>
-                    <th scope="col">Precio</th>
-                    <th scope="col">Fecha creacion</th>
-                    <th scope="col">
-                    <a href="/agregar" class="btn btn-primary">Agregar galleta</a>
-                    </th>
-                    <th scope="col">
+    <table class="table table-striped shadow ">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Imagen</th>
+                <th scope="col">Nombre Galleta</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Fecha creacion</th>
+                <th scope="col">
+                    <a href="/galleta/agregar" class="btn btn-primary">Agregar galleta</a>
+                </th>
+                <th scope="col">
 
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>img galleta</td>
-                    <td>Galleta Chocolate</td>
-                    <td>$ 25.5</td>
-                    <td>01/04/2025</td>
-                    <td>
-                        <a href="/modificad/id" class="btn btn-warning">Modificar</a>
-                    </td>
-                    <td>
-                    <a href="/eliminar/id" class="btn btn-danger">Eliminar</a>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>img galleta</td>
-                    <td>Galleta Chocolate</td>
-                    <td>$ 25.5</td>
-                    <td>01/04/2025</td>
-                    <td>
-                        <a href="/modificad/id" class="btn btn-warning">Modificar</a>
-                    </td>
-                    <td>
-                    <a href="/eliminar/id" class="btn btn-danger">Eliminar</a>
-                    </td>
-                </tr>
-               
-            </tbody>
-        </table>
-    </div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {%for galleta in galletas%}
+            <tr>
+                <th scope="row">1</th>
+                <td>
+                    <img src="data:image/png;base64,{{ galleta.imagen_galleta }}" alt="" class="img-fluid"
+                        style="height: 50px;">
+                </td>
+                <td>{{galleta.nombre_galleta}}</td>
+                <td>$ {{galleta.precio_galleta}}</td>
+                <td>{{galleta.fecha_creacion.strftime('%Y-%m-%d')}}</td>
+                <td>
+                    <a href="/galleta/modificar/{{galleta.id_galleta}}" class="btn btn-warning">Modificar</a>
+                </td>
+                <td>
+                    {%if galleta.activo == False%}
+                    <a href="/galleta/activar/{{galleta.id_galleta}}" class="btn btn-success">Activar</a>
+                    {%else%}
+                    <a href="/galleta/desactivar/{{galleta.id_galleta}}" class="btn btn-danger">Desactivar</a>
+                    {%endif%}
+                </td>
+            </tr>
+            {%endfor%}
+           
+
+        </tbody>
+    </table>
+
+</div>
 {%endblock%}
