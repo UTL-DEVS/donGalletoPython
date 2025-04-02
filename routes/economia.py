@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template,request
+from utils import Blueprint, render_template, redirect, request, login_required, current_user
 from controller import controller_economia
 import json
 
@@ -6,6 +6,7 @@ economia_bp = Blueprint('economia', __name__,url_prefix='/economia', template_fo
 
 
 @economia_bp.route("/", methods=['GET'])
+@login_required
 def dashboard():
     fechas_ventas = controller_economia.obtener_fechas_ventas()
     print(f'fechas: {fechas_ventas}')
@@ -25,8 +26,7 @@ def dashboard():
         }
         for venta in lista_ventas
     ])
-    for v in lista_ventas:
-        print(f'F: {v.fecha}')
-        print(f't: {v.total}')
+    if current_user.rol_user != 0 :
+        return redirect('/login')
 
     return render_template('pages/page-economia/dashboard.html',rango_fechas_ventas=fechas_ventas,lista_ventas=lista_ventas_json)

@@ -35,21 +35,22 @@
                         </tr>
                     </thead>
                     <tbody>
+                      
                         {%for empleado in lista_empleados%}
-                        <tr {%if(empleado.persona.estatus==0)%}class="table-danger"{%endif%}>
+                        <tr {%if(empleado.persona.estatus==0)%}class="table-danger" {%endif%}>
                             <th scope="row">{{loop.index}}</th>
                             <td>{{empleado.persona.nombre}}</td>
 
                             <td>
-                            {%if (empleado.usuario.rol_user == 2)%}
+                                {%if (empleado.usuario.rol_user == 2)%}
                                 Administardor
-                            {%elif (empleado.usuario.rol_user == 3)%}
+                                {%elif (empleado.usuario.rol_user == 3)%}
                                 Cocinero
-                            {%elif (empleado.usuario.rol_user == 4)%}
+                                {%elif (empleado.usuario.rol_user == 4)%}
                                 Cajero
-                            {%else%}
+                                {%else%}
                                 Desconocido
-                            {%endif%}
+                                {%endif%}
                             </td>
                             <td class="">
                                 <a href="/empleado/detallesEmpleado?id_prov={{empleado.id_empleado}}&modal=detalle"><button
@@ -60,23 +61,25 @@
                                         class="btn btn-primary bg-warning">
                                         <i class="bi bi-pencil-square"></i>
                                     </button></a>
-                                    {%if(empleado.persona.estatus!=0)%}                              
-                                        <button onclick="ventanaConfirmarEliminacion({{empleado.id_empleado}});"
-                                            class="btn btn-primary bg-danger" data-bs-toggle="modal"
-                                            data-bs-target="#confirmarEliminarempleado">
-                                            <i class="bi bi-trash"></i>
-                                        </button>
-                                    {%else%}
-                                        <button onclick="ventanaConfirmarReactivacion({{empleado.id_empleado}});"
-                                            class="btn btn-primary bg-success" data-bs-toggle="modal"
-                                            data-bs-target="#confirmarEliminarempleado">
-                                            <i class="bi bi-check-square"></i>
-                                        </button>
-                                    {%endif%}  
+                                {%if(empleado.persona.estatus!=0)%}
+                                <button onclick="ventanaConfirmarEliminacion({{empleado.id_empleado}});"
+                                    class="btn btn-primary bg-danger" data-bs-toggle="modal"
+                                    data-bs-target="#confirmarEliminarempleado">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                                {%else%}
+                                <button onclick="ventanaConfirmarReactivacion({{empleado.id_empleado}});"
+                                    class="btn btn-primary bg-success" data-bs-toggle="modal"
+                                    data-bs-target="#confirmarEliminarempleado">
+                                    <i class="bi bi-check-square"></i>
+                                </button>
+                                {%endif%}
                             </td>
                         </tr>
                         {%endfor%}
-
+                        {%if ( not lista_empleados )%}
+                            <h5 class="text-center">No hay empleados registrados</h3>
+                        {%endif%}
                     </tbody>
                 </table>
             </div>
@@ -84,22 +87,60 @@
         </div>
     </div>
 
+    <!-- Modal agregar empleado -->
+    <div class="shadow modal fade" id="modalAgregarEmpleado" style="display: none;" tabindex="-1" aria-hidden="true"
+        aria-labelledby="modalAgregarEmpleado">
+        <div class="modal-dialog modal-m modal-dialog-centered modal-dialog-scrollable">
+            {%if (form_empleado!=None)%}
+
+            <form class="modal-content" id="agregarProveedor" method="POST" action="/usuario/agregarEmpleado">
+                {{form_persona.csrf_token}}
+
+                <div class="modal-header">
+                    <h4 class="modal-title" id="tituloModalAgregarEmpleado">Agregar empleado</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h5 class="m-4 justify-text-center ">Datos del personales:</h5>
+                    {{macros.macro_campo_upd_proveedor(form_empleado.sueldo)}}
+                    {{macros.macro_campo_upd_proveedor(form_persona.nombre)}}
+                    {{macros.macro_campo_upd_proveedor(form_persona.primer_apellido)}}
+                    {{macros.macro_campo_upd_proveedor(form_persona.segundo_apellido)}}
+                    {{macros.macro_campo_upd_proveedor(form_persona.direccion)}}
+                    {{macros.macro_campo_upd_proveedor(form_persona.telefono)}}
+                    
+                    <h5 class="m-4 justify-text-center ">Datos del de usuario:</h5>
+                    {{macros.macro_campo_upd_proveedor(form_usuario.correo)}}
+                    {{macros.macro_campo_upd_proveedor(form_usuario.rol_user)}}
+
+                    
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+            </form>
+            {%endif%}
+        </div>
+    </div>
+
     <!-- Modal editar empleado-->
-    <div class="shadow modal fade" id="modalEditarProveedor" style="display: none;" tabindex="-1" aria-hidden="true"
-        aria-labelledby="modalEditarProveedor">
+    <div class="shadow modal fade" id="modalEditarEmpleado" style="display: none;" tabindex="-1" aria-hidden="true"
+        aria-labelledby="modalEditarEmpleado">
         <div class="modal-dialog modal-m modal-dialog-centered modal-dialog-scrollable">
             {%if(prov_sel != Undefined)%}
-            <form method="POST" id="formularioEditarProveedor" class="modal-content" id="modificarProveedor"
-                action="/proveedor/actualizarProveedor?id_prov_upd={{prov_sel.id_proveedor}}">
+            <form method="POST" id="formularioEditarEmpleado" class="modal-content" id="modificarEmpleado"
+                action="/proveedor/actualizarEmpleado?id_prov_upd={{prov_sel.id_proveedor}}">
                 {{form_persona.csrf_token}}
                 <div class="modal-header">
-                    <h4 class="modal-title" id="tituloModalEditarProveedor">Modificar proveedor</h4>
+                    <h4 class="modal-title" id="tituloModalEditarEmpleado">Modificar proveedor</h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="d-flex">
-                        <h5 class="col-4 m-2 ">Proveedor:</h5>
-                        <div class=" m-2 col-8" id="nombreProveedor">{{prov_sel.nombre_proveedor}}</div>
+                        <h5 class="col-4 m-2 ">Empleado:</h5>
+                        <div class=" m-2 col-8" id="nombreEmpleado">{{prov_sel.nombre_proveedor}}</div>
                     </div>
                     <hr>
                     {{macros.macro_campo_upd_proveedor(form_persona.direccion,prov_sel.persona.direccion)}}
@@ -120,7 +161,7 @@
     </div>
 
 
- 
+
 </div>
 
 

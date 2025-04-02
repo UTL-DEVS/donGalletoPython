@@ -12,6 +12,7 @@ select * from galletas;
 
 DESCRIBE galletas;
 INSERT INTO usuario(rol_user, email,usuario, contrasenia,token) VALUES (0,'joelbriones@gmail.com', 'joel1234567', 'Joel123456$','00');
+INSERT INTO usuario(rol_user, email,usuario, contrasenia,token) VALUES (0,'carlospadilla@gmail.com', 'carlos1234567', 'Carlos123456$','00');
 
 
 
