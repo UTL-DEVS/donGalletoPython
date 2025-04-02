@@ -50,15 +50,14 @@ login_manager.init_app(app)
 
 @app.route('/')
 def init():
+        return 'landin'
+@app.route('/login_home')
+def init_login():
     form = login_form()  
-
-    
     captcha_base64 = captcha_info()
     
     # Renderizar la plantilla con la imagen en Base64
     return render_template('pages/login.html', form=form, captcha_base64=captcha_base64)
-        
-
 
 @login_manager.user_loader
 def load_user(user_id):
