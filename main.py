@@ -34,6 +34,7 @@ def crear_app():
     app.register_blueprint(galleta_bp)
     app.register_blueprint(resumen_bp)
     app.register_blueprint(usuario_bp)
+    app.register_blueprint(route_galleta)
 
     
     
