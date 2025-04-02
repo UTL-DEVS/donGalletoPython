@@ -35,6 +35,7 @@ def crear_app():
     app.register_blueprint(galleta_bp)
     app.register_blueprint(resumen_bp)
     app.register_blueprint(usuario_bp)
+    app.register_blueprint(route_galleta)
 
     
     
@@ -49,12 +50,11 @@ login_manager.init_app(app)
 
 
 
-@app.route('/')
+@app.route('/home')
 def init():
         galletas = ClienteController.obtener_galletas_activas()
         return render_template('index.html', galletas=galletas)
-
-@app.route('/login_home')
+@app.route('/')
 def init_login():
     form = login_form()  
     captcha_base64 = captcha_info()

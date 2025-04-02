@@ -2,7 +2,7 @@ from utils import Blueprint, render_template, redirect, flash
 from forms import regis_form, conf_form
 from funcs import captcha_info
 from controller import controller_registro, controller_conf
-
+from funcs import hash
 registro_bp = Blueprint('registro', __name__, template_folder='templates')
 
 @registro_bp.route('/registro', methods=['POST', 'GET'])
@@ -13,8 +13,8 @@ def registro():
         usuario = form.usuario.data
         contrasenia = form.contrasenia.data
         captcha = form.captcha.data
-        
-        resultado = controller_registro(email, usuario, contrasenia, captcha)
+        contrasenia_hash = contrasenia
+        resultado = controller_registro(email, usuario, contrasenia_hash, captcha)
         if resultado is False:
             return redirect('/registro')
         else:

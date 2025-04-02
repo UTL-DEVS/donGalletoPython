@@ -30,6 +30,8 @@ def dao_login(usuario, contrasenia, captcha_data):
         if dato > 60:
             delate_captcha_session('captcha_txt')
             return False  # if was passed more to one minute don't leave pass
+        if captcha_txt != captcha_data:
+            return False
         else:
             datos =  verify_user(usuario=usuario, contrasenia=contrasenia)
             if datos:
