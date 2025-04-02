@@ -1,7 +1,53 @@
 {% extends 'components/_estructura_admin.html' %}
 {% block titulo %}Agregar Receta{% endblock %}
 {% block contenido %}
+    <div class="container mt-5 text-center">
 
-<h1>hola mundo desde galletas</h1>
+        <table class="table table-striped shadow ">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Imagen</th>
+                    <th scope="col">Nombre Galleta</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Fecha creacion</th>
+                    <th scope="col">
+                    <a href="/agregar" class="btn btn-primary">Agregar galleta</a>
+                    </th>
+                    <th scope="col">
 
-{% endblock %}
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>img galleta</td>
+                    <td>Galleta Chocolate</td>
+                    <td>$ 25.5</td>
+                    <td>01/04/2025</td>
+                    <td>
+                        <a href="/modificad/id" class="btn btn-warning">Modificar</a>
+                    </td>
+                    <td>
+                    <a href="/eliminar/id" class="btn btn-danger">Eliminar</a>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>img galleta</td>
+                    <td>Galleta Chocolate</td>
+                    <td>$ 25.5</td>
+                    <td>01/04/2025</td>
+                    <td>
+                        <a href="/modificad/id" class="btn btn-warning">Modificar</a>
+                    </td>
+                    <td>
+                    <a href="/eliminar/id" class="btn btn-danger">Eliminar</a>
+                    </td>
+                </tr>
+               
+            </tbody>
+        </table>
+    </div>
+{%endblock%}
