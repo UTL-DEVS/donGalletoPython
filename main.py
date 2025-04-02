@@ -49,10 +49,10 @@ login_manager.init_app(app)
 
 
 
-@app.route('/')
+@app.route('/home')
 def init():
         return 'landin'
-@app.route('/login_home')
+@app.route('/')
 def init_login():
     form = login_form()  
     captcha_base64 = captcha_info()
