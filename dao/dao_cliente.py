@@ -12,10 +12,7 @@ class dao_cliente:
         Galleta.precio_galleta,
         Galleta.imagen_galleta,
         Galleta.descripcion_galleta,
-        # Opción 1: Si la columna existe como cantidad_galleta en la BD
         Galleta.cantidad_galleta,
-        # Opción 2: Si necesitas un valor fijo (0) porque la columna no existe
-        # db.literal(0).label('cantidad_galleta'),
         Galleta.fecha_creacion,
         Galleta.activo
     ).filter(Galleta.activo == True).all()
@@ -52,7 +49,7 @@ class dao_cliente:
                     id_galleta=item['id'],
                     cantidad=item['cantidad'],
                     precio_unitario=item['precio'],
-                    tipo_pedido=item['tipo_pedido']
+                    tipo_pedido=item['tipo_pedido'],
                 )
                 db.session.add(detalle)
             

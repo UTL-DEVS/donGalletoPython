@@ -3,6 +3,7 @@ from routes import *
 from forms import *
 from connection import *
 from models import *
+from controller import *
 
 import hashlib
 import random
@@ -50,7 +51,9 @@ login_manager.init_app(app)
 
 @app.route('/')
 def init():
-        return 'landin'
+        galletas = ClienteController.obtener_galletas_activas()
+        return render_template('index.html', galletas=galletas)
+
 @app.route('/login_home')
 def init_login():
     form = login_form()  

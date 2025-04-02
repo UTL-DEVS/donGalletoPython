@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Delicias Mágicas - Galletas artesanales hechas con ingredientes naturales y mucho amor. Prueba nuestros exclusivos sabores premium.">
+    <title>Delicias Mágicas | Galletas Artesanales Premium</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+          --color-primario: #FF6B6B;
+          --color-primario-oscuro: #e05555;
+          --color-secundario: #4ECDC4;
+          --color-oscuro: #292F36;
+          --color-oscuro-80: rgba(41, 47, 54, 0.8);
+          --color-claro: #F7FFF7;
+          --color-acento: #FFE66D;
+          --color-texto: #333333;
+          --color-fondo: #FFF9F5;
+          --sombra: 0 4px 20px rgba(0, 0, 0, 0.1);
+          --transicion: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        body {
+          font-family: 'Poppins', sans-serif;
+          overflow-x: hidden;
+          color: var(--color-texto);
+          background-color: var(--color-fondo);
+          line-height: 1.6;
+        }
+
+        /* Navegación mejorada */
+        .navbar {
+          transition: var(--transicion);
+          padding: 1.5rem 0;
+          background-color: transparent;
+        }
+
+        .navbar.scrolled {
+          background-color: var(--color-oscuro-80) !important;
+          backdrop-filter: blur(10px);
+          padding: 0.8rem 0;
+          box-shadow: var(--sombra);
+        }
+
+        .nav-link {
+          font-weight: 500;
+          padding: 0.5rem 1rem;
+          margin: 0 0.2rem;
+          border-radius: 50px;
+          transition: var(--transicion);
+        }
+
+        .nav-link:hover, .nav-link.active {
+          background-color: rgba(255, 255, 255, 0.1);
+          color: var(--color-acento) !important;
+        }
+
+        .logo {
+          height: 75px;
+          transition: var(--transicion);
+        }
+
+        /* Hero section */
+        .hero-section {
+          background: linear-gradient(to right, rgba(41, 47, 54, 0.9), rgba(41, 47, 54, 0.7)), 
+                      url('{{ url_for("static", filename="img/casa-cliente.jpg") }}');
+          background-size: cover;
+          background-position: center;
+          background-attachment: fixed;
+          min-height: 100vh;
+          color: white;
+          display: flex;
+          align-items: center;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .hero-section::before {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 100px;
+          background: linear-gradient(to top, var(--color-fondo), transparent);
+          z-index: 1;
+        }
+
+        .hero-content {
+          position: relative;
+          z-index: 2;
+        }
+
+        .hero-img {
+          filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+          max-height: 500px;
+          object-fit: contain;
+        }
+
+        /* Botones */
+        .btn-magic {
+          background-color: var(--color-primario);
+          color: white;
+          border: none;
+          padding: 12px 30px;
+          border-radius: 50px;
+          font-weight: 600;
+          transition: var(--transicion);
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+        }
+
+        .btn-magic:hover {
+          background-color: var(--color-primario-oscuro);
+          color: white;
+          transform: translateY(-3px);
+          box-shadow: 0 15px 30px rgba(255, 107, 107, 0.5);
+        }
+
+        .btn-outline-light:hover {
+          color: var(--color-oscuro) !important;
+        }
+
+        /* Secciones */
+        .section {
+          padding: 6rem 0;
+          position: relative;
+        }
+
+        .section-title {
+          position: relative;
+          display: inline-block;
+          margin-bottom: 3rem;
+          font-weight: 700;
+        }
+
+        .section-title::after {
+          content: '';
+          position: absolute;
+          width: 50%;
+          height: 4px;
+          background: var(--color-primario);
+          bottom: -15px;
+          left: 25%;
+          border-radius: 2px;
+        }
+
+        /* Cards de productos */
+        .product-card {
+          border: none;
+          border-radius: 15px;
+          overflow: hidden;
+          transition: var(--transicion);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+          height: 100%;
+          background: white;
+        }
+
+        .product-card:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-img {
+          height: 220px;
+          object-fit: cover;
+          transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-img {
+          transform: scale(1.05);
+        }
+
+        .badge-new {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          background: var(--color-acento);
+          color: var(--color-oscuro);
+          font-weight: 600;
+          padding: 0.5rem 1rem;
+          border-radius: 50px;
+          text-transform: uppercase;
+          font-size: 0.7rem;
+          letter-spacing: 1px;
+        }
+
+        /* Animaciones mejoradas */
+        @keyframes float {
+          0% { transform: translateY(0px); }
+          50% { transform: translateY(-20px); }
+          100% { transform: translateY(0px); }
+        }
+
+        .floating {
+          animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes rotate {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+
+        .rotating {
+          animation: rotate 30s linear infinite;
+        }
+
+        /* Testimonios */
+        .testimonial-card {
+          background: white;
+          border-radius: 15px;
+          box-shadow: var(--sombra);
+          padding: 2rem;
+          position: relative;
+          height: 100%;
+          transition: var(--transicion);
+        }
+
+        .testimonial-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-card::before {
+          content: '"';
+          font-size: 100px;
+          position: absolute;
+          top: -30px;
+          left: 20px;
+          color: rgba(0, 0, 0, 0.05);
+          font-family: serif;
+          line-height: 1;
+        }
+
+        .star {
+          color: var(--color-acento);
+          margin-right: 3px;
+        }
+
+        /* Sección destacada */
+        .featured-section {
+          position: relative;
+          overflow: hidden;
+        }
+
+        .featured-section::before {
+          content: '';
+          position: absolute;
+          width: 200px;
+          height: 200px;
+          background: url('https://cdn.pixabay.com/photo/2014/04/03/00/41/cookie-309168_960_720.png') no-repeat;
+          background-size: contain;
+          opacity: 0.1;
+          z-index: 0;
+          animation: rotate 60s linear infinite;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+
+        .featured-content {
+          position: relative;
+          z-index: 1;
+          background: white;
+          padding: 3rem;
+          border-radius: 15px;
+          box-shadow: var(--sombra);
+        }
+        /* Footer mejorado */
+        footer {
+          background: var(--color-oscuro);
+          color: white;
+          position: relative;
+          padding-top: 5rem;
+        }
+
+        footer::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100px;
+          background: linear-gradient(to bottom, var(--color-fondo), transparent);
+        }
+
+        .social-icon {
+          width: 40px;
+          height: 40px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          background: rgba(255, 255, 255, 0.1);
+          border-radius: 50%;
+          margin-right: 10px;
+          transition: var(--transicion);
+          color: white;
+        }
+
+        .social-icon:hover {
+          background: var(--color-primario);
+          transform: translateY(-5px);
+          color: white;
+        }
+
+        .footer-link {
+          color: rgba(255, 255, 255, 0.7);
+          transition: var(--transicion);
+          text-decoration: none;
+          display: inline-block;
+          margin-bottom: 0.5rem;
+        }
+
+        .footer-link:hover {
+          color: var(--color-acento);
+          transform: translateX(5px);
+        }
+
+        /* Mejoras de accesibilidad */
+        a:focus, button:focus {
+          outline: 2px dashed var(--color-acento);
+          outline-offset: 3px;
+        }
+
+        /* Efectos hover mejorados */
+        .hover-effect {
+          transition: var(--transicion);
+        }
+
+        .hover-effect:hover {
+          transform: scale(1.03);
+        }
+
+        /* Responsive mejorado */
+        @media (max-width: 992px) {
+          .hero-section {
+            text-align: center;
+            background-attachment: scroll;
+          }
+          
+          .hero-img {
+            max-height: 400px;
+            margin-top: 2rem;
+          }
+          
+          .section {
+            padding: 4rem 0;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .navbar {
+            padding: 1rem 0;
+          }
+          
+          .display-3 {
+            font-size: 2.5rem;
+          }
+          
+          .hero-img {
+            max-height: 300px;
+          }
+        }
+
+        @media (max-width: 576px) {
+          .btn-magic {
+            width: 100%;
+            margin-bottom: 1rem;
+          }
+          
+          .section-title::after {
+            width: 70%;
+            left: 15%;
+          }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navegación Mejorada -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#inicio" aria-label="La Casa de la Galleta - Inicio">
+                <img src="{{url_for('static', filename='img/logo_la_casa_de_la_galleta.jpeg')}}" alt="La Casa de la Galleta" class="logo rounded-5" loading="lazy">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#inicio">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sabores">Sabores</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#nosotros">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonios">Testimonios</a>
+                    </li>
+                </ul>
+                <a href="/login_home" class="btn btn-magic ms-lg-3">Ordenar Ahora</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section Mejorada -->
+    <section class="hero-section" id="inicio">
+        <div class="container hero-content">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-3 fw-bold mb-4 animate__animated animate__fadeInDown">Galletas que <span class="text-warning">encantan</span> el corazón</h1>
+                    <p class="lead mb-5 animate__animated animate__fadeIn animate__delay-1s">Hechas a mano con ingredientes naturales y mucho amor. Cada bocado es una experiencia mágica.</p>
+                    <div class="d-flex flex-wrap animate__animated animate__fadeIn animate__delay-2s">
+                        <a href="#sabores" class="btn btn-magic me-3 mb-3">Nuestros Sabores</a>
+                        <a href="/login_home" class="btn btn-outline-light mb-3">Hacer Pedido</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 animate__animated animate__fadeInRight animate__delay-1s">
+                    <img src="https://images.unsplash.com/photo-1618923850107-d1a234d7a73a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80" alt="Galletas artesanales Delicias Mágicas" class="img-fluid floating hero-img rounded-3" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Sección de Sabores de Galletas -->
+<section class="section" id="sabores">
+  <div class="container">
+      <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+              <h2 class="section-title animate__animated animate__fadeIn">Nuestras <span class="text-danger">Galletas</span> Artesanales</h2>
+              <p class="lead mb-5 animate__animated animate__fadeIn animate__delay-1s">Descubre nuestra exclusiva selección de galletas premium</p>
+          </div>
+      </div>
+            <!-- Galletas principales (primeras 4) -->
+<div class="row g-4">
+  {% for galleta in galletas[:4] %}
+  <div class="col-md-6 col-lg-3 animate__animated animate__fadeInUp">
+      <div class="product-card hover-effect">
+          <img src="{{ url_for('static', filename='img/galletas/' + galleta.imagen_galleta) if galleta.imagen_galleta else 'https://via.placeholder.com/300x200?text=Galleta' }}" class="card-img-top product-img" alt="{{ galleta.nombre_galleta }}" loading="lazy">
+          <div class="card-body">
+              <h3 class="card-title h5">{{ galleta.nombre_galleta }}</h3>
+              <p class="card-text text-muted">{{ galleta.descripcion_galleta or 'Deliciosa galleta artesanal' }}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                  <span class="h5 text-danger mb-0">${{ "%.2f"|format(galleta.precio_galleta) }}/unidad</span>
+                  <a href="/login_home" class="btn btn-sm btn-outline-danger">Ver detalles</a>
+              </div>
+          </div>
+      </div>
+  </div>
+  {% endfor %}
+</div>
+
+
+<!-- Galletas adicionales (resto) -->
+{% if galletas|length > 4 %}
+<div class="row g-4 mt-4 d-none" id="mas-galletas">
+  {% for galleta in galletas[4:] %}
+  <div class="col-md-6 col-lg-3">
+      <div class="product-card hover-effect">
+          <img src="{{ url_for('static', filename='img/galletas/' + galleta.imagen_galleta) if galleta.imagen_galleta else 'https://via.placeholder.com/300x200?text=Galleta' }}" class="card-img-top product-img" alt="{{ galleta.nombre_galleta }}" loading="lazy">
+          <div class="card-body">
+              <h3 class="card-title h5">{{ galleta.nombre_galleta }}</h3>
+              <p class="card-text text-muted">{{ galleta.descripcion_galleta or 'Deliciosa galleta artesanal' }}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                  <span class="h5 text-danger mb-0">${{ "%.2f"|format(galleta.precio_galleta) }}/unidad</span>
+                  <a href="/login_home" class="btn btn-sm btn-outline-danger">Ver detalles</a>
+              </div>
+          </div>
+      </div>
+  </div>
+  {% endfor %}
+</div>
+
+<!-- Botón para ver más sabores -->
+<div class="text-center mt-5 animate__animated animate__fadeIn animate__delay-4s">
+  <button id="ver-mas-btn" class="btn btn-outline-danger">Ver Más Sabores</button>
+</div>
+{% endif %}
+</section>
+
+
+
+
+    <!-- Nosotros Section Mejorada -->
+    <section class="section bg-light" id="nosotros">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0 animate__animated animate__fadeInLeft">
+                    <img src="https://images.unsplash.com/photo-1603532648955-039310d9ed75?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Nuestro proceso artesanal" class="img-fluid rounded shadow-lg hover-effect" loading="lazy">
+                </div>
+                <div class="col-lg-6 animate__animated animate__fadeInRight">
+                    <h2 class="section-title">Nuestra <span class="text-danger">Historia</span></h2>
+                    <p class="lead">La Casa de la Galleta nació de una pasión por la repostería.</p>
+                    <p>Todo comenzó en 2024 en un pequeño horno familiar, donde experimentábamos con recetas tradicionales y modernas. Lo que empezó como un hobby se convirtió en un negocio próspero gracias al amor de nuestros clientes.</p>
+                    <p>Hoy mantenemos ese toque unico, usando solo ingredientes naturales y técnicas tradicionales, combinadas con un toque de innovación.</p>
+                    <div class="mt-4">
+                        <div class="d-flex mb-3">
+                            <div class="me-4 text-danger">
+                                <i class="fas fa-heart fa-2x"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-1">Hecho con Amor</h5>
+                                <p class="mb-0 text-muted">Cada galleta es elaborada con dedicación y cuidado.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <div class="me-4 text-danger">
+                                <i class="fas fa-leaf fa-2x"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-1">Ingredientes Naturales</h5>
+                                <p class="mb-0 text-muted">Sin conservantes ni aditivos artificiales.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="me-4 text-danger">
+                                <i class="fas fa-award fa-2x"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-1">Premiadas</h5>
+                                <p class="mb-0 text-muted">Reconocidas como las mejores galletas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios Section Mejorada -->
+    <section class="section" id="testimonios">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="section-title animate__animated animate__fadeIn">Lo que dicen <span class="text-danger">nuestros clientes</span></h2>
+                    <p class="lead mb-5 animate__animated animate__fadeIn animate__delay-1s">Más de 5,000 clientes satisfechos</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4 animate__animated animate__fadeInUp">
+                    <div class="testimonial-card">
+                        <div class="mb-3">
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                        </div>
+                        <p class="mb-4">"Las mejores galletas que he probado en mi vida. El sabor del chocolate premium es simplemente increíble. ¡No puedo parar de comerlas!"</p>
+                        <div class="d-flex align-items-center">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="María González" class="rounded-circle me-3" width="50" loading="lazy">
+                            <div>
+                                <h5 class="mb-0">María González</h5>
+                                <small class="text-muted">Cliente frecuente</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 animate__animated animate__fadeInUp animate__delay-1s">
+                    <div class="testimonial-card">
+                        <div class="mb-3">
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                        </div>
+                        <p class="mb-4">"Pedí las galletas para mi boda y fueron el éxito de la fiesta. Todos preguntaban dónde las había comprado. ¡Gracias por hacer nuestro día más dulce!"</p>
+                        <div class="d-flex align-items-center">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Ana Martínez" class="rounded-circle me-3" width="50" loading="lazy">
+                            <div>
+                                <h5 class="mb-0">Ana Martínez</h5>
+                                <small class="text-muted">Cliente de evento</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 animate__animated animate__fadeInUp animate__delay-2s">
+                    <div class="testimonial-card">
+                        <div class="mb-3">
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star-half-alt star"></i>
+                        </div>
+                        <p class="mb-4">"Como food blogger he probado galletas en todo el mundo, pero las de Delicias Mágicas son especiales. La textura perfecta y sabores auténticos."</p>
+                        <div class="d-flex align-items-center">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Carlos López" class="rounded-circle me-3" width="50" loading="lazy">
+                            <div>
+                                <h5 class="mb-0">Carlos López</h5>
+                                <small class="text-muted">Blogger gastronómico</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conoce nuestros paquetes -->
+    <section class="section featured-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center featured-content animate__animated animate__pulse animate__infinite">
+                    <h2 class="display-4 fw-bold mb-4">¡Conoce nuestros paquetes!</h2>
+                    <h3 class="text-danger mb-4">Paquetes de 700g o 1 kg</h3>
+                    <p class="lead mb-5">Una combinación única ademas de los sabores de galletas que te encantarán.</p>
+                    <a href="/login_home" class="btn btn-magic btn-lg">Probar Ahora</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer Mejorado -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <img src="https://via.placeholder.com/150x50.png?text=Delicias+Mágicas" alt="Delicias Mágicas" class="logo mb-3" loading="lazy">
+                    <p class="mb-4">Galletas hechas con ingredientes naturales y mucho amor.</p>
+                    <div class="d-flex">
+                        <a href="#" class="social-icon me-2" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon me-2" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon me-2" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="social-icon" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4">Enlaces</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#inicio" class="footer-link">Inicio</a></li>
+                        <li class="mb-2"><a href="#sabores" class="footer-link">Sabores</a></li>
+                        <li class="mb-2"><a href="#nosotros" class="footer-link">Nosotros</a></li>
+                        <li class="mb-2"><a href="#testimonios" class="footer-link">Testimonios</a></li>
+                        <li><a href="#contacto" class="footer-link">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4">Horario</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">Lunes - Viernes: 9am - 7pm</li>
+                        <li class="mb-2">Sábado: 10am - 6pm</li>
+                        <li>Domingo: 11am - 4pm</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-uppercase mb-4">Contacto</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> Av. Dulces 123, León Gto</li>
+                        <li class="mb-2"><i class="fas fa-phone me-2"></i> 4774332136</li>
+                        <li><i class="fas fa-envelope me-2"></i> hola@casa_de_la_galleta.com</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-5 bg-light opacity-10">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-md-0">&copy; 2023 Delicias Mágicas. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0">Hecho con <i class="fas fa-heart text-danger"></i> en México</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Navbar scroll effect mejorado
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            const logo = document.querySelector('.logo');
+            
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+                logo.style.height = '40px';
+            } else {
+                navbar.classList.remove('scrolled');
+                logo.style.height = '50px';
+            }
+        });
+        
+        // Smooth scrolling mejorado para navegación
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Cerrar menú en móviles después de hacer clic
+                    const navbarCollapse = document.querySelector('.navbar-collapse');
+                    if (navbarCollapse.classList.contains('show')) {
+                        const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+                            toggle: false
+                        });
+                        bsCollapse.hide();
+                    }
+                }
+            });
+        });
+        
+        // Animación al hacer scroll mejorada
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.animate__animated');
+            const windowHeight = window.innerHeight;
+            const triggerPoint = windowHeight / 1.2;
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                
+                if (elementPosition < triggerPoint) {
+                    const animationClass = element.classList[1];
+                    element.classList.add(animationClass);
+                }
+            });
+        }
+        
+        // Ejecutar al cargar y al hacer scroll
+        window.addEventListener('load', animateOnScroll);
+        window.addEventListener('scroll', animateOnScroll);
+        
+        // Validación de formulario mejorada
+        (function() {
+            'use strict';
+            
+            const forms = document.querySelectorAll('.needs-validation');
+            
+            Array.prototype.slice.call(forms).forEach(function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        })();
+
+  // Mostrar más galletas al hacer clic en el botón
+  document.getElementById('ver-mas-btn').addEventListener('click', function() {
+      const masGalletas = document.getElementById('mas-galletas');
+      const boton = this;
+      
+      if (masGalletas.classList.contains('d-none')) {
+          masGalletas.classList.remove('d-none');
+          masGalletas.classList.add('animate__animated', 'animate__fadeIn');
+          boton.textContent = 'Mostrar Menos';
+      } else {
+          masGalletas.classList.add('d-none');
+          boton.textContent = 'Ver Más Sabores';
+      }
+  });
+        
+        // Preloader opcional (descomentar para usar)
+        /*
+        window.addEventListener('load', function() {
+            const preloader = document.querySelector('.preloader');
+            if (preloader) {
+                preloader.style.transition = 'opacity 0.5s ease';
+                preloader.style.opacity = '0';
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 500);
+            }
+        });
+        */
+                 // Mostrar/ocultar galletas adicionales
+          document.addEventListener("DOMContentLoaded", function () {
+    const verMasBtn = document.getElementById("ver-mas-btn");
+    const masGalletas = document.getElementById("mas-galletas");
+
+    if (verMasBtn && masGalletas) {
+        verMasBtn.addEventListener("click", function () {
+            masGalletas.classList.remove("d-none"); // Muestra las galletas adicionales
+            verMasBtn.style.display = "none"; // Oculta el botón después de hacer clic
+        });
+    }
+});
+    </script>
+</body>
+</html>
