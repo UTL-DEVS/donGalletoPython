@@ -16,9 +16,9 @@ def guardar_info_persona(u):
 def guardar_info_usuario(u):
     db.session.add(u)
     db.session.commit() 
-    return u.id_usuario
+    return u.id
 
 def guardar_info_empleado(u):
     db.session.add(u)
     db.session.commit() 
-    return u.id_empleado
+    return u.id_empleado != None

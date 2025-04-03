@@ -1,4 +1,4 @@
-from utils import Blueprint, render_template, redirect, request, login_required, url_for, current_user
+from utils import Blueprint, render_template, redirect, request, login_required, url_for, current_user,flash
 import json
 from forms import *
 from controller import controller_usuario
@@ -11,33 +11,41 @@ modales = json.loads(modales_str)  # Convertir a diccionario
 @login_required
 def mostrar_empleados():
     if current_user.rol_user != 0 :
-        return redirect('/login')
-    form_usuario_obj = form_usuario(request.form)
-    form_persona_obj = form_persona(request.form)
-    form_empleado_obj = form_empleado(request.form)
+        print('REDIRIGIDO')
+        #flash('No puedes acceder a este módulo')
+        return redirect(url_for('usuario.mostrar_empleados'))
+     
+    form_empleado_obj = form_empleado()
     lista_empleados=controller_usuario.obtener_empleados()
     
-    return render_template('pages/page-usuario/emlpeado.html',modales=json.dumps(modales),form_persona=form_persona_obj,form_usuario=form_usuario_obj,form_empleado=form_empleado_obj,lista_empleados=lista_empleados)
+    return render_template('pages/page-usuario/emlpeado.html',modales=json.dumps(modales),form_empleado=form_empleado_obj,lista_empleados=lista_empleados)
 
 @usuario_bp.route('/agregarEmpleado', methods=['POST'])
 @login_required
 def agregar_proveedor():
-    form_usuario_obj = form_usuario(request.form)
-    form_persona_obj = form_persona(request.form)
+    if current_user.rol_user != 0 :
+        #flash('No puedes acceder a este módulo')
+        return redirect(url_for('usuario.mostrar_empleados'))
     form_empleado_obj = form_empleado(request.form)
-    if request.method=='POST' and form_usuario_obj.validate_on_submit():
-        controller_usuario.agregar_empleado(form_usuario_obj, form_empleado_obj, form_persona_obj)
+
+    if request.method=='POST'and form_empleado_obj.validate_on_submit():
+        if (controller_usuario.agregar_empleado(form_empleado_obj)):
+            flash("Empleado agregado con éxito", "success")
         return redirect(url_for('usuario.mostrar_empleados'))
     modales["agregar"]=1
     lista_empleados=controller_usuario.obtener_empleados()
-    return render_template('pages/page-usuario/emlpeado.html',modales=json.dumps(modales),form_persona=form_persona_obj,form_usuario=form_usuario_obj,form_empleado=form_empleado_obj,lista_empleados=lista_empleados)
+
+    print(form_empleado_obj.data)  # Ver qué datos está recibiendo el formulario
+    print(form_empleado_obj.errors) 
+    return render_template('pages/page-usuario/emlpeado.html',modales=json.dumps(modales), form_empleado=form_empleado_obj, lista_empleados=lista_empleados)
 
 
 @usuario_bp.route('/empleado/detallesEmpleado', methods=['GET'])
 @login_required
 def detalles_proveedor():
     if current_user.rol_user != 0 :
-        return redirect('/login')
+        #flash('No puedes acceder a este módulo')
+        return redirect(url_for('usuario.mostrar_empleados'))
     form_usuario_obj = form_proveedor(request.form)
     form_persona_obj = form_persona(request.form)
     lista_empleados=controller_usuario.obtener_proveedores()

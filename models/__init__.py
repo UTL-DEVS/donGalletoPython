@@ -11,3 +11,5 @@ from .galleta import Galleta
 from .receta import Receta, detalleReceta
 from .resumen import Venta, DetalleVenta
 from .empleado import Empleado
+from .galleta import Galleta
+from .Stock import Stock
