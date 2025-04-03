@@ -1,3 +1,4 @@
+-- Active: 1742188040282@@127.0.0.1@3306@casagalleta
 CREATE DATABASE casaGalleta; 
 drop DATABASE casaGalleta;
 
@@ -5,11 +6,12 @@ use casaGalleta;
 SHOW TABLES;
 
 
-SELECT * FROM usuario;
+SELECT * FROM materia_prima;
 SELECT * FROM pre_registro;
 
 use casaGalleta;
 select * from galletas;
+select * from stock;
 
 
 Select * from pedidos;
@@ -81,3 +83,19 @@ VALUES (2.5, 1, 1,1);
 
 use casaGalleta;
 SELECT * FROM detalle_receta;
+
+-- Insertar en la tabla Persona primero
+INSERT INTO Persona (nombre, primerApellido, segundoApellido, correo, direccion, telefono, estatus) 
+VALUES ('Juan', 'Pérez', 'Gómez', 'juan.perez@email.com', 'Calle Falsa 123, CDMX', '5551234567', 1);
+
+-- Obtener el ID de la persona insertada
+SET @id_persona = LAST_INSERT_ID();
+
+-- Insertar en la tabla Proveedor con la persona asociada
+INSERT INTO Proveedor (nombre_proveedor, id_persona) 
+VALUES ('Distribuidora López', @id_persona);
+
+SELECT * FROM proveedor;
+SELECT * FROM materia_prima;
+SELECT * FROM persona;
+
