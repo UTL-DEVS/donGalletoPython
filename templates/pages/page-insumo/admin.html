@@ -91,7 +91,7 @@
             {% for i in insumos %}
               <tr>
                 <td>{{ i.nombre_materia }}</td>
-                {%if i.unidad_medida_publico != 1 or i.unidad_medida_publico == 4 and i.stock_materia >= 1 or i.unidad_medida_publico == 5%}
+                {%if i.unidad_medida_publico != 1  and i.stock_materia >= 1 or i.unidad_medida_publico == 5%}
                 
                 <td>{{ i.stock_materia / 1000}}</td>
                 {%else%}

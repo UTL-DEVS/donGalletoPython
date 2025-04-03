@@ -1,9 +1,11 @@
 from flask import Blueprint, render_template,request,redirect,url_for, abort, flash
 from flask_login import login_required, current_user
+from flask import Blueprint, render_template,request,redirect,url_for, flash
 import json
 from forms import *
 from controller import controller_proveedor
 from funcs import crear_log_user, crear_log_error
+from utils import login_required, current_user, abort
 
 
 proveedor_bp = Blueprint('proveedor', __name__, url_prefix='/proveedor', template_folder='templates')

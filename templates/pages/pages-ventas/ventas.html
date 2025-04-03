@@ -8,9 +8,21 @@ Premium{% endblock %} {% block contenido %}
   src="{{ url_for('static', filename='js/page-ventas/proceso_venta.js') }}"
   defer
 ></script>
+<script>
+  history.pushState(null, null, location.href);
+  window.onpopstate = function (event) {
+    window.location.href = "/tipo_venta";
+  };
+</script>
 <meta name="csrf-token" content="{{ csrf_token() }}" />
 
 {% macro render_tarjeta_galleta(galleta) %}
+<script>
+  history.pushState(null, null, location.href);
+  window.onpopstate = function (event) {
+    window.location.href = "/tipo_venta";
+  };
+</script>
 <div class="col-md-6 col-lg-4">
   <div class="card">
     <div class="card-img-container">
@@ -51,6 +63,13 @@ Premium{% endblock %} {% block contenido %}
   </div>
 </div>
 {% endmacro %}{% macro render_item_carrito(item, index) %}
+<script>
+  history.pushState(null, null, location.href);
+  window.onpopstate = function (event) {
+    window.location.href = "/tipo_venta";
+  };
+</script>
+
 <li class="list-group-item d-flex justify-content-between align-items-center">
   {{ item.nombre }} {% if item.tipo_venta == 'unidad' %} (x{{ item.cantidad }}
   unidades) {% elif item.tipo_venta == 'peso' %} ({{ item.unidades * 10 }}g) {%
@@ -67,6 +86,12 @@ Premium{% endblock %} {% block contenido %}
   </form>
 </li>
 {% endmacro %} {% macro render_form_peso(galleta) %}
+<script>
+  history.pushState(null, null, location.href);
+  window.onpopstate = function (event) {
+    window.location.href = "/tipo_venta";
+  };
+</script>
 <div class="col-md-6 col-lg-4">
   <div class="card">
     <div class="card-img-container">
@@ -112,6 +137,12 @@ Premium{% endblock %} {% block contenido %}
   </div>
 </div>
 {% endmacro %} {% macro render_form_paquete() %}
+<script>
+  history.pushState(null, null, location.href);
+  window.onpopstate = function (event) {
+    window.location.href = "/tipo_venta";
+  };
+</script>
 <div class="col-md-6 col-lg-4">
   <div class="card">
     <div class="card-body">

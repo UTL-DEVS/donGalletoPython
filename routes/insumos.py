@@ -74,8 +74,8 @@ def vista_admin_insumos():
                             unidades=UNIDADES)
 
     except Exception as e:
+        print('erro')
         crear_log_error(current_user.usuario, str(e))
-        flash("Error inesperado al acceder a insumos", "danger")
         return redirect('/error')
 
 @insumos_bp.route('/insumo/editar/<int:id_materia>', methods=['GET', 'POST'])
@@ -83,61 +83,54 @@ def vista_admin_insumos():
 def editar_insumo(id_materia):
     if current_user.rol_user != 0:
         abort(404)
-    try:
-        crear_log_user(current_user.usuario, request.url)
+    crear_log_user(current_user.usuario, request.url)
 
-        form = InsumoForm()
-        form.unidad_medida.choices = list(UNIDADES.items())
-        form.unidad_medida_publico.choices = list(UNIDADES_PUBLICAS.items())
+    form = InsumoForm()
+    form.unidad_medida.choices = list(UNIDADES.items())
+    form.unidad_medida_publico.choices = list(UNIDADES_PUBLICAS.items())
 
-        proveedores = Proveedor.query.all()
-        form.id_proveedor.choices = [(p.id_proveedor, p.nombre_proveedor) for p in proveedores]
-        inicial = 0
-        insumo_editar = MateriaPrima.query.get_or_404(id_materia)
+    proveedores = Proveedor.query.all()
+    form.id_proveedor.choices = [(p.id_proveedor, p.nombre_proveedor) for p in proveedores]
+    inicial = 0
+    
+    insumo_editar = MateriaPrima.query.get_or_404(id_materia)
+    if request.method == 'GET':
+        form.id_materia.data = insumo_editar.id_materia
+        form.nombre.data = insumo_editar.nombre_materia
+        form.stock_materia.data = insumo_editar.stock_materia
+        form.unidad_medida.data = insumo_editar.unidad_medida
+        form.unidad_medida_publico.data = insumo_editar.unidad_medida_publico
+        form.precio.data = insumo_editar.precio
+        form.id_proveedor.data = insumo_editar.id_proveedor
+        inicial = form.stock_materia.data
 
-        if request.method == 'GET':
-            form.id_materia.data = insumo_editar.id_materia
-            form.nombre.data = insumo_editar.nombre_materia
-            form.stock_materia.data = insumo_editar.stock_materia
-            form.unidad_medida.data = insumo_editar.unidad_medida
-            form.unidad_medida_publico.data = insumo_editar.unidad_medida_publico
-            form.precio.data = insumo_editar.precio
-            form.id_proveedor.data = insumo_editar.id_proveedor
-            inicial = form.stock_materia.data
+    if form.validate_on_submit():
+        nombre = form.nombre.data
+        cantidad = float(form.stock_materia.data)
+        unidad_base = form.unidad_medida.data
+        unidad_publico = form.unidad_medida_publico.data
+        precio = float(form.precio.data)
+        id_proveedor = form.id_proveedor.data
 
-        if form.validate_on_submit():
-            nombre = form.nombre.data
-            cantidad = float(form.stock_materia.data)
-            unidad_base = form.unidad_medida.data
-            unidad_publico = form.unidad_medida_publico.data
-            precio = float(form.precio.data)
-            id_proveedor = form.id_proveedor.data
+        if insumo_editar.stock_materia != cantidad or insumo_editar.unidad_medida != unidad_base:
+            cantidad_convertida = convertir_a_base(cantidad, unidad_base)
+        else:
+            cantidad_convertida = cantidad
 
-            if insumo_editar.stock_materia != cantidad or insumo_editar.unidad_medida != unidad_base:
-                cantidad_convertida = convertir_a_base(cantidad, unidad_base)
-            else:
-                cantidad_convertida = cantidad
+        if unidad_publico == 4:
+            cantidad_convertida = cantidad_convertida * 1000
 
-            if unidad_publico == 4:
-                cantidad_convertida = cantidad_convertida * 1000
+        insumo_editar.nombre_materia = nombre
+        insumo_editar.stock_materia = cantidad_convertida
+        insumo_editar.unidad_medida = unidad_base
+        insumo_editar.unidad_medida_publico = unidad_publico
+        insumo_editar.precio = precio
+        insumo_editar.id_proveedor = id_proveedor
 
-            insumo_editar.nombre_materia = nombre
-            insumo_editar.stock_materia = cantidad_convertida
-            insumo_editar.unidad_medida = unidad_base
-            insumo_editar.unidad_medida_publico = unidad_publico
-            insumo_editar.precio = precio
-            insumo_editar.id_proveedor = id_proveedor
+        db.session.commit()
+        return redirect(url_for('insumos.vista_admin_insumos'))
 
-            db.session.commit()
-            flash("✅ Insumo actualizado correctamente", "success")
-            return redirect(url_for('insumos.vista_admin_insumos'))
-
-        return render_template('pages/page-insumo/admin.html', form=form)
-
-    except Exception as e:
-        crear_log_error(current_user.usuario, str(e))
-        flash("Error al editar insumo", "danger")
-        return redirect('/error')
+    return render_template('pages/page-insumo/admin.html', form=form)
 
 @insumos_bp.route('/estatus/<int:id>')
 @login_required

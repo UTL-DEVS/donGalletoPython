@@ -13,3 +13,5 @@ from routes.usuario import usuario_bp
 from routes.route_galleta import route_galleta
 from routes.insumos import insumos_bp
 from routes.cocina_insumos import cocina_insumos_bp
+from routes.galleta import galleta_bp
+from routes.resumen_venta import resumen_venta_bp

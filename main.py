@@ -37,6 +37,8 @@ def crear_app():
     app.register_blueprint(cliente_bp)
     app.register_blueprint(economia_bp)
     app.register_blueprint(recetas_bp)
+    app.register_blueprint(galleta_bp)
+    app.register_blueprint(resumen_venta_bp)
     app.register_blueprint(usuario_bp)
     app.register_blueprint(route_galleta)
     app.register_blueprint(insumos_bp)
@@ -72,16 +74,27 @@ def load_user(user_id):
 
 @app.route('/logout')
 def logout():
+    
+    
     logout_user()
     return redirect(url_for('login.login'))
 
 @app.errorhandler(404)
 def page_not_found(e):
-    crear_log_error(current_user.usuario, f"Error 404: Pagina no encontrada en {request.url}")
-    if current_user.is_authenticated and current_user.id:
-        return render_template('pages/error.html'), 404
-    else:
-        return render_template('pages/error.html'), 404
+    # Obtener la IP del usuario
+    ip_usuario = request.remote_addr
+
+    # Verificar si el usuario está autenticado antes de acceder a sus atributos
+    usuario = current_user.usuario if current_user.is_authenticated else "Usuario anónimo"
+    
+    # Registrar el error con la IP
+    crear_log_error(usuario, f"Error 404: Página no encontrada en {request.url} | IP: {ip_usuario}")
+    
+    # Si el usuario está autenticado, cerramos su sesión
+    if current_user.is_authenticated:
+        logout_user()
+    
+    return render_template('pages/error.html'), 404
 
 @app.cli.command()
 def test():
