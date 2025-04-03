@@ -3,6 +3,7 @@ from forms import login_form
 from controller import controller_login
 from funcs import hash
 from datetime import datetime, timedelta
+from flask import flash, redirect, url_for
 
 login_bp = Blueprint('login', __name__, template_folder='templates')
 
@@ -19,22 +20,21 @@ def login():
         contrasenia_hash = hash(contrasenia)
         captcha_data = form.captcha.data
 
-        print(captcha_data)
-
         # Verificar si el usuario está bloqueado
         if usuario in intentos_fallidos:
             data = intentos_fallidos[usuario]
             if data["bloqueado"]:
                 if datetime.now() < data["desbloqueo"]:
-                    return "Cuenta bloqueada temporalmente, intenta más tarde.", 403
+                    flash("Cuenta bloqueada temporalmente, intenta más tarde.", "danger")
+                    return redirect(url_for('init_login'))
                 else:
                     intentos_fallidos[usuario] = {"intentos": 0, "bloqueado": False}
 
         # Verificar credenciales
         result = controller_login(usuario, contrasenia_hash, captcha_data)
         if result:
-            # Si el login es correcto, eliminar intentos fallidos
             intentos_fallidos.pop(usuario, None)
+            flash("Inicio de sesión exitoso", "success")
             return result
 
         # Si las credenciales son incorrectas
@@ -43,13 +43,13 @@ def login():
 
         intentos_fallidos[usuario]["intentos"] += 1
 
-        # Bloquear al usuario vtlv palomino
         if intentos_fallidos[usuario]["intentos"] >= 5:
             intentos_fallidos[usuario]["bloqueado"] = True
             intentos_fallidos[usuario]["desbloqueo"] = datetime.now() + timedelta(minutes=5)
-            return "Cuenta bloqueada temporalmente, intenta en 5 minutos.", 403
+            flash("Cuenta bloqueada temporalmente, intenta en 5 minutos.", "danger")
+            return redirect(url_for('init_login'))
 
-        print(intentos_fallidos[usuario])
-        return "Credenciales incorrectas. Intento {} de 5.".format(intentos_fallidos[usuario]["intentos"]), 403
+        flash(f"Contraseña incorrectas. Intento {intentos_fallidos[usuario]['intentos']} de 5.", "warning")
+        return redirect(url_for('init_login'))
 
-    return redirect('/')
+    return redirect(url_for('init_login'))

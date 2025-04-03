@@ -12,6 +12,8 @@ import io
 import os
 from datetime import timedelta
 from funcs import captcha_info
+from flask import Flask, session
+from flask_session import Session
 
 def crear_app():
     app = Flask(__name__)
@@ -48,6 +50,11 @@ app, csrf = crear_app()
 login_manager = LoginManager()
 login_manager.login_view = "login.login"
 login_manager.init_app(app)
+
+# Configuración de Flask-Session
+app.config['SESSION_TYPE'] = 'filesystem'  
+app.config['SESSION_PERMANENT'] = False
+Session(app)
 
 
 
