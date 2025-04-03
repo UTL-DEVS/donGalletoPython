@@ -12,3 +12,4 @@ from routes.resum import resumen_bp
 from routes.gallet import galleta_bp
 from routes.usuario import usuario_bp
 from routes.route_galleta import route_galleta
+from routes.insumos import insumos_bp
