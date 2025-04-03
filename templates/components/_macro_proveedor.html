@@ -23,7 +23,10 @@
                 <h5 class="col-5 m-2 ">{{field.label}}:</h5>
                 <div class="d-flex col-7">
                     {%if (field.data) != None%}
+                    
                         {{field(required=false,value=field.data)}}
+                    {%elif (data != None)%}
+                        {{field(required=false,value=data)}}
                     {%else%}
                         {{field(required=false)}}
                     {%endif%}

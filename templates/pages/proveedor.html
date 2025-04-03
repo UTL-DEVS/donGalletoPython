@@ -192,8 +192,8 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class=" modal-body">
+                    {%if (prov_sel)%}
                     <div class="d-flex">
-                        {%if (prov_sel)%}
                         <p class="fw-bold col-4 mx-2 d-flex">Proveedor:</p>
                         <div class="d-flex col-7">
                             <div class="mx-2" id="nombreProveedorSel">{{prov_sel.nombre_proveedor}}</div>

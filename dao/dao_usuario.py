@@ -5,7 +5,7 @@ def obtener_empleados():
     empleados = Empleado.query.join(Persona).join(Usuario).filter(Persona.estatus != 0, Usuario.rol_user != 1).all()
     return empleados
 
-def obtener_proveedor_especifico(id_empleado):
+def obtener_empleado_especifico(id_empleado):
     return db.session.query(Empleado).filter(Empleado.id_empleado==id_empleado).first()
 
 def guardar_info_persona(u):

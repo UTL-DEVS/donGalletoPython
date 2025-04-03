@@ -70,7 +70,10 @@ function cargarGrafica(fechasVentas, totalesVentas) {
 }
 
 function obtenerDatosParaGrafica() {
-
+  if(listasVentasDiarias.lenght <=0){
+    $('#ventasDiarias').text('No hay ventas para mostrar');
+    return;
+  }
   // Extraer los días y totales de las ventas
   let fechasVentas = listasVentasDiarias.map(venta => {
     let fecha = new Date(venta.fecha_venta);  // Convierte la fecha en objeto Date

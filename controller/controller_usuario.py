@@ -8,7 +8,6 @@ def obtener_empleados():
 
 
 def agregar_empleado(form_empleado):
-    print(f'Add prov')
     nuevo_persona_prov=Persona()
     nuevo_persona_prov.nombre=str(form_empleado.nombre.data)
     nuevo_persona_prov.primerApellido=str(form_empleado.primer_apellido.data)
@@ -32,24 +31,23 @@ def agregar_empleado(form_empleado):
             nuevo_em.id_usuario = id_usuario
             nuevo_em.id_persona = id_persona
             nuevo_em.sueldo_empleado = float(form_empleado.sueldo.data)
+            nuevo_em.dias_laborales = int(form_empleado.dias_laborales.data)
             return dao_usuario.guardar_info_empleado(nuevo_em)
     
+def obtener_empleado_especifico(id_empleado):
+    return dao_usuario.obtener_empleado_especifico(id_empleado)
 
-'''def obtener_proveedor_especifico(id_proveedor):
-    return dao_proveedor.obtener_proveedor_especifico(id_proveedor)
 
-def actualizar_proveedor(id_proveedor, form_empleado):
-    prov_sel=dao_proveedor.obtener_proveedor_especifico(id_proveedor)
-    prov_sel.id_proveedor=id_proveedor
-    prov_sel.persona.nombre=str(form_empleado.nombre.data)
-    prov_sel.persona.primerApellido=str(form_empleado.primer_apellido.data)
-    prov_sel.persona.segundoApellido=str(form_empleado.segundo_apellido.data)
-    prov_sel.persona.correo=str(form_empleado.correo.data)
-    prov_sel.persona.direccion=str(form_empleado.direccion.data)
-    prov_sel.persona.telefono=str(form_empleado.telefono.data)
-    return cqrs_proveedor.actualizar_proveedor(prov_sel)
+def actualizar_empleado(id_empleado, form_empleado):
+    emp_sel=dao_usuario.obtener_empleado_especifico(id_empleado)
+    emp_sel.id_empleado=id_empleado
+    emp_sel.sueldo_empleado= float(form_empleado.sueldo.data)
+    emp_sel.dias_laborales=int(form_empleado.dias_laborales.data)
+   
+    return dao_usuario.guardar_info_empleado(emp_sel)
 
-def eliminar_proveedor(id_proveedor):
+'''
+def eliminar_proveedor(id_empleado):
     prov_eliminar = dao_proveedor.obtener_proveedor_especifico(id_proveedor)
     prov_eliminar.persona.estatus=0
     return cqrs_proveedor.actualizar_proveedor(prov_eliminar)

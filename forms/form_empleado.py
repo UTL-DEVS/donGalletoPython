@@ -31,9 +31,12 @@ class form_empleado(FlaskForm):
     ],render_kw={'class': 'telefonoPersona'})
 
     # Empleado
-    sueldo = DecimalField('Sueldo (quincenal)', [
+    sueldo = DecimalField('Sueldo (al día)', [
         DataRequired('Ingrese el sueldo del empleado!'),
     ],render_kw={'id': 'sueldo'})
+    dias_laborales = SelectField('Días de trabajo (a la semana)',[
+        DataRequired('Ingrese el número de días que el empleado trabajará a la semana!')
+    ],render_kw={'class': 'diasLaborales'}, choices=[(1, '1'), (2, '2'), (3, '3'), (4, '4'), (5, '5'), (6, '6'), (7, '7')])
 
     def validate_salario(self, field):
         if field.data <= 0:  # ✅ Mejor usar una comparación numérica
