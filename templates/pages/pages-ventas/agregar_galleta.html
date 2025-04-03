@@ -1,6 +1,5 @@
-{% extends 'components/_estructura_admin.html' %}
-{% block titulo %}Agregar Galleta{% endblock %}
-{% block contenido %}
+{% extends 'components/_estructura_admin.html' %} {% block titulo %}Agregar
+Galleta{% endblock %} {% block contenido %}
 <link
   rel="stylesheet"
   href="{{ url_for('static', filename='css/page-ventas/agregar.css') }}"
@@ -32,24 +31,13 @@
               </div>
 
               <!-- Precio y Cantidad -->
-              <div class="col-md-6">
+              <div class="col-md-12">
                 <div class="form-floating">
                   {{ form.precio_galleta(class="form-control" + (" is-invalid"
                   if form.precio_galleta.errors else ""), placeholder=" ",
                   step="0.01") }} {{
                   form.precio_galleta.label(class="form-label") }} {% for error
                   in form.precio_galleta.errors %}
-                  <div class="invalid-feedback">{{ error }}</div>
-                  {% endfor %}
-                </div>
-              </div>
-
-              <div class="col-md-6">
-                <div class="form-floating">
-                  {{ form.cantidad_galleta(class="form-control" + (" is-invalid"
-                  if form.cantidad_galleta.errors else ""), placeholder=" ",
-                  min="0") }} {{ form.cantidad_galleta.label(class="form-label")
-                  }} {% for error in form.cantidad_galleta.errors %}
                   <div class="invalid-feedback">{{ error }}</div>
                   {% endfor %}
                 </div>

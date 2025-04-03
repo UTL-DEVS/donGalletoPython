@@ -10,4 +10,5 @@ class Stock(db.Model):
     minimo_galleta = db.Column(db.Integer, nullable=False, default=700)
     
     galleta = db.relationship('Galleta', backref=db.backref('detalleGalleta', uselist=False))
+    galleta = db.relationship('Galleta', back_populates='stock')
     
