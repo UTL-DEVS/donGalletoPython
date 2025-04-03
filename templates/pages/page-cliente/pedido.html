@@ -56,7 +56,6 @@
                     <form action="{{ url_for('cliente.agregar', id_galleta=galleta.id_galleta) }}" method="post" class="mt-auto">
                         {{ forms[galleta.id_galleta].hidden_tag() }}
                         <input type="hidden" name="tipo_pedido" value="pieza">
-                        
                         <div class="mb-3">
                             <label for="cantidad" class="form-label">Cantidad:</label>
                             {{ forms[galleta.id_galleta].cantidad(class="form-control", min="1") }}
@@ -80,7 +79,5 @@
 
 <script src="{{ url_for('static', filename='js/page-cliente/cliente.js') }}"></script>
 
-
-<script src="{{ url_for('static', filename='js/page-cliente/cliente.js') }}"></script>
 
 {% endblock %}

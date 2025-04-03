@@ -4,6 +4,9 @@ from forms.form_cliente import PaqueteForm, PesoForm, PiezaForm
 from models.pedido import Pedido 
 from utils.db import db
 from models.galleta import Galleta
+from datetime import  timedelta
+from models.usuario import Usuario
+from werkzeug.security import generate_password_hash ,check_password_hash
 
 cliente_bp = Blueprint('cliente', __name__, template_folder='templates')
 
@@ -53,7 +56,7 @@ def piezas():
 
 @cliente_bp.route('/agregar/<int:id_galleta>', methods=['POST'])
 def agregar(id_galleta):
-    # Cambia esta línea para usar una consulta explícita
+
     galleta = db.session.query(
         Galleta.id_galleta,
         Galleta.nombre_galleta,
@@ -64,6 +67,7 @@ def agregar(id_galleta):
         Galleta.fecha_creacion,
         Galleta.activo
     ).filter_by(id_galleta=id_galleta, activo=True).first()
+    
     
     if not galleta:
         flash("Producto no encontrado", "error")
@@ -139,6 +143,32 @@ def mis_pedidos():
     
     return render_template('pages/page-cliente/tabla_pedido.html', pedidos=pedidos)
 
-@cliente_bp.route('/perfil-cliente')
+MAX_INTENTOS = 3
+TIEMPO_LIMITE = timedelta(hours=1) 
+@cliente_bp.route('/perfil-cliente', methods=['GET', 'POST'])
 def perfil_cliente():
+
+    #if 'usuario_id' not in session:
+        #flash('Por favor, inicia sesión para acceder a esta página.', 'danger')
+        #return redirect('/login')
+
+    #usuario_id = session['usuario_id']
+    #usuario = Usuario.query.get(usuario_id)
+
+    if request.method == 'POST':
+        contrasena_actual = request.form['contrasena_actual']
+        nueva_contrasena = request.form['nueva_contrasena']
+
+        # Verificar que la contraseña actual es correcta
+        #if not check_password_hash(usuario.contrasenia, contrasena_actual):
+            #flash('La contraseña actual es incorrecta.', 'danger')
+            #return redirect('/perfil_cliente')
+        
+        # Actualizar la contraseña
+        #usuario.contrasenia = generate_password_hash(nueva_contrasena)
+        #db.session.commit()
+
+        flash('Contraseña cambiada exitosamente.', 'success')
+        return redirect('/perfil')  # O a donde desees redirigir después de cambiar la contraseña
+
     return render_template('pages/page-cliente/perfil_cliente.html')
