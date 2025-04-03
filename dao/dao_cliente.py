@@ -12,7 +12,6 @@ class dao_cliente:
         Galleta.precio_galleta,
         Galleta.imagen_galleta,
         Galleta.descripcion_galleta,
-        Galleta.cantidad_galleta,
         Galleta.fecha_creacion,
         Galleta.activo
     ).filter(Galleta.activo == True).all()
@@ -25,7 +24,6 @@ class dao_cliente:
         Galleta.precio_galleta,
         Galleta.imagen_galleta,
         Galleta.descripcion_galleta,
-        Galleta.cantidad_galleta,
         Galleta.fecha_creacion,
         Galleta.activo
     ).filter_by(id_galleta=id_galleta).first()

@@ -54,6 +54,7 @@ login_manager.init_app(app)
 def init():
         galletas = ClienteController.obtener_galletas_activas()
         return render_template('index.html', galletas=galletas)
+
 @app.route('/')
 def init_login():
     form = login_form()  

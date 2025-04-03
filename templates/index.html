@@ -9,378 +9,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-          --color-primario: #FF6B6B;
-          --color-primario-oscuro: #e05555;
-          --color-secundario: #4ECDC4;
-          --color-oscuro: #292F36;
-          --color-oscuro-80: rgba(41, 47, 54, 0.8);
-          --color-claro: #F7FFF7;
-          --color-acento: #FFE66D;
-          --color-texto: #333333;
-          --color-fondo: #FFF9F5;
-          --sombra: 0 4px 20px rgba(0, 0, 0, 0.1);
-          --transicion: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        body {
-          font-family: 'Poppins', sans-serif;
-          overflow-x: hidden;
-          color: var(--color-texto);
-          background-color: var(--color-fondo);
-          line-height: 1.6;
-        }
-
-        /* Navegación mejorada */
-        .navbar {
-          transition: var(--transicion);
-          padding: 1.5rem 0;
-          background-color: transparent;
-        }
-
-        .navbar.scrolled {
-          background-color: var(--color-oscuro-80) !important;
-          backdrop-filter: blur(10px);
-          padding: 0.8rem 0;
-          box-shadow: var(--sombra);
-        }
-
-        .nav-link {
-          font-weight: 500;
-          padding: 0.5rem 1rem;
-          margin: 0 0.2rem;
-          border-radius: 50px;
-          transition: var(--transicion);
-        }
-
-        .nav-link:hover, .nav-link.active {
-          background-color: rgba(255, 255, 255, 0.1);
-          color: var(--color-acento) !important;
-        }
-
-        .logo {
-          height: 75px;
-          transition: var(--transicion);
-        }
-
-        /* Hero section */
-        .hero-section {
-          background: linear-gradient(to right, rgba(41, 47, 54, 0.9), rgba(41, 47, 54, 0.7)), 
-                      url('{{ url_for("static", filename="img/casa-cliente.jpg") }}');
-          background-size: cover;
-          background-position: center;
-          background-attachment: fixed;
-          min-height: 100vh;
-          color: white;
-          display: flex;
-          align-items: center;
-          position: relative;
-          overflow: hidden;
-        }
-
-        .hero-section::before {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 100%;
-          height: 100px;
-          background: linear-gradient(to top, var(--color-fondo), transparent);
-          z-index: 1;
-        }
-
-        .hero-content {
-          position: relative;
-          z-index: 2;
-        }
-
-        .hero-img {
-          filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
-          max-height: 500px;
-          object-fit: contain;
-        }
-
-        /* Botones */
-        .btn-magic {
-          background-color: var(--color-primario);
-          color: white;
-          border: none;
-          padding: 12px 30px;
-          border-radius: 50px;
-          font-weight: 600;
-          transition: var(--transicion);
-          text-transform: uppercase;
-          letter-spacing: 1px;
-          box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
-        }
-
-        .btn-magic:hover {
-          background-color: var(--color-primario-oscuro);
-          color: white;
-          transform: translateY(-3px);
-          box-shadow: 0 15px 30px rgba(255, 107, 107, 0.5);
-        }
-
-        .btn-outline-light:hover {
-          color: var(--color-oscuro) !important;
-        }
-
-        /* Secciones */
-        .section {
-          padding: 6rem 0;
-          position: relative;
-        }
-
-        .section-title {
-          position: relative;
-          display: inline-block;
-          margin-bottom: 3rem;
-          font-weight: 700;
-        }
-
-        .section-title::after {
-          content: '';
-          position: absolute;
-          width: 50%;
-          height: 4px;
-          background: var(--color-primario);
-          bottom: -15px;
-          left: 25%;
-          border-radius: 2px;
-        }
-
-        /* Cards de productos */
-        .product-card {
-          border: none;
-          border-radius: 15px;
-          overflow: hidden;
-          transition: var(--transicion);
-          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-          height: 100%;
-          background: white;
-        }
-
-        .product-card:hover {
-          transform: translateY(-10px);
-          box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .product-img {
-          height: 220px;
-          object-fit: cover;
-          transition: transform 0.5s ease;
-        }
-
-        .product-card:hover .product-img {
-          transform: scale(1.05);
-        }
-
-        .badge-new {
-          position: absolute;
-          top: 10px;
-          right: 10px;
-          background: var(--color-acento);
-          color: var(--color-oscuro);
-          font-weight: 600;
-          padding: 0.5rem 1rem;
-          border-radius: 50px;
-          text-transform: uppercase;
-          font-size: 0.7rem;
-          letter-spacing: 1px;
-        }
-
-        /* Animaciones mejoradas */
-        @keyframes float {
-          0% { transform: translateY(0px); }
-          50% { transform: translateY(-20px); }
-          100% { transform: translateY(0px); }
-        }
-
-        .floating {
-          animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes rotate {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
-        }
-
-        .rotating {
-          animation: rotate 30s linear infinite;
-        }
-
-        /* Testimonios */
-        .testimonial-card {
-          background: white;
-          border-radius: 15px;
-          box-shadow: var(--sombra);
-          padding: 2rem;
-          position: relative;
-          height: 100%;
-          transition: var(--transicion);
-        }
-
-        .testimonial-card:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .testimonial-card::before {
-          content: '"';
-          font-size: 100px;
-          position: absolute;
-          top: -30px;
-          left: 20px;
-          color: rgba(0, 0, 0, 0.05);
-          font-family: serif;
-          line-height: 1;
-        }
-
-        .star {
-          color: var(--color-acento);
-          margin-right: 3px;
-        }
-
-        /* Sección destacada */
-        .featured-section {
-          position: relative;
-          overflow: hidden;
-        }
-
-        .featured-section::before {
-          content: '';
-          position: absolute;
-          width: 200px;
-          height: 200px;
-          background: url('https://cdn.pixabay.com/photo/2014/04/03/00/41/cookie-309168_960_720.png') no-repeat;
-          background-size: contain;
-          opacity: 0.1;
-          z-index: 0;
-          animation: rotate 60s linear infinite;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-        }
-
-        .featured-content {
-          position: relative;
-          z-index: 1;
-          background: white;
-          padding: 3rem;
-          border-radius: 15px;
-          box-shadow: var(--sombra);
-        }
-        /* Footer mejorado */
-        footer {
-          background: var(--color-oscuro);
-          color: white;
-          position: relative;
-          padding-top: 5rem;
-        }
-
-        footer::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100px;
-          background: linear-gradient(to bottom, var(--color-fondo), transparent);
-        }
-
-        .social-icon {
-          width: 40px;
-          height: 40px;
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          background: rgba(255, 255, 255, 0.1);
-          border-radius: 50%;
-          margin-right: 10px;
-          transition: var(--transicion);
-          color: white;
-        }
-
-        .social-icon:hover {
-          background: var(--color-primario);
-          transform: translateY(-5px);
-          color: white;
-        }
-
-        .footer-link {
-          color: rgba(255, 255, 255, 0.7);
-          transition: var(--transicion);
-          text-decoration: none;
-          display: inline-block;
-          margin-bottom: 0.5rem;
-        }
-
-        .footer-link:hover {
-          color: var(--color-acento);
-          transform: translateX(5px);
-        }
-
-        /* Mejoras de accesibilidad */
-        a:focus, button:focus {
-          outline: 2px dashed var(--color-acento);
-          outline-offset: 3px;
-        }
-
-        /* Efectos hover mejorados */
-        .hover-effect {
-          transition: var(--transicion);
-        }
-
-        .hover-effect:hover {
-          transform: scale(1.03);
-        }
-
-        /* Responsive mejorado */
-        @media (max-width: 992px) {
-          .hero-section {
-            text-align: center;
-            background-attachment: scroll;
-          }
-          
-          .hero-img {
-            max-height: 400px;
-            margin-top: 2rem;
-          }
-          
-          .section {
-            padding: 4rem 0;
-          }
-        }
-
-        @media (max-width: 768px) {
-          .navbar {
-            padding: 1rem 0;
-          }
-          
-          .display-3 {
-            font-size: 2.5rem;
-          }
-          
-          .hero-img {
-            max-height: 300px;
-          }
-        }
-
-        @media (max-width: 576px) {
-          .btn-magic {
-            width: 100%;
-            margin-bottom: 1rem;
-          }
-          
-          .section-title::after {
-            width: 70%;
-            left: 15%;
-          }
-        }
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/landing_page.css') }}">
 </head>
 <body>
+  <style>
+    /* Hero section */
+.hero-section {
+  background: linear-gradient(to right, rgba(41, 47, 54, 0.9), rgba(41, 47, 54, 0.7)), 
+              url('{{ url_for("static", filename="img/casa-cliente.jpg") }}');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  color: white;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+  </style>
     <!-- Navegación Mejorada -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
@@ -405,7 +52,7 @@
                         <a class="nav-link" href="#testimonios">Testimonios</a>
                     </li>
                 </ul>
-                <a href="/login_home" class="btn btn-magic ms-lg-3">Ordenar Ahora</a>
+                <a href="/" class="btn btn-magic ms-lg-3">Ordenar Ahora</a>
             </div>
         </div>
     </nav>
@@ -420,7 +67,7 @@
                     <p class="lead mb-5 animate__animated animate__fadeIn animate__delay-1s">Hechas a mano con ingredientes naturales y mucho amor. Cada bocado es una experiencia mágica.</p>
                     <div class="d-flex flex-wrap animate__animated animate__fadeIn animate__delay-2s">
                         <a href="#sabores" class="btn btn-magic me-3 mb-3">Nuestros Sabores</a>
-                        <a href="/login_home" class="btn btn-outline-light mb-3">Hacer Pedido</a>
+                        <a href="/" class="btn btn-outline-light mb-3">Hacer Pedido</a>
                     </div>
                 </div>
                 <div class="col-lg-6 animate__animated animate__fadeInRight animate__delay-1s">
@@ -449,7 +96,7 @@
               <p class="card-text text-muted">{{ galleta.descripcion_galleta or 'Deliciosa galleta artesanal' }}</p>
               <div class="d-flex justify-content-between align-items-center">
                   <span class="h5 text-danger mb-0">${{ "%.2f"|format(galleta.precio_galleta) }}/unidad</span>
-                  <a href="/login_home" class="btn btn-sm btn-outline-danger">Ver detalles</a>
+                  <a href="/" class="btn btn-sm btn-outline-danger">Ver detalles</a>
               </div>
           </div>
       </div>
@@ -470,7 +117,7 @@
               <p class="card-text text-muted">{{ galleta.descripcion_galleta or 'Deliciosa galleta artesanal' }}</p>
               <div class="d-flex justify-content-between align-items-center">
                   <span class="h5 text-danger mb-0">${{ "%.2f"|format(galleta.precio_galleta) }}/unidad</span>
-                  <a href="/login_home" class="btn btn-sm btn-outline-danger">Ver detalles</a>
+                  <a href="/" class="btn btn-sm btn-outline-danger">Ver detalles</a>
               </div>
           </div>
       </div>
@@ -613,7 +260,7 @@
                     <h2 class="display-4 fw-bold mb-4">¡Conoce nuestros paquetes!</h2>
                     <h3 class="text-danger mb-4">Paquetes de 700g o 1 kg</h3>
                     <p class="lead mb-5">Una combinación única ademas de los sabores de galletas que te encantarán.</p>
-                    <a href="/login_home" class="btn btn-magic btn-lg">Probar Ahora</a>
+                    <a href="/" class="btn btn-magic btn-lg">Probar Ahora</a>
                 </div>
             </div>
         </div>
@@ -673,125 +320,6 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Navbar scroll effect mejorado
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            const logo = document.querySelector('.logo');
-            
-            if (window.scrollY > 100) {
-                navbar.classList.add('scrolled');
-                logo.style.height = '40px';
-            } else {
-                navbar.classList.remove('scrolled');
-                logo.style.height = '50px';
-            }
-        });
-        
-        // Smooth scrolling mejorado para navegación
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Cerrar menú en móviles después de hacer clic
-                    const navbarCollapse = document.querySelector('.navbar-collapse');
-                    if (navbarCollapse.classList.contains('show')) {
-                        const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
-                            toggle: false
-                        });
-                        bsCollapse.hide();
-                    }
-                }
-            });
-        });
-        
-        // Animación al hacer scroll mejorada
-        function animateOnScroll() {
-            const elements = document.querySelectorAll('.animate__animated');
-            const windowHeight = window.innerHeight;
-            const triggerPoint = windowHeight / 1.2;
-            
-            elements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                
-                if (elementPosition < triggerPoint) {
-                    const animationClass = element.classList[1];
-                    element.classList.add(animationClass);
-                }
-            });
-        }
-        
-        // Ejecutar al cargar y al hacer scroll
-        window.addEventListener('load', animateOnScroll);
-        window.addEventListener('scroll', animateOnScroll);
-        
-        // Validación de formulario mejorada
-        (function() {
-            'use strict';
-            
-            const forms = document.querySelectorAll('.needs-validation');
-            
-            Array.prototype.slice.call(forms).forEach(function(form) {
-                form.addEventListener('submit', function(event) {
-                    if (!form.checkValidity()) {
-                        event.preventDefault();
-                        event.stopPropagation();
-                    }
-                    
-                    form.classList.add('was-validated');
-                }, false);
-            });
-        })();
-
-  // Mostrar más galletas al hacer clic en el botón
-  document.getElementById('ver-mas-btn').addEventListener('click', function() {
-      const masGalletas = document.getElementById('mas-galletas');
-      const boton = this;
-      
-      if (masGalletas.classList.contains('d-none')) {
-          masGalletas.classList.remove('d-none');
-          masGalletas.classList.add('animate__animated', 'animate__fadeIn');
-          boton.textContent = 'Mostrar Menos';
-      } else {
-          masGalletas.classList.add('d-none');
-          boton.textContent = 'Ver Más Sabores';
-      }
-  });
-        
-        // Preloader opcional (descomentar para usar)
-        /*
-        window.addEventListener('load', function() {
-            const preloader = document.querySelector('.preloader');
-            if (preloader) {
-                preloader.style.transition = 'opacity 0.5s ease';
-                preloader.style.opacity = '0';
-                setTimeout(() => {
-                    preloader.style.display = 'none';
-                }, 500);
-            }
-        });
-        */
-                 // Mostrar/ocultar galletas adicionales
-          document.addEventListener("DOMContentLoaded", function () {
-    const verMasBtn = document.getElementById("ver-mas-btn");
-    const masGalletas = document.getElementById("mas-galletas");
-
-    if (verMasBtn && masGalletas) {
-        verMasBtn.addEventListener("click", function () {
-            masGalletas.classList.remove("d-none"); // Muestra las galletas adicionales
-            verMasBtn.style.display = "none"; // Oculta el botón después de hacer clic
-        });
-    }
-});
-    </script>
+    <script src="{{ url_for('static', filename='js/landing_page.js') }}"></script>
 </body>
 </html>

@@ -56,6 +56,10 @@ def verify_user(usuario, contrasenia):
                 usuario_local.generar_ultimo_acceso()
                 usuario_local.dentro_sistema()
                 print([nombre_usuario, rol_usuario])
+
+                session['usuario_id'] = usuario_local.id
+                
                 return [nombre_usuario, rol_usuario]
+        
         else:
             return False

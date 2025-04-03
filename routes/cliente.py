@@ -1,8 +1,9 @@
 from flask import Blueprint, render_template, request, redirect, url_for, session, flash
 from controller.controller_cliente import ClienteController
-from forms.form_cliente import PaqueteForm, PesoForm, PiezaForm
+from forms.form_cliente import PaqueteForm, PesoForm, PiezaForm, CambioContrasenaForm
 from models.pedido import Pedido 
 from utils.db import db
+import hashlib
 from models.galleta import Galleta
 from datetime import  timedelta
 from models.usuario import Usuario
@@ -63,7 +64,6 @@ def agregar(id_galleta):
         Galleta.precio_galleta,
         Galleta.imagen_galleta,
         Galleta.descripcion_galleta,
-        Galleta.cantidad_galleta,
         Galleta.fecha_creacion,
         Galleta.activo
     ).filter_by(id_galleta=id_galleta, activo=True).first()
@@ -107,16 +107,10 @@ def realizar_pedido():
         id_usuario = session.get('id_usuario', 1)
         pedido = ClienteController.realizar_pedido(id_usuario)
         flash(f"Pedido #{pedido.id_pedido} realizado con éxito!", "success")
-        return redirect(url_for('cliente.confirmacion_pedido', id_pedido=pedido.id_pedido))
+        return redirect(url_for('cliente.mis_pedidos', id_pedido=pedido.id_pedido))
     except Exception as e:
         flash(str(e), "error")
         return redirect(url_for('cliente.piezas'))
-
-@cliente_bp.route('/confirmacion-pedido/<int:id_pedido>')
-def confirmacion_pedido(id_pedido):
-    
-    pedido = Pedido.query.get_or_404(id_pedido)
-    return render_template('pages/page-cliente/tabla_pedido.html', pedido=pedido)
 
 
 @cliente_bp.route('/vaciar-carrito', methods=['GET'])
@@ -130,7 +124,7 @@ def vaciar_carrito():
 
 @cliente_bp.route('/mis-pedidos')
 def mis_pedidos():
-    id_usuario = session.get('id_usuario', 1)
+    id_usuario = session['usuario_id']
     pedidos = (Pedido.query
         .filter_by(id_usuario=id_usuario)
         .order_by(Pedido.fecha_pedido.desc())
@@ -143,32 +137,36 @@ def mis_pedidos():
     
     return render_template('pages/page-cliente/tabla_pedido.html', pedidos=pedidos)
 
-MAX_INTENTOS = 3
-TIEMPO_LIMITE = timedelta(hours=1) 
+
+
+
+
+def hash_contrasena(contrasena):
+    return hashlib.sha256(contrasena.encode('utf-8')).hexdigest()
+
 @cliente_bp.route('/perfil-cliente', methods=['GET', 'POST'])
 def perfil_cliente():
+    if 'usuario_id' not in session:
+        return redirect('/login')
 
-    #if 'usuario_id' not in session:
-        #flash('Por favor, inicia sesión para acceder a esta página.', 'danger')
-        #return redirect('/login')
+    usuario_id = session['usuario_id']
+    usuario = Usuario.query.get(usuario_id)
+    form = CambioContrasenaForm()  # Creamos la instancia del formulario
 
-    #usuario_id = session['usuario_id']
-    #usuario = Usuario.query.get(usuario_id)
-
-    if request.method == 'POST':
-        contrasena_actual = request.form['contrasena_actual']
-        nueva_contrasena = request.form['nueva_contrasena']
+    if form.validate_on_submit():  # Verificamos si el formulario es válido
+        contrasena_actual = form.contrasena_actual.data
+        nueva_contrasena = form.nueva_contrasena.data
 
         # Verificar que la contraseña actual es correcta
-        #if not check_password_hash(usuario.contrasenia, contrasena_actual):
-            #flash('La contraseña actual es incorrecta.', 'danger')
-            #return redirect('/perfil_cliente')
-        
-        # Actualizar la contraseña
-        #usuario.contrasenia = generate_password_hash(nueva_contrasena)
-        #db.session.commit()
+        if usuario.contrasenia != hash_contrasena(contrasena_actual):
+            flash('La contraseña actual es incorrecta.', 'danger')
+            return redirect('/cliente/perfil-cliente')
+
+        # Encriptar la nueva contraseña y actualizarla en la base de datos
+        usuario.contrasenia = hash_contrasena(nueva_contrasena)
+        db.session.commit()
 
         flash('Contraseña cambiada exitosamente.', 'success')
-        return redirect('/perfil')  # O a donde desees redirigir después de cambiar la contraseña
+        return redirect('perfil-cliente')
 
-    return render_template('pages/page-cliente/perfil_cliente.html')
+    return render_template('pages/page-cliente/perfil_cliente.html', usuario=usuario, form=form)

@@ -15,6 +15,8 @@ select * from galletas;
 Select * from pedidos;
 SELECT * FROM detalles_pedido;
 
+SELECT * FROM usuario;
+
 DESCRIBE galletas;
 INSERT INTO usuario(rol_user, email,usuario, contrasenia,token) VALUES (0,'joelbriones701@gmail.com', 'joel123456', 'e39ab699d50e9eacbe2abf4320192d33de6465592c8752939ec20183de8462e5','00');
 
