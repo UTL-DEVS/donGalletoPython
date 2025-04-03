@@ -52,7 +52,7 @@
                     <h5 class="card-title">{{ galleta.nombre_galleta }}</h5>
                     <p class="card-text">Elige un paquete:</p>
                     <form action="{{ url_for('cliente.agregar', id_galleta=galleta.id_galleta) }}" method="post">
-                        {{ forms[galleta.id_galleta].hidden_tag() }}  <!-- Esto incluye csrf_token y campos ocultos -->
+                        {{ forms[galleta.id_galleta].hidden_tag() }}
                         <div class="mb-2">
                             {{ forms[galleta.id_galleta].paquete(class="form-control") }}
                         </div>

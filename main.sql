@@ -11,6 +11,10 @@ SELECT * FROM pre_registro;
 use casaGalleta;
 select * from galletas;
 
+
+Select * from pedidos;
+SELECT * FROM detalles_pedido;
+
 DESCRIBE galletas;
 INSERT INTO usuario(rol_user, email,usuario, contrasenia,token) VALUES (0,'joelbriones701@gmail.com', 'joel123456', 'e39ab699d50e9eacbe2abf4320192d33de6465592c8752939ec20183de8462e5','00');
 
@@ -25,6 +29,15 @@ INSERT INTO usuario(rol_user, email,usuario, contrasenia,token) VALUES (1,'crist
 use casaGalleta;
 INSERT INTO galletas (id_galleta, nombre_galleta, precio_galleta, imagen_galleta, descripcion_galleta, fecha_creacion, activo) 
 VALUES 
+(1, 'Chocolate Chip', 2.50, 'imagen1.jpg', 'Galleta con chispas de chocolate', 100, NOW(), TRUE),
+(2, 'Oatmeal Raisin', 2.00, 'imagen2.jpg', 'Galleta de avena con pasas', 50, NOW(), TRUE),
+(3, 'Peanut Butter', 2.75, 'imagen3.jpg', 'Galleta de mantequilla de maní', 75, NOW(), TRUE);
+INSERT INTO galletas (id_galleta, nombre_galleta, precio_galleta, imagen_galleta, descripcion_galleta, cantidad_galleta, fecha_creacion, activo) 
+VALUES 
+(4, 'Macadamia Blanca', 3.00, 'imagen4.jpg', 'Galleta con trozos de macadamia y chocolate blanco', 60, NOW(), TRUE),
+(5, 'Doble Chocolate', 2.80, 'imagen5.jpg', 'Galleta de chocolate con chispas de chocolate oscuro', 90, NOW(), TRUE),
+(6, 'Red Velvet', 3.25, 'imagen6.jpg', 'Galleta estilo red velvet con crema de queso', 50, NOW(), TRUE);
+
 (1, 'Chocolate Chip', 2.50, 'imagen1.jpg', 'Galleta con chispas de chocolate', NOW(), TRUE),
 (2, 'Oatmeal Raisin', 2.00, 'imagen2.jpg', 'Galleta de avena con pasas', NOW(), TRUE),
 (3, 'Peanut Butter', 2.75, 'imagen3.jpg', 'Galleta de mantequilla de maní', NOW(), TRUE);
