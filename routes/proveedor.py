@@ -2,11 +2,14 @@ from utils import Blueprint, render_template, redirect, flash, url_for, request,
 import json
 from forms import *
 from controller import controller_proveedor
+from funcs import crear_log_user, crear_log_error
+from utils import login_required, current_user, abort
 
-proveedor_bp = Blueprint('proveedor', __name__,url_prefix='/proveedor', template_folder='templates')
 
-modales_str = '{"detalles": 0, "editar": 0, "agregar": 0}'  
-modales = json.loads(modales_str)  # Convertir a diccionario
+proveedor_bp = Blueprint('proveedor', __name__, url_prefix='/proveedor', template_folder='templates')
+
+modales_str = '{"detalles": 0, "editar": 0, "agregar": 0}'
+modales = json.loads(modales_str)
 
 @proveedor_bp.route('/', methods=['POST','GET'])
 @login_required
@@ -19,6 +22,7 @@ def mostrar_proveedores():
     return render_template('pages/proveedor.html',modales=json.dumps(modales),form_persona=form_persona_obj,form_proveedor=form_proveedor_obj,lista_proveedores=lista_proveedores)
 
 @proveedor_bp.route('/detallesProveedor', methods=['GET'])
+@login_required
 @login_required
 def detalles_proveedor():
     if current_user.rol_user != 0 :
@@ -67,6 +71,7 @@ def reactivarProveedor():
 
 @proveedor_bp.route('/agregarProveedor', methods=['POST'])
 @login_required
+@login_required
 def agregar_proveedor():
     if current_user.rol_user != 0 :
         return redirect('/login')
@@ -84,9 +89,7 @@ def agregar_proveedor():
 
 @proveedor_bp.after_request
 def after_request(response):
-    proveedor_seleccionado=''
-    modales["detalles"]=0
-    modales["editar"]=0
-    modales["agregar"]=0
+    modales["detalles"] = 0
+    modales["editar"] = 0
+    modales["agregar"] = 0
     return response
-

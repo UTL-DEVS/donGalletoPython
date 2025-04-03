@@ -1,27 +1,34 @@
 {% extends 'components/estructura_usuario.html' %}
-{% block titulo %}Mi Perfil - Galletas Premium{% endblock %}
-{% block contenido %}
 
-    <div class="container">
-        <h2 class="mt-5">Cambiar Contraseña</h2>
-        <form method="POST" action="/perfil_cliente">
-            <div class="mb-3">
-                <label for="usuario" class="form-label">Nombre de Usuario</label>
-                <input type="text" class="form-control" id="usuario" name="usuario" value="{{ usuario.usuario }}" readonly>
-            </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Correo Electrónico</label>
-                <input type="email" class="form-control" id="email" name="email" value="{{ usuario.email }}" readonly>
-            </div>
-            <div class="mb-3">
-                <label for="contrasena_actual" class="form-label">Contraseña Actual</label>
-                <input type="password" class="form-control" id="contrasena_actual" name="contrasena_actual" required>
-            </div>
-            <div class="mb-3">
-                <label for="nueva_contrasena" class="form-label">Nueva Contraseña</label>
-                <input type="password" class="form-control" id="nueva_contrasena" name="nueva_contrasena" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Cambiar Contraseña</button>
-        </form>
-    </div>
+{% block titulo %}Mi Perfil - La casa de la Galleta{% endblock %}
+
+{% block contenido %}
+<div class="container">
+    <h2 class="mt-5">Cambiar Contraseña</h2>
+    <form method="POST" action="{{ url_for('cliente.perfil_cliente') }}">
+        {{ form.hidden_tag() }}  {# Protección contra CSRF #}
+
+        <div class="mb-3">
+            <label for="usuario" class="form-label">Nombre de Usuario</label>
+            <input type="text" class="form-control" id="usuario" name="usuario" value="{{ usuario.usuario }}" readonly>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Correo Electrónico</label>
+            <input type="email" class="form-control" id="email" name="email" value="{{ usuario.email }}" readonly>
+        </div>
+        <div class="mb-3">
+            <label for="contrasena_actual" class="form-label">Contraseña Actual</label>
+            {{ form.contrasena_actual(class="form-control") }}
+        </div>
+        <div class="mb-3">
+            <label for="nueva_contrasena" class="form-label">Nueva Contraseña</label>
+            {{ form.nueva_contrasena(class="form-control") }}
+        </div>
+        <div class="mb-3">
+            <label for="confirmar_contrasena" class="form-label">Confirmar Nueva Contraseña</label>
+            {{ form.confirmar_contrasena(class="form-control") }}
+        </div>
+        <button type="submit" class="btn btn-primary">{{ form.submit() }}</button>
+    </form>
+</div>
 {% endblock %}

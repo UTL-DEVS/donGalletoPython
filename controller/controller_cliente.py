@@ -1,5 +1,6 @@
 from dao.dao_cliente import dao_cliente as ClienteDAO
 from flask import session, flash
+from cqrs import cqrs_pedido
 
 class ClienteController:
     @staticmethod
@@ -96,3 +97,7 @@ class ClienteController:
             session.pop('carrito')
             return True
         return False
+    
+    @staticmethod
+    def actualizarPedido(idPedido):
+        return cqrs_pedido.actualizarPedido(idPedido)

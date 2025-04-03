@@ -1,4 +1,4 @@
-{% extends 'components/estructura.html' %} {% block titulo %}Inicio Cliente{%
+{% extends 'pages/pages-ventas/nav.html' %} {% block titulo %}Inicio Cliente{%
 endblock %} {% block contenido %} {% import 'components/_macro_login.html' as
 macros %}
 <link
@@ -9,16 +9,23 @@ macros %}
   rel="stylesheet"
   href="{{ url_for('static', filename='css/page-ventas/tipo_venta.css') }}"
 />
-<script
-  src="{{ url_for('static', filename='js/page-ventas/resumen.js') }}"
-  defer
-></script>
+
 <br />
 
 <meta name="csrf-token" content="{{ csrf_token() }}" />
-<button id="corte-ventas" class="btn">
-  <i class="fas fa-file-alt"></i> Corte de Ventas
-</button>
+
+<form action="{{ url_for('resumen_venta.corte_ventas') }}" method="POST">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+  <button id="corte-ventas" type="submit" class="btn">
+    <i class="fas fa-file-alt"></i> Corte de Ventas
+  </button>
+</form>
+
+<div class="d-flex justify-content-center">
+  <a id="ventas_dia" href="ventas_dia" class="btn">
+    <i class="fa-solid fa-arrow-up"></i> Ventas
+  </a>
+</div>
 
 <div class="custom-container mt-5">
   <h1 class="text-center">Seleccione método de compra</h1>
@@ -37,7 +44,7 @@ macros %}
             />
           </div>
           <div class="card-body">
-            <h5 class="card-title mt-4">Por Unidad</h5>
+            <h5 class="card-title mt-4">Galleta</h5>
           </div>
         </div>
       </a>
@@ -56,7 +63,7 @@ macros %}
             />
           </div>
           <div class="card-body">
-            <h5 class="card-title mt-4">Por Paquete</h5>
+            <h5 class="card-title mt-4">Paquete</h5>
           </div>
         </div>
       </a>
@@ -75,7 +82,7 @@ macros %}
             />
           </div>
           <div class="card-body">
-            <h5 class="card-title mt-4">Por Peso</h5>
+            <h5 class="card-title mt-4">Peso</h5>
           </div>
         </div>
       </a>

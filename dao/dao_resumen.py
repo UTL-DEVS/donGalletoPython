@@ -28,7 +28,7 @@ def crear_venta(total, usuario_id, items):
         db.session.commit()
         return nueva_venta
     except Exception as e:
-        print(f"Error al crear venta: {str(e)}")
+        
         db.session.rollback()
         return None
 

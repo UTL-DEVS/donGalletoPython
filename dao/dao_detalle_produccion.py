@@ -3,9 +3,9 @@ from models.produccion import Produccion
 from models.galleta import Galleta
 from models.detalle_produccion import DetalleProduccion
 from datetime import date
+from flask import jsonify
 
 def obtenerDetalleProduccion(fecha):
-
     resultados = db.session.query(
         Produccion.fecha_produccion,
         Produccion.hora_produccion,
@@ -27,16 +27,10 @@ def obtenerDetalleProduccion(fecha):
     return datos_formateados
 
 def agregarDetalleProduccion(detalleProduccion):
-    db.session.add(detalleProduccion)
-    db.session.commit()
-    actualizarCantidadGalletas(detalleProduccion)
-    return detalleProduccion.id_detalle_produccion
+    try: 
+        db.session.add(detalleProduccion)
+        db.session.commit()
+        return 1
+    except Exception as exception:
+        return -1
 
-def actualizarCantidadGalletas(detalleProduccion):
-    galleta = Galleta.query.get(detalleProduccion.id_galleta)
-    cantidad = detalleProduccion.cantidad * 10
-    if galleta:
-        galleta.cantidad_galleta +=  cantidad
-    else:
-        raise ValueError(f"No se encontró la galleta con ID {detalleProduccion.id_galleta}")
-    db.session.commit()

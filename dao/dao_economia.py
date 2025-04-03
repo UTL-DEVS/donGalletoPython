@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 from utils import db, func,extract
 from models import Venta, Nomina, Empleado, Persona
+=======
+from utils import db, func
+from models.ProcesoVenta import ProcesoVenta
+>>>>>>> 0b840a051a53c82f11c26e0c78b01a9abf2dffeb
 from datetime import datetime, timedelta
 
 def obtener_ventas_por_mes(mes, dias):
@@ -10,22 +15,22 @@ def obtener_ventas_por_mes(mes, dias):
         primer_dia = ultimo_dia - timedelta(days=int(dias) - 1)
 
         return (
-            db.session.query(Venta)
-            .filter(Venta.fecha.between(primer_dia, ultimo_dia))
+            db.session.query(ProcesoVenta)
+            .filter(ProcesoVenta.fecha.between(primer_dia, ultimo_dia))
             #.filter(Venta.estatus != 0)  # Solo Ventas activas
             .all()
         )
 
 def obtener_primera_fecha_venta():
-    primera_fecha_venta = (db.session.query(func.date_format(Venta.fecha,  "%m/%Y"))
-            .order_by(Venta.fecha.asc())
+    primera_fecha_venta = (db.session.query(func.date_format(ProcesoVenta.fecha,  "%m/%Y"))
+            .order_by(ProcesoVenta.fecha.asc())
             .limit(1)
             .scalar())
     return primera_fecha_venta
         
 def obtener_ultima_fecha_venta():
-    ultima_fecha_venta = (db.session.query(func.date_format(Venta.fecha,  "%m/%Y"))
-        .order_by(Venta.fecha.desc())
+    ultima_fecha_venta = (db.session.query(func.date_format(ProcesoVenta.fecha,  "%m/%Y"))
+        .order_by(ProcesoVenta.fecha.desc())
         .limit(1)
         .scalar()
         )

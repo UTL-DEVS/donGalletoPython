@@ -4,9 +4,13 @@ from forms.form_persona import form_persona
 from forms.form_login import regis_form
 from forms.form_login import conf_form
 from forms.form_receta import DetalleRecetaForm
-from forms.form_resumen import *
 from forms.form_receta import DetalleRecetaForm, RecetaForm
 from forms.form_galleta import *
-from forms.form_resumen import *
+from forms.form_proceso_venta import CarritoForm
 from forms.form_cliente import *
 from forms.form_empleado import *
+<<<<<<< HEAD
+=======
+from forms.form_usuario import *
+from forms.form_insumo import InsumoForm
+>>>>>>> 0b840a051a53c82f11c26e0c78b01a9abf2dffeb

@@ -1,24 +1,27 @@
-from utils import Blueprint, render_template, redirect, request, login_required, current_user, flash, url_for
+from utils import Blueprint, render_template, redirect, request, login_required, current_user, flash, url_for, abort
 from datetime import datetime
 from controller import controller_economia
 import json
+from funcs import crear_log_user, crear_log_error
 
-economia_bp = Blueprint('economia', __name__,url_prefix='/economia', template_folder='templates')
-
+economia_bp = Blueprint('economia', __name__, url_prefix='/economia', template_folder='templates')
 
 @economia_bp.route("/", methods=['GET'])
 @login_required
 def dashboard():
-    fechas_ventas = controller_economia.obtener_fechas_ventas()
-    lista_ventas_json=''
-    if (fechas_ventas != None):
-        print(f'fechas: {fechas_ventas}')
-        if(request.args.get('dias_ventas') == None):
-            mes_venta=json.loads(fechas_ventas)['ultima_venta']
-            dias = 30
-        else:
-            mes_venta = ((request.args.get('mes_ventas')))
-            dias =((request.args.get('dias_ventas')))
+    try:
+        if current_user.rol_user != 0:
+            abort(404)
+        fechas_ventas = controller_economia.obtener_fechas_ventas()
+        lista_ventas_json=''
+        if (fechas_ventas != None):
+            print(f'fechas: {fechas_ventas}')
+            if(request.args.get('dias_ventas') == None):
+                mes_venta=json.loads(fechas_ventas)['ultima_venta']
+                dias = 30
+            else:
+                mes_venta = ((request.args.get('mes_ventas')))
+                dias =((request.args.get('dias_ventas')))
     
         lista_ventas = controller_economia.obtener_ventas_diarias(mes_venta, dias)
         lista_ventas_json = json.dumps([
@@ -29,10 +32,12 @@ def dashboard():
             }
             for venta in lista_ventas
         ])
-    if current_user.rol_user != 0 :
-        return redirect('/login')
-
-    return render_template('pages/page-economia/dashboard.html',rango_fechas_ventas=fechas_ventas,lista_ventas=lista_ventas_json)
+        crear_log_user(current_user.usuario, request.url)
+        return render_template('pages/page-economia/dashboard.html',rango_fechas_ventas=fechas_ventas,lista_ventas=lista_ventas_json)
+    except Exception as e:
+        crear_log_error(current_user.usuario, str(e))
+        flash("Error al cargar el panel económico", "danger")
+        return redirect('/error')
 
 @economia_bp.route('/nomina', methods=['GET'])
 @login_required
@@ -52,6 +57,7 @@ def mostrar_nomina():
         flash("No hay pago de sueldos en el periodo seleccionado.", "error")
         return redirect(url_for('economia.mostrar_nomina'))
     return render_template('pages/page-economia/nomina.html', pagos=pagos, mes=mes, anio=anio, quincena=quincena,total_pagos=total_pagos)
+    
 
 @economia_bp.route('/nomina/sueldos', methods=['GET'])
 @login_required
@@ -81,3 +87,7 @@ def pagar_empleado():
     else:
         flash("Algo salió mal.", "error")
     return redirect(url_for('economia.mostrar_pagos_pendientes'))
+
+    
+
+    

@@ -66,7 +66,7 @@ def procesar_venta(total, items):
 
     except Exception as e:
         db.session.rollback()
-        print(f"Error al procesar venta: {str(e)}")
+        
         raise
     
 def generar_reporte_diario():
@@ -163,7 +163,7 @@ def corte_ventas():
         return filepath, None
         
     except Exception as e:
-        print(f"Error al generar corte de ventas: {str(e)}")
+        
         return None, str(e)
     
 CORTE_FOLDER = 'cortes'
@@ -211,9 +211,9 @@ def generar_ticket(venta):
         filename = os.path.join(TICKETS_FOLDER, f"ticket_{venta.id}.pdf")
         pdf.output(filename)
         
-        print(f"Ticket generado en: {filename}") 
+        
         return filename
         
     except Exception as e:
-        print(f"Error al generar ticket: {str(e)}")
+        
         raise

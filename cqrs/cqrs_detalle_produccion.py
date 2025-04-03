@@ -11,6 +11,6 @@ def validarDatos(detalleProduccion):
 def agregarDetalleProduccion(detalleProduccion):
     validacionDatos = validarDatos(detalleProduccion)
     if validacionDatos != '':
-        return validacionDatos
+        return -1
     
     return dao_detalle_produccion.agregarDetalleProduccion(detalleProduccion)    

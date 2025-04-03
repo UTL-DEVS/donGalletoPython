@@ -57,4 +57,25 @@ def reactivar_proveedor(id_proveedor):
     prov_eliminar.persona.estatus=1
     return cqrs_proveedor.actualizar_proveedor(prov_eliminar)
 
+<<<<<<< HEAD
 '''
+=======
+
+def agregar_proveedor(form_proveedor,form_persona):
+    nuevo_persona_prov=Persona()
+    nuevo_persona_prov.nombre=str(form_persona.nombre.data)
+    nuevo_persona_prov.primerApellido=str(form_persona.primer_apellido.data)
+    nuevo_persona_prov.segundoApellido=str(form_persona.segundo_apellido.data)
+    nuevo_persona_prov.correo=str(form_persona.correo.data)
+    nuevo_persona_prov.direccion=str(form_persona.direccion.data)
+    nuevo_persona_prov.telefono=str(form_persona.telefono.data)
+    id_persona = cqrs_proveedor.agregar_persona_proveedor(nuevo_persona_prov)
+    
+    if(id_persona != None):
+        nuevo_prov=Proveedor()
+        nuevo_prov.nombre_proveedor=str(form_proveedor.nombre_proveedor.data)
+        nuevo_prov.id_persona=(id_persona)
+        return cqrs_proveedor.agregar_proveedor(nuevo_prov)
+    else:
+        return False'''
+>>>>>>> 0b840a051a53c82f11c26e0c78b01a9abf2dffeb
