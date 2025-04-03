@@ -1,0 +1,131 @@
+{% extends 'pages/pages-ventas/nav.html' %} {% block titulo %}Ventas del Día -
+Don Galleto{% endblock %} {% block contenido %}
+<meta name="csrf-token" content="{{ csrf_token() }}" />
+<link
+  rel="stylesheet"
+  href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css"
+/>
+<style>
+  .tabla-contenedor {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 30px;
+  }
+
+  .tabla-scroll {
+    max-height: 500px;
+    overflow-y: auto;
+    margin-top: 15px;
+  }
+
+  .table thead th {
+    background-color: rgb(193, 194, 196);
+    color: #000000;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  .table-hover tbody tr:hover {
+    background-color: rgba(0, 123, 255, 0.1);
+  }
+
+  .btn-ticket {
+    background-color: #28a745;
+    border-color: #28a745;
+    transition: all 0.3s;
+  }
+
+  .btn-ticket:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+    transform: translateY(-1px);
+  }
+
+  .table-responsive {
+    border-radius: 8px;
+    overflow: hidden;
+  }
+</style>
+
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-lg-10">
+      <div class="tabla-contenedor">
+        <h2 class="text-center mb-4" style="color: #343a40">
+          <i class="fas fa-file-invoice-dollar me-2"></i>Ventas del Día
+        </h2>
+
+        <div class="tabla-scroll">
+          <div class="table-responsive">
+            <table id="tablaVentas" class="table table-hover align-middle">
+              <thead>
+                <tr>
+                  <th class="text-center">ID Venta</th>
+                  <th class="text-center">Total</th>
+                  <th class="text-center">Fecha</th>
+                  <th class="text-center">Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for venta in ventas_dia %}
+                <tr>
+                  <td class="text-center">{{ venta.id }}</td>
+                  <td class="text-center fw-bold" style="color: #28a745">
+                    ${{ "%.2f"|format(venta.total) }}
+                  </td>
+                  <td class="text-center">
+                    {{ venta.fecha.strftime('%d/%m/%Y %H:%M') }}
+                  </td>
+                  <td class="text-center">
+                    <a
+                      href="{{ url_for('venta.descargar_ticket', venta_id=venta.id) }}"
+                      class="btn btn-ticket btn-sm"
+                      title="Descargar ticket"
+                    >
+                      <i class="fas fa-download me-1"></i> Ticket
+                    </a>
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+<script
+  src="https://kit.fontawesome.com/a076d05399.js"
+  crossorigin="anonymous"
+></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    $("#tablaVentas").DataTable({
+      language: {
+        url: "https://cdn.datatables.net/plug-ins/1.13.7/i18n/es-ES.json",
+      },
+      order: [[2, "desc"]],
+      responsive: true,
+      dom: '<"top"lf>rt<"bottom"ip>',
+      pageLength: 10,
+      scrollY: "400px",
+      scrollCollapse: true,
+      paging: true,
+      fixedHeader: true,
+      initComplete: function () {
+        this.api().columns.adjust();
+      },
+    });
+  });
+</script>
+
+{% endblock %}

@@ -1,4 +1,6 @@
 from flask import Blueprint, request
+from utils import abort, current_user, login_required
+from funcs import crear_log_error, crear_log_user
 import json
 from models import detalle_produccion
 from controller import controller_detalle_produccion

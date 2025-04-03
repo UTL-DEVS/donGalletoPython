@@ -1,0 +1,96 @@
+{% extends 'components/_estructura_admin.html' %}
+{% block titulo %}Agregar Galleta{% endblock %}
+{% block contenido %}
+
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="card border-0 shadow-lg">
+        <div class="card-header bg-primary text-white py-3">
+          <h3 class="mb-0 text-center">
+            <i class="fas fa-plus-circle me-2"></i>Agregar Nueva Galleta
+          </h3>
+        </div>
+        <div class="card-body p-4">
+            <form method="POST" enctype="multipart/form-data">
+
+            {{ form.csrf_token }}
+
+            <div class="row g-3">
+              <!-- Nombre -->
+              <div class="col-md-12">
+                <div class="form-floating">
+                  {{ form.nombre_galleta(class="form-control" + (" is-invalid"
+                  if form.nombre_galleta.errors else ""), placeholder=" ") }} {{
+                  form.nombre_galleta.label(class="form-label") }} {% for error
+                  in form.nombre_galleta.errors %}
+                  <div class="invalid-feedback">{{ error }}</div>
+                  {% endfor %}
+                </div>
+              </div>
+
+              <!-- Precio y Cantidad -->
+              <div class="col-md-12">
+                <div class="form-floating">
+                  {{ form.precio_galleta(class="form-control" + (" is-invalid"
+                  if form.precio_galleta.errors else ""), placeholder=" ",
+                  step="0.01") }} {{
+                  form.precio_galleta.label(class="form-label") }} {% for error
+                  in form.precio_galleta.errors %}
+                  <div class="invalid-feedback">{{ error }}</div>
+                  {% endfor %}
+                </div>
+              </div>
+
+              
+
+              <!-- Descripción -->
+              <div class="col-12">
+                <div class="form-floating">
+                  {{ form.descripcion_galleta(class="form-control" + ("
+                  is-invalid" if form.descripcion_galleta.errors else ""),
+                  placeholder=" ", style="height: 100px") }} {{
+                  form.descripcion_galleta.label(class="form-label") }} {% for
+                  error in form.descripcion_galleta.errors %}
+                  <div class="invalid-feedback">{{ error }}</div>
+                  {% endfor %}
+                </div>
+              </div>
+
+              <!-- Imagen -->
+              <div class="col-12">
+                <div class="mb-3">
+                  <label for="{{ form.imagen_galleta.id }}" class="form-label">
+                    <i class="fas fa-image me-2"></i>{{
+                    form.imagen_galleta.label.text }}
+                  </label>
+                  {{ form.imagen_galleta(class="form-control" + (" is-invalid"
+                  if form.imagen_galleta.errors else "")) }}
+                  <div class="form-text">
+                    Formatos soportados: JPG, PNG, GIF (Max. 5MB)
+                  </div>
+                  {% for error in form.imagen_galleta.errors %}
+                  <div class="invalid-feedback">{{ error }}</div>
+                  {% endfor %}
+                </div>
+              </div>
+
+              <!-- Botones -->
+              <div class="col-12 mt-4">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                  <div class="text-start w-100">
+                    <a href="/galleta_home" class="btn btn-warning">Regresar</a>
+                  </div>
+                  <button type="submit" class="btn btn-primary px-4 w-50">
+                    <i class="fas fa-save me-1"></i> Guardar Galleta
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

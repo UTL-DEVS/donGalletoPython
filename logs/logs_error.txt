@@ -1,0 +1,2 @@
+Fecha: 2025-04-03 04:57:17.046324 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada
+Fecha: 2025-04-03 04:59:44.820148 - Usuario: joel123456 - Accion: Error 404: Pagina no encontrada en http://localhost:8080/cliente

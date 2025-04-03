@@ -35,7 +35,7 @@ class ClienteController:
             return galleta.precio_galleta * cantidad_galleta
     
     @staticmethod
-    def agregar_al_carrito(id_galleta, nombre, precio, cantidad_galleta, tipo_pedido):
+    def agregar_al_carrito(id_galleta, nombre, precio, cantidad_galleta, tipo_pedido,):
         if not all([id_galleta, nombre, precio, cantidad_galleta, tipo_pedido]):
             raise ValueError("Faltan datos requeridos")
             

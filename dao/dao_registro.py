@@ -19,7 +19,8 @@ def dao_registro(email_local, usuario, contrasenia, captcha):
     if dato > 120: # segundos
         delate_captcha_session('captcha_txt')
         return False
-    
+    if captcha_txt != captcha:
+        return False
     # Verificar si el correo o el usuario ya existen
     usuario_existente = PreRegistro.query.filter_by(email=email_local).first()
     if usuario_existente:

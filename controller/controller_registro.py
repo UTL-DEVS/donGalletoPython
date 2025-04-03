@@ -2,7 +2,7 @@ from cqrs import  cqrs_registro,  cqrs_conf
 import re
 import os
 from utils import  redirect, flash
-
+from funcs import hash
 password_regex = r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$'
 
 def validar_contrasenia(contrasenia):
@@ -14,9 +14,10 @@ def controller_registro(email, usuario, contrasenia, captcha):
         flash('Contraseña incorrecta. Debe tener al menos 8 caracteres, una mayúscula, una minúscula, un número y un carácter especial.', 'error')
         
         return False
-    
-    
-    return cqrs_registro(email, usuario, contrasenia, captcha)
+    print('contrasenia controller_login')
+    print(contrasenia)
+    contrasenia_hash = hash(contrasenia)
+    return cqrs_registro(email, usuario, contrasenia_hash, captcha)
 
 def controller_conf(email, token):
     return cqrs_conf(email, token)

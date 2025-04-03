@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, request, jsonify
 from utils import login_required, current_user, redirect
 from dao import dao_galleta, dao_detalle_produccion, dao_produccion
+from dao import dao_detalle_produccion, dao_resumen_venta
 from forms import DetalleRecetaForm
 from datetime import date, datetime
 from models.detalle_produccion import DetalleProduccion
@@ -16,13 +17,13 @@ def working():
 @cocina_produccion_bp.route('/produccion')
 def produccion():
     form = DetalleRecetaForm()
-    lstGalletas = dao_galleta.getAllGalletas()
+    lstGalletas = dao_resumen_venta.getAllGalletas()
     return render_template('pages/page-produccion/cocina-produccion/stock.html', lstGalletas = lstGalletas, form = form)
 
 @cocina_produccion_bp.route('/produccion-stock')
 def stock():
     form = DetalleRecetaForm()
-    lstGalletas = dao_galleta.getAllGalletas()
+    lstGalletas = dao_resumen_venta.getAllGalletas()
     return render_template('pages/page-produccion/cocina-produccion/stock.html', lstGalletas = lstGalletas, form = form)
 
 @cocina_produccion_bp.route('/produccion-historial', methods=['GET'])
