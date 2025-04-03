@@ -19,11 +19,11 @@ def dao_login(usuario, contrasenia, captcha_data):
 from funcs import delate_captcha_session, verificar_captcha
 
 def dao_login(usuario, contrasenia, captcha_data):
-    print(captcha_data)
-    print('contrasenia dao')
-    print(contrasenia)
+    
+    
+    
     if not captcha_data:
-        print(usuario, contrasenia, captcha_data)
+        
         return False
     else:
         dato, captcha_txt= verificar_captcha()
@@ -43,6 +43,8 @@ def dao_login(usuario, contrasenia, captcha_data):
                     return redirect('/receta')
                 elif rol_user == 3:
                     return redirect('/produccion')
+                elif rol_user == 4:
+                     return redirect('/tipo_venta')
             else:
                 return False
             

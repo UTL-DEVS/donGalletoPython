@@ -11,6 +11,8 @@ class Galleta(db.Model):
     fecha_creacion = db.Column(db.DateTime, default=datetime.utcnow)
     activo = db.Column(db.Boolean, default=True)
 
+    stock = db.relationship('Stock', back_populates='galleta', uselist=False)
+    detalles_venta = db.relationship('DetalleVenta', back_populates='galleta')
 
     def __repr__(self):
         return f'<Galleta {self.nombre_galleta}>'

@@ -40,7 +40,7 @@ def agregar_proveedor(form_proveedor,form_persona):
     nuevo_persona_prov.direccion=str(form_persona.direccion.data)
     nuevo_persona_prov.telefono=str(form_persona.telefono.data)
     id_persona = cqrs_proveedor.agregar_persona_proveedor(nuevo_persona_prov)
-    print(f'if: {id_persona}')
+    
     if(id_persona != None):
         nuevo_prov=Proveedor()
         nuevo_prov.nombre_proveedor=str(form_proveedor.nombre_proveedor.data)

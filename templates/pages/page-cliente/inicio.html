@@ -6,6 +6,7 @@
     .custom-container {
         width: 90% !important;
         margin:  auto;
+        height: 100vh !important;
     }
     .fondo {
         background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('{{ url_for("static", filename="img/casa-cliente.jpg") }}');
@@ -63,8 +64,7 @@
 
 </style>
 
-<div class="custom-container">
-    <!-- Hero Section -->
+<div class="custom-container mt-5">
     <section class="fondo text-center mb-5">
         <div class="container">
             <h1 class="display-4 fw-bold mb-4">La Casa de la Galleta</h1>
@@ -76,7 +76,6 @@
         </div>
     </section>
 
-    <!-- Featured Products -->
     <section id="productos" class="mb-5 py-5">
         <div class="text-center mb-5">
             <h2 class="fw-bold mb-3">Nuestras Galletas Destacadas</h2>
@@ -104,10 +103,6 @@
             <a href="{{ url_for('cliente.menu') }}" class="btn btn-warning">Ver Menú Completo</a>
         </div>
     </section>
-
-
-
-  
 
 <!-- Script for animations -->
 <script>

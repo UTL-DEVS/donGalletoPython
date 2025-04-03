@@ -42,12 +42,12 @@ def dao_registro(email_local, usuario, contrasenia, captcha):
         contrasenia = contrasenia
     )
 
-    print(nuevo_usuario.contrasenia)
+    
     enviar_correo(cuerpo=f'{token_local} \n para poder confirmar ingresar a: http://localhost:8080/confirmar', destino=email_local)
     db.session.add(nuevo_usuario)
     db.session.commit()
     
-    print("Usuario registrado correctamente")
+    
     return nuevo_usuario
 
 
@@ -70,7 +70,7 @@ def dao_conf(email, token):
             sistema = 1,
             token = generarToken()
         )
-        print('usuarioGuardado')
+        
         db.session.add(usuario_final)
         db.session.commit()
         return redirect('/cliente')

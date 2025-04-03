@@ -19,3 +19,13 @@ Solo existe durante una petición HTTP:
     g (variables globales temporales)
 
 Es como si, al iniciar la app, le dieras a Flask un conjunto de variables globales con toda esta información, y Flask sabe cómo usar esas "variables globales" durante el ciclo de vida de la app.
+
+
+
+comando para correr las pruebas:
+$env:FLASK_APP="main.py"
+>> flask run
+>> 
+
+(env) D:\ESCUELA_801\ellos_3\donGalletoPython>py -m unittest discover -s tests
+

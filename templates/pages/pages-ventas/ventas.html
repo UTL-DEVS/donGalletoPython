@@ -1,16 +1,28 @@
-{% extends 'components/estructura.html' %} {% block titulo %}Inicio - Galletas
+{% extends 'pages/pages-ventas/nav.html' %} {% block titulo %}Inicio - Galletas
 Premium{% endblock %} {% block contenido %}
-
 <link
   rel="stylesheet"
   href="{{ url_for('static', filename='css/page-ventas/ventas.css') }}"
 />
 <script
-  src="{{ url_for('static', filename='js/page-ventas/galleta.js') }}"
+  src="{{ url_for('static', filename='js/page-ventas/proceso_venta.js') }}"
   defer
 ></script>
+<script>
+  history.pushState(null, null, location.href);
+  window.onpopstate = function (event) {
+    window.location.href = "/tipo_venta";
+  };
+</script>
 <meta name="csrf-token" content="{{ csrf_token() }}" />
+
 {% macro render_tarjeta_galleta(galleta) %}
+<script>
+  history.pushState(null, null, location.href);
+  window.onpopstate = function (event) {
+    window.location.href = "/tipo_venta";
+  };
+</script>
 <div class="col-md-6 col-lg-4">
   <div class="card">
     <div class="card-img-container">
@@ -27,22 +39,21 @@ Premium{% endblock %} {% block contenido %}
     <div class="card-body">
       <h5 class="card-title">{{ galleta.nombre_galleta }}</h5>
       <p class="card-text">${{ "%.2f"|format(galleta.precio_galleta) }}</p>
-      <p class="card-text">Stock: {{ galleta.cantidad_galleta }}</p>
-      <form
-        class="formulario-agregar"
-        data-galleta-id="{{ galleta.id_galleta }}"
-        data-galleta-nombre="{{ galleta.nombre_galleta }}"
-        data-galleta-precio="{{ galleta.precio_galleta }}"
-        data-stock="{{ galleta.cantidad_galleta }}"
-      >
+      <form method="POST" action="{{ url_for('venta.agregar_al_carrito') }}">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+        <input type="hidden" name="tipo_venta" value="unidad" />
+        <input
+          type="hidden"
+          name="galleta_id"
+          value="{{ galleta.id_galleta }}"
+        />
         <input
           type="number"
           name="cantidad"
           value="1"
-          min="1"
-          max="{{ galleta.cantidad_galleta }}"
           class="form-control mb-2"
           required
+          min="1"
         />
         <button type="submit" class="btn btn-warning w-100">
           Agregar al carrito
@@ -51,22 +62,36 @@ Premium{% endblock %} {% block contenido %}
     </div>
   </div>
 </div>
-{% endmacro %} {% macro render_item_carrito(item) %}
+{% endmacro %}{% macro render_item_carrito(item, index) %}
+<script>
+  history.pushState(null, null, location.href);
+  window.onpopstate = function (event) {
+    window.location.href = "/tipo_venta";
+  };
+</script>
+
 <li class="list-group-item d-flex justify-content-between align-items-center">
-  {{ item.nombre }} {% if item.tipo_venta == 'unidad' %} (x{{ item.cantidad }})
-  {% elif item.tipo_venta == 'peso' %} ({{ item.unidades * 10 }}g) {% elif
-  item.tipo_venta == 'paquete' %} ({{ item.unidades }} unidades) {% endif %} -
-  ${{ "%.2f"|format(item.subtotal) }}
-  <button
-    class="btn btn-danger btn-sm remover-item"
-    data-galleta-id="{{ item.galleta_id }}"
-    data-galleta-nombre="{{ item.nombre }}"
-    data-tipo-venta="{{ item.tipo_venta }}"
+  {{ item.nombre }} {% if item.tipo_venta == 'unidad' %} (x{{ item.cantidad }}
+  unidades) {% elif item.tipo_venta == 'peso' %} ({{ item.unidades * 10 }}g) {%
+  elif item.tipo_venta == 'paquete' %} ({{ item.unidades }} unidades en paquete)
+  {% endif %} - ${{ "%.2f"|format(item.subtotal) }}
+
+  <form
+    method="POST"
+    action="{{ url_for('venta.eliminar_item', index=index) }}"
+    style="display: inline"
   >
-    ❌
-  </button>
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+    <button type="submit" class="btn btn-danger btn-sm">❌</button>
+  </form>
 </li>
 {% endmacro %} {% macro render_form_peso(galleta) %}
+<script>
+  history.pushState(null, null, location.href);
+  window.onpopstate = function (event) {
+    window.location.href = "/tipo_venta";
+  };
+</script>
 <div class="col-md-6 col-lg-4">
   <div class="card">
     <div class="card-img-container">
@@ -82,21 +107,15 @@ Premium{% endblock %} {% block contenido %}
     </div>
     <div class="card-body">
       <h5 class="card-title">{{ galleta.nombre_galleta }}</h5>
-      <p class="card-text">
-        ${{ "%.2f"|format(galleta.precio_galleta) }} por unidad
-      </p>
-      <p class="card-text">
-        Stock: {{ galleta.cantidad_galleta }} unidades ({{
-        galleta.cantidad_galleta * 10 }}g)
-      </p>
-
-      <form
-        class="formulario-agregar-peso"
-        data-galleta-id="{{ galleta.id_galleta }}"
-        data-galleta-nombre="{{ galleta.nombre_galleta }}"
-        data-galleta-precio="{{ galleta.precio_galleta }}"
-        data-stock="{{ galleta.cantidad_galleta }}"
-      >
+      <p class="card-text">${{ "%.2f"|format(galleta.precio_galleta) }}</p>
+      <form method="POST" action="{{ url_for('venta.agregar_al_carrito') }}">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+        <input type="hidden" name="tipo_venta" value="peso" />
+        <input
+          type="hidden"
+          name="galleta_id"
+          value="{{ galleta.id_galleta }}"
+        />
         <div class="form-group mb-2">
           <label for="peso-{{ galleta.id_galleta }}">Peso (gramos):</label>
           <input
@@ -104,20 +123,11 @@ Premium{% endblock %} {% block contenido %}
             id="peso-{{ galleta.id_galleta }}"
             name="peso"
             value="10"
+            class="form-control"
+            required
             min="10"
             step="10"
-            max="{{ galleta.cantidad_galleta * 10 }}"
-            class="form-control"
-            oninput="validarPeso(this, {{ galleta.cantidad_galleta }})"
-            required
           />
-        </div>
-        <div class="form-group mb-2">
-          <label
-            >Equivale a:
-            <span id="unidades-{{ galleta.id_galleta }}">1</span>
-            unidades</label
-          >
         </div>
         <button type="submit" class="btn btn-warning w-100">
           Agregar al carrito
@@ -127,24 +137,36 @@ Premium{% endblock %} {% block contenido %}
   </div>
 </div>
 {% endmacro %} {% macro render_form_paquete() %}
+<script>
+  history.pushState(null, null, location.href);
+  window.onpopstate = function (event) {
+    window.location.href = "/tipo_venta";
+  };
+</script>
 <div class="col-md-6 col-lg-4">
   <div class="card">
     <div class="card-body">
       <h5 class="card-title">Paquetes disponibles</h5>
-      <form id="form-paquete">
+      <form method="POST" action="{{ url_for('venta.agregar_al_carrito') }}">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+        <input type="hidden" name="tipo_venta" value="paquete" />
+
         <div class="form-group mb-3">
           <label for="galleta-paquete">Seleccione galleta:</label>
-          <select class="form-control" id="galleta-paquete" required>
+          <select
+            class="form-control"
+            id="galleta-paquete"
+            name="galleta_id"
+            required
+          >
             <option value="">-- Seleccione --</option>
             {% for galleta in galletas %}
             <option
               value="{{ galleta.id_galleta }}"
-              data-galleta-id="{{ galleta.id_galleta }}"
-              data-galleta-nombre="{{ galleta.nombre_galleta }}"
-              data-galleta-precio="{{ galleta.precio_galleta }}"
-              data-stock="{{ galleta.cantidad_galleta }}"
+              data-precio="{{ galleta.precio_galleta }}"
             >
-              {{ galleta.nombre_galleta }}
+              {{ galleta.nombre_galleta }} (${{
+              "%.2f"|format(galleta.precio_galleta) }}/unidad)
             </option>
             {% endfor %}
           </select>
@@ -155,14 +177,15 @@ Premium{% endblock %} {% block contenido %}
             <input
               class="form-check-input"
               type="radio"
-              name="tipo-paquete"
+              name="tipo_paquete"
               id="paquete-1kg"
-              value="1000"
-              data-unidades="100"
+              value="100"
               checked
             />
             <label class="form-check-label" for="paquete-1kg">
-              Caja de 1kg (100 unidades) - $<span id="precio-1kg">0.00</span>
+              Caja de 1kg (100 unidades) - $<span class="precio-paquete"
+                >0.00</span
+              >
             </label>
           </div>
 
@@ -170,13 +193,14 @@ Premium{% endblock %} {% block contenido %}
             <input
               class="form-check-input"
               type="radio"
-              name="tipo-paquete"
+              name="tipo_paquete"
               id="paquete-700g"
-              value="700"
-              data-unidades="70"
+              value="70"
             />
             <label class="form-check-label" for="paquete-700g">
-              Caja de 700g (70 unidades) - $<span id="precio-700g">0.00</span>
+              Caja de 700g (70 unidades) - $<span class="precio-paquete"
+                >0.00</span
+              >
             </label>
           </div>
 
@@ -184,70 +208,171 @@ Premium{% endblock %} {% block contenido %}
             <input
               class="form-check-input"
               type="radio"
-              name="tipo-paquete"
+              name="tipo_paquete"
               id="paquete-500g"
-              value="500"
-              data-unidades="50"
+              value="50"
             />
             <label class="form-check-label" for="paquete-500g">
-              Media caja de 500g (50 unidades) - $<span id="precio-500g"
+              Media caja de 500g (50 unidades) - $<span class="precio-paquete"
                 >0.00</span
               >
             </label>
           </div>
         </div>
 
-        <button
-          type="submit"
-          id="agregarAlCarrito"
-          class="btn btn-warning w-100"
-        >
+        <button type="submit" class="btn btn-warning w-100">
           Agregar al carrito
         </button>
       </form>
     </div>
   </div>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const galletaSelect = document.getElementById("galleta-paquete");
+    const preciosPaquetes = document.querySelectorAll(".precio-paquete");
+    const radiosPaquetes = document.querySelectorAll(
+      'input[name="tipo_paquete"]'
+    );
+
+    function actualizarPrecios() {
+      const precioUnitario =
+        parseFloat(galletaSelect.selectedOptions[0]?.dataset.precio) || 0;
+
+      radiosPaquetes.forEach((radio, index) => {
+        const unidades = parseInt(radio.value);
+        preciosPaquetes[index].textContent = (
+          precioUnitario * unidades
+        ).toFixed(2);
+      });
+    }
+
+    galletaSelect.addEventListener("change", actualizarPrecios);
+    radiosPaquetes.forEach((radio) => {
+      radio.addEventListener("change", actualizarPrecios);
+    });
+
+    actualizarPrecios();
+  });
+</script>
 {% endmacro %}
 
 <div id="overlay"></div>
 <button id="btn-carrito">
-  🛒 <span id="contador-carrito">{{ carrito|length }}</span>
+  🛒 <span id="contador-carrito">{{ carrito|length if carrito else 0 }}</span>
 </button>
+
 <div id="carrito">
   <h4>🛒 Tu Carrito</h4>
   <ul class="list-group">
-    {% for item in carrito %} {{ render_item_carrito(item) }} {% endfor %}
+    {% if carrito %} {% for item in carrito %} {{ render_item_carrito(item,
+    loop.index0) }} {% endfor %} {% else %}
+    <li class="list-group-item">El carrito está vacío</li>
+    {% endif %}
   </ul>
   <p class="text-end mt-3">
-    <strong>Total: ${{ "%.2f"|format(total) }}</strong>
+    <strong>Total: ${{ "%.2f"|format(total) if total else "0.00" }}</strong>
   </p>
 
-  <button id="vaciar-carrito" class="btn btn-danger w-100 mt-2">
-    Vaciar Carrito
-  </button>
-  <button id="procesar-venta" class="btn btn-success w-100 mt-3">
-    Procesar Venta
-  </button>
+  <form method="POST" action="{{ url_for('venta.vaciar_carrito') }}">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+    <button
+      type="submit"
+      class="btn btn-danger w-100 mt-2"
+      {%
+      if
+      not
+      carrito
+      %}disabled{%
+      endif
+      %}
+    >
+      Vaciar Carrito
+    </button>
+  </form>
+  <form
+    method="POST"
+    action="{{ url_for('venta.procesar_venta') }}"
+    id="form-procesar-venta"
+  >
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+    <button
+      type="submit"
+      class="btn btn-success w-100 mt-3"
+      id="btn-procesar-venta"
+      {%
+      if
+      not
+      carrito
+      %}disabled{%
+      endif
+      %}
+    >
+      <i class="fas fa-cash-register me-2"></i> Procesar Venta
+    </button>
+  </form>
 </div>
 
 <div class="custom-container">
   {% if tipo_venta == 'unidad' %}
-  <h2>Venta por Unidad</h2>
+  <h2>Galleta</h2>
   <div class="row g-4">
-    {% for galleta in galletas %} {{ render_tarjeta_galleta(galleta) }} {%
-    endfor %}
+    {% if galletas %} {% for galleta in galletas %} {{
+    render_tarjeta_galleta(galleta) }} {% endfor %} {% else %}
+    <div class="col-12">
+      <div class="alert alert-warning">No hay galletas disponibles</div>
+    </div>
+    {% endif %}
   </div>
 
-  {% elif tipo_venta == 'peso' %}
-  <h2>Venta por Peso</h2>
+  {% with messages = get_flashed_messages(with_categories=true) %} {% if
+  messages %}
+  <div class="container mt-3">
+    {% for category, message in messages %}
+    <div
+      class="alert alert-{{ category }} alert-dismissible fade show flash-message"
+    >
+      {{ message }}
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+    {% endfor %}
+  </div>
+
+  <script>
+    setTimeout(function () {
+      let alerts = document.querySelectorAll(".flash-message");
+      alerts.forEach(function (alert) {
+        let bsAlert = new bootstrap.Alert(alert);
+        bsAlert.close();
+      });
+    }, 5000);
+  </script>
+  {% endif %} {% endwith %} {% elif tipo_venta == 'peso' %}
+  <h2>Peso</h2>
   <div class="row g-4">
-    {% for galleta in galletas %} {{ render_form_peso(galleta) }} {% endfor %}
+    {% if galletas %} {% for galleta in galletas %} {{ render_form_peso(galleta)
+    }} {% endfor %} {% else %}
+    <div class="col-12">
+      <div class="alert alert-warning">No hay galletas disponibles</div>
+    </div>
+    {% endif %}
   </div>
 
   {% elif tipo_venta == 'paquete' %}
-  <h2>Venta por Paquete</h2>
-  <div class="row g-4">{{ render_form_paquete() }}</div>
+  <h2>Paquete</h2>
+  <div class="row g-4">
+    {% if galletas %} {{ render_form_paquete() }} {% else %}
+    <div class="col-12">
+      <div class="alert alert-warning">No hay galletas disponibles</div>
+    </div>
+    {% endif %}
+  </div>
   {% endif %}
 </div>
 

@@ -65,3 +65,14 @@ class dao_cliente:
     def obtenerPedidos():
         return Pedido.query.all()
         return Pedido.query.get(id_pedido)
+    
+    def actualizarEstatusPedido(idPedido):
+        try:
+            pedido = Pedido.query.get(idPedido)
+            pedido.estatus = 'procesado'
+            db.session.add(pedido)
+            db.session.commit()
+            return 1
+        except Exception as exception:
+            return -1
+        

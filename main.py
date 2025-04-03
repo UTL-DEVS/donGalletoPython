@@ -4,6 +4,9 @@ from forms import *
 from connection import *
 from models import *
 from controller import *
+from funcs import crear_log_error, crear_log_user
+import unittest
+from flask_login import current_user
 
 import hashlib
 import random
@@ -14,6 +17,9 @@ from datetime import timedelta
 from funcs import captcha_info
 from flask import Flask, session
 from flask_session import Session
+
+# comando a ejecutar en terminal
+
 
 def crear_app():
     app = Flask(__name__)
@@ -32,16 +38,14 @@ def crear_app():
     app.register_blueprint(proveedor_bp)
     app.register_blueprint(cliente_bp)
     app.register_blueprint(economia_bp)
-    app.register_blueprint(produccion_bp)
     app.register_blueprint(recetas_bp)
     app.register_blueprint(galleta_bp)
-    app.register_blueprint(resumen_bp)
+    app.register_blueprint(resumen_venta_bp)
     app.register_blueprint(usuario_bp)
     app.register_blueprint(route_galleta)
     app.register_blueprint(insumos_bp)
+    app.register_blueprint(cocina_insumos_bp)
 
-    
-    
     return app, csrf
 
 app, csrf = crear_app()
@@ -75,11 +79,34 @@ def init_login():
 def load_user(user_id):
     return Usuario.query.get(int(user_id)) 
 
-
 @app.route('/logout')
 def logout():
+    
+    
     logout_user()
     return redirect(url_for('login.login'))
+
+@app.errorhandler(404)
+def page_not_found(e):
+    # Obtener la IP del usuario
+    ip_usuario = request.remote_addr
+
+    # Verificar si el usuario está autenticado antes de acceder a sus atributos
+    usuario = current_user.usuario if current_user.is_authenticated else "Usuario anónimo"
+    
+    # Registrar el error con la IP
+    crear_log_error(usuario, f"Error 404: Página no encontrada en {request.url} | IP: {ip_usuario}")
+    
+    # Si el usuario está autenticado, cerramos su sesión
+    if current_user.is_authenticated:
+        logout_user()
+    
+    return render_template('pages/error.html'), 404
+
+@app.cli.command()
+def test():
+    test=unittest.TestLoader().discover('tests')
+    unittest.TextTestRunner().run(test)
         
 
 if __name__ == '__main__':

@@ -6,8 +6,8 @@ def enviar_correo(destino, cuerpo):
     msg.body = cuerpo
     try:
         mail.send(msg)
-        print('enviado')
+        
         return True
     except Exception as e:
-        print(f"Error al enviar correo: {e}")
+        
         return False

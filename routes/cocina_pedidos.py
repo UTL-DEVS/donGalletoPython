@@ -1,34 +1,132 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request, jsonify
 from dao import dao_produccion
-from routes.cliente import cliente_bp
-from models.pedido import Pedido, DetallePedido
-from models.galleta import Galleta
-from models.usuario import Usuario
-from models.persona import Persona
-from utils.db import db
+from models.produccion import Produccion
+from models.detalle_produccion import DetalleProduccion
+from controller import controller_detalle_produccion, controller_produccion, controller_cliente
+from datetime import date, datetime
+from forms import DetalleRecetaForm
+from controller.controller_cliente import ClienteController
+from flask import Blueprint, render_template, request
+from dao import dao_produccion
+from models.Stock import Stock
+from controller import controller_stock
+from funcs import crear_log_error, crear_log_user
+from utils import Blueprint, render_template, redirect, flash, db, url_for, request, login_required, current_user, abort
 
 cocina_pedidos_bp = Blueprint('cocina-pedidos', __name__, template_folder='templates')
 
 @cocina_pedidos_bp.route('/cocina-pedidos')
+@login_required
 def cocina_pedidos():
-    pedidos = dao_produccion.obtenerPedidos()
-    print('usuario: ',pedidos)
+    if current_user.rol_user != 3:
+        abort(404)
+    try:
+        crear_log_user(current_user.usuario, request.url)
+        form = DetalleRecetaForm()
+        pedidos = dao_produccion.obtenerPedidos()
+        return render_template('pages/page-produccion/cocina-pedidos/pedidos.html', lstPedidos = pedidos, form=form)
+    except Exception as e:
+        crear_log_error(current_user.usuario,'/cocina-pedidos')
+        abort(404)
+
+@cocina_pedidos_bp.route('/procesar-pedido', methods=['POST'])
+@login_required
+def procesarPedido():
+    if current_user.rol_user != 3:
+        abort(404)
+    data = request.get_json()
+    idPedido = data.get('idPedido')
+    lstDetallePedido = data.get('lstDetallePedido')
     
-    return render_template('pages/page-produccion/cocina-pedidos/pedidos.html', lstPedidos = pedidos)
+    #Proceso - Produccion
+    objProduccion = Produccion()
+    objProduccion.fecha_produccion = date.today().strftime('%Y-%m-%d')
+    objProduccion.hora_produccion = datetime.now().strftime('%H:%M:%S')
+    objProduccion.estatus = 1
+    objProduccion.id_produccion = controller_produccion.agregarProduccion(objProduccion)
+    if objProduccion.id_produccion == -1:
+        return jsonify({
+                "error": True,
+                "message": "Hubo un problema al registrar la produccion!"
+            })
+    
+    for detalleProduccion in lstDetallePedido:
+        objDetalleProduccion = DetalleProduccion()
+        objDetalleProduccion.id_produccion = objProduccion.id_produccion
+        objDetalleProduccion.id_galleta = detalleProduccion.get('id_galleta')
+        cantidad = int(detalleProduccion.get('cantidad'))
+        tipoPedido = detalleProduccion.get('tipo_pedido')
+        objDetalleProduccion.cantidad = calculaPiezasTipoPedido(cantidad, tipoPedido)
+        if objDetalleProduccion.cantidad == 0:
+            continue
+        if controller_detalle_produccion.agregarDetalleProduccion(objDetalleProduccion) == -1:
+            return jsonify({
+                "error": True,
+                "message": "Hubo un problema al registrar el detalle de produccion!"
+            })
+        
+        #Proceso - Stock
+        objStock = Stock()
+        objStock.id_galleta = detalleProduccion["id_galleta"]
+        objStock.cantidad_galleta = int(detalleProduccion["cantidad"])
+        if controller_stock.agregarStock(objStock) != 1:
+            return jsonify({
+                "error": True,
+                "message": "Hubo un problema al actualizar el stock!"
+            })
+    
+    #Proceso - Pedido
+    if ClienteController.actualizarPedido(idPedido) != 1:
+        return jsonify({
+                "error": True,
+                "message": "Hubo un problema al actualizar el pedido!"
+            })
 
+    return jsonify({
+                "success": True,
+                "message": "Se envio correctamente a produccion!"
+            })
 
-# (Pedido.query, Usuario.query
-#         .order_by(Pedido.fecha_pedido.desc())
-#         .options(db.joinedload(Pedido.detalles))
-#         .all())
+def calculaPiezasTipoPedido(cantidad, tipoPedido):
+    if tipoPedido == 'pieza':
+        return cantidad
+    if tipoPedido == 'paquete':
+        piezasPaquete = 50
+        return cantidad * piezasPaquete
+    if tipoPedido == 'peso':
+        piezasPeso = 10
+        return cantidad * piezasPeso
 
-# resultados = db.session.query(
-#         Produccion.fecha_produccion,
-#         Produccion.hora_produccion,
-#         Galleta.nombre_galleta,
-#         DetalleProduccion.cantidad
-#     ).select_from(Produccion)\
-#     .join(DetalleProduccion)\
-#     .join(Galleta)\
-#     .filter(Produccion.fecha_produccion == fecha)\
-#     .all()
+@cocina_pedidos_bp.route('/pedidos-historial', methods=['GET'])
+@login_required
+def pedidosHistorial():
+    if current_user.rol_user != 3:
+        abort(404)
+    fecha = request.args.get('fecha')
+    if fecha == None:
+        fecha = date.today().strftime('%Y-%m-%d')
+    print(fecha)
+    pedidos = dao_produccion.obtenerPedidosProcesados(fecha)
+    return render_template('pages/page-produccion/cocina-pedidos/historial.html', lstPedidos = pedidos, fecha = fecha)
+
+@cocina_pedidos_bp.route('/detalles-pedido', methods=['GET'])
+@login_required
+def detallePedido():
+    if current_user.rol_user != 3:
+        abort(404)
+    form = DetalleRecetaForm()
+    idPedido = request.args.get('idPedido')
+    detallesPedido = dao_produccion.obtenerDetallePedidos(int(idPedido))
+    
+    if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+        detalles = [{
+            'id_pedido': detalle.id_pedido,
+            'id_galleta': detalle.id_galleta,
+            'nombre_galleta': detalle.nombre_galleta,
+            'cantidad': detalle.cantidad,
+            'tipo_pedido': detalle.tipo_pedido
+        } for detalle in detallesPedido]
+        return jsonify(detalles)
+    
+    pedidos = dao_produccion.obtenerPedidos()
+    return render_template('pages/page-produccion/cocina-pedidos/pedidos.html', lstPedidos=pedidos, detallesPedido=detallesPedido, form=form)

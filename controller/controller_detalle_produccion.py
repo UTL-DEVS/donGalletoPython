@@ -5,5 +5,4 @@ from models import detalle_produccion
 import os
 
 def agregarDetalleProduccion(detalleProduccion):
-    detalleProduccion.id_detalle_produccion = cqrs_detalle_produccion.agregarDetalleProduccion(detalleProduccion)
-    return detalleProduccion.id_detalle_produccion
+    return cqrs_detalle_produccion.agregarDetalleProduccion(detalleProduccion)
