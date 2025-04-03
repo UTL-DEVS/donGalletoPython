@@ -9,7 +9,7 @@ resumen_venta_bp = Blueprint('resumen_venta', __name__, template_folder='templat
 @resumen_venta_bp.route('/corte_ventas', methods=['POST'])
 @login_required
 def corte_ventas():
-    if current_user.rol_user != 3:
+    if current_user.rol_user != 4:
         abort(404)
     try:
         crear_log_user(current_user.usuario, request.url)
@@ -31,7 +31,7 @@ def corte_ventas():
 @resumen_venta_bp.route('/descargar_corte/<filename>')
 @login_required
 def descargar_corte(filename):
-    if current_user.rol_user != 3:
+    if current_user.rol_user != 4:
         abort(404)
     try:
         crear_log_user(current_user.usuario, request.url)

@@ -22,7 +22,7 @@ SELECT * FROM usuario;
 DESCRIBE galletas;
 INSERT INTO usuario(rol_user, email,usuario, contrasenia,token) VALUES (0,'joelbriones701@gmail.com', 'joel123456', 'e39ab699d50e9eacbe2abf4320192d33de6465592c8752939ec20183de8462e5','00');
 INSERT INTO usuario(rol_user, email,usuario, contrasenia,token) VALUES (1,'joelbriones70@gmail.com', 'joel1234567', 'e39ab699d50e9eacbe2abf4320192d33de6465592c8752939ec20183de8462e5','00');
-
+INSERT INTO usuario(rol_user, email,usuario, contrasenia,token) VALUES (3, 'miltoner4lfredo@gmail.com', 'milk220010', 'e39ab699d50e9eacbe2abf4320192d33de6465592c8752939ec20183de8462e5', '00');
 
 -- !SEGUIR ESTE ORDEN DE USUARIOS SEGUN EL ROL ESA CONTRASENIA EN EL INPUT ES: Joel123456$
 -- en caso de que no los deje pasar, entonces me equivoque de formato, pero eso es la contrasenia encriptada, 
