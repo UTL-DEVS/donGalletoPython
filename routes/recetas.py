@@ -52,7 +52,8 @@ def receta_detalle(id_receta):
                     receta_id=id_receta,  # Asignar la receta correspondiente
                     id_galleta=id_galleta_local,  # Asignar la galleta seleccionada
                     id_materia=form.id_materia.data,  # Asignar la materia prima seleccionada
-                    cantidad_insumo=form.cantidad_insumo.data  # Asignar la cantidad
+                    cantidad_insumo=form.cantidad_insumo.data * 1000,
+                    
                 )
                 db.session.add(nuevo_detalle)  # Agregar el nuevo detalle a la base de datos
             else:
@@ -121,7 +122,9 @@ def agregar_receta():
             
             nueva_receta = Receta(
                 nombre_receta=form.nombre_receta.data,
-                estado='1'  # La receta comienza activa
+                estado='1',
+                cantidad_insumo_producida = 700# La receta comienza activa
+                
             )
             db.session.add(nueva_receta)
             db.session.commit()
@@ -130,7 +133,7 @@ def agregar_receta():
                 receta_id=nueva_receta.id_receta,
                 id_galleta=galleta.id_galleta,
                 id_materia=form.id_materia.data,
-                cantidad_insumo=form.cantidad_insumo.data
+                cantidad_insumo=form.cantidad_insumo.data * 1000,
             )
             db.session.add(nuevo_detalle)
             

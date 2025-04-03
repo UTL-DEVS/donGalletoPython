@@ -1,7 +1,8 @@
 from flask import Blueprint, render_template, send_from_directory, redirect, url_for, flash, request, abort
 from controller import controller_resumen_venta
 import os
-from utils import login_required, current_user, crear_log_user, crear_log_error
+from utils import login_required, current_user,abort
+from funcs import crear_log_error, crear_log_user
 
 resumen_venta_bp = Blueprint('resumen_venta', __name__, template_folder='templates')
 

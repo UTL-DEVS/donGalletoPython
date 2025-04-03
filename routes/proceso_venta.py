@@ -11,7 +11,7 @@ import os
 import datetime
 from funcs.pdf import generar_pdf_venta
 from utils import login_required, current_user, abort
-from utils import crear_log_user, crear_log_error
+from funcs import crear_log_user, crear_log_error
 
 TICKETS_FOLDER = 'tickets'
 os.makedirs(TICKETS_FOLDER, exist_ok=True)

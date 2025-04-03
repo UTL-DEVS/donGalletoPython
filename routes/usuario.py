@@ -1,8 +1,9 @@
-from flask import Blueprint, render_template,request, redirect,url_for, current_user, login_required, abort, flash
+from flask import Blueprint, render_template,request, redirect,url_for,  flash
 import json
 from forms import *
 from controller import controller_usuario
 from funcs import crear_log_user, crear_log_error
+from utils import current_user, login_required, abort
 
 usuario_bp = Blueprint('usuario', __name__, url_prefix='/usuario', template_folder='templates')
 

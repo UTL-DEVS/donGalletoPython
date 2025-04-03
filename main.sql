@@ -47,8 +47,8 @@ VALUES
 (2, 'Oatmeal Raisin', 2.00, 'imagen2.jpg', 'Galleta de avena con pasas', NOW(), TRUE),
 (3, 'Peanut Butter', 2.75, 'imagen3.jpg', 'Galleta de mantequilla de maní', NOW(), TRUE);
 
-INSERT INTO materia_prima (nombre_materia, stock_materia, unidad_medida, precio, estatus) 
-VALUES ('Harina', 100.0, 1, 5.75, 1);
+INSERT INTO materia_prima (nombre_materia, stock_materia, unidad_medida, unidad_medida_publico, precio, estatus) 
+VALUES ('Harina', 100.0, 1,4, 5.75, 1);
 
 INSERT INTO materia_prima (nombre_materia, stock_materia, unidad_medida, precio, estatus) 
 VALUES ('SAL', 100.0, 1, 5.75, 1);
