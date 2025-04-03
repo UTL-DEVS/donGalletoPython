@@ -11,3 +11,4 @@ from forms.form_resumen import *
 from forms.form_cliente import *
 from forms.form_empleado import *
 from forms.form_usuario import *
+from forms.form_insumo import InsumoForm

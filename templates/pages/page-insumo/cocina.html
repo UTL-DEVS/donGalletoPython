@@ -1,0 +1,41 @@
+{%extends 'components/estructura.html'%}
+{%block titulo%}Insumos{%endblock%}
+{%block contenido%}
+<div class="container mt-4">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h2 class="card-title mb-4">🍽️ Insumos Disponibles - Cocina</h2>
+  
+        <div class="table-responsive">
+          <table class="table table-bordered table-hover align-middle">
+            <thead class="table-light">
+              <tr>
+                <th>🧾 Nombre</th>
+                <th>📦 Stock</th>
+                <th>⚙️ Unidad Interna</th>
+                <th>🎯 Unidad Pública</th>
+                <th>💰 Precio</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for i in insumos %}
+              <tr>
+                <td><strong>{{ i.nombre_materia }}</strong></td>
+                <td>{{ i.stock_materia }}</td>
+                <td>{{ unidades[i.unidad_medida] }}</td>
+                <td>{{ unidades[i.unidad_medida_publico] }}</td>
+                <td>${{ i.precio }}</td>
+              </tr>
+              {% endfor %}
+              {% if insumos|length == 0 %}
+              <tr>
+                <td colspan="5" class="text-center text-muted">No hay insumos disponibles.</td>
+              </tr>
+              {% endif %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+{%endblock%}

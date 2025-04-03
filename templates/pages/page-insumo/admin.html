@@ -1,0 +1,108 @@
+{%extends 'components/estructura.html'%}
+{%block titulo%}Insumos{%endblock%}
+{%block contenido%}
+<div class="container mt-4">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h2 class="card-title mb-3">🍪 Gestión de Insumos - Administrador</h2>
+  
+        <!-- MENSAJES FLASH -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <div class="alert alert-{{ 'success' if category == 'success' else 'danger' }} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+  
+        <!-- FORMULARIO -->
+        <h4 class="mt-4">{% if form.id_materia.data %}Editar Insumo{% else %}Nuevo Insumo{% endif %}</h4>
+        <form method="POST" class="row g-3">
+          {{ form.hidden_tag() }}
+  
+          <div class="col-md-6">
+            <label class="form-label">{{ form.nombre.label }}</label>
+            {{ form.nombre(class="form-control") }}
+          </div>
+  
+          <div class="col-md-6">
+            <label class="form-label">{{ form.stock_materia.label }}</label>
+            {{ form.stock_materia(class="form-control", step="0.01") }}
+          </div>
+  
+          <div class="col-md-6">
+            <label class="form-label">{{ form.unidad_medida.label }}</label>
+            {{ form.unidad_medida(class="form-select") }}
+          </div>
+  
+          <div class="col-md-6">
+            <label class="form-label">{{ form.unidad_medida_publico.label }}</label>
+            {{ form.unidad_medida_publico(class="form-select") }}
+          </div>
+  
+          <div class="col-md-6">
+            <label class="form-label">{{ form.precio.label }}</label>
+            {{ form.precio(class="form-control", step="0.01") }}
+          </div>
+  
+          <div class="col-12">
+            {{ form.submit(class="btn btn-primary") }}
+            {% if form.id_materia.data %}
+              <a href="{{ url_for('insumos.vista_admin_insumos') }}" class="btn btn-secondary">Cancelar</a>
+            {% endif %}
+          </div>
+        </form>
+      </div>
+    </div>
+  
+    <!-- TABLA -->
+    <div class="card shadow-sm mt-4">
+      <div class="card-body">
+        <h4 class="card-title">📋 Listado de Insumos</h4>
+        <div class="table-responsive">
+          <table class="table table-striped table-hover align-middle">
+            <thead class="table-light">
+              <tr>
+                <th>Nombre</th>
+                <th>Stock</th>
+                <th>Unidad interna</th>
+                <th>Unidad pública</th>
+                <th>Precio</th>
+                <th>Estatus</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for i in insumos %}
+              <tr>
+                <td>{{ i.nombre_materia }}</td>
+                <td>{{ i.stock_materia }}</td>
+                <td>{{ unidades[i.unidad_medida] }}</td>
+                <td>{{ unidades[i.unidad_medida_publico] }}</td>
+                <td>${{ i.precio }}</td>
+                <td>
+                  <span class="badge bg-{{ 'success' if i.estatus == 1 else 'secondary' }}">
+                    {{ 'Activo' if i.estatus == 1 else 'Inactivo' }}
+                  </span>
+                </td>
+                <td>
+                  <a href="{{ url_for('insumos.vista_admin_insumos', editar=i.id_materia) }}" class="btn btn-sm btn-warning">
+                    ✏️ Editar
+                  </a>
+                  <a href="{{ url_for('insumos.cambiar_estatus_insumo', id=i.id_materia) }}"
+                     class="btn btn-sm {% if i.estatus == 1 %}btn-danger{% else %}btn-success{% endif %}">
+                    {% if i.estatus == 1 %}🛑 Desactivar{% else %}✅ Activar{% endif %}
+                  </a>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+{%endblock%}
