@@ -70,3 +70,11 @@ class dao_cliente:
     def obtenerPedidos():
         return Pedido.query.all()
         return Pedido.query.get(id_pedido)
+    
+    def actualizarEstatusPedido(idPedido):
+        
+        pedido = Pedido.query.get(idPedido)
+        pedido.estatus = 'procesado'
+        db.session.add(pedido)
+        db.session.commit()
+        return pedido.id_pedido

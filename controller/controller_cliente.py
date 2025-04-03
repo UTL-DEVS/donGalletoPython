@@ -1,5 +1,6 @@
 from dao.dao_cliente import dao_cliente as ClienteDAO
 from flask import session, flash
+from cqrs import cqrs_pedido
 
 class ClienteController:
     @staticmethod
@@ -41,7 +42,7 @@ class ClienteController:
         carrito = session.get('carrito', [])
         item_existente = next(
             (item for item in carrito 
-             if item['id'] == id_galleta and item['tipo_pedido'] == tipo_pedido),
+            if item['id'] == id_galleta and item['tipo_pedido'] == tipo_pedido),
             None
         )
         
@@ -96,3 +97,7 @@ class ClienteController:
             session.pop('carrito')
             return True
         return False
+    
+    @staticmethod
+    def actualizarPedido(idPedido):
+        return cqrs_pedido.actualizarPedido(idPedido)

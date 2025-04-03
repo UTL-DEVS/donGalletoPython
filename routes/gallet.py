@@ -35,7 +35,7 @@ def descargar_ticket(venta_id):
             mimetype='application/pdf'
         )
     except Exception as e:
-        print(f"Error al descargar ticket: {str(e)}")
+        
         return "Error al generar el ticket", 500
     
 @galleta_bp.route('/tipo_venta')
@@ -108,7 +108,7 @@ def procesar_venta():
             })
             
         except Exception as e:
-            print(f"Error generando ticket: {str(e)}")
+            
             return jsonify({
                 'exito': True,
                 'mensaje': 'Venta completada (pero no se generó el ticket)',
@@ -117,7 +117,7 @@ def procesar_venta():
             })
 
     except Exception as e:
-        print(f"Error en procesar_venta: {str(e)}")
+        
         return jsonify({
             'exito': False,
             'error': str(e),

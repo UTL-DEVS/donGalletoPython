@@ -10,12 +10,12 @@ def validar_contrasenia(contrasenia):
 
 def controller_registro(email, usuario, contrasenia, captcha):
     if not validar_contrasenia(contrasenia):
-        print("Contraseña no válida")
+        
         flash('Contraseña incorrecta. Debe tener al menos 8 caracteres, una mayúscula, una minúscula, un número y un carácter especial.', 'error')
         
         return False
-    print('contrasenia controller_login')
-    print(contrasenia)
+    
+    
     return cqrs_registro(email, usuario, contrasenia, captcha)
 
 def controller_conf(email, token):

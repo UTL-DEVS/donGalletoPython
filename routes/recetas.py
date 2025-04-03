@@ -8,8 +8,8 @@ recetas_bp = Blueprint('receta', __name__, template_folder='templates')
 @recetas_bp.route('/receta')
 @login_required
 def receta_index():
-    print(type(current_user.rol_user))
-    print(current_user.rol_user)
+    
+    
     if current_user.rol_user != 0 :
         return redirect('/login')
     recetas = Receta.query.all()
@@ -19,7 +19,7 @@ def receta_index():
 @recetas_bp.route('/receta/<int:id_receta>', methods=['GET', 'POST'])
 @login_required
 def receta_detalle(id_receta):
-    print(current_user.rol_user)
+    
     if current_user.rol_user == 1 | current_user.rol_user == 2 | current_user.rol_user == 3:
         return redirect('/')
     receta = Receta.query.get_or_404(id_receta)  # Cargar la receta por ID
@@ -29,11 +29,11 @@ def receta_detalle(id_receta):
     detalle_receta_obj = detalleReceta.query.filter_by(receta_id=id_receta).first()
     id_galleta_local = detalle_receta_obj.id_galleta if detalle_receta_obj else None
     if id_galleta_local is None:
-        print('nulo')
+        
         return redirect('/receta/agregar')
     nombre_galleta_local = Galleta.query.filter_by(id_galleta=id_galleta_local).first().nombre_galleta
     if request.method == 'POST':
-        print('creado')
+        
         # Crear un nuevo detalleReceta si el formulario fue enviado correctamente
         """
         logica para aumentar los insumos receta

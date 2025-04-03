@@ -29,7 +29,6 @@ def crear_app():
     app.register_blueprint(proveedor_bp)
     app.register_blueprint(cliente_bp)
     app.register_blueprint(economia_bp)
-    app.register_blueprint(produccion_bp)
     app.register_blueprint(recetas_bp)
     app.register_blueprint(galleta_bp)
     app.register_blueprint(resumen_bp)

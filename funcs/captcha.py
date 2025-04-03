@@ -11,7 +11,7 @@ import os
 def captcha_info():
     numero = random.randrange(11111, 99999)
     captcha_txt = str(numero)
-    print(captcha_txt)
+    
     session['captcha_txt'] = captcha_txt  # Guardamos el texto del CAPTCHA en la sesión
     captcha_time = datetime.now()
     
@@ -36,7 +36,7 @@ def delate_captcha_session(captcha):
 def verificar_captcha():
     captcha_txt = session.get('captcha_txt')
     captcha_time = session.get('captcha_time')
-    print(captcha_txt)
+    
     if captcha_time.tzinfo is not None:
         captcha_time = captcha_time.replace(tzinfo=None)  # Convertirlo a naive (sin zona horaria)
 

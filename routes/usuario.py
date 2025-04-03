@@ -14,7 +14,7 @@ def mostrar_empleado():
     form_empleado_obj = form_empleado(request.form)
     lista_empleados=controller_usuario.obtener_empleados()
 
-    print(f'empleados: {lista_empleados[0]}')
+    
     
     return render_template('pages/page-usuario/emlpeado.html',modales=json.dumps(modales),form_persona=form_persona_obj,form_usuario=form_usuario_obj,form_empleado=form_empleado_obj,lista_empleados=lista_empleados)
 

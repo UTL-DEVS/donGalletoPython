@@ -34,7 +34,7 @@ def agregarDetalleProduccion(detalleProduccion):
 
 def actualizarCantidadGalletas(detalleProduccion):
     galleta = Galleta.query.get(detalleProduccion.id_galleta)
-    cantidad = detalleProduccion.cantidad * 10
+    cantidad = detalleProduccion.cantidad
     if galleta:
         galleta.cantidad_galleta +=  cantidad
     else:

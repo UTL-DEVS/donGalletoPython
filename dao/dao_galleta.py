@@ -4,7 +4,7 @@ import base64
 
 def getAllGalletas():
     galletas = Galleta.query.filter_by(activo=1).all()
-    print(f'gallletas: {galletas}')
+    
     return galletas
 
 def crear_galleta(nombre_galleta, precio_galleta, descripcion_galleta, imagen_file, cantidad_galleta):

@@ -142,3 +142,18 @@ def mis_pedidos():
 @cliente_bp.route('/perfil-cliente')
 def perfil_cliente():
     return render_template('pages/page-cliente/perfil_cliente.html')
+
+@cliente_bp.route('/actualizar-pedido', methods=['POST'])
+def actualizarPedido():
+    pedido = request.get_json()
+    resultado = ClienteController.actualizarPedido(pedido)
+    if resultado != 1:
+        return {
+            'codigo': 'error',
+            'mensaje': 'Ocurrio un error al procesar el pedido!'
+        }
+    else:
+        return {
+            'codigo': 'success',
+            'mensaje': 'El pedido se proceso correctamente!'
+        }

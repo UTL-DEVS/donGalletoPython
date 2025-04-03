@@ -19,11 +19,11 @@ def dao_login(usuario, contrasenia, captcha_data):
 from funcs import delate_captcha_session, verificar_captcha
 
 def dao_login(usuario, contrasenia, captcha_data):
-    print(captcha_data)
-    print('contrasenia dao')
-    print(contrasenia)
+    
+    
+    
     if not captcha_data:
-        print(usuario, contrasenia, captcha_data)
+        
         return False
     else:
         dato, captcha_txt= verificar_captcha()
@@ -53,7 +53,7 @@ def verify_user(usuario, contrasenia):
                 usuario_local.generar_token()  # Genera el token y lo guarda
                 usuario_local.generar_ultimo_acceso()
                 usuario_local.dentro_sistema()
-                print([nombre_usuario, rol_usuario])
+                
                 return [nombre_usuario, rol_usuario]
         else:
             return False

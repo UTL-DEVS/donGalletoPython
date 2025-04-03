@@ -59,7 +59,7 @@
         aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
-                <form action="/agregarGalleta" method="post">
+                <form action="/procesar-produccion" method="post">
                     {{form.csrf_token}}
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalCenteredScrollableTitle">Agregar Produccion</h5>
@@ -72,7 +72,7 @@
                                     <tr>
                                         <th scope="col">#</th>
                                         <th scope="col">Galleta</th>
-                                        <th scope="col" class="text-center">Cantidad Ordenes</th>
+                                        <th scope="col" class="text-center">Cantidad Galletas</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -86,11 +86,8 @@
                                                         <i class="bi bi-dash-circle-fill"></i>
                                                     </button>
                                                     <div class="data-produccion d-flex flex-column" style="width: 30%; padding-top: 13px; cursor: default; user-select: none;">
-                                                        <div class="data-produccion-principal">
-                                                            <p><b name="cantidad" class="quantity">1</b></p>
-                                                        </div>
-                                                        <div class="data-produccion-secundaria" style="margin-top: -20px; opacity: 70%;">
-                                                            <p class="cookies-count">10 Galletas</p>
+                                                        <div class="data-produccion-principal" style="display: flex; flex-direction: column; align-items: center;">
+                                                            <input name="cantidad" class="quantity" style="border: none; border-bottom: 1px solid black; background-color: transparent; width: 30%; outline: none; text-align: center;" placeholder="0" value="0"><p style="font-size: small;"> Piezas</p>
                                                         </div>
                                                     </div>
                                                     <button type="button" class="btn btn-success plus-btn" style="margin-left: 10px;" onclick="updateQuantity(this, true)">
@@ -104,7 +101,7 @@
                             </table>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-warning" id="enviarDatos">Procesar<i class="bi bi-fire ms-1"></i></i></button>
+                        <button type="button" class="btn btn-warning" id="btnProcesarProduccion">Procesar<i class="bi bi-fire ms-1"></i></i></button>
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                     </div>
                 </form>
