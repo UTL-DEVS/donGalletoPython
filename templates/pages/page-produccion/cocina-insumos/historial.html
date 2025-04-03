@@ -1,0 +1,77 @@
+{%extends 'components/estructura_produccion.html'%}
+{%block titulo%}Login{%endblock%}
+{%block contenido%}
+{% import 'components/_macro_login.html' as macros%}
+
+<title>Cocina</title>
+<style>
+    .table-fixed {
+        max-height: 500px;
+        overflow-y: auto;
+    }
+    
+    .table-fixed thead {
+        position: sticky;
+        top: 0;
+        background-color: white;
+        z-index: 1;
+    }
+</style>
+<div class="container d-flex align-items-center justify-content-center flex-column mt-5" style="width: 90%;">
+    <div class="menu d-flex align-items-center justify-content-center flex-column w-100">
+        <div class="sub-header d-flex justify-content-between w-100">
+            <div class="sub-header-title">
+                <h1 id="tituloHistorial">Historial{% if fecha %} - {{ fecha }}{% endif %}</h1>
+            </div>
+            <div class="sub-header-buttons d-flex align-items-center" style="width: 33%;">
+                <form action="produccion-historial" id="formHistorial">
+                    <p class="w-100 m-0 fw-bold">Seleccione una fecha: </p>
+                    <input id="inpFecha" type="date" name="fecha" class="form-control" aria-describedby="basic-addon2" onchange="actualizarTituloHistorial()" value="{{ fecha if fecha else '' }}">
+                </form>
+            </div>
+        </div>
+        <hr class="w-100">
+        <div class="data w-100">
+            <div class="table-responsive" style="max-height: 700px; overflow-y: auto;">
+                <table class="table table-light table-hover mb-0">
+                    <thead>
+                        <tr>
+                            <th scope="col" style="position: sticky; top: 0;">#</th>
+                            <th scope="col" style="position: sticky; top: 0;">Galleta</th>
+                            <th scope="col" style="position: sticky; top: 0;">Total</th>
+                            <th scope="col" style="position: sticky; top: 0;">Hora</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for galleta in lstGalletas %}
+                            <tr>
+                                <th scope="row">{{ loop.index }}</th>
+                                <td>{{ galleta.nombre_galleta }}</td>
+                                <td>{{ galleta.cantidad_galleta }} Galletas</td>
+                                <td>{{ galleta.hora_produccion }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Opcional: Mejorar la apariencia del scroll */
+    .table-responsive::-webkit-scrollbar {
+        width: 8px;
+    }
+    .table-responsive::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+    .table-responsive::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 4px;
+    }
+    .table-responsive::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+</style>
+{%endblock%}

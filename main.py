@@ -6,6 +6,7 @@ from models import *
 from controller import *
 from funcs import crear_log_error, crear_log_user
 import unittest
+from flask_login import current_user
 
 import hashlib
 import random
@@ -36,14 +37,11 @@ def crear_app():
     app.register_blueprint(cliente_bp)
     app.register_blueprint(economia_bp)
     app.register_blueprint(recetas_bp)
-    app.register_blueprint(galleta_bp)
-    app.register_blueprint(resumen_bp)
     app.register_blueprint(usuario_bp)
     app.register_blueprint(route_galleta)
     app.register_blueprint(insumos_bp)
+    app.register_blueprint(cocina_insumos_bp)
 
-    
-    
     return app, csrf
 
 app, csrf = crear_app()
@@ -72,8 +70,6 @@ def init_login():
 def load_user(user_id):
     return Usuario.query.get(int(user_id)) 
 
-
-
 @app.route('/logout')
 def logout():
     logout_user()
@@ -81,11 +77,8 @@ def logout():
 
 @app.errorhandler(404)
 def page_not_found(e):
-    # Registrar el error 404 con la URL que intentó acceder el usuario
     crear_log_error(current_user.usuario, f"Error 404: Pagina no encontrada en {request.url}")
-    
     if current_user.is_authenticated and current_user.id:
-        logout_user()  # Cierra la sesión del usuario actual
         return render_template('pages/error.html'), 404
     else:
         return render_template('pages/error.html'), 404

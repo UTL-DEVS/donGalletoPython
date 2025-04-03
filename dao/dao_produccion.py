@@ -6,6 +6,7 @@ from models.persona import Persona
 from models.galleta import Galleta
 from datetime import datetime
 from sqlalchemy import func 
+from flask import jsonify
 
 
 def getAllProduccion():
@@ -13,9 +14,12 @@ def getAllProduccion():
     return produccion
 
 def agregarProduccion(produccion):
-    db.session.add(produccion)
-    db.session.commit()
-    return produccion.id_produccion 
+    try:
+        db.session.add(produccion)
+        db.session.commit()
+        return produccion.id_produccion 
+    except Exception as exception:
+        return -1
 
 def obtenerPedidos():
     pedidos = db.session.query(

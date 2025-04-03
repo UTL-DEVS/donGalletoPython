@@ -1,2 +1,122 @@
 Fecha: 2025-04-03 04:57:17.046324 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada
 Fecha: 2025-04-03 04:59:44.820148 - Usuario: joel123456 - Accion: Error 404: Pagina no encontrada en http://localhost:8080/cliente
+Fecha: 2025-04-03 10:41:41.571671 - Usuario: Cocina666* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/favicon.ico
+Fecha: 2025-04-03 12:25:35.062517 - Usuario: Cocina666* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg
+Fecha: 2025-04-03 12:25:35.072135 - Usuario: Cocina666* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg
+Fecha: 2025-04-03 12:25:35.072211 - Usuario: Cocina666* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg
+Fecha: 2025-04-03 12:29:19.184162 - Usuario: Cocina666* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/cocina-pedidos
+Fecha: 2025-04-03 12:29:22.371842 - Usuario: Cocina666* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/cocina-pedidos
+Fecha: 2025-04-03 12:29:33.539379 - Usuario: Cocina666* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/cocina-pedidos
+Fecha: 2025-04-03 12:31:00.448262 - Usuario: Cocina666* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/cocina-pedidos
+Fecha: 2025-04-03 12:34:02.329594 - Usuario: Cocina666* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/cocina-pedidos
+Fecha: 2025-04-03 12:35:16.134011 - Usuario: Produccion777* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg
+Fecha: 2025-04-03 12:35:16.136880 - Usuario: Produccion777* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg
+Fecha: 2025-04-03 12:35:16.158112 - Usuario: Produccion777* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg
+Fecha: 2025-04-03 12:39:08.733486 - Usuario: Cocina666* - Accion: /cocina-pedidos
+Fecha: 2025-04-03 12:39:08.733780 - Usuario: Cocina666* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/cocina-pedidos
+Fecha: 2025-04-03 12:39:22.481917 - Usuario: Cocina666* - Accion: /cocina-pedidos
+Fecha: 2025-04-03 12:39:22.482379 - Usuario: Cocina666* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/cocina-pedidos
+Fecha: 2025-04-03 12:39:23.291338 - Usuario: Cocina666* - Accion: /cocina-pedidos
+Fecha: 2025-04-03 12:39:23.291841 - Usuario: Cocina666* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/cocina-pedidos
+Fecha: 2025-04-03 12:39:36.186398 - Usuario: Cocina666* - Accion: /cocina-pedidos
+Fecha: 2025-04-03 12:39:36.186769 - Usuario: Cocina666* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/cocina-pedidos
+Fecha: 2025-04-03 12:39:38.116396 - Usuario: Cocina666* - Accion: /cocina-pedidos
+Fecha: 2025-04-03 12:39:38.116850 - Usuario: Cocina666* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/cocina-pedidos
+Fecha: 2025-04-03 12:39:38.544372 - Usuario: Cocina666* - Accion: /cocina-pedidos
+Fecha: 2025-04-03 12:39:38.544947 - Usuario: Cocina666* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/cocina-pedidos
+Fecha: 2025-04-03 12:39:38.737934 - Usuario: Cocina666* - Accion: /cocina-pedidos
+Fecha: 2025-04-03 12:39:38.738551 - Usuario: Cocina666* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/cocina-pedidos
+Fecha: 2025-04-03 12:39:38.916331 - Usuario: Cocina666* - Accion: /cocina-pedidos
+Fecha: 2025-04-03 12:39:38.916653 - Usuario: Cocina666* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/cocina-pedidos
+Fecha: 2025-04-03 12:39:39.118946 - Usuario: Cocina666* - Accion: /cocina-pedidos
+Fecha: 2025-04-03 12:39:39.119408 - Usuario: Cocina666* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/cocina-pedidos
+Fecha: 2025-04-03 12:40:14.024731 - Usuario: Cocina666* - Accion: /cocina-pedidos
+Fecha: 2025-04-03 12:40:14.025124 - Usuario: Cocina666* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/cocina-pedidos
+Fecha: 2025-04-03 12:40:14.662413 - Usuario: Cocina666* - Accion: /cocina-pedidos
+Fecha: 2025-04-03 12:40:14.662969 - Usuario: Cocina666* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/cocina-pedidos
+Fecha: 2025-04-03 12:40:14.859279 - Usuario: Cocina666* - Accion: /cocina-pedidos
+Fecha: 2025-04-03 12:40:14.859916 - Usuario: Cocina666* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/cocina-pedidos
+Fecha: 2025-04-03 12:40:15.027400 - Usuario: Cocina666* - Accion: /cocina-pedidos
+Fecha: 2025-04-03 12:40:15.028025 - Usuario: Cocina666* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/cocina-pedidos
+Fecha: 2025-04-03 12:40:15.193143 - Usuario: Cocina666* - Accion: /cocina-pedidos
+Fecha: 2025-04-03 12:40:15.193765 - Usuario: Cocina666* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/cocina-pedidos
+Fecha: 2025-04-03 12:40:15.357288 - Usuario: Cocina666* - Accion: /cocina-pedidos
+Fecha: 2025-04-03 12:40:15.357721 - Usuario: Cocina666* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/cocina-pedidos
+Fecha: 2025-04-03 12:40:15.514283 - Usuario: Cocina666* - Accion: /cocina-pedidos
+Fecha: 2025-04-03 12:40:15.515005 - Usuario: Cocina666* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/cocina-pedidos
+Fecha: 2025-04-03 12:40:33.299683 - Usuario: Cocina666* - Accion: /cocina-pedidos
+Fecha: 2025-04-03 12:40:33.300094 - Usuario: Cocina666* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/cocina-pedidos
+Fecha: 2025-04-03 12:40:54.679643 - Usuario: Cocina666* - Accion: /cocina-pedidos
+Fecha: 2025-04-03 12:40:54.680209 - Usuario: Cocina666* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/cocina-pedidos
+Fecha: 2025-04-03 12:42:30.052063 - Usuario: Produccion777* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg
+Fecha: 2025-04-03 12:42:30.058706 - Usuario: Produccion777* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg
+Fecha: 2025-04-03 12:42:30.062346 - Usuario: Produccion777* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg
+Fecha: 2025-04-03 12:43:48.171493 - Usuario: Produccion777* - Accion: /cocina-pedidos
+Fecha: 2025-04-03 12:43:48.172090 - Usuario: Produccion777* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/cocina-pedidos
+Fecha: 2025-04-03 12:43:49.368423 - Usuario: Produccion777* - Accion: /cocina-pedidos
+Fecha: 2025-04-03 12:43:49.368945 - Usuario: Produccion777* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/cocina-pedidos
+Fecha: 2025-04-03 12:43:49.532236 - Usuario: Produccion777* - Accion: /cocina-pedidos
+Fecha: 2025-04-03 12:43:49.532670 - Usuario: Produccion777* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/cocina-pedidos
+Fecha: 2025-04-03 12:45:12.583301 - Usuario: Produccion777* - Accion: /cocina-pedidos
+Fecha: 2025-04-03 12:45:12.583697 - Usuario: Produccion777* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/cocina-pedidos
+Fecha: 2025-04-03 12:45:29.123837 - Usuario: Produccion777* - Accion: /cocina-pedidos
+Fecha: 2025-04-03 12:45:29.124329 - Usuario: Produccion777* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/cocina-pedidos
+Fecha: 2025-04-03 12:45:54.728830 - Usuario: Produccion777* - Accion: /cocina-pedidos
+Fecha: 2025-04-03 12:45:54.729097 - Usuario: Produccion777* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/cocina-pedidos
+Fecha: 2025-04-03 12:50:40.447443 - Usuario: Produccion777* - Accion: /cocina-pedidos
+Fecha: 2025-04-03 12:50:40.447875 - Usuario: Produccion777* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/cocina-pedidos
+Fecha: 2025-04-03 12:56:06.961388 - Usuario: Produccion777* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/favicon.ico
+Fecha: 2025-04-03 12:56:12.012709 - Usuario: Produccion777* - Accion: /cocina-pedidos
+Fecha: 2025-04-03 12:56:12.013340 - Usuario: Produccion777* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/cocina-pedidos
+Fecha: 2025-04-03 12:56:12.674697 - Usuario: Produccion777* - Accion: /cocina-pedidos
+Fecha: 2025-04-03 12:56:12.675201 - Usuario: Produccion777* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/cocina-pedidos
+Fecha: 2025-04-03 12:56:12.839413 - Usuario: Produccion777* - Accion: /cocina-pedidos
+Fecha: 2025-04-03 12:56:12.840042 - Usuario: Produccion777* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/cocina-pedidos
+Fecha: 2025-04-03 12:56:13.005996 - Usuario: Produccion777* - Accion: /cocina-pedidos
+Fecha: 2025-04-03 12:56:13.006227 - Usuario: Produccion777* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/cocina-pedidos
+Fecha: 2025-04-03 12:56:13.175383 - Usuario: Produccion777* - Accion: /cocina-pedidos
+Fecha: 2025-04-03 12:56:13.176101 - Usuario: Produccion777* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/cocina-pedidos
+Fecha: 2025-04-03 12:57:00.948613 - Usuario: Produccion777* - Accion: /cocina-pedidos
+Fecha: 2025-04-03 12:57:00.948978 - Usuario: Produccion777* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/cocina-pedidos
+Fecha: 2025-04-03 12:57:31.892446 - Usuario: Produccion777* - Accion: /cocina-pedidos
+Fecha: 2025-04-03 12:57:31.892689 - Usuario: Produccion777* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/cocina-pedidos
+Fecha: 2025-04-03 12:58:14.138858 - Usuario: Produccion777* - Accion: /cocina-pedidos
+Fecha: 2025-04-03 12:58:38.758768 - Usuario: Produccion777* - Accion: /cocina-pedidos
+Fecha: 2025-04-03 12:58:49.668751 - Usuario: Produccion777* - Accion: /cocina-pedidos
+Fecha: 2025-04-03 13:01:51.345482 - Usuario: Produccion777* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/insumos
+Fecha: 2025-04-03 13:02:06.251694 - Usuario: Produccion777* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/insumos
+Fecha: 2025-04-03 13:02:14.061495 - Usuario: Produccion777* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/insumos
+Fecha: 2025-04-03 13:02:42.961419 - Usuario: Produccion777* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/insumos
+Fecha: 2025-04-03 13:03:07.172724 - Usuario: Produccion777* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/insumos
+Fecha: 2025-04-03 13:03:33.636552 - Usuario: Produccion777* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/error
+Fecha: 2025-04-03 13:03:40.730985 - Usuario: Produccion777* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/insumos
+Fecha: 2025-04-03 13:03:40.952521 - Usuario: Produccion777* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/insumos
+Fecha: 2025-04-03 13:41:46.750916 - Usuario: Produccion777* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/cocina-insumos
+Fecha: 2025-04-03 13:41:48.939636 - Usuario: Produccion777* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/cocina-insumos
+Fecha: 2025-04-03 13:42:45.493374 - Usuario: Produccion777* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/cocina-insumos
+Fecha: 2025-04-03 13:42:53.739202 - Usuario: Produccion777* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/cocina-insumos
+Fecha: 2025-04-03 13:43:14.103895 - Usuario: Produccion777* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/cocina-insumos
+Fecha: 2025-04-03 13:43:30.621428 - Usuario: Produccion777* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/cocina-insumos
+Fecha: 2025-04-03 13:45:53.936396 - Usuario: Produccion777* - Accion: /cocina-insumos
+Fecha: 2025-04-03 13:45:53.936741 - Usuario: Produccion777* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/cocina-insumos
+Fecha: 2025-04-03 13:46:18.752581 - Usuario: Produccion777* - Accion: /cocina-pedidos
+Fecha: 2025-04-03 13:46:18.752753 - Usuario: Produccion777* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/cocina-insumos
+Fecha: 2025-04-03 13:46:34.089554 - Usuario: Produccion777* - Accion: /cocina-pedidos
+Fecha: 2025-04-03 13:46:34.089724 - Usuario: Produccion777* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/cocina-insumos
+Fecha: 2025-04-03 13:47:06.499128 - Usuario: Produccion777* - Accion: /cocina-pedidos
+Fecha: 2025-04-03 13:47:25.148498 - Usuario: Produccion777* - Accion: /cocina-pedidos
+Fecha: 2025-04-03 13:49:27.684196 - Usuario: Produccion777* - Accion: /cocina-pedidos
+Fecha: 2025-04-03 14:33:54.390992 - Usuario: Produccion777* - Accion: /cocina-pedidos
+Fecha: 2025-04-03 14:33:54.391326 - Usuario: Produccion777* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/solicitar-insumos
+Fecha: 2025-04-03 14:35:57.239649 - Usuario: Produccion777* - Accion: /cocina-pedidos
+Fecha: 2025-04-03 14:35:57.239898 - Usuario: Produccion777* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/solicitar-insumos
+Fecha: 2025-04-03 14:36:49.442874 - Usuario: Produccion777* - Accion: /cocina-pedidos
+Fecha: 2025-04-03 14:36:49.442996 - Usuario: Produccion777* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/solicitar-insumos
+Fecha: 2025-04-03 14:37:01.196494 - Usuario: Produccion777* - Accion: /cocina-pedidos
+Fecha: 2025-04-03 14:37:01.196673 - Usuario: Produccion777* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/solicitar-insumos
+Fecha: 2025-04-03 14:38:24.395896 - Usuario: Produccion777* - Accion: /cocina-pedidos
+Fecha: 2025-04-03 14:38:24.396067 - Usuario: Produccion777* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/solicitar-insumos
+Fecha: 2025-04-03 14:38:30.450052 - Usuario: Produccion777* - Accion: /cocina-pedidos
+Fecha: 2025-04-03 14:38:30.450189 - Usuario: Produccion777* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/solicitar-insumos
+Fecha: 2025-04-03 14:40:44.513300 - Usuario: Produccion777* - Accion: /cocina-pedidos
+Fecha: 2025-04-03 14:40:44.513625 - Usuario: Produccion777* - Accion: Error 404: Pagina no encontrada en http://127.0.0.1:8080/solicitar-insumos

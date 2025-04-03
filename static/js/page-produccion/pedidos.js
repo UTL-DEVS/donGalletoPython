@@ -179,6 +179,8 @@ function enviarAlServicio(datos) {
         if (data.success)
             alert(data.message)
             window.location = '/cocina-pedidos'
+        if (data.error)
+            alert(data.message)
     })
 }
 

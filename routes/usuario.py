@@ -1,4 +1,5 @@
-from flask import Blueprint, render_template,request, redirect,url_for, current_user, login_required, abort, flash
+from flask import Blueprint, render_template,request, redirect,url_for, abort, flash
+from flask_login import login_required, current_user
 import json
 from forms import *
 from controller import controller_usuario

@@ -53,14 +53,10 @@ function enviarAlServicio(datos) {
     })
     .then(response => response.json())
     .then(data => {
-        console.log(data)
         if (data.success)
             alert(data.message)
             window.location = '/produccion-stock'
         if (data.error)
             alert(data.message)
-    })
-    .catch(error => {
-        console.error('Error:', error);
     });
 }

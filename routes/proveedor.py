@@ -1,4 +1,5 @@
-from flask import Blueprint, render_template,request,redirect,url_for, login_required, abort, current_user, flash
+from flask import Blueprint, render_template,request,redirect,url_for, abort, flash
+from flask_login import login_required, current_user
 import json
 from forms import *
 from controller import controller_proveedor
@@ -30,7 +31,7 @@ def mostrar_proveedores():
         )
     except Exception as e:
         crear_log_error(current_user.usuario, str(e))
-        flash("❌ Error al mostrar proveedores", "danger")
+        flash("Error al mostrar proveedores", "danger")
         return redirect('/error')
 
 @proveedor_bp.route('/detallesProveedor', methods=['GET'])
@@ -62,7 +63,7 @@ def detalles_proveedor():
 
     except Exception as e:
         crear_log_error(current_user.usuario, str(e))
-        flash("❌ Error al mostrar detalles del proveedor", "danger")
+        flash("Error al mostrar detalles del proveedor", "danger")
         return redirect('/error')
 
 @proveedor_bp.route('/actualizarProveedor', methods=['POST', 'GET'])
@@ -78,7 +79,7 @@ def actualizar_proveedor():
         return redirect(url_for('proveedor.mostrar_proveedores'))
     except Exception as e:
         crear_log_error(current_user.usuario, str(e))
-        flash("❌ Error al actualizar proveedor", "danger")
+        flash("Error al actualizar proveedor", "danger")
         return redirect('/error')
 
 @proveedor_bp.route('/eliminarProveedor', methods=['POST', 'GET'])
@@ -93,7 +94,7 @@ def eliminar_proveedor():
         return redirect(url_for('proveedor.mostrar_proveedores'))
     except Exception as e:
         crear_log_error(current_user.usuario, str(e))
-        flash("❌ Error al eliminar proveedor", "danger")
+        flash("Error al eliminar proveedor", "danger")
         return redirect('/error')
 
 @proveedor_bp.route('/reactivarProveedor', methods=['POST', 'GET'])
@@ -108,7 +109,7 @@ def reactivar_proveedor():
         return redirect(url_for('proveedor.mostrar_proveedores'))
     except Exception as e:
         crear_log_error(current_user.usuario, str(e))
-        flash("❌ Error al reactivar proveedor", "danger")
+        flash("Error al reactivar proveedor", "danger")
         return redirect('/error')
 
 @proveedor_bp.route('/agregarProveedor', methods=['POST'])
@@ -137,7 +138,7 @@ def agregar_proveedor():
             )
     except Exception as e:
         crear_log_error(current_user.usuario, str(e))
-        flash("❌ Error al agregar proveedor", "danger")
+        flash("Error al agregar proveedor", "danger")
         return redirect('/error')
 
 @proveedor_bp.after_request

@@ -46,5 +46,5 @@ def dashboard():
 
     except Exception as e:
         crear_log_error(current_user.usuario, str(e))
-        flash("❌ Error al cargar el panel económico", "danger")
+        flash("Error al cargar el panel económico", "danger")
         return redirect('/error')

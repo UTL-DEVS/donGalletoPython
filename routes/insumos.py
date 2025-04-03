@@ -5,7 +5,6 @@ from utils.db import db
 from forms.form_insumo import InsumoForm
 from funcs import crear_log_user, crear_log_error
 
-
 insumos_bp = Blueprint('insumos', __name__, url_prefix='/insumos', template_folder='templates')
 
 UNIDADES = {
@@ -35,8 +34,6 @@ def convertir_a_base(cantidad, unidad):
 @insumos_bp.route('/insumo', methods=['GET', 'POST'])
 @login_required
 def vista_admin_insumos():
-    if current_user.rol_user != 0:
-        abort(404)
     try:
         crear_log_user(current_user.usuario, request.url)
 
@@ -78,11 +75,8 @@ def vista_admin_insumos():
 
     except Exception as e:
         crear_log_error(current_user.usuario, str(e))
-        flash("❌ Error inesperado al acceder a insumos", "danger")
+        flash("Error inesperado al acceder a insumos", "danger")
         return redirect('/error')
-
-
-
 
 @insumos_bp.route('/insumo/editar/<int:id_materia>', methods=['GET', 'POST'])
 @login_required
@@ -142,7 +136,7 @@ def editar_insumo(id_materia):
 
     except Exception as e:
         crear_log_error(current_user.usuario, str(e))
-        flash("❌ Error al editar insumo", "danger")
+        flash("Error al editar insumo", "danger")
         return redirect('/error')
 
 @insumos_bp.route('/estatus/<int:id>')
@@ -161,7 +155,7 @@ def cambiar_estatus_insumo(id):
 
     except Exception as e:
         crear_log_error(current_user.usuario, str(e))
-        flash("❌ Error al cambiar estatus del insumo", "danger")
+        flash("Error al cambiar estatus del insumo", "danger")
         return redirect('/error')
 
 @insumos_bp.route('/cocina')
@@ -177,5 +171,5 @@ def vista_cocina_insumos():
 
     except Exception as e:
         crear_log_error(current_user.usuario, str(e))
-        flash("❌ Error al cargar insumos en cocina", "danger")
+        flash("Error al cargar insumos en cocina", "danger")
         return redirect('/error')
