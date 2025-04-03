@@ -8,7 +8,6 @@ class InsumoForm(FlaskForm):
     })
     nombre = StringField('Nombre del insumo', validators=[DataRequired()])
     stock_materia = DecimalField('Cantidad', places=2, validators=[DataRequired(), NumberRange(min=0.0)], default=0.0)
-    cantidad_pedido = DecimalField('Cantidad Pedido', places=2, validators=[DataRequired(), NumberRange(min=0.01)])
     unidad_medida = SelectField('Unidad de medida (compra)', coerce=int, validators=[DataRequired(
         message='Debes escoger una opcion'
     )])
