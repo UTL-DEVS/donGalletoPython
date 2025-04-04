@@ -403,3 +403,16 @@ Fecha: 2025-04-03 19:30:12.549790 - Usuario: joel1234567 - Accion: http://localh
 Fecha: 2025-04-03 19:30:13.849885 - Usuario: joel1234567 - Accion: http://localhost:8080/cliente
 Fecha: 2025-04-03 19:30:15.277207 - Usuario: joel1234567 - Accion: http://localhost:8080/cliente/menu
 Fecha: 2025-04-03 19:36:10.884798 - Usuario: joel1234567 - Accion: http://localhost:8080/cliente/menu
+Fecha: 2025-04-03 19:42:21.520600 - Usuario: joel1234567 - Accion: http://localhost:8080/cliente/menu
+Fecha: 2025-04-03 19:42:26.394792 - Usuario: joel1234567 - Accion: http://localhost:8080/cliente
+Fecha: 2025-04-03 19:42:39.396918 - Usuario: joel1234567 - Accion: http://localhost:8080/cliente
+Fecha: 2025-04-03 19:43:01.044866 - Usuario: joel1234567 - Accion: http://localhost:8080/cliente
+Fecha: 2025-04-03 19:43:50.490601 - Usuario: joel1234567 - Accion: http://localhost:8080/cliente
+Fecha: 2025-04-03 19:44:35.222872 - Usuario: joel1234567 - Accion: http://localhost:8080/cliente
+Fecha: 2025-04-03 19:45:32.542727 - Usuario: joel1234567 - Accion: http://localhost:8080/cliente
+Fecha: 2025-04-03 19:46:12.612868 - Usuario: joel1234567 - Accion: http://localhost:8080/cliente
+Fecha: 2025-04-03 19:47:10.327913 - Usuario: joel1234567 - Accion: http://localhost:8080/cliente
+Fecha: 2025-04-03 19:50:26.851848 - Usuario: joel1234567 - Accion: http://localhost:8080/cliente
+Fecha: 2025-04-03 19:53:04.742408 - Usuario: joel1234567 - Accion: http://localhost:8080/cliente
+Fecha: 2025-04-03 19:58:29.803597 - Usuario: joel1234567 - Accion: http://localhost:8080/cliente
+Fecha: 2025-04-03 19:59:43.073170 - Usuario: joel1234567 - Accion: http://localhost:8080/cliente
