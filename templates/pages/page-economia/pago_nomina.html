@@ -1,0 +1,109 @@
+{%extends 'components/estructura.html'%}
+{%block titulo%}Economía{%endblock%}
+{%block contenido%}
+ <!-- Mensaje flash -->
+ <div class="row">
+    <div class="col-12">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for category, message in messages %}
+        <div class="alert alert-{{ 'danger' if category == 'error' else 'success' }} alert-dismissible fade show"
+            style="font-size: 15px;" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+    </div>
+</div>
+
+
+
+<div class="container d-flex aling-center justify-content-center flex-column align-center w-90 mt-5">
+    <div class="menu d-flex aling-center justify-content-center flex-column align-center">
+        <div class="sub-header d-flex justify-content-between">
+            <div class="sub-header-title">
+                <h1>Pago de nómina</h1>
+            </div>
+        </div>
+        <hr>
+
+        <div class="data d-flex aling-center justify-content-center flex-column">
+            <div class="table">
+                <table class="table table-hover">
+                    <thead>
+                        <tr class="table-light">
+                            <th scope="col">#</th>
+                            <th scope="col">Empleado</th>
+                            <th scope="col">Sueldo</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        {% for emp in empleados_sin_pago %}
+                        <tr>
+                            <th scope="row">{{loop.index}}</th>
+                            <td>{{ emp.nombre }}</td>
+                            <td>${{ "%.2f"|format(emp.sueldo_calculado) }}</td>
+                            <td>
+                                <button onclick="ventanaConfirmarPago({{emp.id_empleado}})"
+                                        class="btn btn-primary">
+                                        <i class="bi bi-credit-card-fill"></i>
+                                    </button>
+                                <!--<a"><button onclick=cambioPaga
+                                        class="btn btn-primary">
+                                        <i class="bi bi-wallet2"></i>
+                                    </td>
+                                </button></a>-->
+                        </tr>
+                        {%endfor%}
+                      
+                    </tbody>
+                </table>
+                {%if ( not empleados_sin_pago )%}
+                        <h5 class="text-center font-weight-bold">No hay usuarios por pagar</h3>
+                            {%endif%}
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+ <!-- modalPagarEmpleado -->
+ <div class="modal" tabindex="-1" id="confirmarPagarEmpleado">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Pago de empleado</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Se realizará el pago de salario quincenal al empleado</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, cancelar</button>
+                <a id="btnPagarEmpleado"><button type="button" class="btn btn-primary">Si,
+                        pagar</button></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+ <!-- Barra de navegación inferior -->
+    <nav class="navbar navbar-dark bg-dark fixed-bottom">
+        <div class="container-fluid d-flex justify-content-around">
+            <a class="nav-link text-light bg-dark" href="/economia/nomina"><i class="bi bi-house-door"></i> Nómina</a>
+            <a class="nav-link text-light" href="#"><i class="bi bi-search"></i> Ingresos</a>
+            <a class="nav-link text-light" href="#"><i class="bi bi-person"></i> Sueldos</a>
+        </div>
+    </nav>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{url_for('static', filename='js/page-economia/nomina.js')}}"></script>
+
+    {%endblock%}

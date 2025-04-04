@@ -38,10 +38,6 @@ def descargar_ticket(venta_id):
         
         return "Error al generar el ticket", 500
     
-@galleta_bp.route('/tipo_venta')
-def tipo_venta():
-    return render_template('pages/pages-ventas/tipo_venta.html')
-
 @galleta_bp.before_request
 def antes_de_peticion():
     if 'carrito' not in session:

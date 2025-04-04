@@ -15,6 +15,8 @@ import io
 import os
 from datetime import timedelta
 from funcs import captcha_info
+from flask import Flask, session
+from flask_session import Session
 
 # comando a ejecutar en terminal
 
@@ -43,6 +45,7 @@ def crear_app():
     app.register_blueprint(route_galleta)
     app.register_blueprint(insumos_bp)
     app.register_blueprint(cocina_insumos_bp)
+    app.register_blueprint(venta_bp)
 
     return app, csrf
 
@@ -52,6 +55,11 @@ app, csrf = crear_app()
 login_manager = LoginManager()
 login_manager.login_view = "login.login"
 login_manager.init_app(app)
+
+# Configuración de Flask-Session
+app.config['SESSION_TYPE'] = 'filesystem'  
+app.config['SESSION_PERMANENT'] = False
+Session(app)
 
 
 
@@ -106,4 +114,4 @@ if __name__ == '__main__':
     csrf.init_app(app=app)
     with app.app_context():
         db.create_all()
-    app.run(debug=True, port=8080)
+    app.run( port=8080)

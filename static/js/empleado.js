@@ -50,3 +50,6 @@ $('#formularioEditarEmpleado').submit(function (event) {
     });
 });
 
+window.onload = function () {
+    revisarModalesAbiertos();
+};
