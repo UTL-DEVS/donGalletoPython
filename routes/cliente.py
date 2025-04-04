@@ -230,8 +230,7 @@ def hash_contrasena(contrasena):
 @cliente_bp.route('/perfil-cliente', methods=['GET', 'POST'])
 @login_required
 def perfil_cliente():
-    if current_user.rol_user != 1:
-        abort(404)
+    
     try:
         crear_log_user(current_user.usuario, request.url)
         if 'usuario_id' not in session:

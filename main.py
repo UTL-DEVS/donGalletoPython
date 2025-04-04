@@ -45,6 +45,7 @@ def crear_app():
     app.register_blueprint(route_galleta)
     app.register_blueprint(insumos_bp)
     app.register_blueprint(cocina_insumos_bp)
+    app.register_blueprint(venta_bp)
 
     return app, csrf
 
@@ -113,4 +114,4 @@ if __name__ == '__main__':
     csrf.init_app(app=app)
     with app.app_context():
         db.create_all()
-    app.run(debug=True, port=8080)
+    app.run( port=8080)

@@ -204,6 +204,7 @@ Fecha: 2025-04-03 14:08:32.331964 - Usuario: Usuario anï¿½nimo - Accion: Error 4
 Fecha: 2025-04-03 14:08:48.479799 - Usuario: joel123456 - Accion: 'forms.form_receta.RecetaForm object' has no attribute 'nombre'
 Fecha: 2025-04-03 14:08:48.480321 - Usuario: joel123456 - Accion: Error 404: Pï¿½gina no encontrada en http://127.0.0.1:8080/receta/agregar | IP: 127.0.0.1
 Fecha: 2025-04-03 14:12:14.647097 - Usuario: joel123456 - Accion: Error 404: Pï¿½gina no encontrada en http://127.0.0.1:8080/agregar_galleta | IP: 127.0.0.1
+<<<<<<< Updated upstream
 Fecha: 2025-04-03 17:44:34.920457 - Usuario: milk220010 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/tipo_venta | IP: 127.0.0.1
 Fecha: 2025-04-03 17:45:08.383737 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/tipo_venta | IP: 127.0.0.1
 Fecha: 2025-04-03 17:47:42.135571 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/tipo_venta | IP: 127.0.0.1
@@ -212,3 +213,47 @@ Fecha: 2025-04-03 18:12:16.805283 - Usuario: Usuario anónimo - Accion: Error 404
 Fecha: 2025-04-03 18:20:22.989608 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
 Fecha: 2025-04-03 18:20:22.997136 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
 Fecha: 2025-04-03 18:20:22.997714 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+=======
+Fecha: 2025-04-03 17:44:34.920457 - Usuario: milk220010 - Accion: Error 404: Pï¿½gina no encontrada en http://127.0.0.1:8080/tipo_venta | IP: 127.0.0.1
+Fecha: 2025-04-03 17:45:08.383737 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://127.0.0.1:8080/tipo_venta | IP: 127.0.0.1
+Fecha: 2025-04-03 17:47:42.135571 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://127.0.0.1:8080/tipo_venta | IP: 127.0.0.1
+Fecha: 2025-04-03 17:48:32.801046 - Usuario: milk220010 - Accion: Error 404: Pï¿½gina no encontrada en http://127.0.0.1:8080/tipo_venta | IP: 127.0.0.1
+Fecha: 2025-04-03 18:01:47.716787 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/tipo_venta | IP: 127.0.0.1
+Fecha: 2025-04-03 18:03:38.110295 - Usuario: milk220010 - Accion: Error 404: Página no encontrada en http://localhost:8080/tipo_venta | IP: 127.0.0.1
+Fecha: 2025-04-03 18:06:46.869001 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://localhost:8080/tipo_venta | IP: 127.0.0.1
+Fecha: 2025-04-03 18:06:48.446617 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://localhost:8080/tipo_venta | IP: 127.0.0.1
+Fecha: 2025-04-03 18:07:07.077514 - Usuario: milk220010 - Accion: Error 404: Página no encontrada en http://localhost:8080/tipo_venta | IP: 127.0.0.1
+Fecha: 2025-04-03 18:07:43.782098 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://localhost:8080/tipo_venta | IP: 127.0.0.1
+Fecha: 2025-04-03 18:07:53.421278 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://localhost:8080/tipo_venta | IP: 127.0.0.1
+Fecha: 2025-04-03 18:08:10.883017 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://localhost:8080/tipo_venta | IP: 127.0.0.1
+Fecha: 2025-04-03 18:08:55.500364 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://localhost:8080/tipo_venta | IP: 127.0.0.1
+Fecha: 2025-04-03 18:09:01.576222 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://localhost:8080/tipo_venta | IP: 127.0.0.1
+Fecha: 2025-04-03 18:09:10.678343 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://localhost:8080/tipo_venta | IP: 127.0.0.1
+Fecha: 2025-04-03 18:09:55.957731 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://localhost:8080/tipo_venta | IP: 127.0.0.1
+Fecha: 2025-04-03 18:10:09.916296 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://localhost:8080/tipo_venta | IP: 127.0.0.1
+Fecha: 2025-04-03 18:11:02.240280 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://localhost:8080/tipo_venta | IP: 127.0.0.1
+Fecha: 2025-04-03 18:11:02.626629 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 18:11:18.412760 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://localhost:8080/tipo_venta | IP: 127.0.0.1
+Fecha: 2025-04-03 18:11:18.632506 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 18:11:19.301215 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 18:11:30.500960 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 18:12:05.295686 - Usuario: milk220010 - Accion: Error 404: Página no encontrada en http://localhost:8080/tipo_venta | IP: 127.0.0.1
+Fecha: 2025-04-03 18:12:05.539831 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 18:12:51.981008 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://localhost:8080/tipo_venta | IP: 127.0.0.1
+Fecha: 2025-04-03 18:12:52.110596 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 18:13:02.093117 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://localhost:8080/tipo_venta | IP: 127.0.0.1
+Fecha: 2025-04-03 18:13:02.237872 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 18:13:32.478191 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 18:13:34.740803 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 18:13:49.793812 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 18:13:54.645864 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 18:14:38.872722 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 18:15:30.554505 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 18:15:31.372859 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 18:15:38.138692 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 18:15:52.938264 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 18:16:01.771633 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 18:16:27.522834 - Usuario: milk220010 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 18:31:52.487677 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 18:37:00.134323 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+>>>>>>> Stashed changes

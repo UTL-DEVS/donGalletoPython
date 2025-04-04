@@ -6,7 +6,7 @@ use casaGalleta;
 SHOW TABLES;
 
 
-SELECT * FROM materia_prima;
+SELECT * FROM usuario;
 SELECT * FROM pre_registro;
 
 use casaGalleta;
@@ -22,7 +22,7 @@ SELECT * FROM usuario;
 DESCRIBE galletas;
 INSERT INTO usuario(rol_user, email,usuario, contrasenia,token) VALUES (0,'joelbriones701@gmail.com', 'joel123456', 'e39ab699d50e9eacbe2abf4320192d33de6465592c8752939ec20183de8462e5','00');
 INSERT INTO usuario(rol_user, email,usuario, contrasenia,token) VALUES (1,'joelbriones70@gmail.com', 'joel1234567', 'e39ab699d50e9eacbe2abf4320192d33de6465592c8752939ec20183de8462e5','00');
-INSERT INTO usuario(rol_user, email,usuario, contrasenia,token) VALUES (3, 'miltoner4lfredo@gmail.com', 'milk220010', 'e39ab699d50e9eacbe2abf4320192d33de6465592c8752939ec20183de8462e5', '00');
+INSERT INTO usuario(rol_user, email,usuario, contrasenia,token) VALUES (4, 'miltoner4lfredo@gmail.com', 'milk220010', 'e39ab699d50e9eacbe2abf4320192d33de6465592c8752939ec20183de8462e5', '00');
 
 -- !SEGUIR ESTE ORDEN DE USUARIOS SEGUN EL ROL ESA CONTRASENIA EN EL INPUT ES: Joel123456$
 -- en caso de que no los deje pasar, entonces me equivoque de formato, pero eso es la contrasenia encriptada, 
@@ -98,6 +98,23 @@ INSERT INTO Proveedor (nombre_proveedor, id_persona)
 VALUES ('Distribuidora López', @id_persona);
 
 SELECT * FROM proveedor;
+show TABLES;
+SELECT * FROM detalleReceta;
 SELECT * FROM materia_prima;
 SELECT * FROM persona;
+SELECT * FROM receta;
+show tables;
+use casaGalleta;
 
+INSERT INTO galletas (nombre_galleta, precio_galleta, imagen_galleta, descripcion_galleta, fecha_creacion, activo)
+VALUES 
+('Galleta de Chocolate', 2.50, 'imagen_chocolate.jpg', 'Deliciosa galleta con trozos de chocolate negro', '2023-11-15 10:30:00', true),
+('Galleta de Vainilla', 2.00, 'imagen_vainilla.jpg', 'Suave galleta de vainilla con glaseado', '2023-11-15 10:30:00', true),
+('Galleta de Avena', 1.80, 'imagen_avena.jpg', 'Galleta saludable con avena y pasas', '2023-11-15 10:30:00', true),
+('Galleta de Mantequilla', 2.20, NULL, 'Clásica galleta de mantequilla crujiente', '2023-11-15 10:30:00', true),
+('Galleta de Limón', 2.30, 'imagen_limon.jpg', 'Galleta refrescante con ralladura de limón', '2023-11-15 10:30:00', true);
+
+INSERT INTO stock (id_galleta, cantidad_galleta, maximo_galleta, minimo_galleta) 
+VALUES (4, 1000, 1400, 700);
+
+select * from proceso_ventas;
