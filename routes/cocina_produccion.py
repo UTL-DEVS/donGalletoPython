@@ -7,7 +7,8 @@ from datetime import date, datetime
 from models.detalle_produccion import DetalleProduccion
 from models.produccion import Produccion
 from models.Stock import Stock
-from controller import controller_produccion, controller_detalle_produccion, controller_stock
+from models.materiaPrima import MateriaPrima
+from controller import controller_produccion, controller_detalle_produccion, controller_stock, controller_materia_prima
 
 cocina_produccion_bp = Blueprint('cocina-produccion', __name__, template_folder='templates')
 
@@ -77,6 +78,13 @@ def procesarProduccion():
             return jsonify({
                 "error": True,
                 "message": "Hubo un problema al registrar el detalle de produccion!"
+            })
+        
+        #Proceso - Materia
+        if controller_materia_prima.descontarStock(detalleProduccion["id_galleta"], int(detalleProduccion["cantidad"])) != 1:
+            return jsonify({
+                "error": True,
+                "message": "Hubo un problema al descontar la materia!"
             })
         
         #Proceso - Stock

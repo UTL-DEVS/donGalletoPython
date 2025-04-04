@@ -24,7 +24,7 @@
                 <h1 id="tituloHistorial">Historial{% if fecha %} - {{ fecha }}{% endif %}</h1>
             </div>
             <div class="sub-header-buttons d-flex align-items-center" style="width: 33%;">
-                <form action="produccion-historial" id="formHistorial">
+                <form action="insumos-historial" id="formHistorial">
                     <p class="w-100 m-0 fw-bold">Seleccione una fecha: </p>
                     <input id="inpFecha" type="date" name="fecha" class="form-control" aria-describedby="basic-addon2" onchange="actualizarTituloHistorial()" value="{{ fecha if fecha else '' }}">
                 </form>
@@ -37,18 +37,20 @@
                     <thead>
                         <tr>
                             <th scope="col" style="position: sticky; top: 0;">#</th>
-                            <th scope="col" style="position: sticky; top: 0;">Galleta</th>
-                            <th scope="col" style="position: sticky; top: 0;">Total</th>
-                            <th scope="col" style="position: sticky; top: 0;">Hora</th>
+                            <th scope="col" style="position: sticky; top: 0;">Insumo</th>
+                            <th scope="col" style="position: sticky; top: 0;">Total Pedido</th>
+                            <th scope="col" style="position: sticky; top: 0;">Proveedor</th>
+                            <th scope="col" style="position: sticky; top: 0;">Total Precio</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {% for galleta in lstGalletas %}
+                        {% for insumos in lstInsumos %}
                             <tr>
                                 <th scope="row">{{ loop.index }}</th>
-                                <td>{{ galleta.nombre_galleta }}</td>
-                                <td>{{ galleta.cantidad_galleta }} Galletas</td>
-                                <td>{{ galleta.hora_produccion }}</td>
+                                <td>{{ insumos.nombre_materia }}</td>
+                                <td>{{ insumo.stock_materia }} Galletas</td>
+                                <td>{{ insumo.nombre_proveedor }}</td>
+                                <td>{{ insumo.precio }} * {{ insumo.stock_materia }}</td>
                             </tr>
                         {% endfor %}
                     </tbody>
@@ -57,6 +59,8 @@
         </div>
     </div>
 </div>
+
+<script src="../../../../static/js/page-produccion/insumos.js"></script>
 
 <style>
     /* Opcional: Mejorar la apariencia del scroll */

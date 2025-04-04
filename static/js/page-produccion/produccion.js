@@ -42,7 +42,7 @@ document.getElementById('btnProcesarProduccion').addEventListener('click', funct
 
 function enviarAlServicio(datos) {
     const csrfToken = document.querySelector('input[name="csrf_token"]').value;
-
+    
     fetch('/procesar-produccion', {
         method: 'POST',
         headers: {
