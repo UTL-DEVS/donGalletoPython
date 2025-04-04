@@ -131,3 +131,5 @@ INSERT INTO `stock` (`id_stock`,`id_galleta`,`cantidad_galleta`,`maximo_galleta`
 INSERT INTO materia_prima (id_materia,nombre_materia,stock_materia,unidad_medida_publico,unidad_medida,precio,estatus,id_proveedor) VALUES (1,'Harina',147,1,1,50,1,1);
 
 SELECT * FROM pedidos;
+
+SELECT * from usuario;
