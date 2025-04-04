@@ -204,3 +204,7 @@ Fecha: 2025-04-03 14:08:32.331964 - Usuario: Usuario anï¿½nimo - Accion: Error 4
 Fecha: 2025-04-03 14:08:48.479799 - Usuario: joel123456 - Accion: 'forms.form_receta.RecetaForm object' has no attribute 'nombre'
 Fecha: 2025-04-03 14:08:48.480321 - Usuario: joel123456 - Accion: Error 404: Pï¿½gina no encontrada en http://127.0.0.1:8080/receta/agregar | IP: 127.0.0.1
 Fecha: 2025-04-03 14:12:14.647097 - Usuario: joel123456 - Accion: Error 404: Pï¿½gina no encontrada en http://127.0.0.1:8080/agregar_galleta | IP: 127.0.0.1
+Fecha: 2025-04-03 17:44:34.920457 - Usuario: milk220010 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/tipo_venta | IP: 127.0.0.1
+Fecha: 2025-04-03 17:45:08.383737 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/tipo_venta | IP: 127.0.0.1
+Fecha: 2025-04-03 17:47:42.135571 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/tipo_venta | IP: 127.0.0.1
+Fecha: 2025-04-03 17:48:32.801046 - Usuario: milk220010 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/tipo_venta | IP: 127.0.0.1

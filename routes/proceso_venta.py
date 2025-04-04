@@ -27,7 +27,7 @@ def antes_de_peticion():
 @venta_bp.route('/ventas_dia')
 @login_required
 def ventas_dia():
-    if current_user.rol_user != 3:
+    if current_user.rol_user != 4:
         abort(404)
     try:
         crear_log_user(current_user.usuario, request.url)
@@ -41,7 +41,7 @@ def ventas_dia():
 @venta_bp.route('/tipo_venta')
 @login_required
 def tipo_venta():
-    if current_user.rol_user != 3:
+    if current_user.rol_user != 4:
         abort(404)
     try:
         crear_log_user(current_user.usuario, request.url)
@@ -54,7 +54,7 @@ def tipo_venta():
 @venta_bp.route('/ventas/<tipo>')
 @login_required
 def ventas(tipo):
-    if current_user.rol_user != 3:
+    if current_user.rol_user != 4:
         abort(404)
     try:
         crear_log_user(current_user.usuario, request.url)
@@ -80,7 +80,7 @@ def antes_de_peticion():
 @venta_bp.route('/agregar_al_carrito', methods=['POST'])
 @login_required
 def agregar_al_carrito():
-    if current_user.rol_user != 3:
+    if current_user.rol_user != 4:
         abort(404)
     try:
         crear_log_user(current_user.usuario, request.url)
@@ -143,7 +143,7 @@ def agregar_al_carrito():
 @venta_bp.route('/procesar_venta', methods=['POST'])
 @login_required
 def procesar_venta():
-    if current_user.rol_user != 3:
+    if current_user.rol_user != 4:
         abort(404)
     try:
         crear_log_user(current_user.usuario, request.url)
@@ -185,7 +185,7 @@ def procesar_venta():
 @venta_bp.route('/tickets/<int:venta_id>')
 @login_required
 def descargar_ticket(venta_id):
-    if current_user.rol_user != 3:
+    if current_user.rol_user != 4:
         abort(404)
     try:
         crear_log_user(current_user.usuario, request.url)
@@ -209,7 +209,7 @@ def descargar_ticket(venta_id):
 @venta_bp.route('/listar_ventas')
 @login_required
 def listar_ventas():
-    if current_user.rol_user != 3:
+    if current_user.rol_user != 4:
         abort(404)
     try:
         crear_log_user(current_user.usuario, request.url)
@@ -223,7 +223,7 @@ def listar_ventas():
 @venta_bp.route('/eliminar_venta/<int:venta_id>', methods=['POST'])
 @login_required
 def eliminar_venta(venta_id):
-    if current_user.rol_user != 3:
+    if current_user.rol_user != 4:
         abort(404)
     try:
         crear_log_user(current_user.usuario, request.url)
@@ -240,7 +240,7 @@ def eliminar_venta(venta_id):
 @venta_bp.route('/vaciar_carrito', methods=['POST'])
 @login_required
 def vaciar_carrito():
-    if current_user.rol_user != 3:
+    if current_user.rol_user != 4:
         abort(404)
     try:
         crear_log_user(current_user.usuario, request.url)
@@ -257,7 +257,7 @@ def vaciar_carrito():
 @venta_bp.route('/eliminar_item/<int:index>', methods=['POST'])
 @login_required
 def eliminar_item(index):
-    if current_user.rol_user != 3:
+    if current_user.rol_user != 4:
         abort(404)
     try:
         crear_log_user(current_user.usuario, request.url)
