@@ -34,7 +34,7 @@ def agregar_proveedor():
         if request.method=='POST'and form_empleado_obj.validate_on_submit():
             if (controller_usuario.agregar_empleado(form_empleado_obj)):
                 flash("Empleado agregado con éxito", "success")
-            return redirect(url_for('usuario.mostrar_empleados'))
+            return redirect('/navegante/empleado')
         modales["agregar"]=1
         lista_empleados=controller_usuario.obtener_empleados()
         crear_log_user(current_user.usuario, request.url)
@@ -72,7 +72,7 @@ def actualizar_empleado():
         form_empleado_obj = form_empleado(request.form)
         controller_usuario.actualizar_empleado(int(request.args.get('id_emp_upd')),form_empleado_obj)
         crear_log_user(current_user.usuario, request.url)
-        return redirect(url_for('usuario.mostrar_empleados'))
+        return redirect('/navegante/empleado')
     except Exception as e:
         crear_log_error(current_user.usuario, str(e))
         flash("Error al cargar el panel de usuarios", "danger")
@@ -86,7 +86,7 @@ def eliminar_proveedor():
             abort(404)
         crear_log_user(current_user.usuario, request.url)
         controller_usuario.eliminar_proveedor(int(request.args.get('id_prov_del')))
-        return redirect(url_for('proveedor.mostrar_proveedores'))
+        return redirect('/navegante/empleado')
     except Exception as e:
         crear_log_error(current_user.usuario, str(e))
         flash("Error al cargar el panel de usuarios", "danger")
@@ -99,7 +99,7 @@ def reactivarProveedor():
             abort(404)
         crear_log_user(current_user.usuario, request.url)
         controller_usuario.reactivar_proveedor(int(request.args.get('id_prov_rea')))
-        return redirect(url_for('proveedor.mostrar_proveedores'))
+        return redirect('/navegante/empleado')
     except Exception as e:
         crear_log_error(current_user.usuario, str(e))
         flash("Error al cargar el panel de usuarios", "danger")
