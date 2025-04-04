@@ -114,4 +114,4 @@ if __name__ == '__main__':
     csrf.init_app(app=app)
     with app.app_context():
         db.create_all()
-    app.run( port=8080)
+    app.run( port=8080, debug=True)

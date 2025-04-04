@@ -1,35 +1,35 @@
 <<<<<<< HEAD
-Fecha: 2025-04-03 19:12:48.461051 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:12:48.469051 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:12:48.469347 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:14:03.275322 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:14:03.275480 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:14:03.276444 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:19:30.978647 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:19:30.987820 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:19:30.994320 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:34:25.591207 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:34:25.593621 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:34:25.593844 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:35:41.685792 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:35:41.700581 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:35:41.702589 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:40:18.734305 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:40:18.745983 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:40:18.750249 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:44:34.602151 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:44:34.604416 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:44:34.606079 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:46:47.408852 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:46:47.410361 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:50:59.752336 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:50:59.753418 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:52:10.240706 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:52:10.240849 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:52:10.245585 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:52:53.560187 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:52:53.560757 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:52:53.561525 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:12:48.461051 - Usuario: chris123 - Accion: Error 404: Pï¿½gina no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:12:48.469051 - Usuario: chris123 - Accion: Error 404: Pï¿½gina no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:12:48.469347 - Usuario: chris123 - Accion: Error 404: Pï¿½gina no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:14:03.275322 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:14:03.275480 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:14:03.276444 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:19:30.978647 - Usuario: chris123 - Accion: Error 404: Pï¿½gina no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:19:30.987820 - Usuario: chris123 - Accion: Error 404: Pï¿½gina no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:19:30.994320 - Usuario: chris123 - Accion: Error 404: Pï¿½gina no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:34:25.591207 - Usuario: chris123 - Accion: Error 404: Pï¿½gina no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:34:25.593621 - Usuario: chris123 - Accion: Error 404: Pï¿½gina no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:34:25.593844 - Usuario: chris123 - Accion: Error 404: Pï¿½gina no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:35:41.685792 - Usuario: chris123 - Accion: Error 404: Pï¿½gina no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:35:41.700581 - Usuario: chris123 - Accion: Error 404: Pï¿½gina no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:35:41.702589 - Usuario: chris123 - Accion: Error 404: Pï¿½gina no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:40:18.734305 - Usuario: chris123 - Accion: Error 404: Pï¿½gina no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:40:18.745983 - Usuario: chris123 - Accion: Error 404: Pï¿½gina no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:40:18.750249 - Usuario: chris123 - Accion: Error 404: Pï¿½gina no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:44:34.602151 - Usuario: chris123 - Accion: Error 404: Pï¿½gina no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:44:34.604416 - Usuario: chris123 - Accion: Error 404: Pï¿½gina no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:44:34.606079 - Usuario: chris123 - Accion: Error 404: Pï¿½gina no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:46:47.408852 - Usuario: chris123 - Accion: Error 404: Pï¿½gina no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:46:47.410361 - Usuario: chris123 - Accion: Error 404: Pï¿½gina no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:50:59.752336 - Usuario: chris123 - Accion: Error 404: Pï¿½gina no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:50:59.753418 - Usuario: chris123 - Accion: Error 404: Pï¿½gina no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:52:10.240706 - Usuario: chris123 - Accion: Error 404: Pï¿½gina no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:52:10.240849 - Usuario: chris123 - Accion: Error 404: Pï¿½gina no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:52:10.245585 - Usuario: chris123 - Accion: Error 404: Pï¿½gina no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:52:53.560187 - Usuario: chris123 - Accion: Error 404: Pï¿½gina no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:52:53.560757 - Usuario: chris123 - Accion: Error 404: Pï¿½gina no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:52:53.561525 - Usuario: chris123 - Accion: Error 404: Pï¿½gina no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
 =======
 <<<<<<< HEAD
 Fecha: 2025-04-03 19:08:22.865021 - Usuario: Pruebas123* - Accion: Error 404: PÃ¡gina no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
@@ -39,73 +39,215 @@ Fecha: 2025-04-03 19:08:56.294991 - Usuario: Pruebas123* - Accion: Error 404: PÃ
 Fecha: 2025-04-03 19:08:56.296177 - Usuario: Pruebas123* - Accion: Error 404: PÃ¡gina no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
 Fecha: 2025-04-03 19:08:56.296732 - Usuario: Pruebas123* - Accion: Error 404: PÃ¡gina no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
 =======
-Fecha: 2025-04-03 19:25:45.396127 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-03 19:26:11.036397 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:26:11.051128 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:26:11.058698 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:27:33.516375 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:27:33.520712 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:27:33.520712 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:28:16.349558 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:28:16.350584 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:28:16.355115 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:29:27.237306 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:29:27.239527 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:29:27.239527 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:30:12.713524 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:30:12.715673 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:30:12.722616 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:30:13.940221 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:30:13.943241 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:30:13.947242 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:25:45.396127 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 19:26:11.036397 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:26:11.051128 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:26:11.058698 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:27:33.516375 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:27:33.520712 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:27:33.520712 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:28:16.349558 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:28:16.350584 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:28:16.355115 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:29:27.237306 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:29:27.239527 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:29:27.239527 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:30:12.713524 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:30:12.715673 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:30:12.722616 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:30:13.940221 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:30:13.943241 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:30:13.947242 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
 <<<<<<< HEAD
-Fecha: 2025-04-03 19:42:26.531446 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:42:26.541441 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:42:26.544986 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:42:39.523235 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:42:39.525007 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:42:39.528734 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:43:01.166846 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:43:01.171512 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:43:01.172583 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:43:50.620778 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:43:50.631768 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:43:50.637083 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:44:35.340225 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:44:35.342245 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:44:35.343239 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:45:32.696019 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:45:32.719165 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:45:32.720557 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:46:12.791416 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:46:12.791416 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:46:12.791416 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:47:10.446575 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:47:10.451605 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:47:10.454557 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:50:26.987103 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:50:27.000826 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:50:27.002828 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:53:04.879145 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:53:04.896044 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:53:04.903035 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:53:04.982200 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-03 19:58:29.940388 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:58:29.963388 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:58:29.963388 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:59:43.191326 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:59:43.192324 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:59:43.196332 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:42:26.531446 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:42:26.541441 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:42:26.544986 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:42:39.523235 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:42:39.525007 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:42:39.528734 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:43:01.166846 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:43:01.171512 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:43:01.172583 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:43:50.620778 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:43:50.631768 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:43:50.637083 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:44:35.340225 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:44:35.342245 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:44:35.343239 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:45:32.696019 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:45:32.719165 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:45:32.720557 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:46:12.791416 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:46:12.791416 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:46:12.791416 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:47:10.446575 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:47:10.451605 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:47:10.454557 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:50:26.987103 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:50:27.000826 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:50:27.002828 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:53:04.879145 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:53:04.896044 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:53:04.903035 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:53:04.982200 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 19:58:29.940388 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:58:29.963388 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:58:29.963388 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:59:43.191326 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:59:43.192324 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 19:59:43.196332 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
 =======
 >>>>>>> 1a0d0066bb6101809989130c951e7deca8808cf9
 >>>>>>> bcc7f823a049981f51252eeaa8c8e5cacf20d27d
-Fecha: 2025-04-03 20:05:19.053728 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 20:05:19.070318 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 20:05:19.076316 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 20:07:35.567754 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 20:07:35.571940 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 20:07:35.571940 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 20:31:39.906876 - Usuario: carlitos12 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 20:31:39.926169 - Usuario: carlitos12 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 20:31:39.932077 - Usuario: carlitos12 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 20:41:05.842615 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:05:19.053728 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:05:19.070318 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:05:19.076316 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:07:35.567754 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:07:35.571940 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:07:35.571940 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:18:33.373030 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:18:33.386955 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:18:33.393270 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:19:01.913648 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:19:01.914668 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:19:01.916979 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:22:35.006938 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:22:35.008451 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:22:35.016477 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:24:30.435932 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:24:30.445394 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:24:30.506563 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:26:08.782879 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:26:08.796072 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:26:08.799084 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:26:46.685704 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:26:47.771875 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:27:52.676907 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:27:54.618934 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:28:00.578672 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:28:14.071861 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:28:15.596580 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:28:23.113221 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:29:09.930591 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:29:14.521583 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:29:21.825358 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:29:21.839996 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:29:21.845988 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:29:22.548894 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:29:24.502408 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:30:26.892951 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:32:52.150875 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:32:58.098387 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:33:39.275649 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:33:39.283932 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:33:39.283932 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:33:39.491584 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:33:41.641938 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:33:43.238750 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:34:22.792392 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:34:23.330692 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:34:38.561292 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:34:39.240135 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:34:39.241178 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:34:39.241178 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:34:39.540637 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:34:44.528634 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:35:09.809570 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:35:09.819364 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:35:09.825570 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:35:10.514154 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:35:12.382046 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:35:23.180815 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:35:23.667976 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:35:24.002737 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:35:24.715639 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:35:24.718675 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:35:24.725658 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:35:25.133892 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:35:30.214926 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:35:42.663364 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:35:50.652994 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:35:50.664929 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:35:50.670735 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:35:50.924203 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:35:53.237061 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:36:13.853438 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:36:19.758410 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:36:19.765406 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:36:19.770621 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:36:19.975963 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:36:22.071111 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:36:24.016598 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:37:29.836786 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:37:43.129610 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:37:49.342256 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:37:49.859451 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:37:51.402640 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:37:58.717245 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:38:11.385669 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:38:35.017755 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:38:35.677506 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:38:36.848008 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:38:48.505241 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:39:03.057559 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:39:09.605686 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:39:09.615477 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:39:09.621592 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:39:10.330336 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:39:16.447357 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:39:17.574255 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:39:25.115446 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:39:29.504029 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:39:31.745500 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:39:34.891361 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:40:30.906286 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:40:36.350205 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:40:36.359998 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:40:36.366779 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:40:36.727037 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:40:38.587531 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:40:40.887118 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:40:42.875975 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:40:46.472394 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:40:52.417304 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:41:11.889317 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:42:52.785329 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:43:48.736926 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:43:55.192174 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:43:55.200871 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:43:55.206014 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:43:55.430539 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:44:04.377442 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:44:14.277055 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:44:20.979192 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:44:20.991878 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:44:20.991878 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:44:21.204675 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:44:26.067828 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:45:40.643721 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:45:40.652753 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:45:40.656799 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:45:41.038768 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:47:20.428887 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:47:29.231784 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:47:29.240287 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:47:29.241344 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:47:29.506691 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:47:34.435487 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:47:46.329170 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:52:08.028280 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:52:08.912237 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:52:10.287673 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:52:16.677955 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:52:16.688895 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:52:16.688895 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:52:16.844601 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:53:32.516551 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:53:38.725037 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:53:38.737900 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:53:38.744199 - Usuario: joel1234567 - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:53:39.148253 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:53:40.958504 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:53:42.288823 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:53:44.107832 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 20:53:46.818172 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
