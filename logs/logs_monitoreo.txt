@@ -1,0 +1,4 @@
+Fecha: 2025-04-03 19:07:49.747065 - Usuario: Pruebas123* - Accion: http://127.0.0.1:8080/cocina-pedidos
+Fecha: 2025-04-03 19:08:22.828853 - Usuario: Pruebas123* - Accion: http://127.0.0.1:8080/cliente
+Fecha: 2025-04-03 19:08:56.271494 - Usuario: Pruebas123* - Accion: http://127.0.0.1:8080/cliente
+Fecha: 2025-04-03 19:25:44.343696 - Usuario: Pruebas123* - Accion: http://127.0.0.1:8080/cocina-pedidos
