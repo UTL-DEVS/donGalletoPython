@@ -472,3 +472,8 @@ Fecha: 2025-04-03 19:59:43.073170 - Usuario: joel1234567 - Accion: http://localh
 =======
 >>>>>>> 1a0d0066bb6101809989130c951e7deca8808cf9
 >>>>>>> bcc7f823a049981f51252eeaa8c8e5cacf20d27d
+Fecha: 2025-04-03 20:05:18.844959 - Usuario: joel1234567 - Accion: http://localhost:8080/cliente
+Fecha: 2025-04-03 20:07:35.430004 - Usuario: joel1234567 - Accion: http://localhost:8080/cliente
+Fecha: 2025-04-03 20:07:37.151177 - Usuario: joel1234567 - Accion: http://localhost:8080/cliente/menu
+Fecha: 2025-04-03 20:10:08.846418 - Usuario: joel1234567 - Accion: http://localhost:8080/piezas
+Fecha: 2025-04-03 20:10:12.330531 - Usuario: joel1234567 - Accion: http://localhost:8080/paquete

@@ -1,4 +1,4 @@
--- Active: 1742951049609@@127.0.0.1@3306@casagalleta
+-- Active: 1742188040282@@127.0.0.1@3306@casagalleta
 CREATE DATABASE casaGalleta; 
 drop DATABASE casaGalleta;
 
@@ -23,7 +23,7 @@ DESCRIBE galletas;
 INSERT INTO usuario(rol_user, email,usuario, contrasenia,token) VALUES (0,'joelbriones701@gmail.com', 'joel123456', 'e39ab699d50e9eacbe2abf4320192d33de6465592c8752939ec20183de8462e5','00');
 INSERT INTO usuario(rol_user, email,usuario, contrasenia,token) VALUES (1,'joelbriones70@gmail.com', 'joel1234567', 'e39ab699d50e9eacbe2abf4320192d33de6465592c8752939ec20183de8462e5','00');
 INSERT INTO usuario(rol_user, email,usuario, contrasenia,token) VALUES (4, 'miltoner4lfredo@gmail.com', 'milk220010', 'e39ab699d50e9eacbe2abf4320192d33de6465592c8752939ec20183de8462e5', '00');
-INSERT INTO usuario(rol_user, email,usuario, contrasenia,token) VALUES (3,'joelbriones70@gmail.com', 'joel1234567', 'e39ab699d50e9eacbe2abf4320192d33de6465592c8752939ec20183de8462e5','00');
+INSERT INTO usuario(rol_user, email,usuario, contrasenia,token) VALUES (3,'joelbriones470@gmail.com', 'joel12345678', 'e39ab699d50e9eacbe2abf4320192d33de6465592c8752939ec20183de8462e5','00');
 
 -- !SEGUIR ESTE ORDEN DE USUARIOS SEGUN EL ROL ESA CONTRASENIA EN EL INPUT ES: Joel123456$
 -- en caso de que no los deje pasar, entonces me equivoque de formato, pero eso es la contrasenia encriptada, 
