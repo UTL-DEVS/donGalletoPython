@@ -32,7 +32,6 @@ def inicio():
 def menu():
     if current_user.rol_user != 1:
         abort(404)
-    try:
         crear_log_user(current_user.usuario, request.url)
         galletas = ClienteController.obtener_galletas_activas()
         forms = {galleta.id_galleta: PaqueteForm(id_galleta=galleta.id_galleta) for galleta in galletas}
@@ -41,9 +40,6 @@ def menu():
                         total=ClienteController.calcular_total(),
                         galletas=galletas,
                         forms=forms)
-    except Exception as e:
-        crear_log_error(current_user.usuario,str(e))
-        abort(404)
 
 @cliente_bp.route('/paquete')
 @login_required
