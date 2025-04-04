@@ -400,3 +400,14 @@ Fecha: 2025-04-03 19:06:03.021182 - Usuario: chris123 - Accion: http://127.0.0.1
 =======
 >>>>>>> 9379ff9ea86c659c83587951240d0c986b89d2ca
 >>>>>>> 92c0f9226f4617bab9755de509a71e6e02b4c10f
+Fecha: 2025-04-03 19:36:28.008299 - Usuario: Pruebas123* - Accion: http://127.0.0.1:8080/cocina-insumos
+Fecha: 2025-04-03 19:37:20.821944 - Usuario: Pruebas123* - Accion: http://127.0.0.1:8080/cocina-insumos
+Fecha: 2025-04-03 19:37:22.187106 - Usuario: Pruebas123* - Accion: http://127.0.0.1:8080/cocina-insumos
+Fecha: 2025-04-03 19:37:33.708138 - Usuario: Pruebas123* - Accion: http://127.0.0.1:8080/cocina-insumos
+Fecha: 2025-04-03 19:37:53.822264 - Usuario: Pruebas123* - Accion: http://127.0.0.1:8080/cocina-pedidos
+Fecha: 2025-04-03 19:37:57.895014 - Usuario: Pruebas123* - Accion: http://127.0.0.1:8080/cocina-insumos
+Fecha: 2025-04-03 19:37:59.753237 - Usuario: Pruebas123* - Accion: http://127.0.0.1:8080/cocina-insumos
+Fecha: 2025-04-03 19:38:01.473623 - Usuario: Pruebas123* - Accion: http://127.0.0.1:8080/cocina-insumos
+Fecha: 2025-04-03 19:38:52.765292 - Usuario: Pruebas123* - Accion: http://127.0.0.1:8080/cocina-pedidos
+Fecha: 2025-04-03 19:38:54.629793 - Usuario: Pruebas123* - Accion: http://127.0.0.1:8080/cocina-insumos
+Fecha: 2025-04-03 19:45:45.301083 - Usuario: Pruebas123* - Accion: http://127.0.0.1:8080/cocina-insumos
