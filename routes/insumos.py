@@ -34,7 +34,7 @@ def convertir_a_base(cantidad, unidad):
 @insumos_bp.route('/insumo', methods=['GET', 'POST'])
 @login_required
 def vista_admin_insumos():
-    if current_user.rol_usuario != 0:
+    if current_user.rol_user != 0:
         abort(404)
     try:
         crear_log_user(current_user.usuario, request.url)
