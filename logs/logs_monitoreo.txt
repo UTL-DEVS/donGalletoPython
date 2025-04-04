@@ -386,3 +386,7 @@ Fecha: 2025-04-03 18:36:42.584932 - Usuario: milk220010 - Accion: http://localho
 Fecha: 2025-04-03 18:36:47.961170 - Usuario: milk220010 - Accion: http://localhost:8080/vaciar_carrito
 Fecha: 2025-04-03 18:36:47.979646 - Usuario: milk220010 - Accion: http://localhost:8080/ventas/unidad
 >>>>>>> Stashed changes
+Fecha: 2025-04-03 19:05:50.951490 - Usuario: chris123 - Accion: http://127.0.0.1:8080/cliente/menu
+Fecha: 2025-04-03 19:05:56.810051 - Usuario: chris123 - Accion: http://127.0.0.1:8080/cliente/menu
+Fecha: 2025-04-03 19:06:00.238431 - Usuario: chris123 - Accion: http://127.0.0.1:8080/paquete
+Fecha: 2025-04-03 19:06:03.021182 - Usuario: chris123 - Accion: http://127.0.0.1:8080/mis-pedidos
