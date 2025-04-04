@@ -38,6 +38,8 @@ def dashboard():
         crear_log_error(current_user.usuario, str(e))
         flash("Error al cargar el panel económico", "danger")
         return redirect('/error')
+    
+    
 
 @economia_bp.route('/nomina', methods=['GET'])
 @login_required

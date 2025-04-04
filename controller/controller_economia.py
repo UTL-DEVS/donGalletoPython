@@ -4,6 +4,9 @@ from datetime import datetime
 def obtener_ventas_diarias(mes, dias):
     return dao_economia.obtener_ventas_por_mes(mes, dias)
 
+def optener_ventas_galletas_masvendidad(mes):
+    return dao_economia.obtener_ventas_galletas_mas_vendidas(mes)
+
 def obtener_fechas_ventas():
         fechas_ventas = None  
         primera_venta =dao_economia.obtener_primera_fecha_venta()

@@ -1,5 +1,5 @@
 from utils import db, func,extract
-from models import Nomina, Empleado, Persona
+from models import Nomina, Empleado, Persona, Galleta, DetalleVenta
 from models.ProcesoVenta import ProcesoVenta
 from datetime import datetime, timedelta
 
@@ -16,6 +16,33 @@ def obtener_ventas_por_mes(mes, dias):
             #.filter(Venta.estatus != 0)  # Solo Ventas activas
             .all()
         )
+
+
+def obtener_galletas_mas_vendidas_del_mes(mes):
+    mes_numero, anio = map(int, mes.split('/'))
+    primer_dia = datetime(anio, mes_numero, 1)
+    if mes_numero == 12:
+        siguiente_mes = datetime(anio + 1, 1, 1)
+    else:
+        siguiente_mes = datetime(anio, mes_numero + 1, 1)
+    ultimo_dia = siguiente_mes - timedelta(seconds=1)
+
+    resultados = (
+        db.session.query(
+            DetalleVenta.galleta_id,
+            db.func.sum(DetalleVenta.cantidad).label('total_vendida'),
+            Galleta.nombre
+        )
+        .join(DetalleVenta.proceso_venta)
+        .join(DetalleVenta.galleta)
+        .filter(ProcesoVenta.fecha.between(primer_dia, ultimo_dia))
+        .group_by(DetalleVenta.galleta_id, Galleta.nombre)
+        .order_by(db.desc('total_vendida'))
+        .all()
+    )
+
+    return resultados
+
 
 def obtener_primera_fecha_venta():
     primera_fecha_venta = (db.session.query(func.date_format(ProcesoVenta.fecha,  "%m/%Y"))
