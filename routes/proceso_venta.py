@@ -26,7 +26,7 @@ def antes_de_peticion():
 @venta_bp.route('/ventas_dia')
 @login_required
 def ventas_dia():
-    if current_user.rol_usuario != 4:
+    if current_user.rol_user != 4:
         abort(404)
     ventas = ProcesoVentaDAO.obtener_ventas()
     return render_template('pages/pages-ventas/ventas_dia.html', ventas_dia=ventas)
@@ -34,14 +34,15 @@ def ventas_dia():
 @venta_bp.route('/tipo_venta')
 @login_required
 def tipo_venta():
-    if current_user.rol_usuario != 4:
+    print(current_user.rol_user)
+    if current_user.rol_user != 4:
         abort(404)
     return render_template('pages/pages-ventas/tipo_venta.html')
 
 @venta_bp.route('/ventas/<tipo>')
 @login_required
 def ventas(tipo):
-    if current_user.rol_usuario != 4:
+    if current_user.rol_user != 4:
         abort(404)
     galletas = ProcesoVentaDAO.obtener_galletas_activas()
     carrito = session.get('carrito', [])
@@ -118,7 +119,7 @@ def agregar_al_carrito():
 @venta_bp.route('/procesar_venta', methods=['POST'])
 @login_required
 def procesar_venta():
-    if current_user.rol_usuario != 4:
+    if current_user.rol_user != 4:
         abort
     try:
         print("Iniciando procesamiento de venta")
@@ -159,7 +160,7 @@ def procesar_venta():
 @venta_bp.route('/tickets/<int:venta_id>')
 @login_required
 def descargar_ticket(venta_id):
-    if current_user.rol_usuario != 4:
+    if current_user.rol_user != 4:
         abort(404)
     venta = ProcesoVentaDAO.obtener_venta_por_id(venta_id)
     if not venta:
