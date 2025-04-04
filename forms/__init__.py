@@ -9,8 +9,4 @@ from forms.form_galleta import *
 from forms.form_proceso_venta import CarritoForm
 from forms.form_cliente import *
 from forms.form_empleado import *
-<<<<<<< HEAD
-=======
-from forms.form_usuario import *
 from forms.form_insumo import InsumoForm
->>>>>>> 0b840a051a53c82f11c26e0c78b01a9abf2dffeb

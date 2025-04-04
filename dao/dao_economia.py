@@ -1,10 +1,6 @@
-<<<<<<< HEAD
 from utils import db, func,extract
-from models import Venta, Nomina, Empleado, Persona
-=======
-from utils import db, func
+from models import Nomina, Empleado, Persona
 from models.ProcesoVenta import ProcesoVenta
->>>>>>> 0b840a051a53c82f11c26e0c78b01a9abf2dffeb
 from datetime import datetime, timedelta
 
 def obtener_ventas_por_mes(mes, dias):
