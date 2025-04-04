@@ -23,6 +23,7 @@ document.getElementById('btnSolicitar').addEventListener('click', function(event
 
 function enviarAlServicio(datos) {
     const csrfToken = document.querySelector('input[name="csrf_token"]').value;
+    console.log(datos)
     fetch('/solicitar-insumos', {
         method: 'POST',
         headers: {

@@ -1,5 +1,5 @@
 from utils import Blueprint, render_template, redirect, flash, db, url_for, request, login_required, current_user, abort
-from models import Receta, detalleReceta, MateriaPrima, Galleta
+from models import Receta, MateriaPrima, Galleta, DetalleReceta
 from forms import DetalleRecetaForm, RecetaForm
 import os
 from funcs import crear_log_user, crear_log_error
@@ -31,10 +31,10 @@ def receta_detalle(id_receta):
     try:
         crear_log_user(current_user.usuario, request.url)
         receta = Receta.query.get_or_404(id_receta)  # Cargar la receta por ID
-        detalles = detalleReceta.query.filter_by(receta_id=id_receta).all()  # Obtener los detalles de la receta
+        detalles = DetalleReceta.query.filter_by(receta_id=id_receta).all()  # Obtener los detalles de la receta
         form = DetalleRecetaForm()
 
-        detalle_receta_obj = detalleReceta.query.filter_by(receta_id=id_receta).first()
+        detalle_receta_obj = DetalleReceta.query.filter_by(receta_id=id_receta).first()
         id_galleta_local = detalle_receta_obj.id_galleta if detalle_receta_obj else None
         if id_galleta_local is None:
             print('nulo')
@@ -42,13 +42,13 @@ def receta_detalle(id_receta):
         nombre_galleta_local = Galleta.query.filter_by(id_galleta=id_galleta_local).first().nombre_galleta
         if request.method == 'POST':
             print('creado')
-            # Crear un nuevo detalleReceta si el formulario fue enviado correctamente
+            # Crear un nuevo DetalleReceta si el formulario fue enviado correctamente
             """
             logica para aumentar los insumos receta
             """
-            insumo_local = detalleReceta.query.filter_by(receta_id=id_receta, id_materia=form.id_materia.data).first()
+            insumo_local = DetalleReceta.query.filter_by(receta_id=id_receta, id_materia=form.id_materia.data).first()
             if not insumo_local:
-                nuevo_detalle = detalleReceta(
+                nuevo_detalle = DetalleReceta(
                     receta_id=id_receta,  # Asignar la receta correspondiente
                     id_galleta=id_galleta_local,  # Asignar la galleta seleccionada
                     id_materia=form.id_materia.data,  # Asignar la materia prima seleccionada
@@ -129,7 +129,7 @@ def agregar_receta():
             db.session.add(nueva_receta)
             db.session.commit()
             
-            nuevo_detalle = detalleReceta(
+            nuevo_detalle = DetalleReceta(
                 receta_id=nueva_receta.id_receta,
                 id_galleta=galleta.id_galleta,
                 id_materia=form.id_materia.data,
@@ -159,13 +159,13 @@ def eliminar_detalle(id_receta, id_detalle):
     try:
         crear_log_user(current_user.usuario, request.url)
         receta = Receta.query.get_or_404(id_receta)
-        detalles = detalleReceta.query.filter_by(receta_id=id_receta).all()
+        detalles = DetalleReceta.query.filter_by(receta_id=id_receta).all()
 
         if len(detalles) == 1:
             flash('No se puede eliminar el único detalle de la receta.', 'danger')
             return redirect(url_for('receta.receta_detalle', id_receta=id_receta))
 
-        detalle = detalleReceta.query.get_or_404(id_detalle)
+        detalle = DetalleReceta.query.get_or_404(id_detalle)
         db.session.delete(detalle)
         db.session.commit()
         flash('Detalle eliminado exitosamente.', 'success')

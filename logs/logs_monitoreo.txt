@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Fecha: 2025-04-03 04:57:09.532899 - Usuario: joel123456 - Accion: accedio a /receta
 Fecha: 2025-04-03 04:59:34.431363 - Usuario: joel123456 - Accion: accedio a /receta
 Fecha: 2025-04-03 10:13:16.008074 - Usuario: Rainsito999* - Accion: http://127.0.0.1:8080/cliente
@@ -390,3 +391,5 @@ Fecha: 2025-04-03 19:05:50.951490 - Usuario: chris123 - Accion: http://127.0.0.1
 Fecha: 2025-04-03 19:05:56.810051 - Usuario: chris123 - Accion: http://127.0.0.1:8080/cliente/menu
 Fecha: 2025-04-03 19:06:00.238431 - Usuario: chris123 - Accion: http://127.0.0.1:8080/paquete
 Fecha: 2025-04-03 19:06:03.021182 - Usuario: chris123 - Accion: http://127.0.0.1:8080/mis-pedidos
+=======
+>>>>>>> 9379ff9ea86c659c83587951240d0c986b89d2ca

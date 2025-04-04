@@ -12,3 +12,8 @@ def actualizarStock(lstSolicitudes):
         return 1
     except Exception as exception:
         return -1
+    
+def descontarStock(idGalleta, cantidad):
+    print('cnt-id '+idGalleta)
+    print('cnt-cant '+ str(cantidad))
+    return cqrs_materia_prima.descontarStock(idGalleta, cantidad)
