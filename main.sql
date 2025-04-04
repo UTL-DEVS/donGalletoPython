@@ -23,11 +23,12 @@ DESCRIBE galletas;
 INSERT INTO usuario(rol_user, email,usuario, contrasenia,token) VALUES (0,'joelbriones701@gmail.com', 'joel123456', 'e39ab699d50e9eacbe2abf4320192d33de6465592c8752939ec20183de8462e5','00');
 INSERT INTO usuario(rol_user, email,usuario, contrasenia,token) VALUES (1,'joelbriones70@gmail.com', 'joel1234567', 'e39ab699d50e9eacbe2abf4320192d33de6465592c8752939ec20183de8462e5','00');
 INSERT INTO usuario(rol_user, email,usuario, contrasenia,token) VALUES (4, 'miltoner4lfredo@gmail.com', 'milk220010', 'e39ab699d50e9eacbe2abf4320192d33de6465592c8752939ec20183de8462e5', '00');
+INSERT INTO usuario(rol_user, email,usuario, contrasenia,token) VALUES (3,'joelbriones70@gmail.com', 'joel1234567', 'e39ab699d50e9eacbe2abf4320192d33de6465592c8752939ec20183de8462e5','00');
+
 -- !SEGUIR ESTE ORDEN DE USUARIOS SEGUN EL ROL ESA CONTRASENIA EN EL INPUT ES: Joel123456$
 -- en caso de que no los deje pasar, entonces me equivoque de formato, pero eso es la contrasenia encriptada, 
 -- si no se puede crear el usuario y la contrasenia que quieran pues la ponen y ya
 INSERT INTO usuario(rol_user, email,usuario, contrasenia,token) VALUES (1,'cristianJoto@gmail.com', 'cristianJoto', 'e39ab699d50e9eacbe2abf4320192d33de6465592c8752939ec20183de8462e5','00');
-INSERT INTO usuario(rol_user, email,usuario, contrasenia,token) VALUES (0,'joelbriones@gmail.com', 'joel1234567', 'Joel123456$','00');
 
 
 
@@ -114,10 +115,13 @@ VALUES
 ('Galleta de Limón', 2.30, 'imagen_limon.jpg', 'Galleta refrescante con ralladura de limón', '2023-11-15 10:30:00', true);
 
 INSERT INTO stock (id_galleta, cantidad_galleta, maximo_galleta, minimo_galleta) 
-VALUES (4, 1000, 1400, 700);
+VALUES (1, 1000, 1400, 700);
 
 select * from proceso_ventas;
 
+<<<<<<< HEAD
+SELECT * FROM detalle_ventas
+=======
 
 INSERT INTO `detalle_receta` (`id_detalle_receta`,`id_receta`,`cantidad_insumo`,`id_materia`) VALUES (1,1,10,1);
 INSERT INTO `galletas` (`id_galleta`,`nombre_galleta`,`precio_galleta`,`imagen_galleta`,`descripcion_galleta`,`fecha_creacion`,`activo`) VALUES (1,'Chocolate Chip',2.5,'imagen1.jpg','Galleta con chispas de chocolate','2025-04-03 18:44:14',1);
@@ -126,3 +130,4 @@ INSERT INTO `galletas` (`id_galleta`,`nombre_galleta`,`precio_galleta`,`imagen_g
 INSERT INTO `Proveedor` (`id_proveedor`,`nombre_proveedor`,`id_persona`) VALUES (1,'Maseca',2);
 INSERT INTO `receta` (`id_receta`,`id_galleta`,`nombre_receta`,`estado`) VALUES (1,1,'Chocolate Chip','1');
 INSERT INTO `stock` (`id_stock`,`id_galleta`,`cantidad_galleta`,`maximo_galleta`,`minimo_galleta`) VALUES (1,1,1,50,10);
+>>>>>>> bcc7f823a049981f51252eeaa8c8e5cacf20d27d

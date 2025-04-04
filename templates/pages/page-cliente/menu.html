@@ -5,9 +5,33 @@
 
 <link rel="stylesheet" href="{{ url_for('static', filename='css/page-cliente/cliente.css') }}">
 
-<div id="overlay"></div>
+ <div id="overlay"></div>
 <button id="btn-carrito">🛒{{ carrito|length if carrito else 0 }}</button>
+<<<<<<< HEAD
+<!-- <div id="carrito" class="rounded">
+    <h4>🛒 Tu Carrito</h4>
+    {% if carrito %}
+    <ul class="list-group">
+        {% for item in carrito %}
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            {{ item.nombre }} (x{{ item.cantidad }}) - ${{ "%.2f"|format(item.precio * item.cantidad) }}
+            <a href="{{ url_for('cliente.eliminar_del_carrito', index=loop.index0) }}" class="btn btn-danger btn-sm">❌</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <p class="text-end mt-3"><strong>Total: ${{ "%.2f"|format(total) }}</strong></p>
+    <form action="{{ url_for('cliente.realizar_pedido') }}" method="POST">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+        <button type="submit" class="btn btn-success w-100 mt-2">Realizar Compra</button>
+    </form>
+    <a href="{{ url_for('cliente.vaciar_carrito') }}" class="btn btn-warning w-100 mt-3">Vaciar Carrito</a>
+    {% else %}
+    <p class="text-muted">Tu carrito está vacío</p>
+    {% endif %}
+</div> --> -->
+=======
 
+>>>>>>> f41e7f6c37a9b914aace6f22ece0e6922bfc594c
 
 <div class="container-cliente mt-5" style="height: 100vh !important;">
     <h1 class="text-center header-cliente">Pedidos</h1>
