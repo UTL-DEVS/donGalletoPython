@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, request, jsonify
 from dao import dao_produccion
 from models.produccion import Produccion
 from models.detalle_produccion import DetalleProduccion
-from controller import controller_detalle_produccion, controller_produccion, controller_cliente
+from controller import controller_detalle_produccion, controller_produccion, controller_materia_prima
 from datetime import date, datetime
 from forms import DetalleRecetaForm
 from controller.controller_cliente import ClienteController
@@ -63,6 +63,12 @@ def procesarPedido():
             return jsonify({
                 "error": True,
                 "message": "Hubo un problema al registrar el detalle de produccion!"
+            })
+        #Proceso - Materia
+        if controller_materia_prima.descontarStock(detalleProduccion["id_galleta"], int(detalleProduccion["cantidad"])) != 1:
+            return jsonify({
+                "error": True,
+                "message": "Hubo un problema al descontar la materia!"
             })
         
         #Proceso - Stock
