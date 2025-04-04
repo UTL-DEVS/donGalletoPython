@@ -117,3 +117,12 @@ INSERT INTO stock (id_galleta, cantidad_galleta, maximo_galleta, minimo_galleta)
 VALUES (4, 1000, 1400, 700);
 
 select * from proceso_ventas;
+
+
+INSERT INTO `detalle_receta` (`id_detalle_receta`,`id_receta`,`cantidad_insumo`,`id_materia`) VALUES (1,1,10,1);
+INSERT INTO `galletas` (`id_galleta`,`nombre_galleta`,`precio_galleta`,`imagen_galleta`,`descripcion_galleta`,`fecha_creacion`,`activo`) VALUES (1,'Chocolate Chip',2.5,'imagen1.jpg','Galleta con chispas de chocolate','2025-04-03 18:44:14',1);
+INSERT INTO `galletas` (`id_galleta`,`nombre_galleta`,`precio_galleta`,`imagen_galleta`,`descripcion_galleta`,`fecha_creacion`,`activo`) VALUES (2,'Oatmeal Raisin',2,'imagen2.jpg','Galleta de avena con pasas','2025-04-03 18:44:14',1);
+INSERT INTO `galletas` (`id_galleta`,`nombre_galleta`,`precio_galleta`,`imagen_galleta`,`descripcion_galleta`,`fecha_creacion`,`activo`) VALUES (3,'Peanut Butter',2.75,'imagen3.jpg','Galleta de mantequilla de maní','2025-04-03 18:44:14',1);
+INSERT INTO `Proveedor` (`id_proveedor`,`nombre_proveedor`,`id_persona`) VALUES (1,'Maseca',2);
+INSERT INTO `receta` (`id_receta`,`id_galleta`,`nombre_receta`,`estado`) VALUES (1,1,'Chocolate Chip','1');
+INSERT INTO `stock` (`id_stock`,`id_galleta`,`cantidad_galleta`,`maximo_galleta`,`minimo_galleta`) VALUES (1,1,1,50,10);
