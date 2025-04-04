@@ -400,6 +400,38 @@ Fecha: 2025-04-03 19:06:03.021182 - Usuario: chris123 - Accion: http://127.0.0.1
 =======
 >>>>>>> 9379ff9ea86c659c83587951240d0c986b89d2ca
 <<<<<<< HEAD
+Fecha: 2025-04-03 19:12:48.275842 - Usuario: chris123 - Accion: http://127.0.0.1:8080/cliente
+Fecha: 2025-04-03 19:19:30.784868 - Usuario: chris123 - Accion: http://127.0.0.1:8080/cliente
+Fecha: 2025-04-03 19:34:25.486247 - Usuario: chris123 - Accion: http://127.0.0.1:8080/cliente
+Fecha: 2025-04-03 19:35:41.419195 - Usuario: chris123 - Accion: http://127.0.0.1:8080/cliente
+Fecha: 2025-04-03 19:40:18.546601 - Usuario: chris123 - Accion: http://127.0.0.1:8080/cliente
+Fecha: 2025-04-03 19:44:34.426556 - Usuario: chris123 - Accion: http://127.0.0.1:8080/cliente
+Fecha: 2025-04-03 19:46:47.273637 - Usuario: chris123 - Accion: http://127.0.0.1:8080/cliente
+Fecha: 2025-04-03 19:50:59.648236 - Usuario: chris123 - Accion: http://127.0.0.1:8080/cliente
+Fecha: 2025-04-03 19:51:01.241350 - Usuario: chris123 - Accion: http://127.0.0.1:8080/cliente/menu
+Fecha: 2025-04-03 19:51:25.719710 - Usuario: chris123 - Accion: http://127.0.0.1:8080/cliente/menu
+Fecha: 2025-04-03 19:51:27.523239 - Usuario: chris123 - Accion: http://127.0.0.1:8080/paquete
+Fecha: 2025-04-03 19:51:34.851970 - Usuario: chris123 - Accion: http://127.0.0.1:8080/piezas
+Fecha: 2025-04-03 19:52:10.130002 - Usuario: chris123 - Accion: http://127.0.0.1:8080/cliente
+Fecha: 2025-04-03 19:52:53.447273 - Usuario: chris123 - Accion: http://127.0.0.1:8080/cliente
+Fecha: 2025-04-03 19:52:55.009529 - Usuario: chris123 - Accion: http://127.0.0.1:8080/cliente/menu
+Fecha: 2025-04-03 19:53:02.787668 - Usuario: chris123 - Accion: http://127.0.0.1:8080/piezas
+Fecha: 2025-04-03 19:53:04.165060 - Usuario: chris123 - Accion: http://127.0.0.1:8080/agregar/1
+Fecha: 2025-04-03 19:53:04.203124 - Usuario: chris123 - Accion: http://127.0.0.1:8080/piezas
+Fecha: 2025-04-03 19:53:08.378329 - Usuario: chris123 - Accion: http://127.0.0.1:8080/agregar/1
+Fecha: 2025-04-03 19:53:08.423126 - Usuario: chris123 - Accion: http://127.0.0.1:8080/piezas
+Fecha: 2025-04-03 19:53:16.920019 - Usuario: chris123 - Accion: http://127.0.0.1:8080/piezas
+Fecha: 2025-04-03 19:53:20.311604 - Usuario: chris123 - Accion: http://127.0.0.1:8080/agregar/2
+Fecha: 2025-04-03 19:53:20.363250 - Usuario: chris123 - Accion: http://127.0.0.1:8080/piezas
+Fecha: 2025-04-03 19:53:25.462163 - Usuario: chris123 - Accion: http://127.0.0.1:8080/peso
+Fecha: 2025-04-03 19:53:26.843164 - Usuario: chris123 - Accion: http://127.0.0.1:8080/agregar/1
+Fecha: 2025-04-03 19:53:26.876712 - Usuario: chris123 - Accion: http://127.0.0.1:8080/peso
+Fecha: 2025-04-03 19:53:29.591424 - Usuario: chris123 - Accion: http://127.0.0.1:8080/realizar-pedido
+Fecha: 2025-04-03 19:53:29.651429 - Usuario: chris123 - Accion: http://127.0.0.1:8080/mis-pedidos?id_pedido=6
+Fecha: 2025-04-03 19:53:43.861681 - Usuario: chris123 - Accion: http://127.0.0.1:8080/paquete
+Fecha: 2025-04-03 19:53:50.451713 - Usuario: chris123 - Accion: http://127.0.0.1:8080/paquete
+=======
+<<<<<<< HEAD
 >>>>>>> 92c0f9226f4617bab9755de509a71e6e02b4c10f
 Fecha: 2025-04-03 19:36:28.008299 - Usuario: Pruebas123* - Accion: http://127.0.0.1:8080/cocina-insumos
 Fecha: 2025-04-03 19:37:20.821944 - Usuario: Pruebas123* - Accion: http://127.0.0.1:8080/cocina-insumos
