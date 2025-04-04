@@ -6,7 +6,7 @@ from wtforms.validators import DataRequired, NumberRange, EqualTo, Length
 class PaqueteForm(FlaskForm):
     id_galleta = HiddenField(validators=[DataRequired()])
     tipo_pedido = HiddenField(default="paquete")
-    paquete = SelectField('Selecciona un paquete', choices=[(500, 'Paquete de 500g'), (1000, 'Paquete de 1kg')], coerce=int, validators=[DataRequired()])
+    paquete = SelectField('Selecciona un paquete', choices=[(500, 'Paquete de 500g')], coerce=int, validators=[DataRequired()])
     cantidad = IntegerField('Cantidad de paquetes', default=1, validators=[DataRequired(), NumberRange(min=1)])
     submit = SubmitField('Agregar al carrito')
 
