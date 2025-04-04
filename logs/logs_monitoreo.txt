@@ -399,6 +399,7 @@ Fecha: 2025-04-03 19:06:00.238431 - Usuario: chris123 - Accion: http://127.0.0.1
 Fecha: 2025-04-03 19:06:03.021182 - Usuario: chris123 - Accion: http://127.0.0.1:8080/mis-pedidos
 =======
 >>>>>>> 9379ff9ea86c659c83587951240d0c986b89d2ca
+<<<<<<< HEAD
 >>>>>>> 92c0f9226f4617bab9755de509a71e6e02b4c10f
 Fecha: 2025-04-03 19:36:28.008299 - Usuario: Pruebas123* - Accion: http://127.0.0.1:8080/cocina-insumos
 Fecha: 2025-04-03 19:37:20.821944 - Usuario: Pruebas123* - Accion: http://127.0.0.1:8080/cocina-insumos
@@ -411,3 +412,15 @@ Fecha: 2025-04-03 19:38:01.473623 - Usuario: Pruebas123* - Accion: http://127.0.
 Fecha: 2025-04-03 19:38:52.765292 - Usuario: Pruebas123* - Accion: http://127.0.0.1:8080/cocina-pedidos
 Fecha: 2025-04-03 19:38:54.629793 - Usuario: Pruebas123* - Accion: http://127.0.0.1:8080/cocina-insumos
 Fecha: 2025-04-03 19:45:45.301083 - Usuario: Pruebas123* - Accion: http://127.0.0.1:8080/cocina-insumos
+=======
+Fecha: 2025-04-03 19:26:04.679456 - Usuario: joel123456 - Accion: http://localhost:8080/receta
+Fecha: 2025-04-03 19:26:10.855559 - Usuario: joel1234567 - Accion: http://localhost:8080/cliente
+Fecha: 2025-04-03 19:27:30.102398 - Usuario: joel123456 - Accion: http://localhost:8080/receta
+Fecha: 2025-04-03 19:27:33.420183 - Usuario: joel1234567 - Accion: http://localhost:8080/cliente
+Fecha: 2025-04-03 19:28:16.243809 - Usuario: joel1234567 - Accion: http://localhost:8080/cliente
+Fecha: 2025-04-03 19:29:27.097296 - Usuario: joel1234567 - Accion: http://localhost:8080/cliente
+Fecha: 2025-04-03 19:30:12.549790 - Usuario: joel1234567 - Accion: http://localhost:8080/cliente
+Fecha: 2025-04-03 19:30:13.849885 - Usuario: joel1234567 - Accion: http://localhost:8080/cliente
+Fecha: 2025-04-03 19:30:15.277207 - Usuario: joel1234567 - Accion: http://localhost:8080/cliente/menu
+Fecha: 2025-04-03 19:36:10.884798 - Usuario: joel1234567 - Accion: http://localhost:8080/cliente/menu
+>>>>>>> 1a0d0066bb6101809989130c951e7deca8808cf9

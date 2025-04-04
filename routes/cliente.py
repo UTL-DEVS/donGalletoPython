@@ -30,6 +30,7 @@ def inicio():
 @cliente_bp.route('/cliente/menu')
 @login_required
 def menu():
+    print(current_user.rol_user)
     if current_user.rol_user != 1:
         abort(404)
     try:
