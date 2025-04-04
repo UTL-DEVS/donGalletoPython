@@ -28,6 +28,7 @@ INSERT INTO usuario(rol_user, email,usuario, contrasenia,token) VALUES (3, 'milt
 -- en caso de que no los deje pasar, entonces me equivoque de formato, pero eso es la contrasenia encriptada, 
 -- si no se puede crear el usuario y la contrasenia que quieran pues la ponen y ya
 INSERT INTO usuario(rol_user, email,usuario, contrasenia,token) VALUES (1,'cristianJoto@gmail.com', 'cristianJoto', 'e39ab699d50e9eacbe2abf4320192d33de6465592c8752939ec20183de8462e5','00');
+INSERT INTO usuario(rol_user, email,usuario, contrasenia,token) VALUES (0,'joelbriones@gmail.com', 'joel1234567', 'Joel123456$','00');
 
 
 
