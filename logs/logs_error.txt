@@ -208,3 +208,7 @@ Fecha: 2025-04-03 17:44:34.920457 - Usuario: milk220010 - Accion: Error 404: Pág
 Fecha: 2025-04-03 17:45:08.383737 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/tipo_venta | IP: 127.0.0.1
 Fecha: 2025-04-03 17:47:42.135571 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/tipo_venta | IP: 127.0.0.1
 Fecha: 2025-04-03 17:48:32.801046 - Usuario: milk220010 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/tipo_venta | IP: 127.0.0.1
+Fecha: 2025-04-03 18:12:16.805283 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-03 18:20:22.989608 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 18:20:22.997136 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 18:20:22.997714 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
