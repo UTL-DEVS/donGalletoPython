@@ -98,9 +98,9 @@ def page_not_found(e):
     # Registrar el error con la IP
     crear_log_error(usuario, f"Error 404: Página no encontrada en {request.url} | IP: {ip_usuario}")
     
-    # Si el usuario está autenticado, cerramos su sesión
+    '''  # Si el usuario está autenticado, cerramos su sesión
     if current_user.is_authenticated:
-        logout_user()
+        logout_user()'''
     
     return render_template('pages/error.html'), 404
 
