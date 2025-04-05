@@ -51,14 +51,26 @@ def receta_detalle(id_receta):
         """
         insumo_local = DetalleReceta.query.filter_by(id_receta=id_receta, id_materia=form.id_materia.data).first()
         if not insumo_local:
-            nuevo_detalle = DetalleReceta(
-                id_receta=id_receta,  # Asignar la receta correspondiente
-                id_materia=form.id_materia.data,  # Asignar la materia prima seleccionada
-                cantidad_insumo=form.cantidad_insumo.data * 1000,                    
-            )
+            materia = MateriaPrima.query.filter_by(id_materia=form.id_materia.data).first()
+            if materia.unidad_medida_publico == 1:
+                nuevo_detalle = DetalleReceta(
+                    id_receta=id_receta,  # Asignar la receta correspondiente
+                    id_materia=form.id_materia.data,  # Asignar la materia prima seleccionada
+                    cantidad_insumo=form.cantidad_insumo.data,                    
+                )
+            else:
+                 nuevo_detalle = DetalleReceta(
+                    id_receta=id_receta,  # Asignar la receta correspondiente
+                    id_materia=form.id_materia.data,  # Asignar la materia prima seleccionada
+                    cantidad_insumo=form.cantidad_insumo.data * 1000,                    
+                )
             db.session.add(nuevo_detalle)  # Agregar el nuevo detalle a la base de datos
         else:
-            insumo_local.cantidad_insumo +=  form.cantidad_insumo.data * 1000 # Aumentar la cantidad
+            materia = MateriaPrima.query.filter_by(id_materia=form.id_materia.data).first()
+            if materia.unidad_medida_publico == 1:
+                insumo_local.cantidad_insumo += form.cantidad_insumo.data
+            else:
+                insumo_local.cantidad_insumo +=  form.cantidad_insumo.data * 1000 # Aumentar la cantidad
             db.session.merge(insumo_local) 
         db.session.commit()
         return redirect(url_for('receta.receta_detalle', id_receta=id_receta))

@@ -16,7 +16,6 @@ UNIDADES = {
 }
 UNIDADES_PUBLICAS = {
      1: "Gramos",
-    2: "Costal",
     3: "Litro",
     4: "Kilo",
 }
@@ -25,11 +24,10 @@ UNIDADES_PUBLICAS = {
 def convertir_a_base(cantidad, unidad):
     conversiones = {
         1: 1,    
-        2: 1000,      
         3: 1000,   
         4: 1000,   
     }
-    return cantidad * conversiones.get(unidad, 1)
+    return cantidad * conversiones.get(unidad)
 
 @insumos_bp.route('/insumo', methods=['GET', 'POST'])
 @login_required
@@ -53,7 +51,7 @@ def vista_admin_insumos():
         unidad_publico = form.unidad_medida_publico.data
         precio = float(form.precio.data)
         id_proveedor = form.id_proveedor.data
-        cantidad_convertida = convertir_a_base(cantidad, unidad_base)
+        cantidad_convertida = convertir_a_base(cantidad, unidad_publico)
 
         nuevo_insumo = MateriaPrima(
             nombre_materia=nombre,
@@ -92,14 +90,25 @@ def editar_insumo(id_materia):
     
     insumo_editar = MateriaPrima.query.get_or_404(id_materia)
     if request.method == 'GET':
-        form.id_materia.data = insumo_editar.id_materia
-        form.nombre.data = insumo_editar.nombre_materia
-        form.cantidad_compra.data = insumo_editar.cantidad_compra
-        form.unidad_medida.data = insumo_editar.unidad_medida
-        form.unidad_medida_publico.data = insumo_editar.unidad_medida_publico
-        form.precio.data = insumo_editar.precio
-        form.id_proveedor.data = insumo_editar.id_proveedor
-        inicial = form.cantidad_compra.data
+        if insumo_editar.unidad_medida_publico == 1:
+            
+            form.id_materia.data = insumo_editar.id_materia
+            form.nombre.data = insumo_editar.nombre_materia
+            form.cantidad_compra.data = insumo_editar.cantidad_compra
+            form.unidad_medida.data = insumo_editar.unidad_medida
+            form.unidad_medida_publico.data = insumo_editar.unidad_medida_publico
+            form.precio.data = insumo_editar.precio
+            form.id_proveedor.data = insumo_editar.id_proveedor
+            inicial = form.cantidad_compra.data
+        else:
+            form.id_materia.data = insumo_editar.id_materia
+            form.nombre.data = insumo_editar.nombre_materia
+            form.cantidad_compra.data = insumo_editar.cantidad_compra / 1000
+            form.unidad_medida.data = insumo_editar.unidad_medida
+            form.unidad_medida_publico.data = insumo_editar.unidad_medida_publico
+            form.precio.data = insumo_editar.precio
+            form.id_proveedor.data = insumo_editar.id_proveedor
+            inicial = form.cantidad_compra.data
 
     if form.validate_on_submit():
         nombre = form.nombre.data
@@ -110,7 +119,7 @@ def editar_insumo(id_materia):
         id_proveedor = form.id_proveedor.data
 
         if insumo_editar.cantidad_compra != cantidad or insumo_editar.unidad_medida != unidad_base:
-            cantidad_convertida = convertir_a_base(cantidad, unidad_base)
+            cantidad_convertida = convertir_a_base(cantidad, unidad_publico)
         else:
             cantidad_convertida = cantidad
 

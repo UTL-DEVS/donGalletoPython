@@ -89,3 +89,36 @@ Fecha: 2025-04-05 00:20:50.963359 - Usuario: joel123456 - Accion: Error 404: Pág
 Fecha: 2025-04-05 00:26:54.476259 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
 Fecha: 2025-04-05 00:27:06.085677 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
 Fecha: 2025-04-05 00:28:24.563721 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-05 00:41:00.670652 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-05 00:41:02.498960 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-05 00:42:02.578982 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-05 00:42:39.033657 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-05 00:42:52.870976 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-05 00:46:12.410215 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-05 00:48:06.273477 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-05 00:50:08.380572 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-05 00:54:24.115509 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-05 00:54:51.599696 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-05 00:56:53.509668 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-05 00:57:15.019846 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-05 00:57:20.671638 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-05 00:57:22.916338 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-05 00:57:58.430758 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-05 00:58:52.651957 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-05 00:58:54.903964 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-05 01:04:08.944270 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-05 01:08:03.509768 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-05 01:08:36.637370 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-05 01:09:56.134880 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-05 01:10:01.678236 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-05 01:10:09.008632 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-05 01:10:09.022821 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-05 01:10:09.022821 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-05 01:11:02.212922 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-05 01:11:02.246694 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-05 01:11:02.250278 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-05 01:11:16.237221 - Usuario: joel1234568 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-05 01:11:16.239390 - Usuario: joel1234568 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-05 01:11:16.240410 - Usuario: joel1234568 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-05 01:11:28.657837 - Usuario: joel1234568 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-05 01:13:17.163310 - Usuario: joel1234568 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1

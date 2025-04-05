@@ -25,6 +25,8 @@ class MateriaPrima(db.Model):
 
     id_proveedor = db.Column(db.Integer, db.ForeignKey('Proveedor.id_proveedor'), nullable=False)
     proveedor = db.relationship('Proveedor', backref='materias_primas')
+    
+    detalles_receta = db.relationship('DetalleReceta', backref='materia_prima', lazy=True)
 """
 ejemplo si le mete un
 """

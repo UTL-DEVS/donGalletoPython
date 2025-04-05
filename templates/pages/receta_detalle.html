@@ -25,19 +25,7 @@
     <h2>Detalle de la Receta: <span class="text-decoration-underline ms-3">{{ receta.nombre_receta }}</span></h2>
     <h2>Nombre Galleta: <span class="text-decoration-underline ms-3">{{ nombre_galleta }}</span></h2>
 
-    <!-- Flash Messages (solo errores) -->
-    {% with messages = get_flashed_messages(with_categories=true) %}
-    {% if messages %}
-    {% for category, message in messages %}
-    {% if category == "danger" or category == "error" %}
-    <div class="alert alert-{{ category }} alert-dismissible fade show m-2" role="alert">
-        {{ message }}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-    {% endif %}
-    {% endfor %}
-    {% endif %}
-    {% endwith %}
+   
 
     <!-- Fin Flash Messages -->
     <div class="row mt-4">
@@ -90,17 +78,31 @@
                         <th scope="col">#</th>
                         <th scope="col">Materia Prima</th>
                         <th scope="col">Cantidad</th>
+                        <th scope="col">Unidad</th> <!-- Columna adicional para mostrar la unidad -->
                         <th scope="col">Acciones</th>
                     </thead>
                     <tbody>
                         {% for detalle in detalles %}
                         <tr>
                             <th scope="row">{{ loop.index }}</th>
-                            <td>{{ detalle.materia_prima.nombre_materia }}</td>  <!-- Corregido aquí -->
+                            <td>{{ detalle.materia_prima.nombre_materia }}</td>
+                            {%if detalle.materia_prima.unidad_medida_publico == 1%}
                             <td>{{ detalle.cantidad_insumo }}</td>
+                            {%else%}
+                            <td>{{ detalle.cantidad_insumo / 1000}} </td>
+
+                            {%endif%}
                             <td>
-                                <form method="POST"
-                                    action="{{ url_for('receta.eliminar_detalle', id_receta=receta.id_receta, id_detalle=detalle.id_detalle_receta) }}">
+                                {% if detalle.materia_prima.unidad_medida_publico == 1 %}
+                                    gramos
+                                {% elif detalle.materia_prima.unidad_medida_publico == 3 %}
+                                    kilos
+                                {% elif detalle.materia_prima.unidad_medida_publico == 4 %}
+                                    litros
+                                {% endif %}
+                            </td> <!-- Mostrar la unidad -->
+                            <td>
+                                <form method="POST" action="{{ url_for('receta.eliminar_detalle', id_receta=receta.id_receta, id_detalle=detalle.id_detalle_receta) }}">
                                     {{ form.csrf_token }}
                                     <button type="submit" class="btn btn-danger">Eliminar</button>
                                 </form>
@@ -109,6 +111,7 @@
                         {% endfor %}
                     </tbody>
                 </table>
+                
             </div>
         </div> <!-- Cierra .col-6 de la tabla -->
     </div> <!-- Cierra .row -->
