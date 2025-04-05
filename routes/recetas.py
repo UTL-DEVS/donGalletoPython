@@ -28,44 +28,54 @@ def receta_detalle(id_receta):
   #      return redirect('/')
     if current_user.rol_user != 0 :
         abort(404)
-    try:
-        crear_log_user(current_user.usuario, request.url)
-        receta = Receta.query.get_or_404(id_receta)  # Cargar la receta por ID
-        detalles = DetalleReceta.query.filter_by(receta_id=id_receta).all()  # Obtener los detalles de la receta
-        form = DetalleRecetaForm()
+    crear_log_user(current_user.usuario, request.url)
+    receta = Receta.query.get_or_404(id_receta)  # Cargar la receta por ID
+    print('recetas')
+    print(receta)
+    detalles = DetalleReceta.query.filter_by(id_receta=id_receta).all()  # Obtener los detalles de la receta
+    print(detalles)
+    form = DetalleRecetaForm()
 
-        detalle_receta_obj = DetalleReceta.query.filter_by(receta_id=id_receta).first()
-        id_galleta_local = detalle_receta_obj.id_galleta if detalle_receta_obj else None
-        if id_galleta_local is None:
-            print('nulo')
-            return redirect('/receta/agregar')
-        nombre_galleta_local = Galleta.query.filter_by(id_galleta=id_galleta_local).first().nombre_galleta
-        if request.method == 'POST':
-            print('creado')
-            # Crear un nuevo DetalleReceta si el formulario fue enviado correctamente
-            """
-            logica para aumentar los insumos receta
-            """
-            insumo_local = DetalleReceta.query.filter_by(receta_id=id_receta, id_materia=form.id_materia.data).first()
-            if not insumo_local:
+    detalle_receta_obj = Receta.query.filter_by(id_receta=id_receta).first()
+    print(detalle_receta_obj)
+    id_galleta_local = detalle_receta_obj.id_galleta if detalle_receta_obj else None
+    if id_galleta_local is None:
+        print('nulo')
+        return redirect('/receta/agregar')
+    nombre_galleta_local = Galleta.query.filter_by(id_galleta=id_galleta_local).first().nombre_galleta
+    if request.method == 'POST':
+        print('creado')
+        # Crear un nuevo DetalleReceta si el formulario fue enviado correctamente
+        """
+        logica para aumentar los insumos receta
+        """
+        insumo_local = DetalleReceta.query.filter_by(id_receta=id_receta, id_materia=form.id_materia.data).first()
+        if not insumo_local:
+            materia = MateriaPrima.query.filter_by(id_materia=form.id_materia.data).first()
+            if materia.unidad_medida_publico == 1:
                 nuevo_detalle = DetalleReceta(
-                    receta_id=id_receta,  # Asignar la receta correspondiente
-                    id_galleta=id_galleta_local,  # Asignar la galleta seleccionada
+                    id_receta=id_receta,  # Asignar la receta correspondiente
                     id_materia=form.id_materia.data,  # Asignar la materia prima seleccionada
-                    cantidad_insumo=form.cantidad_insumo.data * 1000,
-                    
+                    cantidad_insumo=form.cantidad_insumo.data,                    
                 )
-                db.session.add(nuevo_detalle)  # Agregar el nuevo detalle a la base de datos
             else:
-                insumo_local.cantidad_insumo += form.cantidad_insumo.data  # Aumentar la cantidad
-                db.session.merge(insumo_local) 
-            db.session.commit()
-            return redirect(url_for('receta.receta_detalle', id_receta=id_receta))
+                 nuevo_detalle = DetalleReceta(
+                    id_receta=id_receta,  # Asignar la receta correspondiente
+                    id_materia=form.id_materia.data,  # Asignar la materia prima seleccionada
+                    cantidad_insumo=form.cantidad_insumo.data * 1000,                    
+                )
+            db.session.add(nuevo_detalle)  # Agregar el nuevo detalle a la base de datos
+        else:
+            materia = MateriaPrima.query.filter_by(id_materia=form.id_materia.data).first()
+            if materia.unidad_medida_publico == 1:
+                insumo_local.cantidad_insumo += form.cantidad_insumo.data
+            else:
+                insumo_local.cantidad_insumo +=  form.cantidad_insumo.data * 1000 # Aumentar la cantidad
+            db.session.merge(insumo_local) 
+        db.session.commit()
+        return redirect(url_for('receta.receta_detalle', id_receta=id_receta))
 
-        return render_template('pages/receta_detalle.html', receta=receta, detalles=detalles, form=form, nombre_galleta=nombre_galleta_local)
-    except Exception as e:
-        crear_log_error(current_user.usuario, str(e))
-        abort(404)
+    return render_template('pages/receta_detalle.html', receta=receta, detalles=detalles, form=form, nombre_galleta=nombre_galleta_local)
 @recetas_bp.route('/receta/desactivar/<int:id_receta>')
 @login_required
 def receta_deactivar(id_receta):
@@ -107,46 +117,43 @@ def agregar_receta():
   #      return redirect('/')
     if current_user.rol_user != 0 :
         abort(404)
-    try:
-        crear_log_user(current_user.usuario, request.url)
-        form = RecetaForm()
-        form.id_galleta.choices = [(g.id_galleta, g.nombre_galleta) for g in Galleta.query.filter_by(activo=True).all()]
-        form.id_materia.choices = [(mp.id_materia, mp.nombre_materia) for mp in MateriaPrima.query.all()]
+    print('entro')
+    crear_log_user(current_user.usuario, request.url)
+    form = RecetaForm()
+    form.id_galleta.choices = [(g.id_galleta, g.nombre_galleta) for g in Galleta.query.filter_by(activo=True).all()]
+    form.id_materia.choices = [(mp.id_materia, mp.nombre_materia) for mp in MateriaPrima.query.all()]
         
-        if form.validate_on_submit():
-            galleta = Galleta.query.get(form.id_galleta.data)
+    if form.validate_on_submit():
+        galleta = Galleta.query.filter_by(id_galleta=form.id_galleta.data).first()
+        print('galleta')
+        print(galleta)
+        if not galleta:
+            flash('La galleta seleccionada no es válida.', 'danger')
+            return redirect(url_for('receta.agregar_receta'))
             
-            if not galleta:
-                flash('La galleta seleccionada no es válida.', 'danger')
-                return redirect(url_for('receta.agregar_receta'))
+        nueva_receta = Receta(
+            nombre_receta=form.nombre_receta.data,
+            estado='1',
+            cantidad_insumo_producida = 700,# La receta comienza activa     
+            id_galleta=galleta.id_galleta
+        )
+        db.session.add(nueva_receta)
+        db.session.commit()
             
-            nueva_receta = Receta(
-                nombre_receta=form.nombre_receta.data,
-                estado='1',
-                cantidad_insumo_producida = 700# La receta comienza activa
-                
-            )
-            db.session.add(nueva_receta)
-            db.session.commit()
+        nuevo_detalle = DetalleReceta(
+            id_receta=nueva_receta.id_receta,
+            id_materia=form.id_materia.data,
+            cantidad_insumo=form.cantidad_insumo.data * 1000,
+        )
+        db.session.add(nuevo_detalle)
             
-            nuevo_detalle = DetalleReceta(
-                receta_id=nueva_receta.id_receta,
-                id_galleta=galleta.id_galleta,
-                id_materia=form.id_materia.data,
-                cantidad_insumo=form.cantidad_insumo.data * 1000,
-            )
-            db.session.add(nuevo_detalle)
+        galleta.escogido = False  # Cambiar el estado de la galleta
+        db.session.commit()
             
-            galleta.activo = False  # Cambiar el estado de la galleta
-            db.session.commit()
-            
-            flash('Receta agregada exitosamente.', 'success')
-            return redirect(url_for('receta.receta_index'))
+        flash('Receta agregada exitosamente.', 'success')
+        return redirect(url_for('receta.receta_index'))
         
-        return render_template('pages/agregar_receta.html', form=form)
-    except Exception as e:
-        crear_log_error(current_user.usuario, str(e))
-        abort(404)
+    return render_template('pages/agregar_receta.html', form=form)
 
 
 @recetas_bp.route('/receta/<int:id_receta>/detalle/eliminar/<int:id_detalle>', methods=['POST'])
@@ -159,7 +166,7 @@ def eliminar_detalle(id_receta, id_detalle):
     try:
         crear_log_user(current_user.usuario, request.url)
         receta = Receta.query.get_or_404(id_receta)
-        detalles = DetalleReceta.query.filter_by(receta_id=id_receta).all()
+        detalles = DetalleReceta.query.filter_by(id_receta=id_receta).all()
 
         if len(detalles) == 1:
             flash('No se puede eliminar el único detalle de la receta.', 'danger')

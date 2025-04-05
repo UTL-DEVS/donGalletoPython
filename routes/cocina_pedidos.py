@@ -34,7 +34,7 @@ def cocina_pedidos():
 def procesarPedido():
     if current_user.rol_user != 3:
         abort(404)
-    data = request.get_json()
+    data = request.get_json(silent=True)
     idPedido = data.get('idPedido')
     lstDetallePedido = data.get('lstDetallePedido')
     
@@ -59,16 +59,25 @@ def procesarPedido():
         objDetalleProduccion.cantidad = calculaPiezasTipoPedido(cantidad, tipoPedido)
         if objDetalleProduccion.cantidad == 0:
             continue
+        
+        #Proceso - Materia
+        materiaPrima = controller_materia_prima.descontarStock(detalleProduccion["id_galleta"], int(detalleProduccion["cantidad"]))
+        if materiaPrima != 1:
+            if materiaPrima == -1:
+                return jsonify({
+                    "error": True,
+                    "message": "Hubo un problema al descontar la materia!"
+                })
+            if materiaPrima == -3:
+                return jsonify({
+                    "error": True,
+                    "message": "No tiene suficiente materia prima para producir!"
+                })
+
         if controller_detalle_produccion.agregarDetalleProduccion(objDetalleProduccion) == -1:
             return jsonify({
                 "error": True,
                 "message": "Hubo un problema al registrar el detalle de produccion!"
-            })
-        #Proceso - Materia
-        if controller_materia_prima.descontarStock(detalleProduccion["id_galleta"], int(detalleProduccion["cantidad"])) != 1:
-            return jsonify({
-                "error": True,
-                "message": "Hubo un problema al descontar la materia!"
             })
         
         #Proceso - Stock

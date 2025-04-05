@@ -14,7 +14,8 @@ class MateriaPrima(db.Model):
     si es por pieza colocar la cantidad de piezas
     ! tomar en cuenta que puede poner que es 1.5 kilos por lo tanto hacer la conversion
     """
-    stock_materia = db.Column(db.Float, nullable=False)
+    stock_materia = db.Column(db.Float, nullable=False, default=0.0)
+    cantidad_compra = db.Column(db.Float, nullable=True)
     # Costal, Kilo, Litro, Pieza, Gramos, lata
     unidad_medida_publico = db.Column(db.Integer, nullable=False)
     unidad_medida = db.Column(db.Integer, nullable=False)
@@ -24,6 +25,8 @@ class MateriaPrima(db.Model):
 
     id_proveedor = db.Column(db.Integer, db.ForeignKey('Proveedor.id_proveedor'), nullable=False)
     proveedor = db.relationship('Proveedor', backref='materias_primas')
+    
+    detalles_receta = db.relationship('DetalleReceta', backref='materia_prima', lazy=True)
 """
 ejemplo si le mete un
 """

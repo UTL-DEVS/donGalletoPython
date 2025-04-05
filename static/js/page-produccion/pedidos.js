@@ -159,29 +159,40 @@ document.getElementById('btnProcesarPedido').addEventListener('click', function(
         'idPedido': idPedido
     };
 
-    enviarAlServicio(JSON.stringify(body));
+    enviarAlServicio(datosGalletas, idPedido);
 });
 
-function enviarAlServicio(datos) {
+function enviarAlServicio(datosGalletas, idPedido) {
     const csrfToken = document.querySelector('input[name="csrf_token"]').value;
 
     fetch('/procesar-pedido', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'X-CSRFToken': csrfToken  
+            'X-CSRFToken': csrfToken
         },
-        body: datos
+        body: JSON.stringify({
+            lstDetallePedido: datosGalletas,
+            idPedido: idPedido
+        })
     })
-    .then(response => response.json())
+    .then(response => {
+        if (response.status === 415) {
+            throw new Error("Configuración incorrecta del Content-Type");
+        }
+        return response.json();
+    })
     .then(data => {
-        console.log(data)
-        if (data.success)
-            alert(data.message)
-            window.location = '/cocina-pedidos'
-        if (data.error)
-            alert(data.message)
+        if (data.success) {
+            alert(data.message);
+        } else if (data.error) {
+            alert(data.message); 
+        }
     })
+    .catch(error => {
+        console.error("Error silenciado:", error);
+        alert("Error al procesar (pero no se abrirán pestañas)");
+    });
 }
 
 function actualizarTituloHistorialPedidos() {

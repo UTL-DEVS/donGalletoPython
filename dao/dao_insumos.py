@@ -48,16 +48,20 @@ def actualizarStock(solicitud):
 def descontarStock(idGalleta, cantidad):
     try:
         receta = db.session.query(Receta).filter_by(id_galleta=idGalleta, estado='1').first()
+        print('receta')
         print(receta)
         lstDetalles = db.session.query(DetalleReceta).filter_by(id_receta=receta.id_receta).all()
+        print('detalles')
+        print(lstDetalles)
         for detalle in lstDetalles:
             materiaPrima = db.session.query(MateriaPrima).filter_by(id_materia=detalle.id_materia).first()
-            print(materiaPrima)
+            print('materia')
+            print(materiaPrima)  
             descuento = detalle.cantidad_insumo * cantidad
-            print('stock')
-            print(materiaPrima.stock_materia)
+            print(descuento)
+            if materiaPrima.stock_materia < descuento:
+                return -3
             materiaPrima.stock_materia = materiaPrima.stock_materia - descuento
-            print(materiaPrima.stock_materia)
             db.session.add(materiaPrima)
             db.session.commit()
         return 1

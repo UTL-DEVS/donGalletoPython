@@ -14,3 +14,6 @@ def agregarProduccion(produccion):
         return -1
     
     return dao_produccion.agregarProduccion(produccion)    
+
+def procesarProduccion(id_produccion):
+    return dao_produccion.procesarProduccion(id_produccion)

@@ -8,3 +8,4 @@ class DetalleReceta(db.Model):
     cantidad_insumo = db.Column(db.Float, nullable=False)
     id_materia = db.Column(db.Integer, db.ForeignKey('materia_prima.id_materia'), nullable=False)
     
+      

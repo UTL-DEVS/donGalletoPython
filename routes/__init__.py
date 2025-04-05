@@ -15,4 +15,5 @@ from routes.insumos import insumos_bp
 from routes.cocina_insumos import cocina_insumos_bp
 from routes.galleta import galleta_bp
 from routes.resumen_venta import resumen_venta_bp
+from routes.ventas_pedidos import pedidos_ventas_bp
 from routes.compra_insumos import compra_insumo_admin_bp
