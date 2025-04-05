@@ -29,3 +29,63 @@ Fecha: 2025-04-04 19:13:35.187549 - Usuario: carlitos12 - Accion: Error 404: Pág
 Fecha: 2025-04-04 19:13:35.221726 - Usuario: carlitos12 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/insumos/static/js/app.js | IP: 127.0.0.1
 Fecha: 2025-04-04 19:13:50.369643 - Usuario: carlitos12 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/insumos/static/js/app.js | IP: 127.0.0.1
 Fecha: 2025-04-04 19:13:50.370671 - Usuario: carlitos12 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/insumos/static/img/logo_la_casa_de_la_galleta.jpeg | IP: 127.0.0.1
+Fecha: 2025-04-04 23:04:20.306590 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-04 23:05:29.941322 - Usuario: joel123456 - Accion: cannot access local variable 'mes_venta' where it is not associated with a value
+Fecha: 2025-04-04 23:05:29.966907 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/error | IP: 127.0.0.1
+Fecha: 2025-04-04 23:05:32.652814 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/economia/gastos_dashboard | IP: 127.0.0.1
+Fecha: 2025-04-04 23:05:47.718564 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-04 23:06:17.397288 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-04 23:15:22.875362 - Usuario: milk220010 - Accion: Error 404: Página no encontrada en http://localhost:8080/insumos/insumo | IP: 127.0.0.1
+Fecha: 2025-04-04 23:15:25.184392 - Usuario: milk220010 - Accion: Error 404: Página no encontrada en http://localhost:8080/insumos/insumo | IP: 127.0.0.1
+Fecha: 2025-04-04 23:15:25.276286 - Usuario: milk220010 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-04 23:15:37.989098 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-04 23:16:04.423148 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-04 23:16:16.901122 - Usuario: joel123456 - Accion: 'forms.form_insumo.InsumoForm object' has no attribute 'stock_materia'
+Fecha: 2025-04-04 23:16:16.940418 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/error | IP: 127.0.0.1
+Fecha: 2025-04-04 23:16:51.738778 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/error | IP: 127.0.0.1
+Fecha: 2025-04-04 23:25:40.040540 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-04 23:26:59.299661 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-04 23:27:46.231857 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-04 23:28:09.279348 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-04 23:28:50.692048 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-04 23:29:53.425104 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-04 23:30:12.201221 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-04 23:30:28.016190 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-04 23:34:06.671619 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-04 23:34:33.914185 - Usuario: joel123456 - Accion: 'cantidad_insumo_producida' is an invalid keyword argument for Receta
+Fecha: 2025-04-04 23:34:33.914185 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/receta/agregar | IP: 127.0.0.1
+Fecha: 2025-04-04 23:35:21.909393 - Usuario: joel123456 - Accion: 'cantidad_insumo_producida' is an invalid keyword argument for Receta
+Fecha: 2025-04-04 23:35:21.910443 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/receta/agregar | IP: 127.0.0.1
+Fecha: 2025-04-04 23:35:43.261444 - Usuario: joel123456 - Accion: 'cantidad_insumo_producida' is an invalid keyword argument for Receta
+Fecha: 2025-04-04 23:35:43.262454 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/receta/agregar | IP: 127.0.0.1
+Fecha: 2025-04-04 23:35:51.270058 - Usuario: joel123456 - Accion: 'cantidad_insumo_producida' is an invalid keyword argument for Receta
+Fecha: 2025-04-04 23:35:51.271432 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/receta/agregar | IP: 127.0.0.1
+Fecha: 2025-04-04 23:42:12.953297 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-04 23:51:57.266065 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-05 00:05:08.714177 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-05 00:06:27.859177 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-05 00:08:45.719977 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-05 00:08:54.737467 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-05 00:09:13.711149 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-05 00:09:43.578333 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-05 00:09:48.145702 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-05 00:09:49.495685 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-05 00:10:29.948910 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-05 00:16:04.247865 - Usuario: joel123456 - Accion: 'DetalleReceta' object has no attribute 'id_galleta'
+Fecha: 2025-04-05 00:16:04.248377 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/receta/5 | IP: 127.0.0.1
+Fecha: 2025-04-05 00:17:27.743579 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-05 00:17:38.194147 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-05 00:17:51.088016 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-05 00:17:52.724944 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-05 00:19:05.387405 - Usuario: joel123456 - Accion: 'DetalleReceta' object has no attribute 'id_galleta'
+Fecha: 2025-04-05 00:19:05.388411 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/receta/1 | IP: 127.0.0.1
+Fecha: 2025-04-05 00:20:09.325030 - Usuario: joel123456 - Accion: 'DetalleReceta' object has no attribute 'id_galleta'
+Fecha: 2025-04-05 00:20:09.326050 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/receta/1 | IP: 127.0.0.1
+Fecha: 2025-04-05 00:20:09.428404 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-05 00:20:26.371858 - Usuario: joel123456 - Accion: 'DetalleReceta' object has no attribute 'id_galleta'
+Fecha: 2025-04-05 00:20:26.371858 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/receta/1 | IP: 127.0.0.1
+Fecha: 2025-04-05 00:20:50.963359 - Usuario: joel123456 - Accion: 'DetalleReceta' object has no attribute 'id_galleta'
+Fecha: 2025-04-05 00:20:50.963359 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/receta/1 | IP: 127.0.0.1
+Fecha: 2025-04-05 00:26:54.476259 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-05 00:27:06.085677 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-05 00:28:24.563721 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
