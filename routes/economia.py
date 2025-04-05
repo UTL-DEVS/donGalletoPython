@@ -14,8 +14,8 @@ def dashboard():
             abort(404)
         fechas_ventas = controller_economia.obtener_fechas_ventas()
         lista_ventas_json=''
+
         if (fechas_ventas != None):
-            print(f'fechas: {fechas_ventas}')
             if(request.args.get('dias_ventas') == None):
                 mes_venta=json.loads(fechas_ventas)['ultima_venta']
                 dias = 30
@@ -23,21 +23,22 @@ def dashboard():
                 mes_venta = ((request.args.get('mes_ventas')))
                 dias =((request.args.get('dias_ventas')))
     
-        lista_ventas = controller_economia.obtener_ventas_diarias(mes_venta, dias)
-        lista_ventas_json = json.dumps([
-            {
-                "fecha_venta": venta.fecha.strftime("%Y-%m-%d"),  # Convertir datetime a string
-                "total": venta.total,
-                "estatus": venta.estado
-            }
-            for venta in lista_ventas
-        ])
-        crear_log_user(current_user.usuario, request.url)
+            lista_ventas = controller_economia.obtener_ventas_diarias(mes_venta, dias)
+            lista_ventas_json = json.dumps([
+                {
+                    "fecha_venta": venta.fecha.strftime("%Y-%m-%d"),  # Convertir datetime a string
+                    "total": venta.total,
+                    "estatus": venta.estado
+                }
+                for venta in lista_ventas
+            ])
+            crear_log_user(current_user.usuario, request.url)
         return render_template('pages/page-economia/dashboard.html',rango_fechas_ventas=fechas_ventas,lista_ventas=lista_ventas_json)
     except Exception as e:
         crear_log_error(current_user.usuario, str(e))
         flash("Error al cargar el panel económico", "danger")
-        return redirect('/error')
+        return redirect('/economia')
+
     
     
 
@@ -57,7 +58,7 @@ def mostrar_nomina():
     pagos, total_pagos = controller_economia.obtener_pagos(mes, anio, quincena)
     if (not pagos) and (request.args.get('mes', type=int) != None):
         flash("No hay pago de sueldos en el periodo seleccionado.", "error")
-        return redirect(url_for('economia.mostrar_nomina'))
+        return redirect('/economia/nomina')
     return render_template('pages/page-economia/nomina.html', pagos=pagos, mes=mes, anio=anio, quincena=quincena,total_pagos=total_pagos)
     
 

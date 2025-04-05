@@ -1,6 +1,26 @@
 {%extends 'components/_estructura_admin.html'%}
 {%block titulo%}Economía{%endblock%}
 {%block contenido%}
+
+<div class="container mt-1">
+    <!-- Mensaje flash -->
+    <div class="row">
+        <div class="col-12">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            {% for category, message in messages %}
+            <div class="alert alert-{{ 'danger' if category == 'error' else 'success' }} alert-dismissible fade show"
+                style="font-size: 15px;" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+
+        </div>
+    </div>
+</div>
 <h2 class=" m-3 text-center">Ventas Diarias</h2>
 
 <div class="my-3 d-flex justify-content-center">

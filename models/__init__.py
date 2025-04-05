@@ -13,3 +13,4 @@ from .empleado import Empleado
 from .galleta import Galleta
 from .Stock import Stock
 from .nomina import Nomina
+from .compra_insumos import CompraInsumo, DetalleCompraInsumo

@@ -49,7 +49,7 @@ class form_empleado(FlaskForm):
 
     rol_user = SelectField('Rol del usuario',[
         DataRequired('Ingrese su primer apellido!')
-    ],render_kw={'class': 'rolUsuario'}, choices=[(0, 'Administrador'), (2, 'Cocinero'), (3, 'Vendedor')])
+    ],render_kw={'class': 'rolUsuario'}, choices=[(0, 'Administrador'), (3, 'Cocinero'), (4, 'Vendedor')])
     
     correo = EmailField('Correo', [
         DataRequired('Ingrese su correo!')
