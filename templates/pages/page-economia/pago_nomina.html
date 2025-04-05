@@ -1,4 +1,4 @@
-{%extends 'components/estructura.html'%}
+{%extends 'components/_estructura_admin.html'%}
 {%block titulo%}Economía{%endblock%}
 {%block contenido%}
  <!-- Mensaje flash -->
@@ -104,6 +104,6 @@
     </nav>
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="{{url_for('static', filename='js/page-economia/nomina.js')}}"></script>
+    <script src="../../../static/js/page-economia/nomina.js"></script>
 
     {%endblock%}

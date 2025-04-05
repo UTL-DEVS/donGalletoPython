@@ -46,6 +46,7 @@ def crear_app():
     app.register_blueprint(insumos_bp)
     app.register_blueprint(cocina_insumos_bp)
     app.register_blueprint(venta_bp)
+    app.register_blueprint(pedidos_ventas_bp)
 
     return app, csrf
 
@@ -98,9 +99,9 @@ def page_not_found(e):
     # Registrar el error con la IP
     crear_log_error(usuario, f"Error 404: Página no encontrada en {request.url} | IP: {ip_usuario}")
     
-    # Si el usuario está autenticado, cerramos su sesión
+    '''  # Si el usuario está autenticado, cerramos su sesión
     if current_user.is_authenticated:
-        logout_user()
+        logout_user()'''
     
     return render_template('pages/error.html'), 404
 
@@ -114,4 +115,4 @@ if __name__ == '__main__':
     csrf.init_app(app=app)
     with app.app_context():
         db.create_all()
-    app.run( port=8080)
+    app.run( port=8080, debug=True)

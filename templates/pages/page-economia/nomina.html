@@ -1,4 +1,4 @@
-{%extends 'components/estructura.html'%}
+{%extends 'components/_estructura_admin.html'%}
 {%block titulo%}Economía{%endblock%}
 {%block contenido%}
  <!-- Mensaje flash -->
@@ -19,7 +19,7 @@
     </div>
 </div>
 
-<form class="m-5" method="GET" action="{{ url_for('economia.mostrar_nomina') }}">
+<form class="m-5" method="GET" action="/economia/nomina">
     <label for="mes">Mes:</label>
     <select name="mes">
         {% for num, nombre in [(1, 'Enero'), (2, 'Febrero'), (3, 'Marzo'), (4, 'Abril'), (5, 'Mayo'), (6, 'Junio') , (7, 'Abril'), (8, 'Agosto'), (9, 'Septiembre'), (10, 'Octubre'), (11, 'Noviembre'), (12, 'Dicembre')]%}

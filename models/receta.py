@@ -6,3 +6,4 @@ class Receta(db.Model):
     id_galleta = db.Column(db.Integer, db.ForeignKey('galletas.id_galleta'), nullable=False)
     nombre_receta = db.Column(db.String(100), nullable=False, unique=True)
     estado = db.Column(db.String(1), nullable=False)
+    cantidad_insumo_producida = db.Column(db.Integer, nullable=False)

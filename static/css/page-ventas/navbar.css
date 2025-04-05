@@ -1,179 +1,220 @@
 body {
-    min-height: 100vh;
-    min-height: -webkit-fill-available;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f8f9fa;
-  }
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+}
 
-  html {
-    min-height: 100vh;
-    height: -webkit-fill-available;
-  }
+html {
+  min-height: 100vh;
+  height: -webkit-fill-available;
+}
 
-  main {
-    height: 100vh;
-    height: -webkit-fill-available;
-    max-height: 100vh;
-    overflow-x: auto;
-    overflow-y: hidden;
-  }
+main {
+  height: 100vh;
+  height: -webkit-fill-available;
+  max-height: 100vh;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
 
-  .sidebar {
-    width: 280px;
-    background-color: white;
-    box-shadow: 5px 0px 15px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
-    position: relative;
-    z-index: 10;
-  }
+.sidebar {
+  width: 280px;
+  background-color: white;
+  box-shadow: 5px 0px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 10;
+}
 
-  .sidebar:hover {
-    box-shadow: 5px 0px 20px rgba(0, 0, 0, 0.08);
-  }
+.sidebar:hover {
+  box-shadow: 5px 0px 20px rgba(0, 0, 0, 0.08);
+}
 
-  .sidebar-header {
-    padding: 1.5rem 1.5rem 0.5rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    margin-bottom: 1rem;
-  }
+.sidebar-header {
+  padding: 1.5rem 1.5rem 0.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  margin-bottom: 1rem;
+}
 
-  .sidebar-header img {
-    transition: transform 0.3s ease;
-  }
+.sidebar-header img {
+  transition: transform 0.3s ease;
+}
 
-  .sidebar-header:hover img {
-    transform: scale(1.1);
-  }
+.sidebar-header:hover img {
+  transform: scale(1.1);
+}
 
-  .sidebar-header .brand {
-    font-weight: 700;
-    letter-spacing: 1px;
-    font-size: 1.25rem;
-    color: #333;
-  }
+.sidebar-header .brand {
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 1.25rem;
+  color: #333;
+}
 
-  .btn-toggle {
-    padding: 0.75rem 1.5rem;
-    font-weight: 600;
-    color: #555;
-    background-color: transparent;
-    transition: all 0.3s ease;
-    width: 100%;
-    text-align: left;
-    border-radius: 0;
-    position: relative;
-    border-left: 3px solid transparent;
-  }
+.btn-toggle {
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  color: #555;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  width: 100%;
+  text-align: left;
+  border-radius: 0;
+  position: relative;
+  border-left: 3px solid transparent;
+}
 
-  .btn-toggle:hover {
-    color: #000;
-    background-color: rgba(0, 0, 0, 0.03);
-    border-left: 3px solid #4ecca3;
-  }
+.btn-toggle:hover {
+  color: #000;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-left: 3px solid #4ecca3;
+}
 
-  .btn-toggle[aria-expanded="true"] {
-    color: #000;
-    background-color: rgba(0, 0, 0, 0.05);
-    border-left: 3px solid #4ecca3;
-  }
+.btn-toggle[aria-expanded="true"] {
+  color: #000;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-left: 3px solid #4ecca3;
+}
 
-  .btn-toggle::before {
-    content: "\f285";
-    font-family: bootstrap-icons;
-    position: absolute;
-    right: 1.5rem;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: all 0.3s ease;
-    color: #888;
-  }
+.btn-toggle::before {
+  content: "\f285";
+  font-family: bootstrap-icons;
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+  color: #888;
+}
 
-  .btn-toggle[aria-expanded="true"]::before {
-    transform: translateY(-50%) rotate(90deg);
-    color: #4ecca3;
-  }
+.btn-toggle[aria-expanded="true"]::before {
+  transform: translateY(-50%) rotate(90deg);
+  color: #4ecca3;
+}
 
-  .btn-toggle-nav a {
-    padding: 0.6rem 1.5rem 0.6rem 3rem;
-    margin: 0.1rem 0;
-    color: #666;
-    text-decoration: none;
-    display: block;
-    transition: all 0.2s ease;
-    position: relative;
-    border-radius: 0;
-  }
+.btn-toggle-nav a {
+  padding: 0.6rem 1.5rem 0.6rem 3rem;
+  margin: 0.1rem 0;
+  color: #666;
+  text-decoration: none;
+  display: block;
+  transition: all 0.2s ease;
+  position: relative;
+  border-radius: 0;
+}
 
-  .btn-toggle-nav a:hover,
-  .btn-toggle-nav a:focus {
-    color: #000;
-    background-color: rgba(0, 0, 0, 0.03);
-    padding-left: 3.2rem;
-  }
+.btn-toggle-nav a:hover,
+.btn-toggle-nav a:focus {
+  color: #000;
+  background-color: rgba(0, 0, 0, 0.03);
+  padding-left: 3.2rem;
+}
 
-  .btn-toggle-nav a::before {
-    content: "";
-    position: absolute;
-    left: 2rem;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 6px;
-    height: 6px;
-    background-color: #ddd;
-    border-radius: 50%;
-    transition: all 0.2s ease;
-  }
+.btn-toggle-nav a::before {
+  content: "";
+  position: absolute;
+  left: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background-color: #ddd;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
 
-  .btn-toggle-nav a:hover::before {
-    background-color: #4ecca3;
-    width: 8px;
-    height: 8px;
-  }
+.btn-toggle-nav a:hover::before {
+  background-color: #4ecca3;
+  width: 8px;
+  height: 8px;
+}
 
-  .sidebar-divider {
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
-    margin: 1.5rem 1.5rem;
-  }
+.sidebar-divider {
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  margin: 1.5rem 1.5rem;
+}
 
-  .main-content {
-    width: calc(100% - 280px);
-    background-color: #f8f9fa;
-    padding: 2rem;
-    overflow-y: auto;
-  }
+.main-content {
+  width: calc(100% - 280px);
+  background-color: #f8f9fa;
+  padding: 2rem;
+  overflow-y: auto;
+}
 
-  .collapse:not(.show) {
-    display: none;
-  }
+.collapse:not(.show) {
+  display: none;
+}
 
-  .collapsing {
-    transition: height 0.25s ease;
-  }
+.collapsing {
+  transition: height 0.25s ease;
+}
 
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
+::-webkit-scrollbar {
+  width: 8px;
+}
 
-  ::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.02);
-  }
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.02);
+}
 
-  ::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.1);
-    border-radius: 4px;
-  }
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
 
-  ::-webkit-scrollbar-thumb:hover {
-    background: rgba(0, 0, 0, 0.2);
-  }
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
 
-  .btn-toggle-nav a.active {
-    color: #4ecca3;
-    font-weight: 500;
-  }
+.btn-toggle-nav a.active {
+  color: #4ecca3;
+  font-weight: 500;
+}
 
-  .btn-toggle-nav a.active::before {
-    background-color: #4ecca3;
-    width: 8px;
-    height: 8px;
-  }
+.btn-toggle-nav a.active::before {
+  background-color: #4ecca3;
+  width: 8px;
+  height: 8px;
+}
+
+.d-flex {
+  display: flex !important;
+}
+
+.flex-shrink-0 {
+  flex-shrink: 0 !important;
+}
+
+.list-unstyled {
+  list-style: none;
+  padding-left: 0;
+}
+
+.ps-0 {
+  padding-left: 0 !important;
+}
+
+.mb-1 {
+  margin-bottom: 0.25rem !important;
+}
+
+.rounded {
+  border-radius: 0.25rem !important;
+}
+
+.border-0 {
+  border: 0 !important;
+}
+
+.collapsed {
+  transition: all 0.3s ease;
+}
+
+.fw-normal {
+  font-weight: 400 !important;
+}
+
+.pb-1 {
+  padding-bottom: 0.25rem !important;
+}

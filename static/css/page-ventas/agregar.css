@@ -1,27 +1,26 @@
-
 .card {
-    border-radius: 15px;
-    overflow: hidden;
+  border-radius: 15px;
+  overflow: hidden;
 }
 
 .card-header {
-    border-radius: 15px 15px 0 0 !important;
+  border-radius: 15px 15px 0 0 !important;
 }
 
 .bg-gradient-primary {
-    background: linear-gradient(135deg, #3f51b5, #2196f3);
+  background: linear-gradient(135deg, #3f51b5, #2196f3);
 }
 
-.form-floating>label {
-    padding: 1rem 1.25rem;
+.form-floating > label {
+  padding: 1rem 1.25rem;
 }
 
 .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
 .is-invalid {
-    border-left: 3px solid #dc3545 !important;
+  border-left: 3px solid #dc3545 !important;
 }
