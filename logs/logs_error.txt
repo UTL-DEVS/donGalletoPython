@@ -336,3 +336,7 @@ Fecha: 2025-04-05 01:26:33.596582 - Usuario: Usuario an�nimo - Accion: Error 404
 Fecha: 2025-04-05 01:26:40.459123 - Usuario: joel12345678 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
 Fecha: 2025-04-05 01:27:04.491671 - Usuario: joel12345678 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
 >>>>>>> bc9e50b77aa4d81c0b3c10b367a8209e1a31aca8
+Fecha: 2025-04-05 09:06:36.841466 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-05 09:08:08.055675 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-05 09:08:08.062016 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-05 09:08:08.063833 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1

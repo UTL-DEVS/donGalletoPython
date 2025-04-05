@@ -15,7 +15,7 @@ class MateriaPrima(db.Model):
     ! tomar en cuenta que puede poner que es 1.5 kilos por lo tanto hacer la conversion
     """
     stock_materia = db.Column(db.Float, nullable=False, default=0.0)
-    cantidad_compra = db.Column(db.Float, nullable=False)
+    cantidad_compra = db.Column(db.Float, nullable=True)
     # Costal, Kilo, Litro, Pieza, Gramos, lata
     unidad_medida_publico = db.Column(db.Integer, nullable=False)
     unidad_medida = db.Column(db.Integer, nullable=False)
