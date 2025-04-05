@@ -111,3 +111,19 @@ Fecha: 2025-04-03 20:07:35.567754 - Usuario: joel1234567 - Accion: Error 404: P�
 Fecha: 2025-04-03 20:07:35.571940 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
 Fecha: 2025-04-03 20:07:35.571940 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
 >>>>>>> 5c6651af6d99848d0f0a7a88e72de54113146703
+Fecha: 2025-04-03 20:19:00.437863 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:19:00.443367 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:19:00.445155 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:19:10.940709 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:19:10.940768 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-03 20:19:10.950684 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-04 08:58:11.475860 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-04 09:44:23.151831 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/produccion-confirmaciones | IP: 127.0.0.1
+Fecha: 2025-04-04 09:44:39.351778 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/produccion-confirmaciones | IP: 127.0.0.1
+Fecha: 2025-04-04 09:45:23.444923 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/produccion-confirmaciones | IP: 127.0.0.1
+Fecha: 2025-04-04 09:46:23.548449 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/produccion-confirmaciones | IP: 127.0.0.1
+Fecha: 2025-04-04 09:46:33.143522 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/produccion-confirmaciones | IP: 127.0.0.1
+Fecha: 2025-04-04 09:48:24.952957 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/produccion-confirmaciones | IP: 127.0.0.1
+Fecha: 2025-04-04 09:48:51.747180 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/produccion-confirmaciones | IP: 127.0.0.1
+Fecha: 2025-04-04 09:49:22.398401 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/produccion-confirmaciones | IP: 127.0.0.1
+Fecha: 2025-04-04 10:44:15.029054 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/favicon.ico | IP: 127.0.0.1

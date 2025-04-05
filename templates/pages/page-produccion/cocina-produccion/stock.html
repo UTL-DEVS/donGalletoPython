@@ -36,7 +36,7 @@
                                             red
                                         {% elif galleta.cantidad_galleta >= 10 and galleta.cantidad_galleta < 20 %}
                                             yellow
-                                        {% elif galleta.cantidad_galleta > 40 %}
+                                        {% elif galleta.cantidad_galleta >= 40 %}
                                             orange
                                         {% elif galleta.cantidad_galleta >= 20 and galleta.cantidad_galleta < 40 %}
                                             greenyellow
@@ -101,7 +101,7 @@
                             </table>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-warning" id="btnProcesarProduccion">Procesar<i class="bi bi-fire ms-1"></i></i></button>
+                        <button type="button" class="btn btn-warning" id="btnProcesarProduccion" onclick="procesarProduccion()">Procesar<i class="bi bi-fire ms-1"></i></i></button>
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                     </div>
                 </form>

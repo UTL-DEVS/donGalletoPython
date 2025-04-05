@@ -15,6 +15,7 @@ def obtenerDetalleProduccion(fecha):
     .join(DetalleProduccion)\
     .join(Galleta)\
     .filter(Produccion.fecha_produccion == fecha)\
+    .filter(Produccion.estatus == 3)\
     .all()
 
     datos_formateados = [{

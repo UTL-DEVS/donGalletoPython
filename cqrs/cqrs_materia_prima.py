@@ -18,6 +18,4 @@ def actualizarStock(solicitud):
     return dao_insumos.actualizarStock(solicitud)
 
 def descontarStock(idGalleta, cantidad):
-    print('cqrs-id '+idGalleta)
-    print('cqrs-cnt '+str(cantidad))
     return dao_insumos.descontarStock(idGalleta, cantidad)
