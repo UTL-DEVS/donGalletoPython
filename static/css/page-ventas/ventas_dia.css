@@ -1,0 +1,150 @@
+.tabla-contenedor {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 30px;
+  }
+
+  .tabla-scroll {
+    max-height: 500px;
+    overflow-y: auto;
+    margin-top: 15px;
+  }
+
+  .table thead th {
+    background-color: rgb (193, 194, 196);
+    color: #000000;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  .table-hover tbody tr:hover {
+    background-color: rgba(0, 123, 255, 0.1);
+  }
+
+  .btn-ticket {
+    background-color: #28a745;
+    border-color: #28a745;
+    transition: all 0.3s;
+  }
+
+  .btn-view {
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+    transition: all 0.3s;
+  }
+
+  .btn-ticket:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+    transform: translateY(-1px);
+  }
+
+  .btn-view:hover {
+    background-color: #138496;
+    border-color: #117a8b;
+    transform: translateY(-1px);
+  }
+
+  .table-responsive {
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .btn-group .btn {
+    margin-right: 5px;
+  }
+
+  .btn-group .btn:last-child {
+    margin-right: 0;
+  }
+
+    #ticketModal .modal-dialog {
+      max-width: 800px;
+      margin: 1.75rem auto;
+    }
+    
+    #ticketModal .modal-content {
+      border: none;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    #ticketModal .modal-header {
+      background-color: #f8f9fa;
+      border-bottom: 1px solid #dee2e6;
+      padding: 1rem 1.5rem;
+    }
+    
+    #ticketModal .modal-title {
+      font-weight: 600;
+      color: #343a40;
+    }
+    
+    #ticketModal .modal-body {
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+    
+    #ticketModal .modal-footer {
+      background-color: #f8f9fa;
+      border-top: 1px solid #dee2e6;
+      padding: 0.75rem 1.5rem;
+    }
+    
+    #ticketIframe {
+      min-height: 500px;
+      background: transparent;
+    }
+    
+    #ticketModal.fade .modal-dialog {
+      transition: transform 0.3s ease-out, opacity 0.3s ease;
+      transform: translate(0, -50px);
+    }
+    
+    #ticketModal.show .modal-dialog {
+      transform: translate(0, 0);
+    }
+    
+    @media (max-width: 992px) {
+      #ticketModal .modal-dialog {
+        max-width: 95%;
+        margin: 1rem auto;
+      }
+      
+      #ticketIframe {
+        min-height: 400px;
+      }
+    }
+    
+    @media (max000000000-width: 576px) {
+      #ticketModal .modal-header,
+      #ticketModal .modal-footer {
+        padding: 0.75rem;
+      }
+      
+      #ticketIframe {
+        min-height: 300px;
+      }
+    }
+    
+    #ticketModal .btn-secondary {
+      background-color: #6c757d;
+      border-color: #6c757d;
+    }
+    
+    #ticketModal .btn-secondary:hover {
+      background-color: #5a6268;
+      border-color: #545b62;
+    }
+    
+    #ticketModal .btn-close {
+      filter: invert(1) opacity(0.5);
+      transition: opacity 0.2s;
+    }
+    
+    #ticketModal .btn-close:hover {
+      opacity: 0.75;
+    }

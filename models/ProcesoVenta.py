@@ -22,5 +22,6 @@ class DetalleVenta(db.Model):
     subtotal = db.Column(db.Float, nullable=False)
     tipo_venta = db.Column(db.String(20), default='unidad', nullable=False)
     
+    metadata_json = db.Column(db.JSON, nullable=True, default={})
     galleta = db.relationship('Galleta', back_populates='detalles_venta')
     proceso_venta = db.relationship('ProcesoVenta', back_populates='detalles')
