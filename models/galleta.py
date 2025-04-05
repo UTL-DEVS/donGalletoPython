@@ -10,6 +10,8 @@ class Galleta(db.Model):
     descripcion_galleta = db.Column(db.Text, nullable=True)
     fecha_creacion = db.Column(db.DateTime, default=datetime.utcnow)
     activo = db.Column(db.Boolean, default=True)
+    escogido = db.Column(db.Boolean, default=True)
+    
 
     stock = db.relationship('Stock', back_populates='galleta', uselist=False)
     detalles_venta = db.relationship('DetalleVenta', back_populates='galleta')

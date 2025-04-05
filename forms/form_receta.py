@@ -21,9 +21,9 @@ class DetalleRecetaForm(FlaskForm):
         if unidad_medida == 1:
             return "gramos"
         elif unidad_medida == 3:
-            return "kilos"
-        elif unidad_medida == 4:
             return "litros"
+        elif unidad_medida == 4:
+            return "kilos"
         return "unidad desconocida"
  
 

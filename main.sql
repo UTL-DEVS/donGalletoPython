@@ -15,6 +15,8 @@ INSERT INTO usuario(rol_user, email,usuario, contrasenia,token) VALUES (3,'joelb
 -- en caso de que no los deje pasar, entonces me equivoque de formato, pero eso es la contrasenia encriptada, 
 -- si no se puede crear el usuario y la contrasenia que quieran pues la ponen y ya
 
+select * FROM usuario;
+select * FROM pre_registro;
 
 
 /*
@@ -56,7 +58,7 @@ INSERT INTO `stock` (`id_stock`,`id_galleta`,`cantidad_galleta`,`maximo_galleta`
 
 INSERT INTO materia_prima (id_materia,nombre_materia,stock_materia,unidad_medida_publico,unidad_medida,precio,estatus,id_proveedor) VALUES (1,'Harina',147,1,1,50,1,1);
 
-SELECT * FROM receta;
+SELECT * FROM galletas;
 SELECT * FROM detalle_receta;
 
 

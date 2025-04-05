@@ -147,7 +147,7 @@ def agregar_receta():
         )
         db.session.add(nuevo_detalle)
             
-        galleta.activo = False  # Cambiar el estado de la galleta
+        galleta.escogido = False  # Cambiar el estado de la galleta
         db.session.commit()
             
         flash('Receta agregada exitosamente.', 'success')
