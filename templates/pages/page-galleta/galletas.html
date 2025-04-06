@@ -23,7 +23,8 @@
 
             {%for galleta in galletas%}
             <tr>
-                <th scope="row">1</th>
+                <th scope="row">{{loop.index}}</th>
+
                 <td>
                     <img src="data:image/png;base64,{{ galleta.imagen_galleta }}" alt="" class="img-fluid"
                         style="height: 50px;">

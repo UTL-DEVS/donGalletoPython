@@ -10,7 +10,6 @@ modales = json.loads(modales_str)  # Convertir a diccionario
 
 @usuario_bp.route('/empleado', methods=['POST','GET'])
 def mostrar_empleados():
-        print('empleado entrando')
         form_empleado_obj = form_empleado()
         lista_empleados=controller_usuario.obtener_empleados()
         
@@ -70,27 +69,32 @@ def actualizar_empleado():
         flash("Error al cargar el panel de usuarios", "danger")
         return redirect('/navegante/empleado')
 
-@usuario_bp.route('/eliminarEmpleado', methods=['POST','GET'])
+@usuario_bp.route('/empleado/eliminarEmpleado', methods=['POST','GET'])
 @login_required
-def eliminar_proveedor():
+def eliminar_empleado():
     try:
         if current_user.rol_user != 0:
             abort(404)
+        empleado_seleccionado=controller_usuario.obtener_empleado_especifico(int(request.args.get('id_emp_del')))
+        if(empleado_seleccionado.usuario.id == current_user.id):
+            flash("No puedes desactivar tu propio usuario", "warning")
+            return redirect('/navegante/empleado')
+        controller_usuario.eliminar_empleado(empleado_seleccionado.id_empleado)
         crear_log_user(current_user.usuario, request.url)
-        controller_usuario.eliminar_proveedor(int(request.args.get('id_prov_del')))
         return redirect('/navegante/empleado')
     except Exception as e:
         crear_log_error(current_user.usuario, str(e))
         flash("Error al cargar el panel de usuarios", "danger")
         return redirect('/navegante/empleado')
 
-@usuario_bp.route('/reactivarEmpleado', methods=['POST','GET'])
+@usuario_bp.route('/empleado/reactivarEmpleado', methods=['POST','GET'])
 def reactivarProveedor():
+    print(f'reactivando us')
     try:
         if current_user.rol_user != 0:
             abort(404)
         crear_log_user(current_user.usuario, request.url)
-        controller_usuario.reactivar_proveedor(int(request.args.get('id_prov_rea')))
+        controller_usuario.reactivar_empleado(int(request.args.get('id_emp_rea')))
         return redirect('/navegante/empleado')
     except Exception as e:
         crear_log_error(current_user.usuario, str(e))

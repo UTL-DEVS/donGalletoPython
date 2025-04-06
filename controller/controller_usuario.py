@@ -46,15 +46,16 @@ def actualizar_empleado(id_empleado, form_empleado):
    
     return dao_usuario.guardar_info_empleado(emp_sel)
 
-'''
-def eliminar_proveedor(id_empleado):
-    prov_eliminar = dao_proveedor.obtener_proveedor_especifico(id_proveedor)
-    prov_eliminar.persona.estatus=0
-    return cqrs_proveedor.actualizar_proveedor(prov_eliminar)
+def eliminar_empleado(id_empleado):
+    emp_eliminar = dao_usuario.obtener_empleado_especifico(id_empleado)
+    emp_eliminar.persona.estatus=0
+    return dao_usuario.guardar_info_empleado(emp_eliminar)
 
-def reactivar_proveedor(id_proveedor):
-    prov_eliminar = dao_proveedor.obtener_proveedor_especifico(id_proveedor)
-    prov_eliminar.persona.estatus=1
-    return cqrs_proveedor.actualizar_proveedor(prov_eliminar)
 
-'''
+
+def reactivar_empleado(id_empleado):
+    emp_reactivar = dao_usuario.obtener_empleado_especifico(id_empleado)
+    emp_reactivar.persona.estatus=1
+    return dao_usuario.guardar_info_empleado(emp_reactivar)
+
+

@@ -20,8 +20,8 @@
             <div class="d-flex col-7">
             {{field(required=false)}}
         {%else%}    
-                <h5 class="col-5 m-2 ">{{field.label}}:</h5>
-                <div class="d-flex col-7">
+                <p class="fw-6 col-6 m-2 ">{{field.label}}:</p>
+                <div class="d-flex col-6">
                     {%if (field.data) != None%}
                     
                         {{field(required=false,value=field.data)}}
@@ -44,6 +44,7 @@
             {% endif %}
     <hr>
 {%endmacro%}
+
 
 
 {%macro macro_btn_detalles(nombre_modal)%}

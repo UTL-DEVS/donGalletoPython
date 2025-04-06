@@ -26,6 +26,7 @@ def antes_de_peticion():
 @venta_bp.route('/ventas_dia')
 @login_required
 def ventas_dia():
+    print(f'en proceso venta')
     if current_user.rol_user != 4:
         abort(404)
     ventas = ProcesoVentaDAO.obtener_ventas()
