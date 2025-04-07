@@ -340,3 +340,12 @@ Fecha: 2025-04-05 09:06:36.841466 - Usuario: Usuario anónimo - Accion: Error 40
 Fecha: 2025-04-05 09:08:08.055675 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
 Fecha: 2025-04-05 09:08:08.062016 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
 Fecha: 2025-04-05 09:08:08.063833 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-05 09:30:10.146526 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galletas/imagen1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-05 09:30:10.148379 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galletas/imagen2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-05 09:30:10.149516 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galletas/imagen3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-05 09:30:21.541358 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galletas/imagen1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-05 09:30:21.541418 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galletas/imagen3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-05 09:30:21.542596 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galletas/imagen2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-05 09:33:26.851601 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-05 09:33:26.852681 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-05 09:33:26.859336 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
