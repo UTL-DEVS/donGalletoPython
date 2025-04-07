@@ -1,0 +1,38 @@
+{% extends 'pages/pages-ventas/nav.html' %} {% block title %}Historial de
+Pedidos{% endblock %} {% block contenido %}
+<div class="container-ventas">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="titulo-ventas">Historial de Pedidos</h1>
+    <a
+      href="{{ url_for('pedidos_ventas.crear_pedido') }}"
+      class="btn btn-primary"
+    >
+      <i class="fas fa-plus-circle"></i> Nuevo Pedido
+    </a>
+  </div>
+
+  <!-- Incluir la tabla del cliente -->
+  {% include 'pages/page-cliente/tabla_pedido.html' %}
+
+  <div class="mt-3">
+    <button class="btn btn-outline-secondary" onclick="window.print()">
+      <i class="fas fa-print"></i> Imprimir Historial
+    </button>
+  </div>
+</div>
+
+<style>
+  @media print {
+    .container-ventas {
+      padding: 0;
+    }
+    .no-print {
+      display: none !important;
+    }
+    table {
+      width: 100% !important;
+      font-size: 12px !important;
+    }
+  }
+</style>
+{% endblock %}

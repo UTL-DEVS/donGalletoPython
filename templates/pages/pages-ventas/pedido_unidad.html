@@ -1,0 +1,70 @@
+{% extends 'pages/pages-ventas/nav.html' %} {% block title %}Venta por Unidad{%
+endblock %} {% block contenido %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/page-cliente/cliente.css') }}"
+/>
+
+<div class="container-ventas">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="titulo-ventas">Venta por Unidades</h1>
+    <div>
+      <span class="badge bg-primary p-2">
+        Total: ${{ "%.2f"|format(total) }}
+      </span>
+    </div>
+  </div>
+
+  <!-- Incluir el pedido del cliente -->
+  {% include 'pages/page-cliente/pedido.html' %}
+
+  <div class="mt-4 border-top pt-3 d-flex justify-content-between">
+    <a
+      href="{{ url_for('pedidos_ventas.crear_pedido') }}"
+      class="btn btn-secondary"
+    >
+      <i class="fas fa-arrow-left"></i> Volver al Menú
+    </a>
+    <div>
+      <button class="btn btn-danger" id="vaciar-carrito">
+        <i class="fas fa-trash"></i> Vaciar Carrito
+      </button>
+      <button class="btn btn-success ms-2" id="finalizar-venta">
+        <i class="fas fa-check-circle"></i> Finalizar Venta
+      </button>
+    </div>
+  </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/page-cliente/cliente.js') }}"></script>
+<script>
+  // Mismo JS que pedido_paquete.html
+  document
+    .getElementById("vaciar-carrito")
+    .addEventListener("click", function () {
+      fetch("{{ url_for('cliente.vaciar_carrito') }}", {
+        method: "GET",
+        headers: {
+          "X-Requested-With": "XMLHttpRequest",
+        },
+      }).then((response) => window.location.reload());
+    });
+
+  document
+    .getElementById("finalizar-venta")
+    .addEventListener("click", function () {
+      fetch("{{ url_for('cliente.realizar_pedido') }}", {
+        method: "POST",
+        headers: {
+          "X-Requested-With": "XMLHttpRequest",
+          "Content-Type": "application/x-www-form-urlencoded",
+          "X-CSRFToken": "{{ csrf_token() }}",
+        },
+      }).then((response) => {
+        if (response.ok) {
+          window.location.href = "{{ url_for('pedidos_ventas.pedido_tabla') }}";
+        }
+      });
+    });
+</script>
+{% endblock %}

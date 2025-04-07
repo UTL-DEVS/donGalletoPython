@@ -1,81 +1,61 @@
-from flask import Blueprint, render_template, request, redirect, url_for, flash
-from flask_wtf import FlaskForm
-from wtforms import IntegerField, HiddenField
-from models.pedido import Pedido, DetallePedido
+from flask import Blueprint, render_template, session, redirect, url_for, flash
+from forms.form_cliente import PaqueteForm, PesoForm, PiezaForm
 from models.galleta import Galleta
+from models.pedido import Pedido
 from utils.db import db
-from datetime import datetime
+from functools import wraps
 
 pedidos_ventas_bp = Blueprint('pedidos_ventas', __name__, template_folder='templates')
 
-USUARIO_DEFAULT = 4 
+def obtener_galletas_activas():
+    return Galleta.query.filter_by(activo=True).all()
 
-class PedidoVentaForm(FlaskForm):
-    id_galleta = HiddenField()
-    cantidad = IntegerField('Cantidad', default=1)
-    tipo_pedido = HiddenField(default='unidad')
 
-@pedidos_ventas_bp.route('/ventas/pedidos')
-def inicio():
-    return redirect(url_for('pedidos_ventas.nuevo_pedido'))
-
-@pedidos_ventas_bp.route('/ventas/pedidos/nuevo', methods=['GET'])
-def nuevo_pedido():
-    form = PedidoVentaForm()
-    galletas = Galleta.query.filter_by(activo=True).order_by(Galleta.nombre_galleta).all()
-    
-    return render_template('pages/pages-ventas/crear_pedido.html',
-                        form=form,
-                        galletas=galletas)
-
-@pedidos_ventas_bp.route('/ventas/pedidos/crear', methods=['POST'])
+@pedidos_ventas_bp.route('/ventas/crear-pedido')
 def crear_pedido():
-    try:
-        id_galletas = request.form.getlist('id_galleta[]')
-        cantidades = request.form.getlist('cantidad[]')
-        
-        if not id_galletas:
-            return jsonify({'error': 'No se seleccionaron productos'}), 400
+    return render_template('pages/pages-ventas/crear_pedido.html',
+                         include_template='pages/page-cliente/menu.html')
 
-        # Crear pedido
-        nuevo_pedido = Pedido(
-            id_usuario=USUARIO_VENTAS_DIRECTAS,
-            total=0,
-            fecha_pedido=datetime.now(),
-            estatus='completado',
-            observaciones='Venta directa individual'
-        )
-        db.session.add(nuevo_pedido)
-        db.session.flush()
+@pedidos_ventas_bp.route('/ventas/pedido-paquete')
+def pedido_paquete():
+    galletas = obtener_galletas_activas()
+    forms = {galleta.id_galleta: PaqueteForm(id_galleta=galleta.id_galleta) for galleta in galletas}
+    return render_template('pages/pages-ventas/pedido_paquete.html',
+                         include_template='pages/page-cliente/paquete.html',
+                         galletas=galletas,
+                         forms=forms,
+                         carrito=session.get('carrito', []),
+                         total=sum(item['precio']*item['cantidad'] for item in session.get('carrito', [])))
 
-        # Procesar productos
-        total = 0
-        for i, id_galleta in enumerate(id_galletas):
-            galleta = Galleta.query.get(id_galleta)
-            if galleta and galleta.activo:
-                cantidad = int(cantidades[i]) if cantidades[i] else 0
-                if cantidad > 0:
-                    subtotal = float(galleta.precio_galleta) * cantidad
-                    total += subtotal
+@pedidos_ventas_bp.route('/ventas/pedido-peso')
+def pedido_peso():
+    galletas = obtener_galletas_activas()
+    forms = {galleta.id_galleta: PesoForm(id_galleta=galleta.id_galleta) for galleta in galletas}
+    return render_template('pages/pages-ventas/pedido_peso.html',
+                         include_template='pages/page-cliente/peso.html',
+                         galletas=galletas,
+                         forms=forms,
+                         carrito=session.get('carrito', []),
+                         total=sum(item['precio']*item['cantidad'] for item in session.get('carrito', [])))
 
-                    DetallePedido(
-                        id_pedido=nuevo_pedido.id_pedido,
-                        id_galleta=id_galleta,
-                        cantidad=cantidad,
-                        precio_unitario=galleta.precio_galleta,
-                        tipo_pedido='unidad'
-                    ).save()
+@pedidos_ventas_bp.route('/ventas/pedido-unidad')
+def pedido_unidad():
+    galletas = obtener_galletas_activas()
+    forms = {galleta.id_galleta: PiezaForm(id_galleta=galleta.id_galleta) for galleta in galletas}
+    return render_template('pages/pages-ventas/pedido_unidad.html',
+                         include_template='pages/page-cliente/pedido.html',
+                         galletas=galletas,
+                         forms=forms,
+                         carrito=session.get('carrito', []),
+                         total=sum(item['precio']*item['cantidad'] for item in session.get('carrito', [])))
 
-        # Actualizar total
-        nuevo_pedido.total = total
-        db.session.commit()
-
-        return jsonify({
-            'success': True,
-            'pedido_id': nuevo_pedido.id_pedido,
-            'total': total
-        })
-
-    except Exception as e:
-        db.session.rollback()
-        return jsonify({'error': str(e)}), 500
+@pedidos_ventas_bp.route('/ventas/pedido-tabla')
+def pedido_tabla():
+    id_usuario = session.get('usuario_id')
+    pedidos = (Pedido.query
+               .filter_by(id_usuario=id_usuario)
+               .order_by(Pedido.fecha_pedido.desc())
+               .all())
+    return render_template('pages/pages-ventas/pedido_tabla.html',
+                         include_template='pages/page-cliente/tabla_pedido.html',
+                         pedidos=pedidos)
