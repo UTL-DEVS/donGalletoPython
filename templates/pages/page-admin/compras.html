@@ -1,0 +1,79 @@
+{%extends 'components/_estructura_admin.html'%}
+{%block titulo%}Compras{%endblock%}
+{%block contenido%}
+{% import 'components/_macro_login.html' as macros%}
+
+<div class="container mt-1">
+    <!-- Mensaje flash -->
+    <div class="row">
+        <div class="col-12">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            {% for category, message in messages %}
+            <div class="alert alert-{{ 'danger' if category == 'error' else 'success' }} alert-dismissible fade show"
+                style="font-size: 15px;" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+
+        </div>
+    </div>
+</div>
+
+<title>Compra de insumos</title>
+
+<div class="container d-flex aling-center justify-content-center flex-column align-center mt-5" style="width: 90%;">
+    <div class="menu d-flex aling-center justify-content-center flex-column align-center">
+        <div class="sub-header d-flex justify-content-between">
+            <div class="sub-header-title">
+                <h1>Compras pendientes</h1>
+            </div>
+        </div>
+        <hr>
+        <div class="data d-flex aling-center justify-content-center flex-column">
+            <div class="table">
+                <table class="table table-light table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th>ID</th><th>Fecha</th><th>Total</th>
+                            <th>Acciones</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {%if compras%}
+                        {% for compra in compras %}
+                            <tr>
+                                <th scope="row" style="align-content: center;">{{ loop.index }}</th>
+                                <td>{{ compra.nombre }} {{ compra.primerApellido }} {{ compra.segundoApellido }}</td>
+                                <td style="align-content: center;">{{ compra.fecha_compra.strftime('%d/%m/%Y') }}</td>
+                                <td style="align-content: center;">${{ compra.total }}</td>
+                                {%if (compra.estatus==0)%}
+                                <td style="align-content: center;">
+                                    <form  action="/compraAdmin/compras/aceptar?id_compra={{compra.id_compra_insumo}})" method="post">
+                                        {{f.csrf_token}}
+                                        <button type="submit" class="btn btn-success">Aceptar</button>
+                                    </form>
+                                </td>
+                                {%endif%}
+                            </tr>
+                        {% endfor %}
+                        {%else%}
+                        <div class="sub-header-title">
+                            <h5>No hay compras para mostrar</h5>
+                        </div>
+                    </div>
+                        {%endif%}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+ 
+</div>
+{%endblock%}

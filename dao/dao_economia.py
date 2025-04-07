@@ -1,5 +1,5 @@
 from utils import db, func,extract
-from models import Nomina, Empleado, Persona, Galleta, DetalleVenta
+from models import Nomina, Empleado, Persona, Galleta, DetalleVenta, GastoOperacion
 from models.ProcesoVenta import ProcesoVenta
 from datetime import datetime, timedelta
 
@@ -130,3 +130,21 @@ def pagar_empleado(id_empleado, sueldo_calculado):
     db.session.add(nuevo_pago)
     db.session.commit()
     return nuevo_pago.id_nomina
+
+def agregar_gasto(tipo, monto, fecha, id_usuario):
+    gasto = GastoOperacion(tipo=tipo, monto=monto, fecha=fecha, id_usuario=id_usuario)
+    db.session.add(gasto)
+    db.session.commit()
+
+def obtener_gastos_por_mes(mes):  # formato 'MM/YYYY'
+    mes_numero, anio = map(int, mes.split('/'))
+    from datetime import date
+    inicio = date(anio, mes_numero, 1)
+    fin = date(anio, mes_numero, 28) + timedelta(days=4)
+    fin = fin - timedelta(days=fin.day - 1)
+
+    return db.session.query(GastoOperacion).filter(
+        GastoOperacion.fecha.between(inicio, fin)
+    ).all()
+    
+

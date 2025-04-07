@@ -34,9 +34,10 @@ class form_empleado(FlaskForm):
     sueldo = DecimalField('Sueldo (al día)', [
         DataRequired('Ingrese el sueldo del empleado!'),
     ],render_kw={'id': 'sueldo'})
-    dias_laborales = SelectField('Días de trabajo (a la semana)',[
-        DataRequired('Ingrese el número de días que el empleado trabajará a la semana!')
-    ],render_kw={'class': 'diasLaborales'}, choices=[(1, '1'), (2, '2'), (3, '3'), (4, '4'), (5, '5'), (6, '6'), (7, '7')])
+    dias_laborales = SelectField('Días de trabajo (a la quincena)',[
+        DataRequired('Ingrese el número de días que el empleado trabajará a la quincena!')
+    ],render_kw={'class': 'diasLaborales'}, choices=[(1, '1'), (2, '2'), (3, '3'), (4, '4'), (5, '5'), (6, '6'), (7, '7'),
+                                                (8, '8'), (9, '9'), (10, '10'), (11, '11'), (12, '12'), (13, '13'), (14, '14'), (15, '15')])
 
     def validate_salario(self, field):
         if field.data <= 0:  # ✅ Mejor usar una comparación numérica
@@ -49,7 +50,7 @@ class form_empleado(FlaskForm):
 
     rol_user = SelectField('Rol del usuario',[
         DataRequired('Ingrese su primer apellido!')
-    ],render_kw={'class': 'rolUsuario'}, choices=[(0, 'Administrador'), (2, 'Cocinero'), (3, 'Vendedor')])
+    ],render_kw={'class': 'rolUsuario'}, choices=[(0, 'Administrador'), (3, 'Cocinero'), (4, 'Vendedor')])
     
     correo = EmailField('Correo', [
         DataRequired('Ingrese su correo!')

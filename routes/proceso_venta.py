@@ -26,7 +26,7 @@ def antes_de_peticion():
 @venta_bp.route('/ventas_dia')
 @login_required
 def ventas_dia():
-    if current_user.rol_user != 4:
+    if current_user.rol_user not in [0, 4]:  
         abort(404)
     ventas = ProcesoVentaDAO.obtener_ventas()
     return render_template('pages/pages-ventas/ventas_dia.html', ventas_dia=ventas)
@@ -35,14 +35,14 @@ def ventas_dia():
 @login_required
 def tipo_venta():
     print(current_user.rol_user)
-    if current_user.rol_user != 4:
+    if current_user.rol_user not in [0, 4]:  
         abort(404)
     return render_template('pages/pages-ventas/tipo_venta.html')
 
 @venta_bp.route('/ventas/<tipo>')
 @login_required
 def ventas(tipo):
-    if current_user.rol_user != 4:
+    if current_user.rol_user not in [0, 4]:  
         abort(404)
     galletas = ProcesoVentaDAO.obtener_galletas_activas()
     carrito = session.get('carrito', [])
@@ -57,7 +57,7 @@ def ventas(tipo):
 @venta_bp.route('/agregar_al_carrito', methods=['POST'])
 @login_required
 def agregar_al_carrito():
-    if current_user.rol_user != 4:
+    if current_user.rol_user not in [0, 4]:  
         abort(404)
     form = CarritoForm()
     if form.validate_on_submit():
@@ -151,7 +151,7 @@ def agregar_al_carrito():
 @venta_bp.route('/procesar_venta', methods=['POST'])
 @login_required
 def procesar_venta():
-    if current_user.rol_user != 4:
+    if current_user.rol_user not in [0, 4]:  
         abort(404)
     
     if 'carrito' not in session or not session['carrito']:
@@ -193,7 +193,7 @@ def procesar_venta():
 @venta_bp.route('/tickets/<int:venta_id>')
 @login_required
 def descargar_ticket(venta_id):
-    if current_user.rol_user != 4:
+    if current_user.rol_user not in [0, 4]:  
         abort(404)
     venta = ProcesoVentaDAO.obtener_venta_por_id(venta_id)
     if not venta:
@@ -214,7 +214,7 @@ def descargar_ticket(venta_id):
 @venta_bp.route('/listar_ventas')
 @login_required
 def listar_ventas():
-    if current_user.rol_user != 0:
+    if current_user.rol_user not in [0, 4]:  
         abort(404)
         
     ventas = ProcesoVentaDAO.obtener_ventas()

@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Fecha: 2025-04-03 19:12:48.461051 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
 Fecha: 2025-04-03 19:12:48.469051 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
 Fecha: 2025-04-03 19:12:48.469347 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
@@ -349,3 +350,60 @@ Fecha: 2025-04-05 09:30:21.542596 - Usuario: Pruebas123* - Accion: Error 404: PÃ
 Fecha: 2025-04-05 09:33:26.851601 - Usuario: joel1234567 - Accion: Error 404: PÃ¡gina no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
 Fecha: 2025-04-05 09:33:26.852681 - Usuario: joel1234567 - Accion: Error 404: PÃ¡gina no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
 Fecha: 2025-04-05 09:33:26.859336 - Usuario: joel1234567 - Accion: Error 404: PÃ¡gina no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+=======
+Fecha: 2025-04-06 18:46:15.088326 - Usuario: andrea - Accion: Column expression, FROM clause, or other columns clause element expected, got <module 'models.gastoOperacion' from 'C:\\Users\\charl\\Downloads\\UNI_Local\\PRUEBA GALLETP\\donGalletoPython\\models\\gastoOperacion.py'>.
+Fecha: 2025-04-06 18:57:58.192678 - Usuario: andrea - Accion: Column expression, FROM clause, or other columns clause element expected, got <module 'models.gastoOperacion' from 'C:\\Users\\charl\\Downloads\\UNI_Local\\PRUEBA GALLETP\\donGalletoPython\\models\\gastoOperacion.py'>.
+Fecha: 2025-04-06 18:59:21.529780 - Usuario: andrea - Accion: Column expression, FROM clause, or other columns clause element expected, got <module 'models.gastoOperacion' from 'C:\\Users\\charl\\Downloads\\UNI_Local\\PRUEBA GALLETP\\donGalletoPython\\models\\gastoOperacion.py'>.
+Fecha: 2025-04-06 18:59:39.079281 - Usuario: andrea - Accion: Column expression, FROM clause, or other columns clause element expected, got <module 'models.gastoOperacion' from 'C:\\Users\\charl\\Downloads\\UNI_Local\\PRUEBA GALLETP\\donGalletoPython\\models\\gastoOperacion.py'>.
+Fecha: 2025-04-07 01:25:37.365594 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-07 01:27:49.640491 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-07 01:27:49.646723 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-07 01:27:49.647691 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-07 01:28:17.723565 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-07 01:43:42.736875 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-07 01:43:42.744124 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-07 01:43:42.744575 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-07 01:49:01.725846 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
+Fecha: 2025-04-07 01:49:01.732565 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
+Fecha: 2025-04-07 01:49:01.733590 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
+Fecha: 2025-04-07 02:09:41.818060 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-07 02:09:49.842067 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-07 02:09:52.990686 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-07 02:14:43.085485 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-07 02:14:54.218866 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/ventas_dia | IP: 127.0.0.1
+Fecha: 2025-04-07 02:14:58.833303 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/ventas/peso | IP: 127.0.0.1
+Fecha: 2025-04-07 02:19:25.355513 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-07 02:19:31.488470 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-07 02:19:33.487277 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-07 02:19:34.588483 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/pieza | IP: 127.0.0.1
+Fecha: 2025-04-07 02:22:59.769125 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-07 02:23:01.637253 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/ventas_dia | IP: 127.0.0.1
+Fecha: 2025-04-07 02:24:02.698096 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-07 02:33:16.205576 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-07 02:35:03.397454 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-07 02:36:18.209422 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-07 02:36:23.707781 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-07 02:37:36.139306 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-07 02:37:51.045292 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-07 02:38:14.192933 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-07 02:39:28.412891 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-07 02:39:59.305968 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-07 02:40:40.392223 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-07 02:40:57.515701 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-07 02:40:59.005664 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-07 02:41:00.117131 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-07 02:41:01.021864 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-07 02:41:57.130799 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-07 02:41:59.328498 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-07 02:42:02.587559 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-07 02:42:03.892019 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-07 02:42:04.842402 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-07 02:42:05.822719 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-07 02:42:07.316564 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-07 02:42:13.525127 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-07 02:42:38.306909 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-07 02:42:44.223927 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-07 02:42:50.433932 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-07 02:42:52.403520 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-07 02:42:54.017102 - Usuario: chris123 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+>>>>>>> ff71f9bc67854ddae5a73c38a0b40f7303fa52c3

@@ -2,7 +2,7 @@ document.getElementById("mesGraficaVentasDiarias").addEventListener("input", fun
   let mesSeleccionado = new Date(Date.parse(this.value)); // Formato: YYYY-MM
   let primerMesVenta = "01/2025";
   let ultimoMesVenta = "04/2025";
-  if (rangosFechasVentas != null) {
+  if (rangosFechasVentas != undefined) {
     let [primerMes, primerAnio] = rangosFechasVentas.primera_venta.split('/');
     let [ultimoMes, ultimoAnio] = rangosFechasVentas.ultima_venta.split('/');
 
@@ -27,7 +27,7 @@ function cambiarFechaGrafica() {
 }
 
 function cargarGrafica(fechasVentas, totalesVentas) {
-
+  console.log('Ventas¿ 1: '+totalesVentas[0]);
 
   var options = {
     series: [{
@@ -70,7 +70,7 @@ function cargarGrafica(fechasVentas, totalesVentas) {
 }
 
 function obtenerDatosParaGrafica() {
-  if(listasVentasDiarias.lenght <=0){
+  if(typeof listasVentasDiarias == "undefined" ){
     $('#ventasDiarias').text('No hay ventas para mostrar');
     return;
   }

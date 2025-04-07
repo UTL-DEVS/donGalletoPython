@@ -1,77 +1,104 @@
-{% extends 'components/estructura_usuario.html' %}
-{% block titulo %}Inicio Cliente{% endblock %}
-{% block contenido %}
-{% import 'components/_macro_login.html' as macros %}
+{% if current_user.rol_user == 4 %} {% extends 'pages/pages-ventas/nav.html' %}
+{% else %} {% extends 'components/estructura_usuario.html' %} {% endif %}
+{%block titulo %}Inicio Cliente{% endblock %} {% block contenido %} {% import
+'components/_macro_login.html' as macros %}
 
-<link rel="stylesheet" href="{{ url_for('static', filename='css/page-cliente/cliente.css') }}">
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/page-cliente/cliente.css') }}"
+/>
 
- <div id="overlay"></div>
+<div id="overlay"></div>
 <button id="btn-carrito">🛒{{ carrito|length if carrito else 0 }}</button>
-<!-- <div id="carrito" class="rounded">
-    <h4>🛒 Tu Carrito</h4>
-    {% if carrito %}
-    <ul class="list-group">
-        {% for item in carrito %}
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-            {{ item.nombre }} (x{{ item.cantidad }}) - ${{ "%.2f"|format(item.precio * item.cantidad) }}
-            <a href="{{ url_for('cliente.eliminar_del_carrito', index=loop.index0) }}" class="btn btn-danger btn-sm">❌</a>
-        </li>
-        {% endfor %}
-    </ul>
-    <p class="text-end mt-3"><strong>Total: ${{ "%.2f"|format(total) }}</strong></p>
-    <form action="{{ url_for('cliente.realizar_pedido') }}" method="POST">
-        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
-        <button type="submit" class="btn btn-success w-100 mt-2">Realizar Compra</button>
-    </form>
-    <a href="{{ url_for('cliente.vaciar_carrito') }}" class="btn btn-warning w-100 mt-3">Vaciar Carrito</a>
-    {% else %}
-    <p class="text-muted">Tu carrito está vacío</p>
-    {% endif %}
-</div> --> -->
+<div id="carrito" class="rounded">
+  <h4>🛒 Tu Carrito</h4>
+  {% if carrito %}
+  <ul class="list-group">
+    {% for item in carrito %}
+    <li
+      class="list-group-item d-flex justify-content-between align-items-center"
+    >
+      {{ item.nombre }} (x{{ item.cantidad }}) - ${{ "%.2f"|format(item.precio *
+      item.cantidad) }}
+      <a
+        href="{{ url_for('cliente.eliminar_del_carrito', index=loop.index0) }}"
+        class="btn btn-danger btn-sm"
+        >❌</a
+      >
+    </li>
+    {% endfor %}
+  </ul>
+  <p class="text-end mt-3">
+    <strong>Total: ${{ "%.2f"|format(total) }}</strong>
+  </p>
+  <form action="{{ url_for('cliente.realizar_pedido') }}" method="POST">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+    <button type="submit" class="btn btn-success w-100 mt-2">
+      Realizar Compra
+    </button>
+  </form>
+  <a
+    href="{{ url_for('cliente.vaciar_carrito') }}"
+    class="btn btn-warning w-100 mt-3"
+    >Vaciar Carrito</a
+  >
+  {% else %}
+  <p class="text-muted">Tu carrito está vacío</p>
+  {% endif %}
+</div>
 
-<div class="container-cliente mt-5" style="height: 100vh !important;">
-    <h1 class="text-center header-cliente">Pedidos</h1>
-    
-    <div class="row mt-5">
-        <div class="col-md-4">
-            <a href="/piezas" style="text-decoration: none;"> 
-            <div class="card-cliente">
-                <div class="img-container-cliente">
-               
-                </div>
-                <div class="body-card-cliente">
-                    <h5 class="title-card-cliente mt-4">Galletas</h5>
-                </div>
-            </div>
-        </a>
+<div class="container-cliente mt-5" style="height: 100vh !important">
+  <h1 class="text-center header-cliente">Pedidos</h1>
+
+  <div class="row mt-5">
+    <div class="col-md-4">
+      <a href="/piezas" style="text-decoration: none">
+        <div class="card-cliente">
+          <div class="img-container-cliente">
+            <img
+              src="{{ url_for('static', filename='img/galleta_menu.png') }}"
+              alt="Paquete"
+            />
+          </div>
+          <div class="body-card-cliente">
+            <h5 class="title-card-cliente mt-4">Galletas</h5>
+          </div>
         </div>
-        
-        <div class="col-md-4">
-            <a href="/paquete" style="text-decoration: none;"> 
-            <div class="card-cliente">
-                <div class="img-container-cliente">
-                    <img src="{{ url_for('static', filename='img/paquete_menu.png') }}" alt="Paquete">
-                </div>
-                <div class="body-card-cliente">
-                    <h5 class="title-card-cliente mt-4">Paquete</h5>
-                </div>
-            </div>
-        </a>
-        </div>
-        
-        <div class="col-md-4">
-            <a href="/peso" style="text-decoration: none;"> 
-            <div class="card-cliente">
-                <div class="img-container-cliente">
-                    <img src="{{ url_for('static', filename='img/buscula_menu.png') }}" alt="Peso">
-                </div>
-                <div class="body-card-cliente">
-                    <h5 class="title-card-cliente mt-4">Peso</h5>
-                </div>
-            </div>
-        </a>
-        </div>
+      </a>
     </div>
+
+    <div class="col-md-4">
+      <a href="/paquete" style="text-decoration: none">
+        <div class="card-cliente">
+          <div class="img-container-cliente">
+            <img
+              src="{{ url_for('static', filename='img/paquete_menu.png') }}"
+              alt="Paquete"
+            />
+          </div>
+          <div class="body-card-cliente">
+            <h5 class="title-card-cliente mt-4">Paquete</h5>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-md-4">
+      <a href="/peso" style="text-decoration: none">
+        <div class="card-cliente">
+          <div class="img-container-cliente">
+            <img
+              src="{{ url_for('static', filename='img/buscula_menu.png') }}"
+              alt="Peso"
+            />
+          </div>
+          <div class="body-card-cliente">
+            <h5 class="title-card-cliente mt-4">Peso</h5>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
 </div>
 
 <script src="{{ url_for('static', filename='js/page-cliente/cliente.js') }}"></script>

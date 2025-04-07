@@ -46,6 +46,8 @@ def crear_app():
     app.register_blueprint(insumos_bp)
     app.register_blueprint(cocina_insumos_bp)
     app.register_blueprint(venta_bp)
+    app.register_blueprint(compra_insumo_admin_bp)
+    
     app.register_blueprint(pedidos_ventas_bp)
 
     return app, csrf
