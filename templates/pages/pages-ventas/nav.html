@@ -52,6 +52,15 @@
                 <ul class="btn-toggle-nav list-unstyled fw-normal pb-1">
                   <li>
                     <a
+                      href="/tipo_venta"
+                      class="d-inline-flex text-decoration-none rounded"
+                    >
+                      <i class="fa-solid fa-ellipsis-vertical me-3"></i>
+                      Inicio
+                    </a>
+                  </li>
+                  <li>
+                    <a
                       href="{{ url_for('venta.ventas', tipo='peso') }}"
                       class="d-inline-flex text-decoration-none rounded"
                     >
@@ -83,12 +92,64 @@
                       día
                     </a>
                   </li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="sidebar-divider"></li>
+
+            <li class="mb-1">
+              <button
+                class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                data-bs-toggle="collapse"
+                data-bs-target="#pedidos-collapse"
+                aria-expanded="false"
+              >
+                <i class="fa-solid fa-boxes-packing me-3"></i> Pedidos
+              </button>
+              <div class="collapse" id="pedidos-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1">
                   <li>
                     <a
-                      href="{{ url_for('pedidos_ventas.crear_pedido') }}"
+                      href="/cliente/menu"
                       class="d-inline-flex text-decoration-none rounded"
                     >
-                      <i class="fas fa-clipboard-list me-2"></i>Pedidos
+                      <i class="fa-solid fa-cookie-bite me-2"></i> Menú
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      href="/paquete"
+                      class="d-inline-flex text-decoration-none rounded"
+                    >
+                      <i class="fa-solid fa-box me-2"></i> Paquete
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/piezas"
+                      class="d-inline-flex text-decoration-none rounded"
+                    >
+                      <i class="fa-solid fa-cookie me-2"></i> Pieza
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      href="/peso"
+                      class="d-inline-flex text-decoration-none rounded"
+                    >
+                      <i class="fa-solid fa-weight-scale me-2"></i> Peso
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      href="/mis-pedidos"
+                      class="d-inline-flex text-decoration-none rounded"
+                    >
+                      <i class="fa-solid fa-circle-info me-2"></i> Pedido
                     </a>
                   </li>
                 </ul>
