@@ -2,6 +2,7 @@ from utils import Blueprint, render_template, redirect, request, login_required,
 from datetime import datetime
 from controller import controller_economia
 import json
+from forms.form_gastoOperacion import GastoForm
 from funcs import crear_log_user, crear_log_error
 
 economia_bp = Blueprint('economia', __name__, url_prefix='/economia', template_folder='templates')
@@ -92,5 +93,70 @@ def pagar_empleado():
     return redirect(url_for('economia.mostrar_pagos_pendientes'))
 
     
+@economia_bp.route("/gastos", methods=['GET', 'POST'])
+@login_required
+def registrar_gastos():
+    if current_user.rol_user != 0:
+        abort(404)
 
+    form = GastoForm()  # Aquí va arriba
+
+    try:
+        crear_log_user(current_user.usuario, request.url)
+
+        if form.validate_on_submit():
+            controller_economia.agregar_gasto(
+                form.tipo.data,
+                float(form.monto.data),
+                form.fecha.data,
+                current_user.id  # ✅ Ya corregido
+            )
+            flash("✅ Gasto registrado correctamente", "success")
+            return redirect(url_for('economia.registrar_gastos'))
+        return render_template("pages/page-economia/gastos.html", form=form)
+    except Exception as e:
+        crear_log_error(current_user.usuario, str(e))
+        flash("❌ Ha ocurrido un error inesperado", "danger")
+
+    return render_template("pages/page-economia/gastos.html", form=form)
+
+
+
+# DASHBOARD DE GASTOS OPERATIVOS
+
+@economia_bp.route("/gastos_dashboard", methods=['GET'])
+@login_required
+def dashboard_gastos():
+    if current_user.rol_user != 0:
+        abort(404)
+    try:
+        crear_log_user(current_user.usuario, request.url)
+
+        mes = request.args.get('mes')
+        if not mes:
+            from datetime import datetime
+            hoy = datetime.today()
+            mes = f"{hoy.month:02d}/{hoy.year}"
+
+        gastos = controller_economia.obtener_gastos_por_mes(mes)
+
+        # Convertimos los objetos GastoOperacion a diccionarios
+        gastos_dict = [
+            {
+                "tipo": gasto.tipo,
+                "monto": gasto.monto,
+                "fecha": gasto.fecha.strftime('%Y-%m-%d')
+            } for gasto in gastos
+        ]
+
+        return render_template(
+            "pages/page-economia/dashboard_gastos.html",
+            lista_gastos=gastos_dict,
+            mes_seleccionado=f"{mes.split('/')[1]}-{mes.split('/')[0]}"  # formato YYYY-MM
+        )
+
+    except Exception as e:
+        crear_log_error(current_user.usuario, str(e))
+        flash("Error al cargar el dashboard de gastos", "danger")
+        return redirect(url_for('economia.dashboard'))
     

@@ -1,5 +1,5 @@
 from utils import db
-from models import Usuario
+from models import Usuario, Empleado
 from utils import session
 import os
 from datetime import datetime
@@ -50,6 +50,8 @@ def dao_login(usuario, contrasenia, captcha_data):
             
 def verify_user(usuario, contrasenia):
         usuario_local = db.session.query(Usuario).filter(Usuario.usuario == usuario, Usuario.contrasenia == contrasenia).first()
+        if(verify_employee(usuario,contrasenia)): # Verifica si el usuario es un empleado y si ha sido desactivado
+            return False
         if usuario_local:
                 login_user(usuario_local)
                 nombre_usuario = usuario_local.usuario
@@ -65,3 +67,13 @@ def verify_user(usuario, contrasenia):
         
         else:
             return False
+
+def verify_employee(usuario, contrasenia):
+    usuario_local = db.session.query(Usuario).filter(Usuario.usuario == usuario, Usuario.contrasenia == contrasenia).first()
+    if not usuario_local:
+        return False
+    empleado_local = db.session.query(Empleado).filter(Empleado.id_usuario == usuario_local.id).first()
+    if (empleado_local):
+        return empleado_local.persona.estatus == 0 # True significa que el empleado ha sido desactivado
+    else: 
+        return False

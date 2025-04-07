@@ -1,0 +1,58 @@
+
+{%extends 'components/_estructura_admin.html'%}
+{% block titulo %}Registrar Gasto{% endblock %}
+{% block contenido %}
+
+<div class="d-flex align-items-center">
+    <a href="/economia/gastos_dashboard"><button class="btn btn-warning">Regresar
+        <i class="bi bi-arrow-return-left"></i></button></a>
+</div>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white text-center">
+                    <h3>Registrar nuevo gasto</h3>
+                </div>
+                <div class="card-body">
+
+                    {% with mensajes = get_flashed_messages(with_categories=true) %}
+                    {% if mensajes %}
+                        {% for categoria, mensaje in mensajes %}
+                            <div class="alert alert-{{ categoria }} alert-dismissible fade show" role="alert">
+                                {{ mensaje }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                    {% endwith %}
+
+                    <form method="POST">
+                        {{ form.hidden_tag() }}
+
+                        <div class="mb-3">
+                            {{ form.tipo.label(class="form-label") }}
+                            {{ form.tipo(class="form-select") }}
+                        </div>
+
+                        <div class="mb-3">
+                            {{ form.monto.label(class="form-label") }}
+                            {{ form.monto(class="form-control") }}
+                        </div>
+
+                        <div class="mb-3">
+                            {{ form.fecha.label(class="form-label") }}
+                            {{ form.fecha(class="form-control") }}
+                        </div>
+
+                        <div class="d-grid">
+                            {{ form.submit(class="btn btn-success") }}
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

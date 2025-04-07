@@ -35,3 +35,10 @@ def obtener_empleado(id_empleado):
 
 def pagar_empleado(id_empleado, sueldo_calculado):
      return dao_economia.pagar_empleado(id_empleado, sueldo_calculado)
+
+
+def agregar_gasto(tipo, monto, fecha, id_usuario):
+    return dao_economia.agregar_gasto(tipo, monto, fecha, id_usuario)
+
+def obtener_gastos_por_mes(mes):
+    return dao_economia.obtener_gastos_por_mes(mes)
