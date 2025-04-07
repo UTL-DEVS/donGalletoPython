@@ -45,8 +45,16 @@
         <div class="col-md-6 col-lg-4">
             <div class="card">
                 <div class="card-img-container">
-                    <img src="{{ url_for('static', filename='img/galleta_menu.png') }}" class="card-img-top" alt="{{ galleta.nombre_galleta }}">
-                </div>
+                    {% if galleta.imagen_galleta %}
+                    <img
+                      src="data:image/png;base64,{{ galleta.imagen_galleta }}"
+                      class="card-img-top"
+                      alt="{{ galleta.nombre_galleta }}"
+                    />
+                    {% else %}
+                    <div class="bg-secondary text-white p-5 text-center">No hay imagen</div>
+                    {% endif %}
+                  </div>
                 <div class="card-body">
                     <h5 class="card-title">{{ galleta.nombre_galleta }}</h5>
                     <p class="card-text">Precio por 100g: ${{ galleta.precio_100g }}</p>

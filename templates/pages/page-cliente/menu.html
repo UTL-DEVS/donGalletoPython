@@ -7,7 +7,7 @@
 
  <div id="overlay"></div>
 <button id="btn-carrito">🛒{{ carrito|length if carrito else 0 }}</button>
-<!-- <div id="carrito" class="rounded">
+ <div id="carrito" class="rounded">
     <h4>🛒 Tu Carrito</h4>
     {% if carrito %}
     <ul class="list-group">
@@ -27,7 +27,7 @@
     {% else %}
     <p class="text-muted">Tu carrito está vacío</p>
     {% endif %}
-</div> --> -->
+</div> 
 
 <div class="container-cliente mt-5" style="height: 100vh !important;">
     <h1 class="text-center header-cliente">Pedidos</h1>
@@ -37,7 +37,7 @@
             <a href="/piezas" style="text-decoration: none;"> 
             <div class="card-cliente">
                 <div class="img-container-cliente">
-               
+                    <img src="{{ url_for('static', filename='img/galleta_menu.png') }}" alt="Paquete">
                 </div>
                 <div class="body-card-cliente">
                     <h5 class="title-card-cliente mt-4">Galletas</h5>

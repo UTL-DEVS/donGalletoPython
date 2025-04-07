@@ -49,3 +49,16 @@ Fecha: 2025-04-06 19:13:58.209977 - Usuario: andrea - Accion: http://127.0.0.1:8
 Fecha: 2025-04-06 19:16:31.900584 - Usuario: andrea - Accion: http://127.0.0.1:8080/economia/gastos_dashboard
 Fecha: 2025-04-06 19:16:38.453774 - Usuario: andrea - Accion: http://127.0.0.1:8080/economia/gastos
 Fecha: 2025-04-06 19:16:40.849388 - Usuario: andrea - Accion: http://127.0.0.1:8080/economia/gastos_dashboard
+Fecha: 2025-04-07 01:38:03.038455 - Usuario: joel123456 - Accion: http://127.0.0.1:8080/receta
+Fecha: 2025-04-07 01:38:06.520449 - Usuario: joel123456 - Accion: http://127.0.0.1:8080/galleta_home
+Fecha: 2025-04-07 01:38:13.783392 - Usuario: joel123456 - Accion: http://127.0.0.1:8080/galleta/agregar
+Fecha: 2025-04-07 01:38:38.834998 - Usuario: joel123456 - Accion: http://127.0.0.1:8080/galleta/agregar
+Fecha: 2025-04-07 01:41:55.267165 - Usuario: joel123456 - Accion: http://127.0.0.1:8080/galleta/agregar
+Fecha: 2025-04-07 01:41:55.352545 - Usuario: joel123456 - Accion: http://127.0.0.1:8080/galleta_home
+Fecha: 2025-04-07 01:49:05.982832 - Usuario: chris123 - Accion: http://127.0.0.1:8080/perfil-cliente
+Fecha: 2025-04-07 01:50:29.305618 - Usuario: chris123 - Accion: http://127.0.0.1:8080/perfil-cliente
+Fecha: 2025-04-07 01:50:31.255018 - Usuario: chris123 - Accion: http://127.0.0.1:8080/perfil-cliente
+Fecha: 2025-04-07 01:50:31.547586 - Usuario: chris123 - Accion: http://127.0.0.1:8080/perfil-cliente
+Fecha: 2025-04-07 01:55:44.594805 - Usuario: chris123 - Accion: http://127.0.0.1:8080/perfil-cliente
+Fecha: 2025-04-07 01:57:29.144586 - Usuario: chris123 - Accion: http://127.0.0.1:8080/perfil-cliente
+Fecha: 2025-04-07 02:36:23.625499 - Usuario: chris123 - Accion: http://127.0.0.1:8080/perfil-cliente

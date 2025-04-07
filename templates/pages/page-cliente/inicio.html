@@ -1,5 +1,7 @@
 {% extends 'components/estructura_usuario.html' %}
+
 {% block titulo %}Inicio - Galletas Premium{% endblock %}
+
 {% block contenido %}
 {% with messages = get_flashed_messages(with_categories=true) %}
   {% if messages %}
@@ -14,10 +16,12 @@
 
 <style>
     .custom-container {
-        width: 90% !important;
-        margin:  auto;
-        height: 100vh !important;
+        width: 90%;
+        margin: auto;
+        padding-top: 20px;
+        padding-bottom: 50px;
     }
+
     .fondo {
         background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('{{ url_for("static", filename="img/casa-cliente.jpg") }}');
         background-size: cover;
@@ -27,40 +31,25 @@
         margin-bottom: 50px;
         border-radius: 10px;
     }
-    .feature-card {
-        transition: transform 0.3s;
-        height: 100%;
-        border: none;
+
+    .feature-card, .product-card, .testimonial-card {
+        transition: transform 0.3s, box-shadow 0.3s;
         border-radius: 15px;
         overflow: hidden;
         box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
-    .feature-card:hover {
+
+    .feature-card:hover, .product-card:hover {
         transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
     }
+
     .feature-icon {
         font-size: 2.5rem;
         margin-bottom: 1rem;
         color: #ffc107;
     }
-    .testimonial-card {
-        background: #f8f9fa;
-        border-radius: 15px;
-        padding: 20px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    }
-    
-    .product-card {
-        border: none;
-        border-radius: 15px;
-        overflow: hidden;
-        transition: all 0.3s;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-    .product-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-    }
+
     .product-badge {
         position: absolute;
         top: 10px;
@@ -72,9 +61,56 @@
         font-weight: bold;
     }
 
+    .product-card {
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .product-card img {
+        transition: transform 0.3s ease;
+    }
+
+    .product-card:hover img {
+        transform: scale(1.05);
+    }
+
+    .card-body {
+        padding: 1.5rem;
+        text-align: center;
+    }
+
+    .card-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #333;
+    }
+
+    .card-text {
+        font-size: 1rem;
+        color: #777;
+        margin-bottom: 1.5rem;
+    }
+
+    .btn-warning {
+        padding: 0.75rem 1.5rem;
+        border-radius: 30px;
+        font-weight: bold;
+    }
+
+    .btn-outline-light {
+        padding: 0.75rem 1.5rem;
+        border-radius: 30px;
+        font-weight: bold;
+        border-color: white;
+    }
+
+    .btn-outline-light:hover, .btn-warning:hover {
+        background-color: #f44336;
+        color: white;
+    }
 </style>
 
 <div class="custom-container mt-5">
+    <!-- Hero Section -->
     <section class="fondo text-center mb-5">
         <div class="container">
             <h1 class="display-4 fw-bold mb-4">La Casa de la Galleta</h1>
@@ -86,23 +122,31 @@
         </div>
     </section>
 
+    <!-- Productos Destacados -->
     <section id="productos" class="mb-5 py-5">
         <div class="text-center mb-5">
             <h2 class="fw-bold mb-3">Nuestras Galletas Destacadas</h2>
             <p class="lead text-muted">Los favoritos de nuestros clientes</p>
         </div>
         <div class="row g-4">
-            {% for i in range(3) %}
-            <div class="col-md-4">
-                <div class="product-card card h-100">
-                    <span class="product-badge">Más vendido</span>
-                    <img src="{{ url_for('static', filename='img/galleta-' ~ (i+1) ~ '.jpg') }}" class="card-img-top" alt="Galleta premium">
+            {% for galleta in galletas[:4] %}
+            <div class="col-md-6 col-lg-3">
+                <div class="product-card">
+                    <div class="card-img-container position-relative">
+                        {% if galleta.imagen_galleta %}
+                        <img src="data:image/png;base64,{{ galleta.imagen_galleta }}"
+                             class="card-img-top rounded-3 shadow-lg" alt="{{ galleta.nombre_galleta }}"
+                             style="object-fit: cover; height: 300px;" loading="lazy"/>
+                        {% else %}
+                        <div class="bg-secondary text-white p-5 text-center rounded-3">No hay imagen</div>
+                        {% endif %}
+                    </div>
                     <div class="card-body">
-                        <h5 class="card-title">Galleta Premium {{ i+1 }}</h5>
-                        <p class="card-text">Deliciosa galleta con trozos de chocolate belga y nueces tostadas.</p>
+                        <h3 class="card-title">{{ galleta.nombre_galleta }}</h3>
+                        <p class="card-text">{{ galleta.descripcion_galleta or 'Deliciosa galleta artesanal' }}</p>
                         <div class="d-flex justify-content-between align-items-center">
-                            <span class="fw-bold text-warning">${{ "%.2f"|format(25.50 + i*5) }}</span>
-                            <a href="#" class="btn btn-sm btn-outline-warning">Añadir al carrito</a>
+                            <span class="h5 text-danger">${{ "%.2f"|format(galleta.precio_galleta) }}/unidad</span>
+                            <a href="/" class="btn btn-sm btn-outline-danger">Ver detalles</a>
                         </div>
                     </div>
                 </div>
@@ -113,6 +157,7 @@
             <a href="/cliente/menu" class="btn btn-warning">Ver Menú Completo</a>
         </div>
     </section>
+</div>
 
 <!-- Script for animations -->
 <script>
@@ -126,7 +171,7 @@
             });
         }, {threshold: 0.1});
 
-        document.querySelectorAll('.feature-card, .product-card, .testimonial-card').forEach(card => {
+        document.querySelectorAll('.product-card').forEach(card => {
             observer.observe(card);
         });
     });
