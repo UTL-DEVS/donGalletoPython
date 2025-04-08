@@ -23,9 +23,10 @@
 </div>
 <h2 class=" m-3 text-center">Ventas Diarias</h2>
 
-<div class="my-3 d-flex justify-content-center">
-    <label for="mes mx-2">Selecciona un mes:</label>
-    <input type="month" id="mesGraficaVentasDiarias" name="mes">
+
+<div class="sub-header-buttons d-flex align-items-center" style="width: 33%;">
+        <p class="w-100 m-0 fw-bold">Seleccione una fecha: </p>
+        <input id="mesGraficaVentasDiarias" type="month" name="mes" class="form-control" aria-describedby="basic-addon2" onchange="consultarVentas()" value="{{ mes_sel if mes_sel else '' }}">
 </div>
 
     <div id="ventasDiarias"></div>
@@ -50,14 +51,14 @@
         </div>
     </div>
 
- <!-- Barra de navegación inferior -->
+ <!-- Barra de navegación inferior 
     <nav class="navbar navbar-dark bg-dark fixed-bottom">
         <div class="container-fluid d-flex justify-content-around">
             <a class="nav-link text-light" href="#"><i class="bi bi-house-door"></i> Estadísticas</a>
             <a class="nav-link text-light" href="#"><i class="bi bi-search"></i> Ventas Diarias</a>
             <a class="nav-link text-light" href="#"><i class="bi bi-person"></i> Gastos</a>
         </div>
-    </nav>
+    </nav>-->
     
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

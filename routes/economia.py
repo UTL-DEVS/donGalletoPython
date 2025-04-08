@@ -46,14 +46,17 @@ def dashboard():
 @economia_bp.route('/nomina', methods=['GET'])
 @login_required
 def mostrar_nomina():
-    anio = (datetime.now()).year
-    mes = (datetime.now()).month 
+    anio = None
+    mes = None
     quincena=2
     if (datetime.now().day <= 15):
         quincena=1
-    if request.method == 'GET':
-        mes = request.args.get('mes', type=int)
-        anio = request.args.get('anio', type=int)
+    if request.args.get('fechaSel') != None:
+        fecha_sel = request.args.get('fechaSel')
+        print(f'fecha sel: {fecha_sel}')
+        anio,mes = map(str, str(fecha_sel).split('-'))
+        #mes = request.args.get('mes', type=int)
+        #anio = request.args.get('anio', type=int)
         quincena = request.args.get('quincena', type=int, default=None)
      
     pagos, total_pagos = controller_economia.obtener_pagos(mes, anio, quincena)

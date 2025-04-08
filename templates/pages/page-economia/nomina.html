@@ -19,30 +19,10 @@
     </div>
 </div>
 
-<form class="m-5" method="GET" action="/economia/nomina">
-    <label for="mes">Mes:</label>
-    <select name="mes">
-        {% for num, nombre in [(1, 'Enero'), (2, 'Febrero'), (3, 'Marzo'), (4, 'Abril'), (5, 'Mayo'), (6, 'Junio') , (7, 'Abril'), (8, 'Agosto'), (9, 'Septiembre'), (10, 'Octubre'), (11, 'Noviembre'), (12, 'Dicembre')]%}
-            <option value="{{ num }}">{{ nombre }}</option>
-        {% endfor %}
-    </select>
-
-    <label for="anio">Año:</label>
-    <input type="number" name="anio" min="2023" max="2025" required>
-
-    <label for="quincena">Quincena:</label>
-    <select name="quincena">
-        <option value="">Mes completo</option>
-        <option value="1">Primera quincena (1-15)</option>
-        <option value="2">Segunda quincena (16-fin de mes)</option>
-    </select>
-
-    <button type="submit">Buscar</button>
-</form>
 
 
 
-<div class="container d-flex aling-center justify-content-center flex-column align-center w-90 mt-5">
+<div class="container d-flex aling-center justify-content-center flex-column align-center w-90 mt-2">
     <div class="menu d-flex aling-center justify-content-center flex-column align-center">
         <div class="sub-header d-flex justify-content-between">
             <div class="sub-header-title">
@@ -56,6 +36,23 @@
                 
             </div>
         </div>
+
+        
+<div class="sub-header-buttons d-flex align-items-center" style="width: 33%;">
+    <div>
+        <p class="w-100 m-0 fw-bold">Seleccione una fecha: </p>
+        <input id="inpFecha" type="month" name="fechaSel" class="form-control" aria-describedby="basic-addon2" onchange="consultarNomina()" value="{{ fecha if fecha else '' }}">
+    </div>
+    <div class=" mx-2">
+        <p class="w-100 m-0 fw-bold">Periodo: </p>
+        <select id="quin" class="form-select " name="quincena" >
+            <option value="">Mes completo</option>
+            <option value="1">Primera quincena (1-15)</option>
+            <option value="2">Segunda quincena (16-fin de mes)</option>
+        </select>
+    </div>
+</div>
+
         <hr>
 
         
@@ -100,15 +97,15 @@
 </div>
 
 
- <!-- Barra de navegación inferior -->
+ <!-- Barra de navegación inferior 
     <nav class="navbar navbar-dark bg-dark fixed-bottom">
         <div class="container-fluid d-flex justify-content-around">
             <a class="nav-link text-light text-primary" href="/economia/nomina"><i class="bi bi-house-door"></i> Nómina</a>
-            <a class="nav-link text-light" href="#"><i class="bi bi-search"></i> Ingresos</a>
-            <a class="nav-link text-light" href="#"><i class="bi bi-person"></i> Sueldos</a>
+            <a class="nav-link text-light" href="/economia/nomina/sueldos"><i class="bi bi-search"></i> Pago de sueldos</a>
         </div>
-    </nav>
+    </nav>-->
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../../../static/js/page-economia/nomina.js"></script>
 
     {%endblock%}

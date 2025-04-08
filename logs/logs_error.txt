@@ -1,4 +1,26 @@
-Fecha: 2025-04-06 18:46:15.088326 - Usuario: andrea - Accion: Column expression, FROM clause, or other columns clause element expected, got <module 'models.gastoOperacion' from 'C:\\Users\\charl\\Downloads\\UNI_Local\\PRUEBA GALLETP\\donGalletoPython\\models\\gastoOperacion.py'>.
-Fecha: 2025-04-06 18:57:58.192678 - Usuario: andrea - Accion: Column expression, FROM clause, or other columns clause element expected, got <module 'models.gastoOperacion' from 'C:\\Users\\charl\\Downloads\\UNI_Local\\PRUEBA GALLETP\\donGalletoPython\\models\\gastoOperacion.py'>.
-Fecha: 2025-04-06 18:59:21.529780 - Usuario: andrea - Accion: Column expression, FROM clause, or other columns clause element expected, got <module 'models.gastoOperacion' from 'C:\\Users\\charl\\Downloads\\UNI_Local\\PRUEBA GALLETP\\donGalletoPython\\models\\gastoOperacion.py'>.
-Fecha: 2025-04-06 18:59:39.079281 - Usuario: andrea - Accion: Column expression, FROM clause, or other columns clause element expected, got <module 'models.gastoOperacion' from 'C:\\Users\\charl\\Downloads\\UNI_Local\\PRUEBA GALLETP\\donGalletoPython\\models\\gastoOperacion.py'>.
+
+Fecha: 2025-04-07 19:36:58.603779 - Usuario: andrea - Accion: time data 'aN/NaN' does not match format '%Y-%m'
+Fecha: 2025-04-07 19:40:12.907822 - Usuario: andrea - Accion: time data '02/2025' does not match format '%Y-%m'
+Fecha: 2025-04-07 19:44:11.699289 - Usuario: andrea - Accion: time data '2025/02' does not match format '%Y-%m'
+Fecha: 2025-04-07 19:45:11.115462 - Usuario: andrea - Accion: not enough values to unpack (expected 2, got 1)
+Fecha: 2025-04-07 19:45:11.208382 - Usuario: andrea - Accion: not enough values to unpack (expected 2, got 1)Fecha: 2025-04-07 19:47:48.266590 - Usuario: andrea - Accion: not enough values to unpack (expected 2, got 1)
+Fecha: 2025-04-07 19:47:48.353729 - Usuario: andrea - Accion: Error 404: Pï¿½gina no encontrada en http://127.0.0.1:8080/nomina | IP: 127.0.0.1
+Fecha: 2025-04-07 19:49:55.808150 - Usuario: andrea - Accion: not enough values to unpack (expected 2, got 1)
+Fecha: 2025-04-07 19:56:03.299495 - Usuario: andrea - Accion: not enough values to unpack (expected 2, got 1)
+Fecha: 2025-04-07 19:56:45.396555 - Usuario: andrea - Accion: not enough values to unpack (expected 2, got 1)
+Fecha: 2025-04-07 19:58:32.118975 - Usuario: andrea - Accion: not enough values to unpack (expected 2, got 1)
+Fecha: 2025-04-07 19:58:56.218937 - Usuario: andrea - Accion: not enough values to unpack (expected 2, got 1)
+Fecha: 2025-04-07 20:03:23.858590 - Usuario: andrea - Accion: not enough values to unpack (expected 2, got 1)
+Fecha: 2025-04-07 20:03:23.931415 - Usuario: andrea - Accion: cannot access local variable 'm' where it is not associated with a value
+Fecha: 2025-04-07 20:03:24.001351 - Usuario: andrea - Accion: cannot access local variable 'm' where it is not associated with a value
+Fecha: 2025-04-07 20:03:24.074649 - Usuario: andrea - Accion: cannot access local variable 'm' where it is not associated with a value
+Fecha: 2025-04-07 20:03:24.143371 - Usuario: andrea - Accion: cannot access local variable 'm' where it is not associated with a value
+Fecha: 2025-04-07 20:03:24.215371 - Usuario: andrea - Accion: cannot access local variable 'm' where it is not associated with a value
+Fecha: 2025-04-07 20:03:24.286090 - Usuario: andrea - Accion: cannot access local variable 'm' where it is not associated with a value
+Fecha: 2025-04-07 20:03:24.355740 - Usuario: andrea - Accion: cannot access local variable 'm' where it is not associated with a value
+Fecha: 2025-04-07 20:03:24.426381 - Usuario: andrea - Accion: cannot access local variable 'm' where it is not associated with a value
+Fecha: 2
+Fecha: 2025-04-07 20:29:53.936241 - Usuario: andrea - Accion: not enough values to unpack (expected 2, got 1)
+Fecha: 2025-04-07 20:49:54.993771 - Usuario: andrea - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/economia/nomina/?fechaSel=2025-03&quincena= | IP: 127.0.0.1
+Fecha: 2025-04-07 20:51:37.928306 - Usuario: andrea - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/economia/nomina/?fechaSel=2025-02&quincena= | IP: 127.0.0.1
+Fecha: 2025-04-07 20:58:04.766723 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/favicon.ico | IP: 127.0.0.1

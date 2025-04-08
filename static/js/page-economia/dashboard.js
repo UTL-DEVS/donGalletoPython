@@ -11,9 +11,7 @@ document.getElementById("mesGraficaVentasDiarias").addEventListener("input", fun
 
   }
 
-  console.log('Mes sel: ' + mesSeleccionado);
-  console.log('Primer mes: ' + primerMesVenta);
-  console.log('Ultimo mes: ' + ultimoMesVenta);
+
   if (mesSeleccionado < primerMesVenta || mesSeleccionado > ultimoMesVenta) {
     $('#alertaMesFueraDeRango').modal('show');
     this.value = ""; // Borra la selección
