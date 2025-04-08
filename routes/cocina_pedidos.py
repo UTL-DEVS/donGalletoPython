@@ -18,7 +18,7 @@ cocina_pedidos_bp = Blueprint('cocina-pedidos', __name__, template_folder='templ
 @cocina_pedidos_bp.route('/cocina-pedidos')
 @login_required
 def cocina_pedidos():
-    if current_user.rol_user != 3:
+    if current_user.rol_user not in [0, 3]:
         abort(404)
     try:
         crear_log_user(current_user.usuario, request.url)
@@ -32,7 +32,7 @@ def cocina_pedidos():
 @cocina_pedidos_bp.route('/procesar-pedido', methods=['POST'])
 @login_required
 def procesarPedido():
-    if current_user.rol_user != 3:
+    if current_user.rol_user not in [0, 3]:
         abort(404)
     data = request.get_json(silent=True)
     print(data)
@@ -116,7 +116,7 @@ def calculaPiezasTipoPedido(cantidad, tipoPedido):
 @cocina_pedidos_bp.route('/pedidos-historial', methods=['GET'])
 @login_required
 def pedidosHistorial():
-    if current_user.rol_user != 3:
+    if current_user.rol_user not in [0, 3]:
         abort(404)
     fecha = request.args.get('fecha')
     if fecha == None:
@@ -128,7 +128,7 @@ def pedidosHistorial():
 @cocina_pedidos_bp.route('/detalles-pedido', methods=['GET'])
 @login_required
 def detallePedido():
-    if current_user.rol_user != 3:
+    if current_user.rol_user not in [0, 3]:
         abort(404)
     form = DetalleRecetaForm()
     idPedido = request.args.get('idPedido')

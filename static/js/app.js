@@ -10,11 +10,15 @@
 $(document).ready(function() {
     $('.sidebar a').on('click', function(e) {
         e.preventDefault();
+        
+        $('.sidebar a').removeClass('active');
+        $(this).addClass('active');
+        
         const url = $(this).attr('href');
 
         if (url != '/') {
             $.get(url, function(data) {
-                $('.container-principal').html($(data).find('.container-principal').html());
+                $('.main-content').html($(data).find('.main-content').html());
                 history.pushState(null, null, url);
             });
         } else {

@@ -14,7 +14,7 @@ cocina_insumos_bp = Blueprint('cocina-insumos', __name__, template_folder='templ
 @cocina_insumos_bp.route('/cocina-insumos')
 @login_required
 def cocina_insumos():
-    if current_user.rol_user != 3:
+    if current_user.rol_user not in [0, 3]:
         abort(404)
     try:
         crear_log_user(current_user.usuario, request.url)
@@ -28,7 +28,7 @@ def cocina_insumos():
 @cocina_insumos_bp.route('/solicitar-insumos', methods=['POST'])
 @login_required
 def actualiza_insumos():
-    if current_user.rol_user != 3:
+    if current_user.rol_user not in [0, 3]:
         abort(404)
     try:
         crear_log_user(current_user.usuario, request.url)
