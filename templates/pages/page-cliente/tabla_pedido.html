@@ -37,9 +37,9 @@ messages %} {% for category, message in messages %}
 
     {% if pedidos %}
     <div class="data d-flex align-center justify-content-center flex-column">
-      <div class="table-responsive">
-        <table class="table table-light table-hover">
-          <thead class="table-primary">
+      <div class="table-responsive" style="max-height: 700px; overflow-y: auto;">
+        <table class="table table-light table-hover mb-0">
+          <thead>
             <tr>
               <th scope="col"># Pedido</th>
               <th scope="col">Fecha</th>
