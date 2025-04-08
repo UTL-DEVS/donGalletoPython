@@ -8,7 +8,7 @@ resumen_venta_bp = Blueprint('resumen_venta', __name__, template_folder='templat
 @resumen_venta_bp.route('/corte_ventas', methods=['POST'])
 @login_required
 def corte_ventas():
-    if current_user.rol_user != 4:
+    if current_user.rol_user not in [0, 4]:  
         abort(404)
     try:
         filepath, error = controller_resumen_venta.corte_ventas()
@@ -28,7 +28,7 @@ def corte_ventas():
 @resumen_venta_bp.route('/descargar_corte/<filename>')
 @login_required
 def descargar_corte(filename):
-    if current_user.rol_user != 4:
+    if current_user.rol_user not in [0, 4]:  
         abort(404)
     return send_from_directory(
         controller_resumen_venta.CORTES_FOLDER, 

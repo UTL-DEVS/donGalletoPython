@@ -7,6 +7,7 @@ from controller import *
 from funcs import crear_log_error, crear_log_user
 import unittest
 from flask_login import current_user
+from jinja2 import Environment
 
 import hashlib
 import random
@@ -47,8 +48,6 @@ def crear_app():
     app.register_blueprint(cocina_insumos_bp)
     app.register_blueprint(venta_bp)
     app.register_blueprint(compra_insumo_admin_bp)
-    
-    app.register_blueprint(pedidos_ventas_bp)
 
     return app, csrf
 
@@ -64,6 +63,34 @@ app.config['SESSION_TYPE'] = 'filesystem'
 app.config['SESSION_PERMANENT'] = False
 Session(app)
 
+
+#filtro para formatear unidades jinja2 
+def format_unit(cantidad, tipo_unidad):
+    def clean_decimal(number):
+        """Elimina .0 en enteros, mantiene decimales si son necesarios."""
+        if isinstance(number, float) and number.is_integer():
+            return int(number)
+        return round(number, 2) if isinstance(number, float) else number
+
+    # Peso: gramos g kg  t
+    if tipo_unidad == 1 or tipo_unidad == 4:
+        if cantidad >= 1_000_000:  # 1,000,000 g = 1 t
+            return f"{clean_decimal(cantidad / 1_000_000)} t"
+        elif cantidad >= 1000:  # 1,000 g = 1 kg
+            return f"{clean_decimal(cantidad / 1000)} kg"
+        else:
+            return f"{clean_decimal(cantidad)} g"
+
+    # Líquidos: ml L
+    elif tipo_unidad == 3:
+        if cantidad >= 1000:
+            return f"{clean_decimal(cantidad / 1000)} L"
+        else:
+            return f"{clean_decimal(cantidad)} mL"
+
+    return f"{clean_decimal(cantidad)}"
+
+app.jinja_env.filters['format_unit'] = format_unit
 
 
 @app.route('/home')

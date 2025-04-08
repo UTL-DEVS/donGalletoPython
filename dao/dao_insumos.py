@@ -10,6 +10,7 @@ def obtenerInsumos():
         MateriaPrima.nombre_materia, 
         MateriaPrima.stock_materia,
         MateriaPrima.unidad_medida,
+        MateriaPrima.cantidad_compra,
         MateriaPrima.precio,
         MateriaPrima.estatus,
         Proveedor.nombre_proveedor
@@ -36,9 +37,24 @@ def obtenerInsumosHistorial(fecha):
 
 def actualizarStock(solicitud):
         try:
-            print('dao:')
             materiaPrima = MateriaPrima.query.get(solicitud.id_materia)
-            materiaPrima.stock_materia += solicitud.stock_materia
+            print('unidad')
+            print(solicitud.unidad_medida)
+            print('stock-materia')
+            print(solicitud.stock_materia)
+            print('cantidad-compra')
+            print(solicitud.cantidad_compra)
+            unidadMedida = 0
+            if solicitud.unidad_medida == 1:
+                unidadMedida = 1
+            if solicitud.unidad_medida == 3:
+                unidadMedida = 1000
+            if solicitud.unidad_medida == 4:
+                unidadMedida = 1000
+            cantidadTotal = (solicitud.stock_materia * solicitud.cantidad_compra) * unidadMedida
+            materiaPrima.stock_materia += cantidadTotal
+            print('stock-nuevo')
+            print(materiaPrima.stock_materia)
             db.session.add(materiaPrima)
             db.session.commit()
             return 1

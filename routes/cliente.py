@@ -20,7 +20,8 @@ def inicio():
     print(current_user.id)
     if current_user.rol_user != 1:
         return redirect('/')
-    return render_template('pages/page-cliente/inicio.html')
+    galletas = ClienteController.obtener_galletas_activas()
+    return render_template('pages/page-cliente/inicio.html', galletas=galletas)
 
 @cliente_bp.route('/cliente/menu')
 def menu():

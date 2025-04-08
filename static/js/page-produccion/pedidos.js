@@ -154,11 +154,6 @@ document.getElementById('btnProcesarPedido').addEventListener('click', function(
         }
     });
 
-    const body = {
-        'lstDetallePedido': datosGalletas,
-        'idPedido': idPedido
-    };
-
     enviarAlServicio(datosGalletas, idPedido);
 });
 
