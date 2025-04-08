@@ -17,7 +17,7 @@ def working():
 @cocina_produccion_bp.route('/produccion-stock')
 @login_required
 def stock():
-    if current_user.rol_user != 3:
+    if current_user.rol_user not in [0, 3]:
         abort(404)
     form = DetalleRecetaForm()
     lstGalletas = dao_stock.obtenerStock()
@@ -26,7 +26,7 @@ def stock():
 @cocina_produccion_bp.route('/produccion-historial', methods=['GET'])
 @login_required
 def historial():
-    if current_user.rol_user != 3:
+    if current_user.rol_user not in [0, 3]:
         abort(404)
     fecha = request.args.get('fecha')
     if fecha == None:
@@ -37,7 +37,7 @@ def historial():
 @cocina_produccion_bp.route('/procesar-produccion', methods=['POST'])
 @login_required
 def procesarProduccion():
-    if current_user.rol_user != 3:
+    if current_user.rol_user not in [0, 3]:
         abort(404)
     data = request.json
     lstDetalleProduccion = data.get('lstDetalleProduccion')
@@ -78,7 +78,7 @@ def procesarProduccion():
 @cocina_produccion_bp.route('/produccion-confirmaciones')
 @login_required
 def confirmaciones():
-    if current_user.rol_user != 3:
+    if current_user.rol_user not in [0, 3]:
         abort(404)
     form = DetalleRecetaForm()
     lstConfirmaciones= dao_produccion.getAllConfirmaciones()
@@ -87,7 +87,7 @@ def confirmaciones():
 @cocina_produccion_bp.route('/detalles-confirmacion', methods=['GET'])
 @login_required
 def detalleConfirmacion():
-    if current_user.rol_user != 3:
+    if current_user.rol_user not in [0, 3]:
         abort(404)
     form = DetalleRecetaForm()
     idProduccion = request.args.get('idProduccion')
@@ -106,7 +106,7 @@ def detalleConfirmacion():
 @cocina_produccion_bp.route('/confirmar-produccion', methods=['POST'])
 @login_required
 def confirmarProduccion():
-    if current_user.rol_user != 3:
+    if current_user.rol_user not in [0, 3]:
         abort(404)
     data = request.json
     lstDetalleProduccion = data.get('lstDetalleProduccion')

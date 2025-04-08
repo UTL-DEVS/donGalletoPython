@@ -1193,3 +1193,4 @@ Fecha: 2025-04-08 11:19:50.394152 - Usuario: Pruebas123* - Accion: http://127.0.
 Fecha: 2025-04-08 11:19:57.273340 - Usuario: Pruebas123* - Accion: http://127.0.0.1:8080/solicitar-insumos
 Fecha: 2025-04-08 11:19:58.430537 - Usuario: Pruebas123* - Accion: http://127.0.0.1:8080/cocina-insumos
 Fecha: 2025-04-08 11:21:17.013748 - Usuario: Pruebas123* - Accion: http://127.0.0.1:8080/cocina-insumos
+Fecha: 2025-04-08 11:46:39.295815 - Usuario: Pruebas123* - Accion: http://127.0.0.1:8080/cocina-insumos
