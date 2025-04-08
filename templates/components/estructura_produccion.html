@@ -12,6 +12,61 @@
     <title>{% block titulo %}{% endblock %}</title>
 </head>
 
+<style>
+    body {
+        height: 100vh !important;
+        max-height: 100vh !important;
+    }
+
+    .sidebar {
+        width: 15%; 
+        background-color: #e7e7e747;
+        transition: 'background-color';
+        transition-duration: 0.3s;
+    }
+
+    .sidebar:hover {
+        box-shadow: none;
+        box-shadow: 5px 0px 10px 0px rgba(0, 0, 0, 0.3);
+        background-color: white;
+    }
+
+    .main-content {
+        width: 85%; 
+        background-color: #e7e7e747;
+        transition: 'background-color', 'box-shadow';
+        transition-duration: 0.3s;
+    }
+
+    .table-light {
+        --bs-table-bg: #e7e7e700 !important;
+        transition: 'background-color';
+        transition-duration: 0.3s;
+    }
+
+    .table-light:hover {
+        --bs-table-bg: white !important;
+        background-color: white !important;
+    }
+
+    .table {
+        --bs-table-bg: #e7e7e700 !important;
+        transition: 'background-color';
+        transition-duration: 0.3s;
+    }
+
+    .table:hover {
+        --bs-table-bg: white !important;
+        background-color: white !important;
+    }
+
+    .main-content:hover {
+        background-color: white;
+        box-shadow: -5px 0px 10px 0px rgba(0, 0, 0, 0.3);
+    }
+
+</style>
+
 <body>
     <div class="d-flex" style="height: 100vh !important">
         <div class="sidebar">
@@ -20,7 +75,7 @@
                     <a href="/" class="d-flex align-items-center text-decoration-none">
                         <img src="{{ url_for('static', filename='img/logo_la_casa_de_la_galleta.webp') }}"
                             class="bi pe-none me-3" width="40" height="40" />
-                        <span class="brand">La Casa de la Galleta</span>
+                        <span class="fw-bold text-decoration-none text-dark fs-6">La Casa de la Galleta</span>
                     </a>
                 </div>
                 <ul class="list-unstyled ps-0">
