@@ -20,6 +20,6 @@ class DetalleCompraInsumo(db.Model):
     id_compra = db.Column(db.Integer, db.ForeignKey('compra_insumo.id_compra_insumo'), nullable=False)
     id_materia = db.Column(db.Integer, db.ForeignKey('materia_prima.id_materia'), nullable=False)
     cantidad = db.Column(db.Float, nullable=False)  # En gramos, mililitros o piezas, según unidad
-    fecha_caducidad = db.Column(db.DateTime, nullable =False)
+    fecha_caducidad = db.Column(db.DateTime, nullable =True)
     precio_unitario = db.Column(db.Float, nullable=False)
     materia_prima = db.relationship('MateriaPrima', backref='detalle_compra')

@@ -24,3 +24,10 @@ Fecha: 2025-04-07 20:29:53.936241 - Usuario: andrea - Accion: not enough values 
 Fecha: 2025-04-07 20:49:54.993771 - Usuario: andrea - Accion: Error 404: Pï¿½gina no encontrada en http://127.0.0.1:8080/economia/nomina/?fechaSel=2025-03&quincena= | IP: 127.0.0.1
 Fecha: 2025-04-07 20:51:37.928306 - Usuario: andrea - Accion: Error 404: Pï¿½gina no encontrada en http://127.0.0.1:8080/economia/nomina/?fechaSel=2025-02&quincena= | IP: 127.0.0.1
 Fecha: 2025-04-07 20:58:04.766723 - Usuario: Usuario anï¿½nimo - Accion: Error 404: Pï¿½gina no encontrada en http://127.0.0.1:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-08 10:43:31.107532 - Usuario: andrea - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/compraAdmin/detallesCompra?csrf_token=IjY1ZjRmNThmNzBhY2NjOWM5OWM0NzFkNTlmYTE4MTRjOWVjMGEyYzUi.Z_VSMQ.45sdiN7ZZ2LN4HGfVPaqwXSg6g0 | IP: 127.0.0.1
+Fecha: 2025-04-08 10:45:30.724737 - Usuario: andrea - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/compraAdmin/detallesCompra?csrf_token=IjY1ZjRmNThmNzBhY2NjOWM5OWM0NzFkNTlmYTE4MTRjOWVjMGEyYzUi.Z_VSMQ.45sdiN7ZZ2LN4HGfVPaqwXSg6g0 | IP: 127.0.0.1
+Fecha: 2025-04-08 10:48:29.641076 - Usuario: andrea - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/compraAdmin/detallesCompra | IP: 127.0.0.1
+Fecha: 2025-04-08 10:49:48.440917 - Usuario: andrea - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/compraAdmin/detallesCompra | IP: 127.0.0.1
+Fecha: 2025-04-08 10:51:32.124676 - Usuario: andrea - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/compraAdmin/detallesCompra | IP: 127.0.0.1
+Fecha: 2025-04-08 10:51:55.727211 - Usuario: andrea - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/compraAdmin/detallesCompra | IP: 127.0.0.1
+Fecha: 2025-04-08 10:53:00.345036 - Usuario: andrea - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/compraAdmin/detallesCompra?id_comp=1 | IP: 127.0.0.1

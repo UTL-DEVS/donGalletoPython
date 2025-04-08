@@ -49,6 +49,7 @@ def mostrar_nomina():
     anio = None
     mes = None
     quincena=2
+    fecha_sel=None
     if (datetime.now().day <= 15):
         quincena=1
     if request.args.get('fechaSel') != None:
@@ -63,7 +64,7 @@ def mostrar_nomina():
     if (not pagos) and (request.args.get('mes', type=int) != None):
         flash("No hay pago de sueldos en el periodo seleccionado.", "error")
         return redirect('/economia/nomina')
-    return render_template('pages/page-economia/nomina.html', pagos=pagos, mes=mes, anio=anio, quincena=quincena,total_pagos=total_pagos)
+    return render_template('pages/page-economia/nomina.html', f=fecha_sel,pagos=pagos, mes=mes, anio=anio, quincena=quincena,total_pagos=total_pagos)
     
 
 @economia_bp.route('/nomina/sueldos', methods=['GET'])
@@ -94,6 +95,8 @@ def pagar_empleado():
     else:
         flash("Algo salió mal.", "error")
     return redirect(url_for('economia.mostrar_pagos_pendientes'))
+
+
 
     
 @economia_bp.route("/gastos", methods=['GET', 'POST'])

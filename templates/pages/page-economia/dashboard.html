@@ -21,37 +21,52 @@
         </div>
     </div>
 </div>
-<h2 class=" m-3 text-center">Ventas Diarias</h2>
 
 
-<div class="sub-header-buttons d-flex align-items-center" style="width: 33%;">
-        <p class="w-100 m-0 fw-bold">Seleccione una fecha: </p>
-        <input id="mesGraficaVentasDiarias" type="month" name="mes" class="form-control" aria-describedby="basic-addon2" onchange="consultarVentas()" value="{{ mes_sel if mes_sel else '' }}">
-</div>
+<div class="container d-flex align-items-center justify-content-center flex-column mt-5" style="width: 90%;">
+    <div class="menu d-flex align-items-center justify-content-center flex-column w-100">
+        <div class="sub-header d-flex justify-content-between w-100">
+            <div class="sub-header-title">
+                <h1 id="tituloHistorial">Ventas del mes</h1>
+            </div>
+            <div class="sub-header-buttons d-flex align-items-center" style="width: 33%;">
+                <p class="w-100 m-0 fw-bold">Seleccione una fecha: </p>
+                <input id="mesGraficaVentasDiarias" type="month" name="mes" class="form-control"
+                    aria-describedby="basic-addon2" onchange="consultarVentas()"
+                    value="{{ mes_sel if mes_sel else '' }}">
+            </div>
+        </div>
+        <hr class="w-100">
+        <div class="data w-100">
 
-    <div id="ventasDiarias"></div>
-    <h4 id="fechaGrafica"></h4>
 
 
-    <!-- modal fecha no disponible -->
-    <div class="modal" tabindex="-1" id="alertaMesFueraDeRango">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Mes fuera de rango</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>El mes seleccionado está fuera de rango.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" data-bs-dismiss="modal" class="btn btn-primary">Aceptar</button>
+            <div id="ventasDiarias"></div>
+            <h4 id="fechaGrafica"></h4>
+
+
+            <!-- modal fecha no disponible -->
+            <div class="modal" tabindex="-1" id="alertaMesFueraDeRango">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Mes fuera de rango</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>El mes seleccionado está fuera de rango.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" data-bs-dismiss="modal" class="btn btn-primary">Aceptar</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
- <!-- Barra de navegación inferior 
+<!-- Barra de navegación inferior 
     <nav class="navbar navbar-dark bg-dark fixed-bottom">
         <div class="container-fluid d-flex justify-content-around">
             <a class="nav-link text-light" href="#"><i class="bi bi-house-door"></i> Estadísticas</a>
@@ -59,12 +74,12 @@
             <a class="nav-link text-light" href="#"><i class="bi bi-person"></i> Gastos</a>
         </div>
     </nav>-->
-    
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="../../../static/js/page-economia/dashboard.js"></script>
-    <script>
-        let rangosFechasVentas = {{ rango_fechas_ventas| safe }};
-        let listasVentasDiarias = {{ lista_ventas|safe }};
-    </script>
-    {%endblock%}
+
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="../../../static/js/page-economia/dashboard.js"></script>
+<script>
+    let rangosFechasVentas = {{ rango_fechas_ventas| safe }};
+    let listasVentasDiarias = {{ lista_ventas| safe }};
+</script>
+{%endblock%}
