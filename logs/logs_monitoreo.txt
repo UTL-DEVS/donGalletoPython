@@ -1251,3 +1251,13 @@ Fecha: 2025-04-08 15:02:55.398128 - Usuario: Pruebas123* - Accion: http://127.0.
 Fecha: 2025-04-08 15:04:18.782726 - Usuario: Pruebas123* - Accion: http://127.0.0.1:8080/receta
 Fecha: 2025-04-08 15:04:41.854956 - Usuario: Pruebas123* - Accion: http://127.0.0.1:8080/receta
 Fecha: 2025-04-08 15:04:51.942304 - Usuario: Pruebas123* - Accion: http://127.0.0.1:8080/cocina-insumos
+Fecha: 2025-04-08 15:05:26.315548 - Usuario: Pruebas123* - Accion: http://127.0.0.1:8080/cocina-insumos
+Fecha: 2025-04-08 15:05:27.380236 - Usuario: Pruebas123* - Accion: http://127.0.0.1:8080/cocina-insumos
+Fecha: 2025-04-08 15:05:55.152428 - Usuario: Pruebas123* - Accion: http://127.0.0.1:8080/receta
+Fecha: 2025-04-08 15:06:33.545616 - Usuario: Pruebas123* - Accion: http://127.0.0.1:8080/receta
+Fecha: 2025-04-08 15:07:00.848061 - Usuario: Pruebas123* - Accion: http://127.0.0.1:8080/receta
+Fecha: 2025-04-08 15:08:13.905701 - Usuario: Pruebas123* - Accion: http://127.0.0.1:8080/receta
+Fecha: 2025-04-08 15:11:07.551697 - Usuario: Pruebas123* - Accion: http://127.0.0.1:8080/receta
+Fecha: 2025-04-08 15:12:00.122381 - Usuario: Pruebas123* - Accion: http://127.0.0.1:8080/receta
+Fecha: 2025-04-08 15:13:25.870247 - Usuario: Pruebas123* - Accion: http://127.0.0.1:8080/receta
+Fecha: 2025-04-08 15:13:39.429279 - Usuario: Pruebas123* - Accion: http://127.0.0.1:8080/receta

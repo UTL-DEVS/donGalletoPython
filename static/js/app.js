@@ -16,7 +16,7 @@ $(document).ready(function() {
         
         const url = $(this).attr('href');
 
-        if (url != '/') {
+        if (url !== '/' && url !== '/logout') {
             $.get(url, function(data) {
                 $('.main-content').html($(data).find('.main-content').html());
                 history.pushState(null, null, url);
