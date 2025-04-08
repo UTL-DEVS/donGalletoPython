@@ -1,6 +1,7 @@
 {%extends 'components/_estructura_admin.html'%}
 {%block titulo%}Recetas{%endblock%}
 {%block contenido%}
+
 {% with messages = get_flashed_messages(with_categories=true) %}
   {% if messages %}
     {% for category, message in messages %}
@@ -11,6 +12,7 @@
     {% endfor %}
   {% endif %}
 {% endwith %}
+
 <div class="container mt-5">
 
     <table class="table table-striped">
