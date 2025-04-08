@@ -1193,3 +1193,7 @@ Fecha: 2025-04-08 11:19:50.394152 - Usuario: Pruebas123* - Accion: http://127.0.
 Fecha: 2025-04-08 11:19:57.273340 - Usuario: Pruebas123* - Accion: http://127.0.0.1:8080/solicitar-insumos
 Fecha: 2025-04-08 11:19:58.430537 - Usuario: Pruebas123* - Accion: http://127.0.0.1:8080/cocina-insumos
 Fecha: 2025-04-08 11:21:17.013748 - Usuario: Pruebas123* - Accion: http://127.0.0.1:8080/cocina-insumos
+Fecha: 2025-04-08 12:05:19.047265 - Usuario: andrea - Accion: http://127.0.0.1:8080/receta
+Fecha: 2025-04-08 12:05:20.465423 - Usuario: andrea - Accion: http://127.0.0.1:8080/receta/agregar
+Fecha: 2025-04-08 12:05:29.074034 - Usuario: andrea - Accion: http://127.0.0.1:8080/galleta_home
+Fecha: 2025-04-08 12:05:33.625787 - Usuario: andrea - Accion: http://127.0.0.1:8080/galleta/agregar
