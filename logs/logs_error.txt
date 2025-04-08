@@ -462,3 +462,31 @@ Fecha: 2025-04-08 14:55:16.829454 - Usuario: Usuario anÃ³nimo - Accion: Error 40
 Fecha: 2025-04-08 15:24:45.170618 - Usuario: Pruebas123* - Accion: Error 404: PÃ¡gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
 Fecha: 2025-04-08 15:24:46.512021 - Usuario: Pruebas123* - Accion: Error 404: PÃ¡gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
 Fecha: 2025-04-08 15:29:10.931820 - Usuario: Pruebas123* - Accion: Error 404: PÃ¡gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-08 15:50:50.831155 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-08 15:51:03.248387 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-08 16:10:01.507142 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/proveedor/mis-pedidos | IP: 127.0.0.1
+Fecha: 2025-04-08 16:34:14.894574 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/insumos/static/js/page-ventas/nabvar.js | IP: 127.0.0.1
+Fecha: 2025-04-08 16:34:14.894574 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/insumos/static/css/page-ventas/navbar.css | IP: 127.0.0.1
+Fecha: 2025-04-08 16:34:14.895582 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/insumos/static/js/app.js | IP: 127.0.0.1
+Fecha: 2025-04-08 16:34:14.934418 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/insumos/static/js/page-ventas/nabvar.js | IP: 127.0.0.1
+Fecha: 2025-04-08 16:34:14.954380 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/insumos/static/js/app.js | IP: 127.0.0.1
+Fecha: 2025-04-08 16:36:55.241464 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/insumos/static/js/app.js | IP: 127.0.0.1
+Fecha: 2025-04-08 16:36:55.241464 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/insumos/static/js/page-ventas/nabvar.js | IP: 127.0.0.1
+Fecha: 2025-04-08 16:36:55.241464 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/insumos/static/css/page-ventas/navbar.css | IP: 127.0.0.1
+Fecha: 2025-04-08 16:36:55.283851 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/insumos/static/js/page-ventas/nabvar.js | IP: 127.0.0.1
+Fecha: 2025-04-08 16:36:55.303075 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/insumos/static/js/app.js | IP: 127.0.0.1
+Fecha: 2025-04-08 16:37:03.881486 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/insumos/static/js/app.js | IP: 127.0.0.1
+Fecha: 2025-04-08 16:37:03.881486 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/insumos/static/css/page-ventas/navbar.css | IP: 127.0.0.1
+Fecha: 2025-04-08 16:37:03.883495 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/insumos/static/js/page-ventas/nabvar.js | IP: 127.0.0.1
+Fecha: 2025-04-08 16:37:04.003018 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/insumos/static/js/page-ventas/nabvar.js | IP: 127.0.0.1
+Fecha: 2025-04-08 16:37:04.023930 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/insumos/static/js/app.js | IP: 127.0.0.1
+Fecha: 2025-04-08 16:37:15.400374 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/insumos/static/css/page-ventas/navbar.css | IP: 127.0.0.1
+Fecha: 2025-04-08 16:37:15.400374 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/insumos/static/js/page-ventas/nabvar.js | IP: 127.0.0.1
+Fecha: 2025-04-08 16:37:15.400374 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/insumos/static/js/app.js | IP: 127.0.0.1
+Fecha: 2025-04-08 16:37:15.434412 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/insumos/static/js/page-ventas/nabvar.js | IP: 127.0.0.1
+Fecha: 2025-04-08 16:37:15.453803 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/insumos/static/js/app.js | IP: 127.0.0.1
+Fecha: 2025-04-08 16:37:51.919831 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-08 16:37:51.952347 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-08 16:45:23.421106 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-08 16:50:35.888303 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-08 16:50:35.984611 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1

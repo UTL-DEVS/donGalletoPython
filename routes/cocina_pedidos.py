@@ -11,6 +11,7 @@ from dao import dao_produccion
 from models.Stock import Stock
 from controller import controller_stock
 from funcs import crear_log_error, crear_log_user
+import os
 from utils import Blueprint, render_template, redirect, flash, db, url_for, request, login_required, current_user, abort
 
 cocina_pedidos_bp = Blueprint('cocina-pedidos', __name__, template_folder='templates')
@@ -35,6 +36,7 @@ def procesarPedido():
     if current_user.rol_user not in [0, 3]:
         abort(404)
     data = request.get_json(silent=True)
+    os.system('cls') 
     print(data)
     idPedido = data.get('idPedido')
     lstDetallePedido = data.get('lstDetallePedido')

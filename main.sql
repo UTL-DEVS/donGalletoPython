@@ -1,4 +1,4 @@
--- Active: 1742951049609@@127.0.0.1@3306@casagalleta
+-- Active: 1742188040282@@127.0.0.1@3306@casagalleta
 CREATE DATABASE casaGalleta; 
 drop DATABASE casaGalleta;
 
@@ -40,6 +40,7 @@ select * FROM pre_registro;
 INSERT INTO Persona (nombre, primerApellido, segundoApellido, correo, direccion, telefono, estatus) 
 VALUES ('Juan', 'Pérez', 'Gómez', 'juan.perez@email.com', 'Calle Falsa 123, CDMX', '5551234567', 1);
 
+SELECT * from persona;
 -- Obtener el ID de la persona insertada
 SET @id_persona = LAST_INSERT_ID();
 
@@ -59,7 +60,8 @@ INSERT INTO `stock` (`id_stock`,`id_galleta`,`cantidad_galleta`,`maximo_galleta`
 INSERT INTO materia_prima (id_materia,nombre_materia,stock_materia,unidad_medida_publico,unidad_medida,precio,estatus,id_proveedor) VALUES (1,'Harina',147,1,1,50,1,1);
 
 SELECT * FROM galletas;
-SELECT * FROM detalle_receta;
+SELECT * from usuario;
+SELECT * FROM compra_insumo;
 
 
 SELECT * from materia_prima;
