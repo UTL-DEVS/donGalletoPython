@@ -8,7 +8,6 @@ class CompraInsumo(db.Model):
     fecha_compra = db.Column(db.DateTime, default=datetime.utcnow)
     total = db.Column(db.Float, nullable=False)
     estatus = db.Column(db.Integer, nullable=False, default=0)  # 0: pendiente, 1: aceptada
-
     id_usuario = db.Column(db.Integer, db.ForeignKey('usuario.id'), nullable=False)
     usuario = db.relationship('Usuario', backref='compras', lazy=True)
     # Relación a detalles
