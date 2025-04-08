@@ -14,7 +14,7 @@ import random
 import base64
 import io
 import os
-from datetime import timedelta
+from datetime import timedelta, datetime
 from funcs import captcha_info
 from flask import Flask, session
 from flask_session import Session
@@ -116,6 +116,24 @@ def logout():
     
     logout_user()
     return redirect(url_for('login.login'))
+
+@app.before_request
+def check_inactivity():
+    if current_user.is_authenticated:
+        now = datetime.utcnow()
+        last_active = session.get('last_active')
+
+        if last_active:
+            tiempo_trascurrido = now - datetime.fromisoformat(last_active)
+            if tiempo_trascurrido.total_seconds() > 600 :  # son 10 mintos
+                logout_user()
+                session.clear()
+                flash("Tu sesión ha expirado por inactividad. Por favor inicia sesión nuevamente.", "warning")
+                return redirect(url_for('login.login'))
+
+        session['last_active'] = now.isoformat()
+
+
 
 @app.errorhandler(404)
 def page_not_found(e):

@@ -21,9 +21,14 @@ def aceptar_compra():
 
     for detalle in compra.detalles:
         materia = detalle.materia_prima
-        print(f'Se suma {materia.stock_materia} mas {detalle.cantidad}')
-        materia.stock_materia += detalle.cantidad
-        
+        cantidadAgregar = materia.cantidad_compra * detalle.cantidad
+        print('por agregar')
+        print(cantidadAgregar)
+        print('stock actual')
+        print(materia.stock_materia)
+        materia.stock_materia += cantidadAgregar
+        print('actualizado')
+        print(materia.stock_materia)
 
     compra.estatus = 1  # Marcar como aceptada
     db.session.commit()
