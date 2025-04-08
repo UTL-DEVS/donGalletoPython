@@ -35,6 +35,7 @@ def procesarPedido():
     if current_user.rol_user != 3:
         abort(404)
     data = request.get_json(silent=True)
+    print(data)
     idPedido = data.get('idPedido')
     lstDetallePedido = data.get('lstDetallePedido')
     

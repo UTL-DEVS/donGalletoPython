@@ -7,13 +7,19 @@ document.getElementById('btnSolicitar').addEventListener('click', function(event
         const th = fila.querySelector('th');
         const idMateria = th ? th.id : null;
 
-        const pCantidad = fila.querySelector('input[name="cantidad"]');
-        const cantidad = pCantidad ? parseInt(pCantidad.value) : 0;
+        const intCantidad = fila.querySelector('input[name="cantidad"]');
+        const cantidad = intCantidad ? parseInt(intCantidad.value) : 0;
+        const intCompra = fila.querySelector('input[name="compra"]');
+        const compra = intCompra ? parseInt(intCompra.value) : 0;
+        const intTipo = fila.querySelector('input[name="tipo"]');
+        const tipo = intTipo ? parseInt(intTipo.value) : 0;
         
         if (idMateria && !isNaN(cantidad)) {
             solicitudes.push({
                 id_materia: idMateria,
-                cantidad: cantidad
+                cantidad: cantidad,
+                compra: compra,
+                tipo: tipo
             });
         }
     });

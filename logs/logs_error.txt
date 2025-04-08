@@ -407,3 +407,12 @@ Fecha: 2025-04-07 02:42:50.433932 - Usuario: chris123 - Accion: Error 404: P�gin
 Fecha: 2025-04-07 02:42:52.403520 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
 Fecha: 2025-04-07 02:42:54.017102 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
 >>>>>>> ff71f9bc67854ddae5a73c38a0b40f7303fa52c3
+Fecha: 2025-04-07 17:51:14.271635 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-07 18:12:39.415912 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-07 18:12:42.680190 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-07 18:12:43.753064 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-07 18:12:48.362965 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-07 18:12:51.200058 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-07 18:13:01.325260 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-07 18:13:02.150625 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-07 18:13:21.539125 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1

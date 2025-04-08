@@ -30,8 +30,10 @@
                             <tr>
                                 <th scope="row">{{ loop.index }}</th>
                                 <td>{{ insumo.nombre_materia }}</td>
-                                <td>{{ insumo.stock_materia }}</td>
-                                <td>{{ insumo.precio }}</td>
+                                <td>
+                                    {{ insumo.stock_materia|format_unit(insumo.unidad_medida) }} 
+                                </td>
+                                <td>${{ "%.2f"|format(insumo.precio) }}</td>
                                 <td>{{ insumo.nombre_proveedor }}</td>
                             </tr>
                         {% endfor %}
@@ -74,15 +76,7 @@
                                             <td name="nombreMateria" style="align-content: center;">{{ insumo.nombre_materia }}</td>
                                             <td style="align-content: center;">{{ insumo.nombre_proveedor }}</td>
                                             <td name="unidadMedidad" style="align-content: center;">
-                                                {% if insumo.unidad_medida == 1 %}
-                                                Bolsa
-                                              {% elif insumo.unidad_medida == 2 %}
-                                                Caja
-                                              {% elif insumo.unidad_medida == 3 %}
-                                                Galon
-                                              {% elif insumo.unidad_medida == 4 %}
-                                                Kilo
-                                              {% endif %}
+                                                {{ insumo.cantidad_compra|format_unit(insumo.unidad_medida) }} 
                                             </td>
                                             <td class="text-center">
                                                 <div class="opcion d-flex justify-content-center align-items-center">
@@ -91,7 +85,12 @@
                                                     </button>
                                                     <div class="data-produccion d-flex flex-column" style="width: 30%; padding-top: 13px; cursor: default; user-select: none;">
                                                         <div class="data-produccion-principal" style="display: flex; flex-direction: column; align-items: center;">
-                                                            <input name="cantidad" class="quantity" style="border: none; border-bottom: 1px solid black; background-color: transparent; width: 30%; outline: none; text-align: center;" placeholder="0" value="0"><p style="font-size: small;"> Gramos</p>
+                                                            <input type="hidden" name="compra" value="{{ insumo.cantidad_compra }}">
+                                                            <input type="hidden" name="tipo" value="{{ insumo.unidad_medida }}">
+                                                            <input name="cantidad" class="quantity" style="border: none; border-bottom: 1px solid black; background-color: transparent; width: 30%; outline: none; text-align: center;" placeholder="0" value="0">
+                                                            <p style="font-size: small;"> 
+                                                                Piezas
+                                                            </p>
                                                         </div>
                                                     </div>
                                                     <button type="button" class="btn btn-success plus-btn" style="margin-left: 10px;" onclick="updateQuantity(this, true)">
