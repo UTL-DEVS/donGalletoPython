@@ -1,5 +1,5 @@
 from utils import Blueprint, render_template, redirect, request, login_required, current_user, flash, url_for, abort, db
-from models import CompraInsumo as Compra, Persona,Usuario
+from models import CompraInsumo as Compra, Persona,Usuario, DetalleCompraInsumo as Detalles, MateriaPrima
 from forms import form_empleado
 compra_insumo_admin_bp = Blueprint('compra_admin', __name__, url_prefix='/compraAdmin', template_folder='templates')
 
@@ -43,7 +43,19 @@ def obtener_compras_con_usuarios():
         Compra.estatus,
         Persona.nombre,
         Persona.primerApellido,
-        Persona.segundoApellido
+        Persona.segundoApellido 
     ).all()
 
     return compras
+
+@compra_insumo_admin_bp.route('/detalleCompra', methods=['POST'])
+@login_required
+def ver_detalles_compra():
+    form = form_empleado()
+    id_compra= request.args.get('id_comp')
+    print(f'id: {id_compra}')
+    compra = db.session.query(Compra).filter(Compra.id_compra_insumo ==id_compra).first()
+    detalles = db.session.query(Detalles).filter(Detalles.id_compra==id_compra).join(MateriaPrima).all()
+    print(f'detalles {detalles}')
+    compras_pendientes = obtener_compras_con_usuarios()
+    return render_template('pages/page-admin/compras.html', compras=compras_pendientes, f=form, compra=compra, detalles=detalles, modal='true')

@@ -1,8 +1,8 @@
 {%extends 'components/_estructura_admin.html'%}
 {%block titulo%}Economía{%endblock%}
 {%block contenido%}
- <!-- Mensaje flash -->
- <div class="row">
+<!-- Mensaje flash -->
+<div class="row">
     <div class="col-12">
         {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
@@ -19,51 +19,69 @@
     </div>
 </div>
 
-<form class="m-5" method="GET" action="/economia/nomina">
-    <label for="mes">Mes:</label>
-    <select name="mes">
-        {% for num, nombre in [(1, 'Enero'), (2, 'Febrero'), (3, 'Marzo'), (4, 'Abril'), (5, 'Mayo'), (6, 'Junio') , (7, 'Abril'), (8, 'Agosto'), (9, 'Septiembre'), (10, 'Octubre'), (11, 'Noviembre'), (12, 'Dicembre')]%}
-            <option value="{{ num }}">{{ nombre }}</option>
-        {% endfor %}
-    </select>
-
-    <label for="anio">Año:</label>
-    <input type="number" name="anio" min="2023" max="2025" required>
-
-    <label for="quincena">Quincena:</label>
-    <select name="quincena">
-        <option value="">Mes completo</option>
-        <option value="1">Primera quincena (1-15)</option>
-        <option value="2">Segunda quincena (16-fin de mes)</option>
-    </select>
-
-    <button type="submit">Buscar</button>
-</form>
+<style>
+    /* Estilos opcionales para mejorar la apariencia del scroll */
+    .table-responsive::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+    .table-responsive::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 4px;
+    }
+    .table-responsive::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 4px;
+    }
+    .table-responsive::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+</style>
 
 
 
-<div class="container d-flex aling-center justify-content-center flex-column align-center w-90 mt-5">
-    <div class="menu d-flex aling-center justify-content-center flex-column align-center">
-        <div class="sub-header d-flex justify-content-between">
-            <div class="sub-header-title">
-                <h1>Nómina</h1>
-            </div>
 
-            <div class="sub-header-buttons d-flex align-items-center">
-                <a href="/economia/nomina/sueldos">
-                <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalAgregarEmpleado"> Pagos <i class="bi bi-plus-circle-fill"></i></button>
-                </a>
+
+
+                        <div class="container d-flex aling-center justify-content-center flex-column align-center mt-3" style="width: 90%;">
+                            <div class="sub-header-buttons d-flex align-items-center ms-auto mb-3">
+                                <a href="/economia/nomina/sueldos">
+                                    <button class="btn btn-warning"> Pagos
+                                        <i class="bi bi-plus-circle-fill"></i></button>
+                                </a>
                 
-            </div>
-        </div>
-        <hr>
+                            </div>
+                            <div class="menu d-flex align-items-center justify-content-center flex-column">
+                                <div class="sub-header d-flex justify-content-between w-100">
+                                    <div class="sub-header-title">
+                                        <h1 id="tituloNomina">Nómina{% if f %} - {{ f }}{% endif %}</h1>
+                                    </div>
+                                    
+                                    <div class="sub-header-buttons d-flex align-items-center ms-auto" style="width: 33%;">
+                                        
+                                        <div>
+                                            <p class="w-100 m-0 fw-bold">Seleccione una fecha: </p>
+                                            <input id="inpFecha" type="month" name="fechaSel" class="form-control" aria-describedby="basic-addon2"
+                                                onchange="consultarNomina()" value="{{ fecha if fecha else '' }}">
+                                        </div>
+                                        <div class=" mx-2">
+                                            <p class="w-100 m-0 fw-bold">Periodo: </p>
+                                            <select id="quin" class="form-select " name="quincena">
+                                                <option value="">Mes completo</option>
+                                                <option value="1">Primera quincena (1-15)</option>
+                                                <option value="2">Segunda quincena (16-fin de mes)</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
 
-        
+                                
+                                <hr class="w-100">
+                                <div class="data w-100">
+                                    <div class="table-responsive" style="max-height: 500px; overflow-y: auto;">
+                                        <table class="table table-light table-hover mb-0">
+                                            <thead>
 
-        <div class="data d-flex aling-center justify-content-center flex-column">
-            <div class="table">
-                <table class="table table-hover">
-                    <thead>
                         <tr class="table-light">
                             <th scope="col">#</th>
                             <th scope="col">Empleado</th>
@@ -89,9 +107,9 @@
                         {%endif%}
                     </tbody>
                 </table>
-                {%if ( not pagos )%}
-                        <h5 class="text-center font-weight-bold">No hay pagos registrados</h3>
-                            {%endif%}
+                    {%if ( not pagos )%}
+                        <h3 class="text-center fw-bold my-5">No hay pagos registrados</h3>
+                    {%endif%}
             </div>
 
         </div>
@@ -100,15 +118,15 @@
 </div>
 
 
- <!-- Barra de navegación inferior -->
+<!-- Barra de navegación inferior 
     <nav class="navbar navbar-dark bg-dark fixed-bottom">
         <div class="container-fluid d-flex justify-content-around">
             <a class="nav-link text-light text-primary" href="/economia/nomina"><i class="bi bi-house-door"></i> Nómina</a>
-            <a class="nav-link text-light" href="#"><i class="bi bi-search"></i> Ingresos</a>
-            <a class="nav-link text-light" href="#"><i class="bi bi-person"></i> Sueldos</a>
+            <a class="nav-link text-light" href="/economia/nomina/sueldos"><i class="bi bi-search"></i> Pago de sueldos</a>
         </div>
-    </nav>
-    
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </nav>-->
 
-    {%endblock%}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="../../../static/js/page-economia/nomina.js"></script>
+
+{%endblock%}

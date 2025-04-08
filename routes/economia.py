@@ -46,21 +46,25 @@ def dashboard():
 @economia_bp.route('/nomina', methods=['GET'])
 @login_required
 def mostrar_nomina():
-    anio = (datetime.now()).year
-    mes = (datetime.now()).month 
+    anio = None
+    mes = None
     quincena=2
+    fecha_sel=None
     if (datetime.now().day <= 15):
         quincena=1
-    if request.method == 'GET':
-        mes = request.args.get('mes', type=int)
-        anio = request.args.get('anio', type=int)
+    if request.args.get('fechaSel') != None:
+        fecha_sel = request.args.get('fechaSel')
+        print(f'fecha sel: {fecha_sel}')
+        anio,mes = map(str, str(fecha_sel).split('-'))
+        #mes = request.args.get('mes', type=int)
+        #anio = request.args.get('anio', type=int)
         quincena = request.args.get('quincena', type=int, default=None)
      
     pagos, total_pagos = controller_economia.obtener_pagos(mes, anio, quincena)
     if (not pagos) and (request.args.get('mes', type=int) != None):
         flash("No hay pago de sueldos en el periodo seleccionado.", "error")
         return redirect('/economia/nomina')
-    return render_template('pages/page-economia/nomina.html', pagos=pagos, mes=mes, anio=anio, quincena=quincena,total_pagos=total_pagos)
+    return render_template('pages/page-economia/nomina.html', f=fecha_sel,pagos=pagos, mes=mes, anio=anio, quincena=quincena,total_pagos=total_pagos)
     
 
 @economia_bp.route('/nomina/sueldos', methods=['GET'])
@@ -91,6 +95,8 @@ def pagar_empleado():
     else:
         flash("Algo salió mal.", "error")
     return redirect(url_for('economia.mostrar_pagos_pendientes'))
+
+
 
     
 @economia_bp.route("/gastos", methods=['GET', 'POST'])

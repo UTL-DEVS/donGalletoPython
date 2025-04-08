@@ -2,12 +2,6 @@
 {%block titulo%}Empleados{%endblock%}
 {%block contenido%}
 {% import 'components/_macro_proveedor.html' as macros%}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
-
 
 
 <div class="container mt-1">
@@ -31,22 +25,36 @@
 </div>
 
 
-<div class="container d-flex aling-center justify-content-center flex-column align-center w-90 mt-5">
-    <div class="menu d-flex aling-center justify-content-center flex-column align-center">
-        <div class="sub-header d-flex justify-content-between">
-            <div class="sub-header-title">
-                <h1>Empleados</h1>
-            </div>
 
-            <div class="sub-header-buttons d-flex align-items-center">
+<style>
+    .table-fixed {
+        max-height: 500px;
+        overflow-y: auto;
+    }
+
+    .table-fixed thead {
+        position: sticky;
+        top: 0;
+        background-color: white;
+        z-index: 1;
+    }
+</style>
+<div class="container d-flex align-items-center justify-content-center flex-column mt-5" style="width: 90%;">
+    <div class="menu d-flex align-items-center justify-content-center flex-column w-100">
+        <div class="sub-header d-flex justify-content-between w-100">
+            <div class="sub-header-title">
+                <h1 id="tituloEmpleado">Empleados</h1>
+            </div>
+            <div class="sub-header-buttons d-flex align-items-center" style="width: 33%;">
                 <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalAgregarEmpleado">Nuevo
                     empleado <i class="bi bi-plus-circle-fill"></i></button>
             </div>
         </div>
-        <hr>
-        <div class="data d-flex aling-center justify-content-center flex-column">
-            <div class="table">
-                <table class="table table-hover">
+        <hr class="w-100">
+        <div class="data w-100">
+            <div class="table-responsive" style="max-height: 700px; overflow-y: auto;">
+                <table class="table table-light table-hover mb-0">
+
                     <thead>
                         <tr class="table-light">
                             <th scope="col">#</th>
@@ -64,13 +72,13 @@
 
                             <td>
                                 {%if (empleado.usuario.rol_user == 0)%}
-                                         Administardor
+                                Administardor
                                 {%elif (empleado.usuario.rol_user == 3)%}
-                                        Cocinero
+                                Cocinero
                                 {%elif (empleado.usuario.rol_user == 4)%}
-                                        Cajero
+                                Cajero
                                 {%else%}
-                                        Desconocido
+                                Desconocido
                                 {%endif%}
                             </td>
                             <td class="">
@@ -79,7 +87,8 @@
                                         class="btn btn-primary">
                                         <i class="bi bi-eye-fill"></i>
                                     </button></a>
-                                <a href="/navegante/empleado/detallesEmpleado?id_emp={{empleado.id_empleado}}&modal=edit">
+                                <a
+                                    href="/navegante/empleado/detallesEmpleado?id_emp={{empleado.id_empleado}}&modal=edit">
                                     <button class="btn btn-primary bg-warning">
                                         <i class="bi bi-pencil-square"></i>
                                     </button></a>
@@ -167,7 +176,8 @@
                     <div class="d-flex">
                         <p class="fw-bold col-4 mx-2 d-flex">Nombre:</p>
                         <div class="d-flex col-7">
-                            <div class="mx-2" id="nombreEmpleadoSel">{{emp_sel.persona.nombre}} {{emp_sel.persona.primerApellido}}
+                            <div class="mx-2" id="nombreEmpleadoSel">{{emp_sel.persona.nombre}}
+                                {{emp_sel.persona.primerApellido}}
                                 {{emp_sel.persona.segundoApellido}}</div>
                         </div>
                     </div>
@@ -197,9 +207,9 @@
                         <p class="fw-bold col-4 mx-2 d-flex">Estatus:</p>
                         <div class="d-flex col-7">
                             {%if (emp_sel.persona.estatus == 0)%}
-                                <div class="mx-2" id="estatusEmpleadoSel">Inactivo</div>
+                            <div class="mx-2" id="estatusEmpleadoSel">Inactivo</div>
                             {%else%}
-                                <div class="mx-2" id="estatusEmpleadoSel">Activo</div>
+                            <div class="mx-2" id="estatusEmpleadoSel">Activo</div>
                             {%endif%}
                         </div>
                     </div>
@@ -224,88 +234,89 @@
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                 </div>
             </div>
-          
+
+        </div>
     </div>
-</div>
 
 
-<!-- Modal editar empleado-->
-<div class="shadow modal fade" id="modalEditarEmpleado" style="display: none;" tabindex="-1" aria-hidden="true"
-    aria-labelledby="modalEditarEmpleado">
-    <div class="modal-dialog modal-m modal-dialog-centered modal-dialog-scrollable">
-        {%if(emp_sel != Undefined)%}
-        <form method="POST" id="formularioEditarEmpleado" class="modal-content"
-            action="/navegante/empleado/actualizarEmpleado?id_emp_upd={{emp_sel.id_empleado}}">
-            {{form_empleado.csrf_token}}
-            <div class="modal-header">
-                <h4 class="modal-title" id="tituloModalEditarEmpleado">Modificar empleado</h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                {%if (emp_sel)%}
-                <div class="d-flex">
-                    <p class="fw-bold col-4 mx-2 d-flex">Nombre:</p>
-                    <div class="d-flex col-7">
-                        <div class="mx-2" id="nombreEmpleadoSel">{{emp_sel.persona.nombre}} {{emp_sel.persona.primerApellido}}
-                            {{emp_sel.persona.segundoApellido}}</div>
-                    </div>
+    <!-- Modal editar empleado-->
+    <div class="shadow modal fade" id="modalEditarEmpleado" style="display: none;" tabindex="-1" aria-hidden="true"
+        aria-labelledby="modalEditarEmpleado">
+        <div class="modal-dialog modal-m modal-dialog-centered modal-dialog-scrollable">
+            {%if(emp_sel != Undefined)%}
+            <form method="POST" id="formularioEditarEmpleado" class="modal-content"
+                action="/navegante/empleado/actualizarEmpleado?id_emp_upd={{emp_sel.id_empleado}}">
+                {{form_empleado.csrf_token}}
+                <div class="modal-header">
+                    <h4 class="modal-title" id="tituloModalEditarEmpleado">Modificar empleado</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                
-                {{macros.macro_campo_upd_proveedor(form_empleado.sueldo,emp_sel.sueldo_empleado)}}
-                {{macros.macro_campo_upd_proveedor(form_empleado.dias_laborales,emp_sel.dias_laborales)}}
+                <div class="modal-body">
+                    {%if (emp_sel)%}
+                    <div class="d-flex">
+                        <p class="fw-bold col-4 mx-2 d-flex">Nombre:</p>
+                        <div class="d-flex col-7">
+                            <div class="mx-2" id="nombreEmpleadoSel">{{emp_sel.persona.nombre}}
+                                {{emp_sel.persona.primerApellido}}
+                                {{emp_sel.persona.segundoApellido}}</div>
+                        </div>
+                    </div>
 
-                {%endif%}
+                    {{macros.macro_campo_upd_proveedor(form_empleado.sueldo,emp_sel.sueldo_empleado)}}
+                    {{macros.macro_campo_upd_proveedor(form_empleado.dias_laborales,emp_sel.dias_laborales)}}
 
-                
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="submit" class="btn btn-primary">Guardar cambios</button>
-            </div>
-        </form>
-        {%endif%}
+                    {%endif%}
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-primary">Guardar cambios</button>
+                </div>
+            </form>
+            {%endif%}
+        </div>
     </div>
-</div>
 
-  <!-- modalEliminarEmpleado -->
-  <div class="modal" tabindex="-1" id="confirmarEliminarEmpleado">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Eliminación de empleado</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <p>¿Está segur@ de inhabilitar a este empleado?</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, cancelar</button>
-                <a id="btnEliminarEmpleado"><button type="button" class="btn btn-primary">Si,
-                        desactivar</button></a>
+    <!-- modalEliminarEmpleado -->
+    <div class="modal" tabindex="-1" id="confirmarEliminarEmpleado">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Eliminación de empleado</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>¿Está segur@ de inhabilitar a este empleado?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, cancelar</button>
+                    <a id="btnEliminarEmpleado"><button type="button" class="btn btn-primary">Si,
+                            desactivar</button></a>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-  <!-- modal reactivar Empleado -->
-  <div class="modal" tabindex="-1" id="confirmarReactivarEmpleado">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Reactivación de empleado</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <p>¿Está segur@ de reactivar a este empleado?</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, cancelar</button>
-                <a id="btnReactivarEmpleado"><button type="button" class="btn btn-primary">Si,
-                        reactivar</button></a>
+    <!-- modal reactivar Empleado -->
+    <div class="modal" tabindex="-1" id="confirmarReactivarEmpleado">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Reactivación de empleado</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>¿Está segur@ de reactivar a este empleado?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, cancelar</button>
+                    <a id="btnReactivarEmpleado"><button type="button" class="btn btn-primary">Si,
+                            reactivar</button></a>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 </div>
 

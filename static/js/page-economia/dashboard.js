@@ -1,30 +1,29 @@
 document.getElementById("mesGraficaVentasDiarias").addEventListener("input", function () {
-  let mesSeleccionado = new Date(Date.parse(this.value)); // Formato: YYYY-MM
-  let primerMesVenta = "01/2025";
-  let ultimoMesVenta = "04/2025";
-  if (rangosFechasVentas != undefined) {
+  let value = this.value; // "2025-04"
+  let [anio, mes] = value.split("-");
+
+  let mesSeleccionado = new Date(parseInt(anio), parseInt(mes) - 1); // Correcto, sin problemas de zona horaria
+
+  let primerMesVenta = new Date(2025, 0); // Enero 2025
+  let ultimoMesVenta = new Date(2025, 3); // Abril 2025
+
+  if (rangosFechasVentas !== undefined) {
     let [primerMes, primerAnio] = rangosFechasVentas.primera_venta.split('/');
     let [ultimoMes, ultimoAnio] = rangosFechasVentas.ultima_venta.split('/');
-
-    primerMesVenta = new Date(parseInt(primerAnio), parseInt(primerMes) - 1, 1); // Año, Mes (0-based), Día
-    ultimoMesVenta = new Date(parseInt(ultimoAnio), parseInt(ultimoMes) - 1, 1);
-
+    primerMesVenta = new Date(parseInt(primerAnio), parseInt(primerMes) - 1);
+    ultimoMesVenta = new Date(parseInt(ultimoAnio), parseInt(ultimoMes) - 1);
   }
 
-  console.log('Mes sel: ' + mesSeleccionado);
-  console.log('Primer mes: ' + primerMesVenta);
-  console.log('Ultimo mes: ' + ultimoMesVenta);
   if (mesSeleccionado < primerMesVenta || mesSeleccionado > ultimoMesVenta) {
     $('#alertaMesFueraDeRango').modal('show');
     this.value = ""; // Borra la selección
   } else {
-    let mesVentas = ('0' + (mesSeleccionado.getMonth() + 1)).slice(-2) + '/' + mesSeleccionado.getFullYear();
-    window.location.assign('/economia/?mes_ventas=' + mesVentas + '&dias_ventas=' + 28);
+    let mesVentas = mes + '/' + anio;
+    window.location.assign('/economia/?mes_ventas=' + mesVentas + '&dias_ventas=28');
   }
 });
-function cambiarFechaGrafica() {
 
-}
+
 
 function cargarGrafica(fechasVentas, totalesVentas) {
   console.log('Ventas¿ 1: '+totalesVentas[0]);

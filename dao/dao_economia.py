@@ -64,6 +64,15 @@ def obtener_ultima_fecha_venta():
 def obtener_pagos_con_total(mes, anio, quincena=None):
     """Obtiene los pagos de nómina con nombre del empleado, cantidad pagada y fecha, además del total"""
     
+        # Si no se especifica mes o año, obtener el último mes y año con pagos
+    if mes is None or anio is None:
+        ultima_fecha = db.session.query(Nomina.fecha_pago).order_by(Nomina.fecha_pago.desc()).first()
+        if ultima_fecha:
+            mes = ultima_fecha.fecha_pago.month
+            anio = ultima_fecha.fecha_pago.year
+        else:
+            return [], 0  # No hay registros
+
     query = db.session.query(
         Persona.nombre,  # Nombre del empleado
         Nomina.cantidad_pagada,

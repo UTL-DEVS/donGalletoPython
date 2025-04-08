@@ -25,55 +25,141 @@
 
 <title>Compra de insumos</title>
 
-<div class="container d-flex aling-center justify-content-center flex-column align-center mt-5" style="width: 90%;">
-    <div class="menu d-flex aling-center justify-content-center flex-column align-center">
-        <div class="sub-header d-flex justify-content-between">
+
+
+<style>
+    .table-fixed {
+        max-height: 500px;
+        overflow-y: auto;
+    }
+
+    .table-fixed thead {
+        position: sticky;
+        top: 0;
+        background-color: white;
+        z-index: 1;
+    }
+</style>
+<div class="container d-flex align-items-center justify-content-center flex-column mt-5" style="width: 90%;">
+    <div class="menu d-flex align-items-center justify-content-center flex-column w-100">
+        <div class="sub-header d-flex justify-content-between w-100">
             <div class="sub-header-title">
-                <h1>Compras pendientes</h1>
+                <h1 id="tituloCompras">Compras pendientes</h1>
             </div>
+
         </div>
-        <hr>
-        <div class="data d-flex aling-center justify-content-center flex-column">
-            <div class="table">
-                <table class="table table-light table-hover">
+        <hr class="w-100">
+        <div class="data w-100">
+            <div class="table-responsive" style="max-height: 700px; overflow-y: auto;">
+                <table class="table table-light table-hover mb-0">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th>ID</th><th>Fecha</th><th>Total</th>
+                            <th>Empleado</th>
+                            <th>Fecha</th>
+                            <th>Total</th>
                             <th>Acciones</th>
 
                         </tr>
+
                     </thead>
                     <tbody>
                         {%if compras%}
                         {% for compra in compras %}
-                            <tr>
-                                <th scope="row" style="align-content: center;">{{ loop.index }}</th>
-                                <td>{{ compra.nombre }} {{ compra.primerApellido }} {{ compra.segundoApellido }}</td>
-                                <td style="align-content: center;">{{ compra.fecha_compra.strftime('%d/%m/%Y') }}</td>
-                                <td style="align-content: center;">${{ compra.total }}</td>
+                        <tr>
+                            <th scope="row" style="align-content: center;">{{ loop.index }}</th>
+                            <td>{{ compra.nombre }} {{ compra.primerApellido }} {{ compra.segundoApellido }}</td>
+                            <td style="align-content: center;">{{ compra.fecha_compra.strftime('%d/%m/%Y') }}</td>
+                            <td style="align-content: center;">${{ compra.total }}</td>
+                            <td style="align-content: center;" class="d-flex">
                                 {%if (compra.estatus==0)%}
-                                <td style="align-content: center;">
-                                    <form  action="/compraAdmin/compras/aceptar?id_compra={{compra.id_compra_insumo}})" method="post">
-                                        {{f.csrf_token}}
-                                        <button type="submit" class="btn btn-success">Aceptar</button>
-                                    </form>
-                                </td>
+
+                                <form action="/compraAdmin/compras/aceptar?id_compra={{compra.id_compra_insumo}}"
+                                    method="post" class="mx-1">
+                                    {{f.csrf_token}}
+                                    <button type="submit" class="btn btn-primary bg-success">
+                                    <i class="bi bi-check-square"></i>
+                                </button>
+                                </form>
                                 {%endif%}
-                            </tr>
+
+                                <form action="/compraAdmin/detalleCompra?id_comp={{compra.id_compra_insumo}}"
+                                method="post" class="mx-1">
+                                {{f.csrf_token}}
+
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="bi bi-eye-fill"></i>
+                            </button>
+                            </form>
+                                
+                            </td>
+                        </tr>
                         {% endfor %}
                         {%else%}
-                        <div class="sub-header-title">
-                            <h5>No hay compras para mostrar</h5>
+                        <div class="sub-header-title mt-5">
+                            <h3 class="fw-bold">No hay compras para mostrar</h3>
                         </div>
-                    </div>
-                        {%endif%}
-                    </tbody>
-                </table>
             </div>
+            {%endif%}
+            </tbody>
+            </table>
         </div>
     </div>
-
- 
 </div>
+
+<!-- Modal detalles de compra -->
+<div class="shadow modal fade" id="modalDetallesEmpleado" tabindex="-1" aria-labelledby="modalDetallesEmpleado"
+    style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-m modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                {%if compra%}
+                <div class="sub-header-title">
+                    <h4 class="modal-title" id="exampleModalCenteredScrollableTitle">Detalles compra </h4>
+                </div>
+                <p><strong>Registrado por:</strong> {{ compra.usuario.persona.nombre }} {{ compra.usuario.persona.primerApellido }}</p>
+        <p><strong>Total:</strong> ${{ compra.total }}</p>
+            {%endif%}
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class=" modal-body">
+                
+<table class="table table-bordered mt-3">
+    <thead>
+        <tr>
+            <th>Materia Prima</th>
+            <th>Cantidad</th>
+            <th>Precio Unitario</th>
+            <th>Subtotal</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for d in detalles %}
+        <tr>
+            <td>{{ d.materia_prima.nombre_materia }}</td>
+            <td>{{ d.cantidad }}</td>
+            <td>${{ d.precio_unitario }}</td>
+            <td>${{ d.cantidad * d.precio_unitario }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+</div>
+<script>
+    const modalOpen = {{ modal| safe }};
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="../../../static/js/compra_admin.js"></script>
 {%endblock%}
