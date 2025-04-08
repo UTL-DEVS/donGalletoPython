@@ -449,3 +449,12 @@ Fecha: 2025-04-07 23:13:56.374078 - Usuario: chris123 - Accion: Error 404: Pï¿½g
 Fecha: 2025-04-07 23:13:57.549577 - Usuario: chris123 - Accion: Error 404: Pï¿½gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
 >>>>>>> 00d26bda0512d29a3dd2217e507507e6c624dbc5
 Fecha: 2025-04-08 11:16:25.844171 - Usuario: Pruebas123* - Accion: Error 404: PÃ¡gina no encontrada en http://127.0.0.1:8080/cocina-insumos | IP: 127.0.0.1
+Fecha: 2025-04-08 13:27:06.682918 - Usuario: carlos - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-08 13:27:07.131897 - Usuario: carlos - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-08 13:27:13.901511 - Usuario: carlos - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-08 13:27:14.036777 - Usuario: carlos - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-08 13:27:21.500275 - Usuario: carlos - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-08 13:27:21.644463 - Usuario: carlos - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-08 13:29:16.767367 - Usuario: carlos - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-08 13:36:07.817709 - Usuario: andrea - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-08 13:38:44.194461 - Usuario: andrea - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1

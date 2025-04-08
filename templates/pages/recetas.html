@@ -3,53 +3,81 @@
 {%block contenido%}
 
 {% with messages = get_flashed_messages(with_categories=true) %}
-  {% if messages %}
-    {% for category, message in messages %}
-      <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
-        {{ message }}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>
-    {% endfor %}
-  {% endif %}
+{% if messages %}
+{% for category, message in messages %}
+<div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+    {{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+{% endif %}
 {% endwith %}
 
-<div class="container mt-5">
 
-    <table class="table table-striped">
-        <thead>
-            <th scope="col">#</th>
-            <th scope="col">Nombre Receta</th>
-            <th scope="col"></th>
-            <th scope="col"></th>
-            <th scope="col">
-                <a href="/receta/agregar" class="btn btn-primary">AgregarReceta</a>
-            </th>
-        </thead>
-        <tbody class="table-group-divider">
-            {%for receta in recetas%}
-            <tr>
-                <th scope="row">
-                    {{loop.index}}
-                </th>
-                <td>
-                    {{receta.nombre_receta}}
-                </td>
-                <td>
-                    <a href="/receta/{{receta.id_receta}}" class="btn btn-warning">Ver detalles</a>
-                </td>
-                {%if receta.estado == '0'%}
-                <td>
-                    <a href="/receta/activar/{{receta.id_receta}}" class="btn btn-success">Activar</a>
-                </td>
-                {%else%}
-                <td>
-                    <a href="/receta/desactivar/{{receta.id_receta}}" class="btn btn-danger">eliminar</a>
-                </td>
-                {%endif%}
-            </tr>
-            {%endfor%}
-        </tbody>
-    </table>
+<title>Cocina</title>
+<style>
+    .table-fixed {
+        max-height: 500px;
+        overflow-y: auto;
+    }
+
+    .table-fixed thead {
+        position: sticky;
+        top: 0;
+        background-color: white;
+        z-index: 1;
+    }
+</style>
+<div class="container d-flex align-items-center justify-content-center flex-column mt-5" style="width: 90%;">
+    <div class="menu d-flex align-items-center justify-content-center flex-column w-100">
+        <div class="sub-header d-flex justify-content-between w-100">
+            <div class="sub-header-title">
+                <h1 id="tituloHistorial">Recetas</h1>
+            </div>
+            <div class="sub-header-buttons d-flex align-items-center" style="width: 33%;">
+                <a href="/receta/agregar" class="btn btn-primary ms-auto">AgregarReceta</a>
+
+            </div>
+        </div>
+        <hr class="w-100">
+        <div class="data w-100">
+            <div class="table-responsive" style="max-height: 700px; overflow-y: auto;">
+                <table class="table table-light table-hover mb-0">
+                    <thead>
+                        <th scope="col">#</th>
+                        <th scope="col">Nombre Receta</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        
+                    </thead>
+                    <tbody class="table-group-divider">
+                        {%for receta in recetas%}
+                        <tr>
+                            <th scope="row">
+                                {{loop.index}}
+                            </th>
+                            <td>
+                                {{receta.nombre_receta}}
+                            </td>
+                            <td>
+                                <a href="/receta/{{receta.id_receta}}" class="btn btn-warning">Ver detalles</a>
+                            </td>
+                            {%if receta.estado == '0'%}
+                            <td>
+                                <a href="/receta/activar/{{receta.id_receta}}" class="btn btn-success">Activar</a>
+                            </td>
+                            {%else%}
+                            <td>
+                                <a href="/receta/desactivar/{{receta.id_receta}}" class="btn btn-danger">eliminar</a>
+                            </td>
+                            {%endif%}
+                        </tr>
+                        {%endfor%}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>
-    
-    {%endblock%}
+
+        {%endblock%}

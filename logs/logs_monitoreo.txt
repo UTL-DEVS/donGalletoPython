@@ -1225,3 +1225,16 @@ Fecha: 2025-04-08 12:13:37.110310 - Usuario: Pruebas123* - Accion: http://127.0.
 Fecha: 2025-04-08 12:15:35.259031 - Usuario: Pruebas123* - Accion: http://127.0.0.1:8080/cocina-insumos
 Fecha: 2025-04-08 12:15:36.249211 - Usuario: Pruebas123* - Accion: http://127.0.0.1:8080/cocina-insumos
 Fecha: 2025-04-08 12:15:38.796833 - Usuario: Pruebas123* - Accion: http://127.0.0.1:8080/cocina-pedidos
+Fecha: 2025-04-08 12:45:41.013595 - Usuario: andrea - Accion: http://127.0.0.1:8080/receta
+Fecha: 2025-04-08 12:46:35.130153 - Usuario: andrea - Accion: http://127.0.0.1:8080/receta
+Fecha: 2025-04-08 12:46:48.589102 - Usuario: andrea - Accion: http://127.0.0.1:8080/receta
+Fecha: 2025-04-08 12:46:56.150996 - Usuario: andrea - Accion: http://127.0.0.1:8080/insumos/insumo
+Fecha: 2025-04-08 12:49:58.198400 - Usuario: andrea - Accion: http://127.0.0.1:8080/receta
+Fecha: 2025-04-08 12:50:00.341822 - Usuario: andrea - Accion: http://127.0.0.1:8080/insumos/insumo
+Fecha: 2025-04-08 13:25:25.980536 - Usuario: andrea - Accion: http://127.0.0.1:8080/receta
+Fecha: 2025-04-08 13:25:29.380250 - Usuario: andrea - Accion: http://127.0.0.1:8080/insumos/insumo
+Fecha: 2025-04-08 13:25:40.761902 - Usuario: andrea - Accion: http://127.0.0.1:8080/insumos/insumo
+Fecha: 2025-04-08 13:25:53.458676 - Usuario: andrea - Accion: http://127.0.0.1:8080/insumos/insumo
+Fecha: 2025-04-08 13:26:03.576032 - Usuario: andrea - Accion: http://127.0.0.1:8080/insumos/insumo
+Fecha: 2025-04-08 13:32:40.403562 - Usuario: andrea - Accion: http://127.0.0.1:8080/insumos/insumo
+Fecha: 2025-04-08 13:34:22.516300 - Usuario: andrea - Accion: http://127.0.0.1:8080/insumos/insumo
