@@ -1,33 +1,42 @@
 document.getElementById('btnSolicitar').addEventListener('click', function(event) {
     const filas = document.querySelectorAll('#tblSolicitudInsumos tbody tr');
     const solicitudes = [];
-
+    let totalCompra = 0;
     filas.forEach(fila => {
         
         const th = fila.querySelector('th');
         const idMateria = th ? th.id : null;
 
-        const intCantidad = fila.querySelector('input[name="cantidad"]');
-        const cantidad = intCantidad ? parseInt(intCantidad.value) : 0;
-        const intCompra = fila.querySelector('input[name="compra"]');
-        const compra = intCompra ? parseInt(intCompra.value) : 0;
-        const intTipo = fila.querySelector('input[name="tipo"]');
-        const tipo = intTipo ? parseInt(intTipo.value) : 0;
+        const inpPrecio = fila.querySelector('input[name="precio"]');
+        const precio = inpPrecio ? parseInt(inpPrecio.value) : 0;
+        const inpCantidad = fila.querySelector('input[name="cantidad"]');
+        const cantidad = inpCantidad ? parseInt(inpCantidad.value) : 0;
+        const inpCompra = fila.querySelector('input[name="compra"]');
+        const compra = inpCompra ? parseInt(inpCompra.value) : 0;
+        const inpTipo = fila.querySelector('input[name="tipo"]');
+        const tipo = inpTipo ? parseInt(inpTipo.value) : 0;
+
+        if (cantidad == 0) {
+            return;
+        }
+
+        totalCompra += precio * cantidad
         
         if (idMateria && !isNaN(cantidad)) {
             solicitudes.push({
                 id_materia: idMateria,
                 cantidad: cantidad,
                 compra: compra,
-                tipo: tipo
+                tipo: tipo,
+                precio: precio
             });
         }
     });
 
-    enviarAlServicio(solicitudes);
+    enviarAlServicio(solicitudes, totalCompra);
 });
 
-function enviarAlServicio(datos) {
+function enviarAlServicio(datos, total) {
     const csrfToken = document.querySelector('input[name="csrf_token"]').value;
     console.log(datos)
     fetch('/solicitar-insumos', {
@@ -37,7 +46,8 @@ function enviarAlServicio(datos) {
             'X-CSRFToken': csrfToken  
         },
         body: JSON.stringify({
-            solicitudes: datos
+            solicitudes: datos,
+            totalCompra: total
         })
     })
     .then(response => response.json())

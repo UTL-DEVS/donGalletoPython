@@ -416,3 +416,5 @@ Fecha: 2025-04-07 18:12:51.200058 - Usuario: Pruebas123* - Accion: Error 404: P�
 Fecha: 2025-04-07 18:13:01.325260 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
 Fecha: 2025-04-07 18:13:02.150625 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
 Fecha: 2025-04-07 18:13:21.539125 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-08 10:42:48.793822 - Usuario: Pruebas123* - Accion: /cocina-pedidos
+Fecha: 2025-04-08 10:42:48.795044 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/solicitar-insumos | IP: 127.0.0.1
