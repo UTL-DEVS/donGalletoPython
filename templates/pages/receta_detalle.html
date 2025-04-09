@@ -1,6 +1,8 @@
 {% extends 'components/_estructura_admin.html' %}
 {% block titulo %}Detalle de Receta{% endblock %}
+
 {% block contenido %}
+
 {% with messages = get_flashed_messages(with_categories=true) %}
   {% if messages %}
     {% for category, message in messages %}
@@ -12,108 +14,106 @@
   {% endif %}
 {% endwith %}
 
-<nav class="navbar  nav">
-    <div class="container-fluid">
-        <a class="navbar-brand fs-3" href="#">Agregar Ingrediente</a>
-        <div class=" d-flex">
-            <a class="m-4 btn btn-warning" href="/receta">Regresar</a>
-        </div>
+<nav class="navbar nav bg-dark bg-opacity-10 rounded mb-4">
+  <div class="container-fluid">
+    <span class="navbar-brand fs-3">Detalle de Receta</span>
+    <div class="d-flex">
+      <a class="m-2 btn btn-warning" href="/receta">Regresar</a>
     </div>
+  </div>
 </nav>
 
-<div class="container mt-1">
-    <h2>Detalle de la Receta: <span class="text-decoration-underline ms-3">{{ receta.nombre_receta }}</span></h2>
-    <h2>Nombre Galleta: <span class="text-decoration-underline ms-3">{{ nombre_galleta }}</span></h2>
+<div class="card shadow-sm border-0 rounded-4 mt-4 mb-5">
+  <div class="card-header bg-light border-bottom rounded-top-4 py-3 px-4">
+    <h2 class="mb-2">
+      Detalle de la Receta: <span class="text-primary">{{ receta.nombre_receta }}</span>
+    </h2>
+    <h4>
+      Nombre Galleta: <span class="text-secondary">{{ nombre_galleta }}</span>
+    </h4>
+  </div>
 
-   
+  <div class="card-body px-4 py-4">
+    <div class="d-flex justify-content-end mb-3">
+      <button class="btn btn-primary px-4" data-bs-toggle="modal" data-bs-target="#modalAgregarDetalle">
+        Agregar Ingrediente
+      </button>
+    </div>
 
-    <!-- Fin Flash Messages -->
-    <div class="row mt-4">
-        <div class="col-6 ">
-            <div class="container ">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="card border-0 shadow-lg">
-                            <div class="card-header bg-primary text-white py">
-                                <h3 class="mb-0 text-center">
-                                    <i class="fas fa-plus-circle me-2"></i>Agregar Nueva Receta
-                                </h3>
-                            </div>
-                            <div class="card-body p-4">
-                                <form method="POST">
-                                    {{form.csrf_token}}
-    
-                                    <div class="row g-3">
-                                        <!-- Nombre -->
-                                        <div class="col-md-12">
-                                            <div class="">
-                                                {{ form.id_materia.label }}
-                                                {{ form.id_materia(class="form-control") }}
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="">
-                                                {{ form.cantidad_insumo.label }}
-                                                {{ form.cantidad_insumo(class="form-control") }}
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="">
-                                                {{ form.submit(class="btn btn-success") }}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div> <!-- Cierra .card -->
-                    </div> <!-- Cierra .col-lg-8 -->
-                </div> <!-- Cierra .row -->
-            </div> <!-- Cierra .container -->
-        </div> <!-- Cierra .col-6.bg-danger -->
-    
-        <div class="col-6">
-            <div style="max-height: 300px; overflow: auto;">
-                <table class="table table-striped mt-4 text-center">
-                    <thead>
-                        <th scope="col">#</th>
-                        <th scope="col">Materia Prima</th>
-                        <th scope="col">Cantidad</th>
-                        <th scope="col">Unidad</th> <!-- Columna adicional para mostrar la unidad -->
-                        <th scope="col">Acciones</th>
-                    </thead>
-                    <tbody>
-                        {% for detalle in detalles %}
-                        <tr>
-                            <th scope="row">{{ loop.index }}</th>
-                            <td>{{ detalle.materia_prima.nombre_materia }}</td>
-                            {%if detalle.materia_prima.unidad_medida_publico == 1%}
-                            <td>{{ detalle.cantidad_insumo }}</td>
-                            {%else%}
-                            <td>{{ detalle.cantidad_insumo / 1000}} </td>
+    <div style="max-height: 300px; overflow: auto;">
+      <table class="table table-hover table-bordered text-center align-middle">
+        <thead class="table-dark">
+          <tr>
+            <th>#</th>
+            <th>Materia Prima</th>
+            <th>Cantidad</th>
+            <th>Unidad</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for detalle in detalles %}
+          <tr>
+            <th scope="row">{{ loop.index }}</th>
+            <td>{{ detalle.materia_prima.nombre_materia }}</td>
+            <td>
+              {% if detalle.materia_prima.unidad_medida_publico == 1 %}
+                {{ detalle.cantidad_insumo }}
+              {% else %}
+                {{ detalle.cantidad_insumo / 1000 }}
+              {% endif %}
+            </td>
+            <td>
+              {% if detalle.materia_prima.unidad_medida_publico == 1 %}
+                gramos
+              {% elif detalle.materia_prima.unidad_medida_publico == 3 %}
+                litros
+              {% elif detalle.materia_prima.unidad_medida_publico == 4 %}
+                kilos
+              {% endif %}
+            </td>
+            <td>
+              <form method="POST"
+                    action="{{ url_for('receta.eliminar_detalle', id_receta=receta.id_receta, id_detalle=detalle.id_detalle_receta) }}">
+                {{ form.csrf_token }}
+                <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+              </form>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
 
-                            {%endif%}
-                            <td>
-                                {% if detalle.materia_prima.unidad_medida_publico == 1 %}
-                                    gramos
-                                {% elif detalle.materia_prima.unidad_medida_publico == 3 %}
-                                litros
-                                {% elif detalle.materia_prima.unidad_medida_publico == 4 %}
-                                    Kilos
-                                {% endif %}
-                            </td> <!-- Mostrar la unidad -->
-                            <td>
-                                <form method="POST" action="{{ url_for('receta.eliminar_detalle', id_receta=receta.id_receta, id_detalle=detalle.id_detalle_receta) }}">
-                                    {{ form.csrf_token }}
-                                    <button type="submit" class="btn btn-danger">Eliminar</button>
-                                </form>
-                            </td>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-                
-            </div>
-        </div> <!-- Cierra .col-6 de la tabla -->
-    </div> <!-- Cierra .row -->
-    
+<!-- Modal para Agregar Ingrediente -->
+<div class="modal fade" id="modalAgregarDetalle" tabindex="-1" aria-labelledby="modalAgregarDetalleLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-md modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content shadow rounded-4 border-0">
+      <div class="modal-header bg-primary text-white rounded-top-4">
+        <h5 class="modal-title" id="modalAgregarDetalleLabel">Agregar Ingrediente</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <form method="POST">
+          {{ form.csrf_token }}
+          <div class="mb-3">
+            {{ form.id_materia.label(class="form-label") }}
+            {{ form.id_materia(class="form-control") }}
+          </div>
+          <div class="mb-3">
+            {{ form.cantidad_insumo.label(class="form-label") }}
+            {{ form.cantidad_insumo(class="form-control") }}
+          </div>
+          <div class="text-center">
+            {{ form.submit(class="btn btn-success px-4") }}
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
 {% endblock %}

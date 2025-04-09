@@ -490,3 +490,77 @@ Fecha: 2025-04-08 16:37:51.952347 - Usuario: joel123456 - Accion: Error 404: Pág
 Fecha: 2025-04-08 16:45:23.421106 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
 Fecha: 2025-04-08 16:50:35.888303 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
 Fecha: 2025-04-08 16:50:35.984611 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-09 11:58:24.979147 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-09 12:09:29.662739 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-09 12:09:33.212761 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-09 12:09:36.804045 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-09 12:15:09.058831 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-09 12:21:31.239796 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-09 12:22:54.436639 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/receta/mis-pedidos | IP: 127.0.0.1
+Fecha: 2025-04-09 12:22:58.457634 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/receta/mis-pedidos | IP: 127.0.0.1
+Fecha: 2025-04-09 12:23:03.026598 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/receta/mis-pedidos | IP: 127.0.0.1
+Fecha: 2025-04-09 12:23:46.774430 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/insumos/static/js/page-ventas/nabvar.js | IP: 127.0.0.1
+Fecha: 2025-04-09 12:23:46.778584 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/insumos/static/css/page-ventas/navbar.css | IP: 127.0.0.1
+Fecha: 2025-04-09 12:23:46.780604 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/insumos/static/js/app.js | IP: 127.0.0.1
+Fecha: 2025-04-09 12:23:46.889654 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/insumos/static/js/page-ventas/nabvar.js | IP: 127.0.0.1
+Fecha: 2025-04-09 12:23:46.920289 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/insumos/static/js/app.js | IP: 127.0.0.1
+Fecha: 2025-04-09 12:24:28.326117 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-09 12:24:40.826440 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-09 12:26:57.205069 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-09 12:27:49.354175 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-09 12:32:43.082593 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-09 12:32:51.796669 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-09 12:33:09.635223 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-09 12:33:10.954196 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-09 12:37:32.280347 - Usuario: joel123456 - Accion: 'form' is undefined
+Fecha: 2025-04-09 12:37:32.303071 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/error | IP: 127.0.0.1
+Fecha: 2025-04-09 12:37:40.185679 - Usuario: joel123456 - Accion: 'form' is undefined
+Fecha: 2025-04-09 12:37:40.207952 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/error | IP: 127.0.0.1
+Fecha: 2025-04-09 12:37:54.480872 - Usuario: joel123456 - Accion: 'form' is undefined
+Fecha: 2025-04-09 12:37:54.520394 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/error | IP: 127.0.0.1
+Fecha: 2025-04-09 12:37:55.856825 - Usuario: joel123456 - Accion: 'form' is undefined
+Fecha: 2025-04-09 12:37:55.883085 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/error | IP: 127.0.0.1
+Fecha: 2025-04-09 12:38:00.235252 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-09 12:38:03.915408 - Usuario: joel123456 - Accion: 'form' is undefined
+Fecha: 2025-04-09 12:38:03.949477 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/error | IP: 127.0.0.1
+Fecha: 2025-04-09 12:38:04.810126 - Usuario: joel123456 - Accion: 'form' is undefined
+Fecha: 2025-04-09 12:38:04.837589 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/error | IP: 127.0.0.1
+Fecha: 2025-04-09 12:38:05.230173 - Usuario: joel123456 - Accion: 'form' is undefined
+Fecha: 2025-04-09 12:38:05.256736 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/error | IP: 127.0.0.1
+Fecha: 2025-04-09 12:38:05.443070 - Usuario: joel123456 - Accion: 'form' is undefined
+Fecha: 2025-04-09 12:38:05.471178 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/error | IP: 127.0.0.1
+Fecha: 2025-04-09 12:38:05.659856 - Usuario: joel123456 - Accion: 'form' is undefined
+Fecha: 2025-04-09 12:38:05.687990 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/error | IP: 127.0.0.1
+Fecha: 2025-04-09 12:38:16.848889 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-09 12:38:18.377378 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-09 12:38:21.402813 - Usuario: joel123456 - Accion: 'form' is undefined
+Fecha: 2025-04-09 12:38:21.436150 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/error | IP: 127.0.0.1
+Fecha: 2025-04-09 12:38:32.019806 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-09 12:39:34.112969 - Usuario: joel123456 - Accion: 'form' is undefined
+Fecha: 2025-04-09 12:39:34.150472 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/error | IP: 127.0.0.1
+Fecha: 2025-04-09 12:40:05.348904 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/error | IP: 127.0.0.1
+Fecha: 2025-04-09 12:40:05.446409 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-09 12:40:09.936377 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/galleta_home | IP: 127.0.0.1
+Fecha: 2025-04-09 12:40:42.832838 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-09 12:41:14.498136 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-09 12:41:17.495572 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-09 12:41:49.622979 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-09 12:43:52.577049 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-09 12:45:06.915167 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-09 12:45:22.501558 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-09 12:46:14.214816 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-09 12:46:19.488197 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-09 12:46:31.673922 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-09 12:47:10.313901 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-09 12:48:46.890387 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-09 12:50:23.448169 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-09 12:51:52.256794 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/economia/mis-pedidos | IP: 127.0.0.1
+Fecha: 2025-04-09 12:51:56.152246 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/economia/mis-pedidos | IP: 127.0.0.1
+Fecha: 2025-04-09 12:51:56.674656 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/economia/mis-pedidos | IP: 127.0.0.1
+Fecha: 2025-04-09 12:51:56.875059 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/economia/mis-pedidos | IP: 127.0.0.1
+Fecha: 2025-04-09 12:51:57.080036 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/economia/mis-pedidos | IP: 127.0.0.1
+Fecha: 2025-04-09 12:51:57.314291 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/economia/mis-pedidos | IP: 127.0.0.1
+Fecha: 2025-04-09 12:51:57.523373 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/economia/mis-pedidos | IP: 127.0.0.1
+Fecha: 2025-04-09 12:54:21.372977 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-09 12:54:45.032224 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-09 12:55:09.726218 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1

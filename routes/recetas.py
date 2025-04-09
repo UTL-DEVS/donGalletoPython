@@ -5,19 +5,15 @@ import os
 from funcs import crear_log_user, crear_log_error
 
 recetas_bp = Blueprint('receta', __name__, template_folder='templates')
-
 @recetas_bp.route('/receta')
-@login_required
 def receta_index():
-    if current_user.rol_user != 0 :
-        abort(404)
     try:
-        
-        crear_log_user(current_user.usuario, request.url)
         recetas = Receta.query.all()
-        return render_template('/pages/recetas.html', recetas=recetas)
+        form = RecetaForm()
+        form.id_galleta.choices = [(g.id_galleta, g.nombre_galleta) for g in Galleta.query.filter_by(activo=True).all()]
+        form.id_materia.choices = [(mp.id_materia, mp.nombre_materia) for mp in MateriaPrima.query.all()]
+        return render_template('/pages/recetas.html', recetas=recetas, form=form)
     except Exception as e:
-        crear_log_error(current_user.usuario, str(e))
         return redirect('/error')
 
 
@@ -76,6 +72,8 @@ def receta_detalle(id_receta):
         return redirect(url_for('receta.receta_detalle', id_receta=id_receta))
 
     return render_template('pages/receta_detalle.html', receta=receta, detalles=detalles, form=form, nombre_galleta=nombre_galleta_local)
+
+
 @recetas_bp.route('/receta/desactivar/<int:id_receta>')
 @login_required
 def receta_deactivar(id_receta):
@@ -110,50 +108,42 @@ def receta_activar(id_receta):
         crear_log_error(current_user.usuario, str(e))
         abort(404)
 
-@recetas_bp.route('/receta/agregar', methods=['GET', 'POST'])
-@login_required
+@recetas_bp.route('/receta/agregar', methods=['POST'])
 def agregar_receta():
- #   if current_user.rol_user == 1 | current_user.rol_user == 2 | current_user.rol_user == 3:
-  #      return redirect('/')
-    if current_user.rol_user != 0 :
-        abort(404)
-    print('entro')
-    crear_log_user(current_user.usuario, request.url)
     form = RecetaForm()
     form.id_galleta.choices = [(g.id_galleta, g.nombre_galleta) for g in Galleta.query.filter_by(activo=True).all()]
     form.id_materia.choices = [(mp.id_materia, mp.nombre_materia) for mp in MateriaPrima.query.all()]
-        
+    
     if form.validate_on_submit():
         galleta = Galleta.query.filter_by(id_galleta=form.id_galleta.data).first()
-        print('galleta')
-        print(galleta)
         if not galleta:
             flash('La galleta seleccionada no es válida.', 'danger')
-            return redirect(url_for('receta.agregar_receta'))
-            
+            return redirect(url_for('receta.receta_index'))
+
         nueva_receta = Receta(
             nombre_receta=form.nombre_receta.data,
             estado='1',
-            cantidad_insumo_producida = 1,# La receta comienza activa     
+            cantidad_insumo_producida=1,
             id_galleta=galleta.id_galleta
         )
         db.session.add(nueva_receta)
         db.session.commit()
-            
+
         nuevo_detalle = DetalleReceta(
             id_receta=nueva_receta.id_receta,
             id_materia=form.id_materia.data,
             cantidad_insumo=form.cantidad_insumo.data * 1000,
         )
         db.session.add(nuevo_detalle)
-            
-        galleta.escogido = False  # Cambiar el estado de la galleta
+
+        galleta.escogido = False
         db.session.commit()
-            
+
         flash('Receta agregada exitosamente.', 'success')
         return redirect(url_for('receta.receta_index'))
-        
-    return render_template('pages/agregar_receta.html', form=form)
+
+    flash('Error al agregar la receta.', 'danger')
+    return redirect(url_for('receta.receta_index'))
 
 
 @recetas_bp.route('/receta/<int:id_receta>/detalle/eliminar/<int:id_detalle>', methods=['POST'])
