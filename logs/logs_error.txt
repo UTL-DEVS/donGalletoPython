@@ -462,6 +462,7 @@ Fecha: 2025-04-08 14:55:16.829454 - Usuario: Usuario an√≥nimo - Accion: Error 40
 Fecha: 2025-04-08 15:24:45.170618 - Usuario: Pruebas123* - Accion: Error 404: P√°gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
 Fecha: 2025-04-08 15:24:46.512021 - Usuario: Pruebas123* - Accion: Error 404: P√°gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
 Fecha: 2025-04-08 15:29:10.931820 - Usuario: Pruebas123* - Accion: Error 404: P√°gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+<<<<<<< HEAD
 Fecha: 2025-04-08 16:51:49.795211 - Usuario: Usuario an√≥nimo - Accion: Error 404: P√°gina no encontrada en http://127.0.0.1:8080/favicon.ico | IP: 127.0.0.1
 Fecha: 2025-04-08 16:52:25.652154 - Usuario: Pruebas123* - Accion: Error 404: P√°gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
 Fecha: 2025-04-08 16:52:27.766099 - Usuario: Pruebas123* - Accion: Error 404: P√°gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
@@ -469,3 +470,56 @@ Fecha: 2025-04-08 16:52:30.665447 - Usuario: Pruebas123* - Accion: Error 404: P√
 Fecha: 2025-04-08 16:53:43.603315 - Usuario: Pruebas123* - Accion: Error 404: P√°gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
 Fecha: 2025-04-08 16:53:44.929345 - Usuario: Pruebas123* - Accion: Error 404: P√°gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
 Fecha: 2025-04-08 16:53:47.460620 - Usuario: Pruebas123* - Accion: Error 404: P√°gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+=======
+Fecha: 2025-04-08 15:50:50.831155 - Usuario: Usuario anÛnimo - Accion: Error 404: P·gina no encontrada en http://127.0.0.1:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-08 15:51:03.248387 - Usuario: Usuario anÛnimo - Accion: Error 404: P·gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-08 16:10:01.507142 - Usuario: joel123456 - Accion: Error 404: P·gina no encontrada en http://localhost:8080/proveedor/mis-pedidos | IP: 127.0.0.1
+Fecha: 2025-04-08 16:34:14.894574 - Usuario: joel123456 - Accion: Error 404: P·gina no encontrada en http://localhost:8080/insumos/static/js/page-ventas/nabvar.js | IP: 127.0.0.1
+Fecha: 2025-04-08 16:34:14.894574 - Usuario: joel123456 - Accion: Error 404: P·gina no encontrada en http://localhost:8080/insumos/static/css/page-ventas/navbar.css | IP: 127.0.0.1
+Fecha: 2025-04-08 16:34:14.895582 - Usuario: joel123456 - Accion: Error 404: P·gina no encontrada en http://localhost:8080/insumos/static/js/app.js | IP: 127.0.0.1
+Fecha: 2025-04-08 16:34:14.934418 - Usuario: joel123456 - Accion: Error 404: P·gina no encontrada en http://localhost:8080/insumos/static/js/page-ventas/nabvar.js | IP: 127.0.0.1
+Fecha: 2025-04-08 16:34:14.954380 - Usuario: joel123456 - Accion: Error 404: P·gina no encontrada en http://localhost:8080/insumos/static/js/app.js | IP: 127.0.0.1
+Fecha: 2025-04-08 16:36:55.241464 - Usuario: joel123456 - Accion: Error 404: P·gina no encontrada en http://localhost:8080/insumos/static/js/app.js | IP: 127.0.0.1
+Fecha: 2025-04-08 16:36:55.241464 - Usuario: joel123456 - Accion: Error 404: P·gina no encontrada en http://localhost:8080/insumos/static/js/page-ventas/nabvar.js | IP: 127.0.0.1
+Fecha: 2025-04-08 16:36:55.241464 - Usuario: joel123456 - Accion: Error 404: P·gina no encontrada en http://localhost:8080/insumos/static/css/page-ventas/navbar.css | IP: 127.0.0.1
+Fecha: 2025-04-08 16:36:55.283851 - Usuario: joel123456 - Accion: Error 404: P·gina no encontrada en http://localhost:8080/insumos/static/js/page-ventas/nabvar.js | IP: 127.0.0.1
+Fecha: 2025-04-08 16:36:55.303075 - Usuario: joel123456 - Accion: Error 404: P·gina no encontrada en http://localhost:8080/insumos/static/js/app.js | IP: 127.0.0.1
+Fecha: 2025-04-08 16:37:03.881486 - Usuario: joel123456 - Accion: Error 404: P·gina no encontrada en http://localhost:8080/insumos/static/js/app.js | IP: 127.0.0.1
+Fecha: 2025-04-08 16:37:03.881486 - Usuario: joel123456 - Accion: Error 404: P·gina no encontrada en http://localhost:8080/insumos/static/css/page-ventas/navbar.css | IP: 127.0.0.1
+Fecha: 2025-04-08 16:37:03.883495 - Usuario: joel123456 - Accion: Error 404: P·gina no encontrada en http://localhost:8080/insumos/static/js/page-ventas/nabvar.js | IP: 127.0.0.1
+Fecha: 2025-04-08 16:37:04.003018 - Usuario: joel123456 - Accion: Error 404: P·gina no encontrada en http://localhost:8080/insumos/static/js/page-ventas/nabvar.js | IP: 127.0.0.1
+Fecha: 2025-04-08 16:37:04.023930 - Usuario: joel123456 - Accion: Error 404: P·gina no encontrada en http://localhost:8080/insumos/static/js/app.js | IP: 127.0.0.1
+Fecha: 2025-04-08 16:37:15.400374 - Usuario: joel123456 - Accion: Error 404: P·gina no encontrada en http://localhost:8080/insumos/static/css/page-ventas/navbar.css | IP: 127.0.0.1
+Fecha: 2025-04-08 16:37:15.400374 - Usuario: joel123456 - Accion: Error 404: P·gina no encontrada en http://localhost:8080/insumos/static/js/page-ventas/nabvar.js | IP: 127.0.0.1
+Fecha: 2025-04-08 16:37:15.400374 - Usuario: joel123456 - Accion: Error 404: P·gina no encontrada en http://localhost:8080/insumos/static/js/app.js | IP: 127.0.0.1
+Fecha: 2025-04-08 16:37:15.434412 - Usuario: joel123456 - Accion: Error 404: P·gina no encontrada en http://localhost:8080/insumos/static/js/page-ventas/nabvar.js | IP: 127.0.0.1
+Fecha: 2025-04-08 16:37:15.453803 - Usuario: joel123456 - Accion: Error 404: P·gina no encontrada en http://localhost:8080/insumos/static/js/app.js | IP: 127.0.0.1
+Fecha: 2025-04-08 16:37:51.919831 - Usuario: joel123456 - Accion: Error 404: P·gina no encontrada en http://localhost:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-08 16:37:51.952347 - Usuario: joel123456 - Accion: Error 404: P·gina no encontrada en http://localhost:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-08 16:45:23.421106 - Usuario: joel123456 - Accion: Error 404: P·gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-08 16:50:35.888303 - Usuario: joel123456 - Accion: Error 404: P·gina no encontrada en http://localhost:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-08 16:50:35.984611 - Usuario: joel123456 - Accion: Error 404: P·gina no encontrada en http://localhost:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+>>>>>>> 6def98142aee8454aefa664ef7b095dc8eb6f72d
+Fecha: 2025-04-08 17:33:34.135590 - Usuario: Pruebas123* - Accion: Error 404: P√°gina no encontrada en http://127.0.0.1:8080/insumos/static/css/page-ventas/navbar.css | IP: 127.0.0.1
+Fecha: 2025-04-08 17:33:34.138138 - Usuario: Pruebas123* - Accion: Error 404: P√°gina no encontrada en http://127.0.0.1:8080/insumos/static/js/app.js | IP: 127.0.0.1
+Fecha: 2025-04-08 17:33:34.138192 - Usuario: Pruebas123* - Accion: Error 404: P√°gina no encontrada en http://127.0.0.1:8080/insumos/static/js/page-ventas/nabvar.js | IP: 127.0.0.1
+Fecha: 2025-04-08 17:36:34.051094 - Usuario: Pruebas123* - Accion: Error 404: P√°gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-08 17:36:51.544309 - Usuario: Pruebas123* - Accion: Error 404: P√°gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-08 17:36:54.552087 - Usuario: Pruebas123* - Accion: Error 404: P√°gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-08 17:37:40.794015 - Usuario: Pruebas123* - Accion: Error 404: P√°gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-08 17:37:46.927227 - Usuario: Pruebas123* - Accion: Error 404: P√°gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-08 17:38:33.435421 - Usuario: Pruebas123* - Accion: Error 404: P√°gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-08 17:38:41.228196 - Usuario: Pruebas123* - Accion: Error 404: P√°gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-08 17:38:53.200555 - Usuario: Pruebas123* - Accion: Error 404: P√°gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-08 18:00:44.531849 - Usuario: Usuario an√≥nimo - Accion: Error 404: P√°gina no encontrada en http://127.0.0.1:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-09 17:47:59.158662 - Usuario: Pruebas123* - Accion: /cocina-pedidos
+Fecha: 2025-04-09 17:47:59.159224 - Usuario: Pruebas123* - Accion: Error 404: P√°gina no encontrada en http://127.0.0.1:8080/cocina-pedidos | IP: 127.0.0.1
+Fecha: 2025-04-09 17:48:41.375417 - Usuario: Pruebas123* - Accion: /cocina-pedidos
+Fecha: 2025-04-09 17:48:41.375857 - Usuario: Pruebas123* - Accion: Error 404: P√°gina no encontrada en http://127.0.0.1:8080/cocina-pedidos | IP: 127.0.0.1
+Fecha: 2025-04-09 17:48:44.076360 - Usuario: Pruebas123* - Accion: /cocina-pedidos
+Fecha: 2025-04-09 17:48:44.076784 - Usuario: Pruebas123* - Accion: Error 404: P√°gina no encontrada en http://127.0.0.1:8080/cocina-pedidos | IP: 127.0.0.1
+Fecha: 2025-04-09 17:48:46.319660 - Usuario: Pruebas123* - Accion: /cocina-pedidos
+Fecha: 2025-04-09 17:48:46.320346 - Usuario: Pruebas123* - Accion: Error 404: P√°gina no encontrada en http://127.0.0.1:8080/cocina-pedidos | IP: 127.0.0.1
+Fecha: 2025-04-09 17:50:48.800271 - Usuario: Pruebas123* - Accion: /cocina-pedidos
+Fecha: 2025-04-09 17:50:48.800642 - Usuario: Pruebas123* - Accion: Error 404: P√°gina no encontrada en http://127.0.0.1:8080/cocina-pedidos | IP: 127.0.0.1
+Fecha: 2025-04-11 09:12:01.103657 - Usuario: Usuario an√≥nimo - Accion: Error 404: P√°gina no encontrada en http://127.0.0.1:8080/favicon.ico | IP: 127.0.0.1

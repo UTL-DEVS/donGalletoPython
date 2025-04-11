@@ -114,7 +114,6 @@ def confirmarProduccion():
 
     #Proceso - Produccion
     produccion = controller_produccion.procesarProduccion(id_produccion)
-    print('produccion ' + str(produccion))
     if produccion != 1:
         return jsonify({
                 "error": True,
@@ -125,7 +124,6 @@ def confirmarProduccion():
     for detalleProduccion in lstDetalleProduccion:
         #Proceso - Materia
         materiaPrima = controller_materia_prima.descontarStock(detalleProduccion["id_galleta"], int(detalleProduccion["cantidad"]))
-        print('materia ' + str(materiaPrima))
         if materiaPrima != 1:
             if materiaPrima == -1:
                 return jsonify({
@@ -143,7 +141,6 @@ def confirmarProduccion():
         objStock.id_galleta = detalleProduccion["id_galleta"]
         objStock.cantidad_galleta = int(detalleProduccion["cantidad"])
         stock = controller_stock.agregarStock(objStock)
-        print('stock ' + str(stock))
         if stock != 1:
             return jsonify({
                 "error": True,

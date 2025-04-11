@@ -60,7 +60,6 @@ def descontarStock(idGalleta, cantidad):
         for detalle in lstDetalles:
             materiaPrima = db.session.query(MateriaPrima).filter_by(id_materia=detalle.id_materia).first()  
             descuento = detalle.cantidad_insumo * cantidad
-            print(descuento)
             if materiaPrima.stock_materia < descuento:
                 return -3
             materiaPrima.stock_materia = materiaPrima.stock_materia - descuento

@@ -134,7 +134,7 @@ def agregar_receta():
         nueva_receta = Receta(
             nombre_receta=form.nombre_receta.data,
             estado='1',
-            cantidad_insumo_producida = 700,# La receta comienza activa     
+            cantidad_insumo_producida = 1,# La receta comienza activa     
             id_galleta=galleta.id_galleta
         )
         db.session.add(nueva_receta)

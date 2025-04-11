@@ -1,0 +1,2 @@
+[2025-04-08 16:08:03.714587] - Usuario: joel123456 - Insumo ID: 1 - Acción: CREACIÓN - Descripción: "leche", Precio: "30.0", Estatus: "1"
+[2025-04-08 17:33:21.191523] - Usuario: Pruebas123* - Insumo ID: 3 - Acción: CREACIÓN - Descripción: "Harina de trigo", Precio: "1.0", Estatus: "1"
