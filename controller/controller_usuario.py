@@ -41,6 +41,12 @@ def obtener_empleado_especifico(id_empleado):
 def actualizar_empleado(id_empleado, form_empleado):
     emp_sel=dao_usuario.obtener_empleado_especifico(id_empleado)
     emp_sel.id_empleado=id_empleado
+    
+    emp_sel.persona.nombre=str(form_empleado.nombre.data)
+    emp_sel.persona.primerApellido=str(form_empleado.primer_apellido.data)
+    emp_sel.persona.segundoApellido=str(form_empleado.segundo_apellido.data)
+    emp_sel.persona.direccion=str(form_empleado.direccion.data)
+    emp_sel.persona.telefono=str(form_empleado.telefono.data)
     emp_sel.sueldo_empleado= float(form_empleado.sueldo.data)
     emp_sel.dias_laborales=int(form_empleado.dias_laborales.data)
    

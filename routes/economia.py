@@ -25,16 +25,17 @@ def dashboard():
                 dias =((request.args.get('dias_ventas')))
     
             lista_ventas = controller_economia.obtener_ventas_diarias(mes_venta, dias)
+            total_mes=0
+            for v in lista_ventas: total_mes+=v.total_dia  
+            print(f'totalmes: {total_mes}')
             lista_ventas_json = json.dumps([
                 {
-                    "fecha_venta": venta.fecha.strftime("%Y-%m-%d"),  # Convertir datetime a string
-                    "total": venta.total,
-                    "estatus": venta.estado
-                }
+                    "fecha_venta": venta.fecha_venta.strftime("%Y-%m-%d"),  # Convertir datetime a string
+                    "total": venta.total_dia                }
                 for venta in lista_ventas
             ])
             crear_log_user(current_user.usuario, request.url)
-        return render_template('pages/page-economia/dashboard.html',rango_fechas_ventas=fechas_ventas,lista_ventas=lista_ventas_json)
+        return render_template('pages/page-economia/dashboard.html',rango_fechas_ventas=fechas_ventas,lista_ventas=lista_ventas_json, list=lista_ventas, tot_mes=total_mes)
     except Exception as e:
         crear_log_error(current_user.usuario, str(e))
         flash("Error al cargar el panel económico", "danger")

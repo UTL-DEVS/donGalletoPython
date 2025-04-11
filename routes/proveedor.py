@@ -55,8 +55,6 @@ def actualizar_proveedor():
     try:
         if current_user.rol_user != 0:
             abort(404)
-        if current_user.rol_user != 0 :
-            return redirect('/login')
         form_persona_obj = form_persona()
         controller_proveedor.actualizar_proveedor(int(request.args.get('id_prov_upd')),form_persona_obj)
         crear_log_user(current_user.usuario, request.url)

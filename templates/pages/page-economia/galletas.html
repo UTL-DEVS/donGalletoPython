@@ -27,12 +27,12 @@
     <div class="menu d-flex align-items-center justify-content-center flex-column w-100">
         <div class="sub-header d-flex justify-content-between w-100">
             <div class="sub-header-title">
-                <h1 id="tituloHistorial">Ventas del mes</h1>
+                <h1 id="tituloHistorial">Galletas más vendidas del mes</h1>
             </div>
             <div class="sub-header-buttons d-flex align-items-center" style="width: 33%;">
                 <p class="w-100 m-0 fw-bold">Seleccione una fecha: </p>
                 <input id="mesGraficaVentasDiarias" type="month" name="mes" class="form-control"
-                    aria-describedby="basic-addon2"
+                    aria-describedby="basic-addon2" 
                     value="{{ mes_sel if mes_sel else '' }}">
             </div>
         </div>
@@ -41,7 +41,7 @@
 
 
 
-            <div id="ventasDiarias"></div>
+            <div id="galletasMasVendidas"></div>
             <h4 id="fechaGrafica"></h4>
 
 
@@ -85,10 +85,7 @@
                                 <td>${{ f.total_dia}}</td>
                             </tr>
                             {% endfor %}
-                            <tr>
-                                <td class="fw-bold">TOTAL:</td> 
-                                <td class="fw-bold text-center">${{tot_mes}}</td>
-                            </tr>
+                          
                         </tbody>
                     </table>
                 </div>
@@ -97,14 +94,6 @@
     </div>
 </div>
 
-<!-- Barra de navegación inferior 
-    <nav class="navbar navbar-dark bg-dark fixed-bottom">
-        <div class="container-fluid d-flex justify-content-around">
-            <a class="nav-link text-light" href="#"><i class="bi bi-house-door"></i> Estadísticas</a>
-            <a class="nav-link text-light" href="#"><i class="bi bi-search"></i> Ventas Diarias</a>
-            <a class="nav-link text-light" href="#"><i class="bi bi-person"></i> Gastos</a>
-        </div>
-    </nav>-->
 
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

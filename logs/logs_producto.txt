@@ -1,1 +1,5 @@
 [2025-04-08 16:08:03.714587] - Usuario: joel123456 - Insumo ID: 1 - Acción: CREACIÓN - Descripción: "leche", Precio: "30.0", Estatus: "1"
+[2025-04-09 21:56:33.843407] - Usuario: andrea - Insumo ID: 1 - Acción: CREACIÓN - Descripción: "Fresas", Precio: "75.0", Estatus: "1"
+[2025-04-10 19:43:25.701170] - Usuario: andrea - Insumo ID: 2 - Acción: CREACIÓN - Descripción: "Harina", Precio: "450.0", Estatus: "1"
+[2025-04-10 19:44:00.177615] - Usuario: andrea - Insumo ID: 3 - Acción: CREACIÓN - Descripción: "Leche", Precio: "15.0", Estatus: "1"
+[2025-04-10 19:45:07.522655] - Usuario: andrea - Insumo ID: 4 - Acción: CREACIÓN - Descripción: "Esencia de vainilla", Precio: "102.0", Estatus: "1"

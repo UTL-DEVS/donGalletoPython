@@ -1,492 +1,93 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-Fecha: 2025-04-03 19:12:48.461051 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:12:48.469051 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:12:48.469347 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:14:03.275322 - Usuario: Usuario an�nimo - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:14:03.275480 - Usuario: Usuario an�nimo - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:14:03.276444 - Usuario: Usuario an�nimo - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:19:30.978647 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:19:30.987820 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:19:30.994320 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:34:25.591207 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:34:25.593621 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:34:25.593844 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:35:41.685792 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:35:41.700581 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:35:41.702589 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:40:18.734305 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:40:18.745983 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:40:18.750249 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:44:34.602151 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:44:34.604416 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:44:34.606079 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:46:47.408852 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:46:47.410361 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:50:59.752336 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:50:59.753418 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:52:10.240706 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:52:10.240849 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:52:10.245585 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:52:53.560187 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:52:53.560757 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:52:53.561525 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-=======
-<<<<<<< HEAD
-Fecha: 2025-04-03 19:08:22.865021 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:08:22.871523 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:08:22.873023 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:08:56.294991 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:08:56.296177 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:08:56.296732 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-=======
-Fecha: 2025-04-03 19:25:45.396127 - Usuario: Usuario an�nimo - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-03 19:26:11.036397 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:26:11.051128 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:26:11.058698 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:27:33.516375 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:27:33.520712 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:27:33.520712 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:28:16.349558 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:28:16.350584 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:28:16.355115 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:29:27.237306 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:29:27.239527 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:29:27.239527 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:30:12.713524 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:30:12.715673 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:30:12.722616 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:30:13.940221 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:30:13.943241 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:30:13.947242 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-<<<<<<< HEAD
-Fecha: 2025-04-03 19:42:26.531446 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:42:26.541441 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:42:26.544986 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:42:39.523235 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:42:39.525007 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:42:39.528734 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:43:01.166846 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:43:01.171512 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:43:01.172583 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:43:50.620778 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:43:50.631768 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:43:50.637083 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:44:35.340225 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:44:35.342245 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:44:35.343239 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:45:32.696019 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:45:32.719165 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:45:32.720557 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:46:12.791416 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:46:12.791416 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:46:12.791416 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:47:10.446575 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:47:10.451605 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:47:10.454557 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:50:26.987103 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:50:27.000826 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:50:27.002828 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:53:04.879145 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:53:04.896044 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:53:04.903035 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:53:04.982200 - Usuario: Usuario an�nimo - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-03 19:58:29.940388 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:58:29.963388 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:58:29.963388 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:59:43.191326 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:59:43.192324 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 19:59:43.196332 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-=======
->>>>>>> 1a0d0066bb6101809989130c951e7deca8808cf9
->>>>>>> bcc7f823a049981f51252eeaa8c8e5cacf20d27d
-<<<<<<< HEAD
-Fecha: 2025-04-03 20:03:43.342373 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 20:03:43.346999 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 20:03:43.347703 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-=======
-Fecha: 2025-04-03 20:05:19.053728 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 20:05:19.070318 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 20:05:19.076316 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 20:07:35.567754 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 20:07:35.571940 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 20:07:35.571940 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
->>>>>>> 5c6651af6d99848d0f0a7a88e72de54113146703
-Fecha: 2025-04-03 20:19:00.437863 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 20:19:00.443367 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 20:19:00.445155 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 20:19:10.940709 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 20:19:10.940768 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-03 20:19:10.950684 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-04 08:58:11.475860 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-04 09:44:23.151831 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/produccion-confirmaciones | IP: 127.0.0.1
-Fecha: 2025-04-04 09:44:39.351778 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/produccion-confirmaciones | IP: 127.0.0.1
-Fecha: 2025-04-04 09:45:23.444923 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/produccion-confirmaciones | IP: 127.0.0.1
-Fecha: 2025-04-04 09:46:23.548449 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/produccion-confirmaciones | IP: 127.0.0.1
-Fecha: 2025-04-04 09:46:33.143522 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/produccion-confirmaciones | IP: 127.0.0.1
-Fecha: 2025-04-04 09:48:24.952957 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/produccion-confirmaciones | IP: 127.0.0.1
-Fecha: 2025-04-04 09:48:51.747180 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/produccion-confirmaciones | IP: 127.0.0.1
-Fecha: 2025-04-04 09:49:22.398401 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/produccion-confirmaciones | IP: 127.0.0.1
-Fecha: 2025-04-04 10:44:15.029054 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/favicon.ico | IP: 127.0.0.1
-=======
-Fecha: 2025-04-04 10:04:41.516708 - Usuario: carlitos12 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/economia/gastos_dashboard | IP: 127.0.0.1
-Fecha: 2025-04-04 10:17:45.225664 - Usuario: carlitos12 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/cocina-pedidos | IP: 127.0.0.1
-Fecha: 2025-04-04 10:18:56.802322 - Usuario: carlitos12 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-04 10:18:56.811011 - Usuario: carlitos12 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-04 10:18:56.812014 - Usuario: carlitos12 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-04 10:43:55.432726 - Usuario: Usuario an�nimo - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-04 18:03:52.242383 - Usuario: Usuario an�nimo - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/empleado | IP: 127.0.0.1
-Fecha: 2025-04-04 18:39:59.976258 - Usuario: carlitos12 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/economia/gastos | IP: 127.0.0.1
-Fecha: 2025-04-04 18:40:08.436688 - Usuario: Usuario an�nimo - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/economia/gastos | IP: 127.0.0.1
-Fecha: 2025-04-04 18:40:10.096415 - Usuario: Usuario an�nimo - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/economia/gastos | IP: 127.0.0.1
-Fecha: 2025-04-04 18:40:24.282988 - Usuario: Usuario an�nimo - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/economia/gastos | IP: 127.0.0.1
-Fecha: 2025-04-04 18:40:25.283803 - Usuario: Usuario an�nimo - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/economia/gastos_dashboard | IP: 127.0.0.1
-Fecha: 2025-04-04 18:46:15.656528 - Usuario: carlitos12 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/economia/gastos | IP: 127.0.0.1
-Fecha: 2025-04-04 18:51:55.730536 - Usuario: carlitos12 - Accion: cannot access local variable 'mes_venta' where it is not associated with a value
-Fecha: 2025-04-04 18:51:55.761574 - Usuario: carlitos12 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/error | IP: 127.0.0.1
-Fecha: 2025-04-04 18:53:09.597034 - Usuario: carlitos12 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/economia/gastos_dashboard | IP: 127.0.0.1
-Fecha: 2025-04-04 18:59:58.001041 - Usuario: carlitos12 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/insumos/static/js/app.js | IP: 127.0.0.1
-Fecha: 2025-04-04 18:59:58.015676 - Usuario: carlitos12 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/insumos/static/img/logo_la_casa_de_la_galleta.jpeg | IP: 127.0.0.1
-Fecha: 2025-04-04 19:07:10.340478 - Usuario: carlitos12 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/economia/gastos | IP: 127.0.0.1
-Fecha: 2025-04-04 19:07:51.389838 - Usuario: carlitos12 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/economia/gastos_dashboard | IP: 127.0.0.1
-Fecha: 2025-04-04 19:07:54.551786 - Usuario: carlitos12 - Accion: cannot access local variable 'mes_venta' where it is not associated with a value
-Fecha: 2025-04-04 19:07:54.584100 - Usuario: carlitos12 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/error | IP: 127.0.0.1
-Fecha: 2025-04-04 19:11:41.778133 - Usuario: carlitos12 - Accion: 'cantidad_insumo_producida' is an invalid keyword argument for Receta
-Fecha: 2025-04-04 19:11:41.779125 - Usuario: carlitos12 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/receta/agregar | IP: 127.0.0.1
-Fecha: 2025-04-04 19:13:12.997901 - Usuario: carlitos12 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/economia/gastos | IP: 127.0.0.1
-Fecha: 2025-04-04 19:13:15.606297 - Usuario: carlitos12 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/economia/gastos | IP: 127.0.0.1
-Fecha: 2025-04-04 19:13:17.085939 - Usuario: carlitos12 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/economia/gastos | IP: 127.0.0.1
-Fecha: 2025-04-04 19:13:35.187549 - Usuario: carlitos12 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/insumos/static/img/logo_la_casa_de_la_galleta.jpeg | IP: 127.0.0.1
-Fecha: 2025-04-04 19:13:35.221726 - Usuario: carlitos12 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/insumos/static/js/app.js | IP: 127.0.0.1
-Fecha: 2025-04-04 19:13:50.369643 - Usuario: carlitos12 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/insumos/static/js/app.js | IP: 127.0.0.1
-Fecha: 2025-04-04 19:13:50.370671 - Usuario: carlitos12 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/insumos/static/img/logo_la_casa_de_la_galleta.jpeg | IP: 127.0.0.1
-Fecha: 2025-04-04 23:04:20.306590 - Usuario: Usuario an�nimo - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-04 23:05:29.941322 - Usuario: joel123456 - Accion: cannot access local variable 'mes_venta' where it is not associated with a value
-Fecha: 2025-04-04 23:05:29.966907 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/error | IP: 127.0.0.1
-Fecha: 2025-04-04 23:05:32.652814 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/economia/gastos_dashboard | IP: 127.0.0.1
-Fecha: 2025-04-04 23:05:47.718564 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-04 23:06:17.397288 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-04 23:15:22.875362 - Usuario: milk220010 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/insumos/insumo | IP: 127.0.0.1
-Fecha: 2025-04-04 23:15:25.184392 - Usuario: milk220010 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/insumos/insumo | IP: 127.0.0.1
-Fecha: 2025-04-04 23:15:25.276286 - Usuario: milk220010 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-04 23:15:37.989098 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-04 23:16:04.423148 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-04 23:16:16.901122 - Usuario: joel123456 - Accion: 'forms.form_insumo.InsumoForm object' has no attribute 'stock_materia'
-Fecha: 2025-04-04 23:16:16.940418 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/error | IP: 127.0.0.1
-Fecha: 2025-04-04 23:16:51.738778 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/error | IP: 127.0.0.1
-Fecha: 2025-04-04 23:25:40.040540 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-04 23:26:59.299661 - Usuario: Usuario an�nimo - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-04 23:27:46.231857 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-04 23:28:09.279348 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-04 23:28:50.692048 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-04 23:29:53.425104 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-04 23:30:12.201221 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-04 23:30:28.016190 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-04 23:34:06.671619 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-04 23:34:33.914185 - Usuario: joel123456 - Accion: 'cantidad_insumo_producida' is an invalid keyword argument for Receta
-Fecha: 2025-04-04 23:34:33.914185 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/receta/agregar | IP: 127.0.0.1
-Fecha: 2025-04-04 23:35:21.909393 - Usuario: joel123456 - Accion: 'cantidad_insumo_producida' is an invalid keyword argument for Receta
-Fecha: 2025-04-04 23:35:21.910443 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/receta/agregar | IP: 127.0.0.1
-Fecha: 2025-04-04 23:35:43.261444 - Usuario: joel123456 - Accion: 'cantidad_insumo_producida' is an invalid keyword argument for Receta
-Fecha: 2025-04-04 23:35:43.262454 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/receta/agregar | IP: 127.0.0.1
-Fecha: 2025-04-04 23:35:51.270058 - Usuario: joel123456 - Accion: 'cantidad_insumo_producida' is an invalid keyword argument for Receta
-Fecha: 2025-04-04 23:35:51.271432 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/receta/agregar | IP: 127.0.0.1
-Fecha: 2025-04-04 23:42:12.953297 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-04 23:51:57.266065 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 00:05:08.714177 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 00:06:27.859177 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 00:08:45.719977 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 00:08:54.737467 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 00:09:13.711149 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 00:09:43.578333 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 00:09:48.145702 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 00:09:49.495685 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 00:10:29.948910 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 00:16:04.247865 - Usuario: joel123456 - Accion: 'DetalleReceta' object has no attribute 'id_galleta'
-Fecha: 2025-04-05 00:16:04.248377 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/receta/5 | IP: 127.0.0.1
-Fecha: 2025-04-05 00:17:27.743579 - Usuario: Usuario an�nimo - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 00:17:38.194147 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 00:17:51.088016 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 00:17:52.724944 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 00:19:05.387405 - Usuario: joel123456 - Accion: 'DetalleReceta' object has no attribute 'id_galleta'
-Fecha: 2025-04-05 00:19:05.388411 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/receta/1 | IP: 127.0.0.1
-Fecha: 2025-04-05 00:20:09.325030 - Usuario: joel123456 - Accion: 'DetalleReceta' object has no attribute 'id_galleta'
-Fecha: 2025-04-05 00:20:09.326050 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/receta/1 | IP: 127.0.0.1
-Fecha: 2025-04-05 00:20:09.428404 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 00:20:26.371858 - Usuario: joel123456 - Accion: 'DetalleReceta' object has no attribute 'id_galleta'
-Fecha: 2025-04-05 00:20:26.371858 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/receta/1 | IP: 127.0.0.1
-Fecha: 2025-04-05 00:20:50.963359 - Usuario: joel123456 - Accion: 'DetalleReceta' object has no attribute 'id_galleta'
-Fecha: 2025-04-05 00:20:50.963359 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/receta/1 | IP: 127.0.0.1
-Fecha: 2025-04-05 00:26:54.476259 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 00:27:06.085677 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 00:28:24.563721 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 00:41:00.670652 - Usuario: Usuario an�nimo - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 00:41:02.498960 - Usuario: Usuario an�nimo - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 00:42:02.578982 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 00:42:39.033657 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 00:42:52.870976 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 00:46:12.410215 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 00:48:06.273477 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 00:50:08.380572 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 00:54:24.115509 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 00:54:51.599696 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 00:56:53.509668 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 00:57:15.019846 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 00:57:20.671638 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 00:57:22.916338 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 00:57:58.430758 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 00:58:52.651957 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 00:58:54.903964 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:04:08.944270 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:08:03.509768 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:08:36.637370 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:09:56.134880 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:10:01.678236 - Usuario: Usuario an�nimo - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:10:09.008632 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-05 01:10:09.022821 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-05 01:10:09.022821 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-05 01:11:02.212922 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-05 01:11:02.246694 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-05 01:11:02.250278 - Usuario: joel1234567 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-05 01:11:16.237221 - Usuario: joel1234568 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-05 01:11:16.239390 - Usuario: joel1234568 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-05 01:11:16.240410 - Usuario: joel1234568 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-05 01:11:28.657837 - Usuario: joel1234568 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:13:17.163310 - Usuario: joel1234568 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:15:31.896469 - Usuario: joel1234568 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:15:51.758531 - Usuario: joel1234568 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/receta | IP: 127.0.0.1
-Fecha: 2025-04-05 01:15:52.202414 - Usuario: joel1234568 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:15:53.818929 - Usuario: joel1234568 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:16:00.628306 - Usuario: joel1234568 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:16:02.597563 - Usuario: joel1234568 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:16:10.629846 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:17:46.669926 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:17:47.954116 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:17:49.500593 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:18:17.871116 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:18:31.280502 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:18:33.622033 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:18:38.086490 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:19:22.209891 - Usuario: joel1234568 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-05 01:19:22.220919 - Usuario: joel1234568 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-05 01:19:22.228642 - Usuario: joel1234568 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-05 01:19:22.455909 - Usuario: joel1234568 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:19:27.726631 - Usuario: joel1234568 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-05 01:19:27.731055 - Usuario: joel1234568 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-05 01:19:27.735543 - Usuario: joel1234568 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-05 01:19:27.857526 - Usuario: joel1234568 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:19:32.056094 - Usuario: joel1234568 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:20:05.700665 - Usuario: Usuario an�nimo - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:20:25.436101 - Usuario: Usuario an�nimo - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:20:52.315314 - Usuario: Usuario an�nimo - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:21:08.865267 - Usuario: joel1234568 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-05 01:21:08.873276 - Usuario: joel1234568 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-05 01:21:08.877089 - Usuario: joel1234568 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-05 01:21:08.986077 - Usuario: joel1234568 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:21:15.058590 - Usuario: joel1234568 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:21:17.580297 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:21:26.030675 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:21:39.015261 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:21:43.556612 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:21:44.132933 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:21:49.665577 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:21:53.063557 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:21:59.613111 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:22:01.038998 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:22:10.499743 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:22:18.782270 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:22:20.378423 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:22:27.120361 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:22:29.754879 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:22:34.742320 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:22:35.550186 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:22:36.794376 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:22:37.363427 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:22:38.027071 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:22:38.654972 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:22:39.631912 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:22:40.586281 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:22:45.851083 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:22:48.769524 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:22:53.497819 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:22:57.877561 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:22:59.339734 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:24:12.288984 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:24:36.778939 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:25:06.167219 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:25:11.290887 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:25:31.929187 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:25:32.317285 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:25:33.135469 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:25:37.589519 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/cliente/ | IP: 127.0.0.1
-Fecha: 2025-04-05 01:25:37.835807 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:25:40.653485 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:25:46.735666 - Usuario: joel1234568 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-05 01:25:46.747837 - Usuario: joel1234568 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-05 01:25:46.748922 - Usuario: joel1234568 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-05 01:25:46.880152 - Usuario: joel1234568 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:25:50.537595 - Usuario: joel1234568 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:25:52.289686 - Usuario: joel1234568 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:25:54.015305 - Usuario: joel1234568 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:25:58.081864 - Usuario: joel1234568 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:26:04.116997 - Usuario: joel1234568 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:26:25.019238 - Usuario: joel1234568 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:26:25.589193 - Usuario: joel1234568 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:26:33.596582 - Usuario: Usuario an�nimo - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:26:40.459123 - Usuario: joel12345678 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 01:27:04.491671 - Usuario: joel12345678 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
->>>>>>> bc9e50b77aa4d81c0b3c10b367a8209e1a31aca8
-Fecha: 2025-04-05 09:06:36.841466 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-05 09:08:08.055675 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-05 09:08:08.062016 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-05 09:08:08.063833 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-05 09:30:10.146526 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galletas/imagen1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-05 09:30:10.148379 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galletas/imagen2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-05 09:30:10.149516 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galletas/imagen3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-05 09:30:21.541358 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galletas/imagen1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-05 09:30:21.541418 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galletas/imagen3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-05 09:30:21.542596 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galletas/imagen2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-05 09:33:26.851601 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-05 09:33:26.852681 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-05 09:33:26.859336 - Usuario: joel1234567 - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-=======
-Fecha: 2025-04-06 18:46:15.088326 - Usuario: andrea - Accion: Column expression, FROM clause, or other columns clause element expected, got <module 'models.gastoOperacion' from 'C:\\Users\\charl\\Downloads\\UNI_Local\\PRUEBA GALLETP\\donGalletoPython\\models\\gastoOperacion.py'>.
-Fecha: 2025-04-06 18:57:58.192678 - Usuario: andrea - Accion: Column expression, FROM clause, or other columns clause element expected, got <module 'models.gastoOperacion' from 'C:\\Users\\charl\\Downloads\\UNI_Local\\PRUEBA GALLETP\\donGalletoPython\\models\\gastoOperacion.py'>.
-Fecha: 2025-04-06 18:59:21.529780 - Usuario: andrea - Accion: Column expression, FROM clause, or other columns clause element expected, got <module 'models.gastoOperacion' from 'C:\\Users\\charl\\Downloads\\UNI_Local\\PRUEBA GALLETP\\donGalletoPython\\models\\gastoOperacion.py'>.
-Fecha: 2025-04-06 18:59:39.079281 - Usuario: andrea - Accion: Column expression, FROM clause, or other columns clause element expected, got <module 'models.gastoOperacion' from 'C:\\Users\\charl\\Downloads\\UNI_Local\\PRUEBA GALLETP\\donGalletoPython\\models\\gastoOperacion.py'>.
-Fecha: 2025-04-07 01:25:37.365594 - Usuario: Usuario an�nimo - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-07 01:27:49.640491 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-07 01:27:49.646723 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-07 01:27:49.647691 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-07 01:28:17.723565 - Usuario: Usuario an�nimo - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-07 01:43:42.736875 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-07 01:43:42.744124 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-07 01:43:42.744575 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-07 01:49:01.725846 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/img/galleta-1.jpg | IP: 127.0.0.1
-Fecha: 2025-04-07 01:49:01.732565 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/img/galleta-2.jpg | IP: 127.0.0.1
-Fecha: 2025-04-07 01:49:01.733590 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/img/galleta-3.jpg | IP: 127.0.0.1
-Fecha: 2025-04-07 02:09:41.818060 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 02:09:49.842067 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 02:09:52.990686 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 02:14:43.085485 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 02:14:54.218866 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/ventas_dia | IP: 127.0.0.1
-Fecha: 2025-04-07 02:14:58.833303 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/ventas/peso | IP: 127.0.0.1
-Fecha: 2025-04-07 02:19:25.355513 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 02:19:31.488470 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 02:19:33.487277 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 02:19:34.588483 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/pieza | IP: 127.0.0.1
-Fecha: 2025-04-07 02:22:59.769125 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 02:23:01.637253 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/ventas_dia | IP: 127.0.0.1
-Fecha: 2025-04-07 02:24:02.698096 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 02:33:16.205576 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 02:35:03.397454 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 02:36:18.209422 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 02:36:23.707781 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 02:37:36.139306 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 02:37:51.045292 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 02:38:14.192933 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 02:39:28.412891 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 02:39:59.305968 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 02:40:40.392223 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 02:40:57.515701 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 02:40:59.005664 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 02:41:00.117131 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 02:41:01.021864 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 02:41:57.130799 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 02:41:59.328498 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 02:42:02.587559 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 02:42:03.892019 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 02:42:04.842402 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 02:42:05.822719 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 02:42:07.316564 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 02:42:13.525127 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 02:42:38.306909 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 02:42:44.223927 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 02:42:50.433932 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 02:42:52.403520 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 02:42:54.017102 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
->>>>>>> ff71f9bc67854ddae5a73c38a0b40f7303fa52c3
-Fecha: 2025-04-07 17:51:14.271635 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-07 18:12:39.415912 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 18:12:42.680190 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 18:12:43.753064 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 18:12:48.362965 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 18:12:51.200058 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 18:13:01.325260 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 18:13:02.150625 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 18:13:21.539125 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-<<<<<<< HEAD
-Fecha: 2025-04-08 10:42:48.793822 - Usuario: Pruebas123* - Accion: /cocina-pedidos
-Fecha: 2025-04-08 10:42:48.795044 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/solicitar-insumos | IP: 127.0.0.1
-=======
-Fecha: 2025-04-07 22:47:46.523743 - Usuario: Usuario an�nimo - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-07 22:48:02.138786 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 23:06:58.156156 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 23:07:17.874084 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 23:07:20.043421 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 23:10:24.616587 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 23:10:29.669159 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 23:10:31.278066 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 23:11:07.606032 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 23:12:06.533954 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 23:12:07.406866 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 23:12:07.633262 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 23:12:07.859386 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 23:12:08.052256 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 23:12:08.271994 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 23:12:08.475947 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 23:12:08.642205 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 23:12:08.840697 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 23:12:09.015554 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 23:12:47.982501 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 23:12:49.483722 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 23:12:49.699642 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 23:12:49.890900 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 23:12:50.061751 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 23:13:54.264060 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 23:13:56.374078 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-07 23:13:57.549577 - Usuario: chris123 - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
->>>>>>> 00d26bda0512d29a3dd2217e507507e6c624dbc5
-Fecha: 2025-04-08 11:16:25.844171 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/cocina-insumos | IP: 127.0.0.1
-Fecha: 2025-04-08 13:27:06.682918 - Usuario: carlos - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-08 13:27:07.131897 - Usuario: carlos - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-08 13:27:13.901511 - Usuario: carlos - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-08 13:27:14.036777 - Usuario: carlos - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-08 13:27:21.500275 - Usuario: carlos - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-08 13:27:21.644463 - Usuario: carlos - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-08 13:29:16.767367 - Usuario: carlos - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-08 13:36:07.817709 - Usuario: andrea - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-08 13:38:44.194461 - Usuario: andrea - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-08 14:55:16.829454 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-08 15:24:45.170618 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-08 15:24:46.512021 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-08 15:29:10.931820 - Usuario: Pruebas123* - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-08 15:50:50.831155 - Usuario: Usuario an�nimo - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-08 15:51:03.248387 - Usuario: Usuario an�nimo - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-08 16:10:01.507142 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/proveedor/mis-pedidos | IP: 127.0.0.1
-Fecha: 2025-04-08 16:34:14.894574 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/insumos/static/js/page-ventas/nabvar.js | IP: 127.0.0.1
-Fecha: 2025-04-08 16:34:14.894574 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/insumos/static/css/page-ventas/navbar.css | IP: 127.0.0.1
-Fecha: 2025-04-08 16:34:14.895582 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/insumos/static/js/app.js | IP: 127.0.0.1
-Fecha: 2025-04-08 16:34:14.934418 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/insumos/static/js/page-ventas/nabvar.js | IP: 127.0.0.1
-Fecha: 2025-04-08 16:34:14.954380 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/insumos/static/js/app.js | IP: 127.0.0.1
-Fecha: 2025-04-08 16:36:55.241464 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/insumos/static/js/app.js | IP: 127.0.0.1
-Fecha: 2025-04-08 16:36:55.241464 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/insumos/static/js/page-ventas/nabvar.js | IP: 127.0.0.1
-Fecha: 2025-04-08 16:36:55.241464 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/insumos/static/css/page-ventas/navbar.css | IP: 127.0.0.1
-Fecha: 2025-04-08 16:36:55.283851 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/insumos/static/js/page-ventas/nabvar.js | IP: 127.0.0.1
-Fecha: 2025-04-08 16:36:55.303075 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/insumos/static/js/app.js | IP: 127.0.0.1
-Fecha: 2025-04-08 16:37:03.881486 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/insumos/static/js/app.js | IP: 127.0.0.1
-Fecha: 2025-04-08 16:37:03.881486 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/insumos/static/css/page-ventas/navbar.css | IP: 127.0.0.1
-Fecha: 2025-04-08 16:37:03.883495 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/insumos/static/js/page-ventas/nabvar.js | IP: 127.0.0.1
-Fecha: 2025-04-08 16:37:04.003018 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/insumos/static/js/page-ventas/nabvar.js | IP: 127.0.0.1
-Fecha: 2025-04-08 16:37:04.023930 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/insumos/static/js/app.js | IP: 127.0.0.1
-Fecha: 2025-04-08 16:37:15.400374 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/insumos/static/css/page-ventas/navbar.css | IP: 127.0.0.1
-Fecha: 2025-04-08 16:37:15.400374 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/insumos/static/js/page-ventas/nabvar.js | IP: 127.0.0.1
-Fecha: 2025-04-08 16:37:15.400374 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/insumos/static/js/app.js | IP: 127.0.0.1
-Fecha: 2025-04-08 16:37:15.434412 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/insumos/static/js/page-ventas/nabvar.js | IP: 127.0.0.1
-Fecha: 2025-04-08 16:37:15.453803 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/insumos/static/js/app.js | IP: 127.0.0.1
-Fecha: 2025-04-08 16:37:51.919831 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-08 16:37:51.952347 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-08 16:45:23.421106 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
-Fecha: 2025-04-08 16:50:35.888303 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
-Fecha: 2025-04-08 16:50:35.984611 - Usuario: joel123456 - Accion: Error 404: P�gina no encontrada en http://localhost:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-10 14:33:33.937795 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:33:33.986884 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:33:34.032243 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:33:34.091630 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:33:34.135098 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:33:34.171752 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:33:34.204698 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:33:34.237627 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:33:34.271049 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:33:34.304441 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:36:44.493243 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:36:44.531029 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:36:44.563023 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:36:44.599275 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:36:44.635580 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:36:44.670863 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:36:44.709605 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:36:44.746603 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:36:44.788991 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:36:44.827352 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:37:07.894354 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:37:07.930272 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:37:07.962151 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:37:07.994212 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:37:08.024063 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:37:08.061485 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:37:08.094239 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:37:08.129041 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:37:08.167123 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:37:08.203854 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:37:32.305532 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:37:32.337887 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:37:32.371640 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:37:32.403216 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:37:32.435556 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:37:32.467828 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:37:32.501171 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:37:32.539013 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:37:32.581543 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:37:32.626034 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:37:54.207984 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:37:54.251939 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:37:54.290546 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:37:54.341667 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:37:54.383149 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:37:54.418670 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:37:54.461182 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:37:54.519595 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:37:54.577288 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:37:54.619650 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:38:16.555466 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:38:16.597014 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:38:16.632711 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:38:16.670552 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:38:16.705114 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:38:16.738005 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:38:16.772095 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:38:16.804158 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:38:16.837939 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 14:38:16.873226 - Usuario: andrea - Accion: fecha
+Fecha: 2025-04-10 15:44:36.648212 - Usuario: andrea - Accion: 'list' object has no attribute 'total_dia'
+Fecha: 2025-04-10 15:44:36.747664 - Usuario: andrea - Accion: 'list' object has no attribute 'total_dia'
+Fecha: 2025-04-10 15:44:36.819059 - Usuario: andrea - Accion: 'list' object has no attribute 'total_dia'
+Fecha: 2025-04-10 15:44:36.881825 - Usuario: andrea - Accion: 'list' object has no attribute 'total_dia'
+Fecha: 2025-04-10 15:44:36.947112 - Usuario: andrea - Accion: 'list' object has no attribute 'total_dia'
+Fecha: 2025-04-10 15:44:37.019457 - Usuario: andrea - Accion: 'list' object has no attribute 'total_dia'
+Fecha: 2025-04-10 15:44:37.100623 - Usuario: andrea - Accion: 'list' object has no attribute 'total_dia'
+Fecha: 2025-04-10 15:44:37.191760 - Usuario: andrea - Accion: 'list' object has no attribute 'total_dia'
+Fecha: 2025-04-10 15:44:37.254524 - Usuario: andrea - Accion: 'list' object has no attribute 'total_dia'
+Fecha: 2025-04-10 15:44:37.324722 - Usuario: andrea - Accion: 'list' object has no attribute 'total_dia'
+Fecha: 2025-04-10 15:44:38.526184 - Usuario: andrea - Accion: 'list' object has no attribute 'total_dia'
+Fecha: 2025-04-10 15:44:38.614630 - Usuario: andrea - Accion: 'list' object has no attribute 'total_dia'
+Fecha: 2025-04-10 15:44:38.686782 - Usuario: andrea - Accion: 'list' object has no attribute 'total_dia'
+Fecha: 2025-04-10 15:44:38.756538 - Usuario: andrea - Accion: 'list' object has no attribute 'total_dia'
+Fecha: 2025-04-10 15:44:38.820041 - Usuario: andrea - Accion: 'list' object has no attribute 'total_dia'
+Fecha: 2025-04-10 15:44:38.898209 - Usuario: andrea - Accion: 'list' object has no attribute 'total_dia'
+Fecha: 2025-04-10 15:44:39.003535 - Usuario: andrea - Accion: 'list' object has no attribute 'total_dia'
+Fecha: 2025-04-10 15:44:39.130581 - Usuario: andrea - Accion: 'list' object has no attribute 'total_dia'
+Fecha: 2025-04-10 15:44:39.316801 - Usuario: andrea - Accion: 'list' object has no attribute 'total_dia'
+Fecha: 2025-04-10 15:44:39.419863 - Usuario: andrea - Accion: 'list' object has no attribute 'total_dia'
+Fecha: 2025-04-10 19:12:34.315655 - Usuario: andrea - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-10 19:15:00.000788 - Usuario: andrea - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-10 19:15:36.089350 - Usuario: andrea - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-10 19:15:50.417582 - Usuario: andrea - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-10 19:15:57.002528 - Usuario: andrea - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-10 19:15:59.161360 - Usuario: andrea - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-10 19:16:01.567852 - Usuario: andrea - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-10 19:16:04.852396 - Usuario: andrea - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-10 19:16:07.061313 - Usuario: andrea - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-10 19:16:45.825244 - Usuario: andrea - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-10 19:16:56.222076 - Usuario: andrea - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-10 19:16:58.013860 - Usuario: andrea - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-10 19:41:27.839529 - Usuario: andrea - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1

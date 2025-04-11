@@ -1,21 +1,30 @@
-from utils import db, func,extract
+from utils import db, func,extract, func
 from models import Nomina, Empleado, Persona, Galleta, DetalleVenta, GastoOperacion
 from models.ProcesoVenta import ProcesoVenta
 from datetime import datetime, timedelta
 
-def obtener_ventas_por_mes(mes, dias):
-        # Convertir el mes en un rango de fechas
-        mes_numero,anio = map(str, str(mes).split('/'))
-        ultimo_dia = datetime(int(anio), int(mes_numero), 1).replace(day=28) + timedelta(days=4)
-        ultimo_dia = ultimo_dia - timedelta(days=ultimo_dia.day)  # Último día del mes
-        primer_dia = ultimo_dia - timedelta(days=int(dias) - 1)
 
-        return (
-            db.session.query(ProcesoVenta)
-            .filter(ProcesoVenta.fecha.between(primer_dia, ultimo_dia))
-            #.filter(Venta.estatus != 0)  # Solo Ventas activas
-            .all()
+def obtener_ventas_por_mes(mes, dias): 
+    # Convertir el mes en un rango de fechas
+    mes_numero, anio = map(int, str(mes).split('/'))
+    
+    ultimo_dia = datetime(anio, mes_numero, 1).replace(day=28) + timedelta(days=4)
+    ultimo_dia = ultimo_dia - timedelta(days=ultimo_dia.day)  # Último día del mes
+    primer_dia = ultimo_dia - timedelta(days=int(dias) - 1)
+
+    # Consulta agrupada por día
+    resultados = (
+        db.session.query(
+            func.date(ProcesoVenta.fecha).label("fecha_venta"),
+            func.sum(ProcesoVenta.total).label("total_dia")
         )
+        .filter(ProcesoVenta.fecha.between(primer_dia, ultimo_dia))
+        .group_by(func.date(ProcesoVenta.fecha))
+        .order_by(func.date(ProcesoVenta.fecha))
+        .all()
+    )
+    # Retorna una lista de tuplas (fecha_venta, total_dia)
+    return resultados
 
 
 def obtener_galletas_mas_vendidas_del_mes(mes):
