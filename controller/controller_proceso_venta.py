@@ -57,51 +57,64 @@ class ProcesoVentaController:
     
     @staticmethod
     def agregar_al_carrito(session, galleta_id, nombre, precio, cantidad, tipo_venta):
-        carrito = session.get('carrito', [])
-        
-        item_key = f"{galleta_id}_{tipo_venta}"
-        item = next((item for item in carrito 
-                if f"{item['galleta_id']}_{item['tipo_venta']}" == item_key), None)
-        
-        if item:
-            if tipo_venta == 'unidad':
-                item['cantidad'] += cantidad
-                item['unidades_equivalentes'] += cantidad
-            elif tipo_venta == 'peso':
-                item['gramos'] += cantidad
-                item['unidades_equivalentes'] += cantidad / 10
-            elif tipo_venta == 'paquete':
-                item['cantidad_paquetes'] += 1
-                item['unidades_equivalentes'] += cantidad  
-        else:
-            item = {
-                'galleta_id': galleta_id,
-                'nombre': nombre,
-                'precio_unitario': precio,
-                'tipo_venta': tipo_venta,
-                'cantidad': 0,
-                'gramos': 0,
-                'cantidad_paquetes': 0,
-                'unidades_equivalentes': 0
-            }
+        try:
+            carrito = session.get('carrito', [])
             
-            if tipo_venta == 'unidad':
-                item['cantidad'] = cantidad
-                item['unidades_equivalentes'] = cantidad
-            elif tipo_venta == 'peso':
-                item['gramos'] = cantidad
-                item['unidades_equivalentes'] = cantidad / 10
-            elif tipo_venta == 'paquete':
-                item['cantidad_paquetes'] = 1
-                item['unidades_equivalentes'] = cantidad
+            item_key = f"{galleta_id}_{tipo_venta}"
+            item = next((item for item in carrito 
+                    if f"{item['galleta_id']}_{item['tipo_venta']}" == item_key), None)
             
-            carrito.append(item)
-        
-        item['subtotal'] = item['unidades_equivalentes'] * precio
-        
-        session['carrito'] = carrito
-        session.modified = True
-        return carrito
+            if item:
+                if tipo_venta == 'unidad':
+                    item['cantidad'] += cantidad
+                    item['unidades_equivalentes'] += cantidad
+                elif tipo_venta == 'peso':
+                    item['gramos'] += cantidad
+                    item['unidades_equivalentes'] += cantidad / 10
+                elif tipo_venta == 'paquete':
+                    item['cantidad_paquetes'] += 1
+                    item['unidades_equivalentes'] += cantidad  
+            else:
+                item = {
+                    'galleta_id': galleta_id,
+                    'nombre': nombre,
+                    'precio_unitario': precio,
+                    'tipo_venta': tipo_venta,
+                    'cantidad': 0,
+                    'gramos': 0,
+                    'cantidad_paquetes': 0,
+                    'unidades_equivalentes': 0
+                }
+                
+                if tipo_venta == 'unidad':
+                    item['cantidad'] = cantidad
+                    item['unidades_equivalentes'] = cantidad
+                elif tipo_venta == 'peso':
+                    item['gramos'] = cantidad
+                    item['unidades_equivalentes'] = cantidad / 10
+                elif tipo_venta == 'paquete':
+                    item['cantidad_paquetes'] = 1
+                    item['unidades_equivalentes'] = cantidad
+                
+                carrito.append(item)
+            
+            item['subtotal'] = item['unidades_equivalentes'] * precio
+            
+            session['carrito'] = carrito
+            session.modified = True
+            
+            msg = f"Producto agregado: {nombre} ("
+            if tipo_venta == 'unidad':
+                msg += f"{item['cantidad']} unidades)"
+            elif tipo_venta == 'peso':
+                msg += f"{item['gramos']}g)"
+            else:
+                msg += f"{item['cantidad_paquetes']} paq.)"
+            
+            return carrito, msg
+            
+        except Exception as e:
+            raise ValueError(f"Error al agregar al carrito: {str(e)}")
 
     @staticmethod
     def procesar_venta(session):

@@ -78,63 +78,28 @@ def agregar_al_carrito():
             if tipo_venta == 'unidad':
                 cantidad = int(form.cantidad.data)
                 unidades_equivalentes = cantidad
-                metadata = {'cantidad_unidades': cantidad, 'gramos': 0, 'cantidad_paquetes': 0}
             elif tipo_venta == 'peso':
-                gramos = int(form.peso.data)
-                unidades_equivalentes = gramos / 10
-                metadata = {'cantidad_unidades': 0, 'gramos': gramos, 'cantidad_paquetes': 0}
+                cantidad = int(form.peso.data)
+                unidades_equivalentes = cantidad / 10
             elif tipo_venta == 'paquete':
-                unidades_por_paquete = int(form.tipo_paquete.data)
-                unidades_equivalentes = unidades_por_paquete
-                metadata = {'cantidad_unidades': 0, 'gramos': 0, 'cantidad_paquetes': 1}
+                cantidad = int(form.tipo_paquete.data)
+                unidades_equivalentes = cantidad
             
             if stock.cantidad_galleta < unidades_equivalentes:
                 flash(f'Stock insuficiente. Disponibles: {stock.cantidad_galleta} unidades equivalentes', 'danger')
                 return redirect(url_for('venta.ventas', tipo=tipo_venta))
             
-            subtotal = galleta.precio_galleta * unidades_equivalentes
-            
-            carrito = session.get('carrito', [])
-            item_existente = next(
-                (item for item in carrito 
-                 if item['galleta_id'] == galleta_id and item['tipo_venta'] == tipo_venta),
-                None
+            carrito, msg = ProcesoVentaController.agregar_al_carrito(
+                session,
+                galleta_id,
+                galleta.nombre_galleta,
+                galleta.precio_galleta,
+                cantidad,
+                tipo_venta
             )
             
-            if item_existente:
-                if tipo_venta == 'unidad':
-                    item_existente['cantidad'] += cantidad
-                elif tipo_venta == 'peso':
-                    item_existente['gramos'] += gramos
-                elif tipo_venta == 'paquete':
-                    item_existente['cantidad_paquetes'] += 1
-                
-                item_existente['unidades_equivalentes'] += unidades_equivalentes
-                item_existente['subtotal'] += subtotal
-                item_existente['metadata_json'] = metadata
-            else:
-                nuevo_item = {
-                    'galleta_id': galleta_id,
-                    'nombre': galleta.nombre_galleta,
-                    'precio_unitario': galleta.precio_galleta,
-                    'tipo_venta': tipo_venta,
-                    'subtotal': subtotal,
-                    'unidades_equivalentes': unidades_equivalentes,
-                    'metadata_json': metadata
-                }
-                
-                if tipo_venta == 'unidad':
-                    nuevo_item['cantidad'] = cantidad
-                elif tipo_venta == 'peso':
-                    nuevo_item['gramos'] = gramos
-                elif tipo_venta == 'paquete':
-                    nuevo_item['cantidad_paquetes'] = 1
-                
-                carrito.append(nuevo_item)
-            
-            session['carrito'] = carrito
-            session.modified = True
-            flash('Producto agregado al carrito', 'success')
+            flash(msg, 'success')
+            return redirect(url_for('venta.ventas', tipo=tipo_venta))
             
         except ValueError as e:
             flash(f'Error en los datos: {str(e)}', 'danger')
@@ -165,6 +130,7 @@ def procesar_venta():
             if not stock or stock.cantidad_galleta < unidades:
                 flash(f'Stock insuficiente para {item["nombre"]}', 'danger')
                 return redirect(url_for('venta.ventas', tipo=session.get('tipo_venta_actual', 'unidad')))
+        
         venta, ticket_path = ProcesoVentaController.procesar_venta(session)
         
         session['carrito'] = []
@@ -174,6 +140,8 @@ def procesar_venta():
             flash('Error al generar el ticket', 'danger')
             return redirect(url_for('venta.ventas', tipo=session.get('tipo_venta_actual', 'unidad')))
         
+        flash('Venta realizada correctamente. Descargando ticket...', 'success')
+        
         return send_file(
             ticket_path,
             as_attachment=True,
@@ -182,11 +150,11 @@ def procesar_venta():
         )
         
     except ValueError as e:
-        session['carrito'] = [] 
-        session.modified = True
-        flash(str(e), 'danger')
-    except Exception as e:
         session['carrito'] = []
+        session.modified = True
+        flash(f'Error al procesar la venta: {str(e)}', 'danger')
+    except Exception as e:
+        session['carrito'] = [] 
         session.modified = True
         flash(f'Error al procesar la venta: {str(e)}', 'danger')
         db.session.rollback()
@@ -235,19 +203,33 @@ def eliminar_venta(venta_id):
 @login_required
 def vaciar_carrito():
     tipo_venta = session.get('tipo_venta_actual', 'unidad')
-    session['carrito'] = []
-    session.modified = True
-    flash('Carrito vaciado correctamente', 'success')
+    try:
+        if 'carrito' not in session or not session['carrito']:
+            flash('El carrito ya está vacío', 'warning')
+        else:
+            session['carrito'] = []
+            session.modified = True
+            flash('Carrito vaciado correctamente', 'success')
+    except Exception as e:
+        flash(f'Error al vaciar el carrito: {str(e)}', 'danger')
+    
     return redirect(url_for('venta.ventas', tipo=tipo_venta))
+
 
 @venta_bp.route('/eliminar_item/<int:index>', methods=['POST'])
 @login_required
 def eliminar_item(index):
     tipo_venta = session.get('tipo_venta_actual', 'unidad')
     try:
-        session['carrito'].pop(index)
-        session.modified = True
-        flash('Item eliminado del carrito', 'success')
-    except IndexError:
-        flash('No se pudo eliminar el item', 'danger')
+        if 'carrito' not in session or not session['carrito']:
+            flash('El carrito está vacío', 'warning')
+        elif index >= len(session['carrito']):
+            flash('Índice de item no válido', 'danger')
+        else:
+            item = session['carrito'].pop(index)
+            session.modified = True
+            flash(f'Item "{item["nombre"]}" eliminado del carrito', 'success')
+    except Exception as e:
+        flash(f'Error al eliminar el item: {str(e)}', 'danger')
+    
     return redirect(url_for('venta.ventas', tipo=tipo_venta))

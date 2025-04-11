@@ -145,3 +145,19 @@ h2 {
 .notificacion.error {
     background-color: #dc3545;
 }
+
+.iziToast {
+    font-family: inherit;
+    border-radius: 4px;
+}
+
+.iziToast-close {
+    background: none !important;
+    color: inherit !important;
+    opacity: 0.8;
+}
+
+.iziToast-title {
+    font-weight: bold;
+    font-size: 1.1em;
+}

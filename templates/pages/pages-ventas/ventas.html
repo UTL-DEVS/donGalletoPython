@@ -15,9 +15,41 @@
     window.location.href = "/tipo_venta";
   };
 </script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/izitoast@1.4.0/dist/css/iziToast.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/izitoast@1.4.0/dist/js/iziToast.min.js"></script>
 <meta name="csrf-token" content="{{ csrf_token() }}" />
 
-{% macro render_tarjeta_galleta(galleta) %}
+{% with messages = get_flashed_messages(with_categories=true) %} {% if messages
+%}
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      {% for category, message in messages %}
+      iziToast.{{
+          'success' if category == 'success' else
+          'error' if category == 'danger' else
+          'warning' if category == 'warning' else
+          'info'
+      }}({
+          title: '{{
+              "Éxito" if category == "success" else
+              "Error" if category == "danger" else
+              "Advertencia" if category == "warning" else
+              "Información"
+          }}',
+          message: '{{ message }}',
+          position: 'topRight',
+          timeout: 5000,
+          progressBar: true,
+          closeOnClick: true,
+          displayMode: 2
+      });
+      {% endfor %}
+  });
+</script>
+{% endif %} {% endwith %} {% macro render_tarjeta_galleta(galleta) %}
 <script>
   history.pushState(null, null, location.href);
   window.onpopstate = function (event) {
@@ -331,34 +363,7 @@
     {% endif %}
   </div>
 
-  {% with messages = get_flashed_messages(with_categories=true) %} {% if
-  messages %}
-  <div class="container mt-3">
-    {% for category, message in messages %}
-    <div
-      class="alert alert-{{ category }} alert-dismissible fade show flash-message"
-    >
-      {{ message }}
-      <button
-        type="button"
-        class="btn-close"
-        data-bs-dismiss="alert"
-        aria-label="Close"
-      ></button>
-    </div>
-    {% endfor %}
-  </div>
-
-  <script>
-    setTimeout(function () {
-      let alerts = document.querySelectorAll(".flash-message");
-      alerts.forEach(function (alert) {
-        let bsAlert = new bootstrap.Alert(alert);
-        bsAlert.close();
-      });
-    }, 5000);
-  </script>
-  {% endif %} {% endwith %} {% elif tipo_venta == 'peso' %}
+  {% elif tipo_venta == 'peso' %}
   <h2>Peso</h2>
   <div class="row g-4">
     {% if galletas %} {% for galleta in galletas %} {{ render_form_peso(galleta)
