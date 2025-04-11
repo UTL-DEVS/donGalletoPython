@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.style.overflow = carritoElement.classList.contains('mostrar') ? 'hidden' : '';
     }
     
-    // Manejo de inputs de peso
     document.querySelectorAll('input[name="peso"]').forEach(input => {
         input.addEventListener('input', function() {
             const galletaId = this.id.split('-')[1];
@@ -30,7 +29,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Manejo de select de galletas para paquetes
     const selectGalleta = document.getElementById('galleta-paquete');
     if (selectGalleta) {
         selectGalleta.addEventListener('change', function() {
@@ -44,7 +42,112 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Manejo del formulario de procesar venta
+    const btnPedidos = document.getElementById('btn-pedidos');
+    if (btnPedidos) {
+        btnPedidos.addEventListener('click', function() {
+            const modal = new bootstrap.Modal(document.getElementById('pedidosModal'));
+            modal.show();
+            
+            cargarPedidosCompletados();
+        });
+    }
+    
+    function cargarPedidosCompletados() {
+        fetch('/obtener_pedidos_completados', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': document.querySelector('meta[name="csrf-token"]').content
+            }
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (!Array.isArray(data)) {
+                throw new Error('Respuesta inesperada del servidor');
+            }
+            
+            const tbody = document.querySelector('#tablaPedidos tbody');
+            tbody.innerHTML = '';
+            
+            data.forEach(pedido => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${pedido.id_pedido || 'N/A'}</td>
+                    <td>${pedido.usuario || 'Anónimo'}</td>
+                    <td>${pedido.fecha_pedido || 'N/A'}</td>
+                    <td>$${(pedido.total || 0).toFixed(2)}</td>
+                    <td>
+                        <button class="btn btn-sm btn-primary btn-cargar-pedido" data-id="${pedido.id_pedido}">
+                            <i class="fas fa-cart-plus"></i> Cargar al carrito
+                        </button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });    
+            
+            document.querySelectorAll('.btn-cargar-pedido').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const idPedido = this.getAttribute('data-id');
+                    cargarPedidoAlCarrito(idPedido);
+                });
+            });
+        })
+        .catch(error => {
+            console.error('Error al cargar pedidos:', error);
+            iziToast.error({
+                title: 'Error',
+                message: 'No se pudieron cargar los pedidos',
+                position: 'topRight'
+            });
+        });
+    }
+    
+    function cargarPedidoAlCarrito(idPedido) {
+        fetch(`/cargar_pedido/${idPedido}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': document.querySelector('meta[name="csrf-token"]').content
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                iziToast.success({
+                    title: 'Éxito',
+                    message: 'Pedido cargado al carrito',
+                    position: 'topRight'
+                });
+                
+                if (data.carrito) {
+                    actualizarInterfazCarrito(data.carrito);
+                }
+                
+                const modal = bootstrap.Modal.getInstance(document.getElementById('pedidosModal'));
+                modal.hide();
+            } else {
+                iziToast.error({
+                    title: 'Error',
+                    message: data.error || 'Error al cargar el pedido',
+                    position: 'topRight'
+                });
+            }
+        })
+        .catch(error => {
+            console.error('Error al cargar pedido:', error);
+            iziToast.error({
+                title: 'Error',
+                message: 'Error al cargar el pedido',
+                position: 'topRight'
+            });
+        });
+    }
+
     const formProcesarVenta = document.getElementById('form-procesar-venta');
     if (formProcesarVenta) {
         formProcesarVenta.addEventListener('submit', function(e) {

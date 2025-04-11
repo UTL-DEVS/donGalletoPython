@@ -594,3 +594,11 @@ Fecha: 2025-04-11 00:15:24.108261 - Usuario: KilllYourAss12$$ - Accion: Error 40
 Fecha: 2025-04-11 00:15:34.580879 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
 Fecha: 2025-04-11 00:15:46.076927 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
 Fecha: 2025-04-11 00:15:54.036889 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-11 00:44:49.217078 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-11 00:44:51.607101 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-11 00:48:58.589827 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-11 00:50:11.795028 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-11 00:54:25.383480 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-11 00:54:29.790684 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-11 01:08:17.919553 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-11 01:08:19.613691 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1

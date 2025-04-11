@@ -1,5 +1,5 @@
-from flask import Blueprint, render_template, redirect, url_for, session, flash, send_from_directory, send_file, request
-from controller import controller_proceso_venta, ProcesoVentaController
+from flask import Blueprint, render_template, redirect, url_for, session, flash, send_from_directory, send_file, request, jsonify
+from controller import controller_proceso_venta, ProcesoVentaController, PedidoController
 from dao.dao_proceso_venta import ProcesoVentaDAO
 from models.Stock import Stock
 from models.galleta import Galleta
@@ -233,3 +233,36 @@ def eliminar_item(index):
         flash(f'Error al eliminar el item: {str(e)}', 'danger')
     
     return redirect(url_for('venta.ventas', tipo=tipo_venta))
+
+@venta_bp.route('/obtener_pedidos_completados', methods=['GET'])
+@login_required
+def obtener_pedidos_completados():
+    if current_user.rol_user not in [0, 4]:  
+        abort(404)
+    
+    pedidos = PedidoController.obtener_pedidos_completados(current_user.id)
+    pedidos_data = []
+    
+    for pedido in pedidos:
+        pedidos_data.append({
+            'id_pedido': pedido.id_pedido,
+            'fecha_pedido': pedido.fecha_pedido.strftime('%d/%m/%Y %H:%M'),
+            'total': pedido.total,
+            'usuario': pedido.usuario.nombre if pedido.usuario else 'Anónimo'
+        })
+    
+    return jsonify(pedidos_data)
+
+@venta_bp.route('/cargar_pedido/<int:id_pedido>', methods=['POST'])
+@login_required
+def cargar_pedido(id_pedido):
+    if current_user.rol_user not in [0, 4]:  
+        abort(404)
+    
+    try:
+        carrito = PedidoController.cargar_pedido_a_carrito(session, id_pedido)
+        flash('Pedido cargado al carrito correctamente', 'success')
+        return jsonify({'success': True, 'carrito': carrito})
+    except Exception as e:
+        flash(f'Error al cargar el pedido: {str(e)}', 'danger')
+        return jsonify({'success': False, 'error': str(e)}), 400
