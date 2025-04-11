@@ -43,6 +43,7 @@ function cargarDetallesPedido() {
                         <td style="align-content: center;">${detalle.nombre_galleta}</td>
                         <td style="align-content: center;" name="cantidad">${detalle.cantidad}</td>
                         <td style="align-content: center;" name="tipoPedido">${detalle.tipo_pedido}</td>
+                        <td style="align-content: center;" hidden="hidden" name="id_pedido">${detalle.id_pedido}</td>
                     `;
                     modalBody.appendChild(row);
                 });
@@ -130,63 +131,55 @@ function cargarDetallesPedidoHistorial() {
 }
 document.addEventListener('DOMContentLoaded', cargarDetallesPedidoHistorial);
 
-document.getElementById('btnProcesarPedido').addEventListener('click', function(event) {
-    const idPedido = event.target.value;
+document.getElementById('btnProcesarPedido').addEventListener('click', function() {
     const filas = document.querySelectorAll('#tblDetalleProduccion tbody tr');
     const datosGalletas = [];
 
     filas.forEach(fila => {
-        
         const th = fila.querySelector('th');
         const idGalleta = th ? th.id : null;
 
         const tdCantidad = fila.querySelector('td[name="cantidad"]');
         const cantidad = tdCantidad ? parseInt(tdCantidad.textContent) : 0;
+        const tdIdPedido = fila.querySelector('td[name="id_pedido"]');
+        const id_pedido = tdIdPedido ? tdIdPedido.textContent.trim() : '';
         const tdTipoPedido = fila.querySelector('td[name="tipoPedido"]');
-        const tipoPedido = tdTipoPedido ? tdTipoPedido.textContent : '';
+        const tipoPedido = tdTipoPedido ? tdTipoPedido.textContent.trim() : '';
         
         if (idGalleta && !isNaN(cantidad)) {
             datosGalletas.push({
                 id_galleta: idGalleta,
                 cantidad: cantidad,
-                tipo_pedido: tipoPedido
+                tipo_pedido: tipoPedido,
+                id_pedido: id_pedido
             });
         }
     });
-
-    enviarAlServicio(datosGalletas, idPedido);
+    
+    enviarAlServicio(datosGalletas);
 });
 
-function enviarAlServicio(datosGalletas, idPedido) {
+function enviarAlServicio(datos) {
+    console.log(datos)
     const csrfToken = document.querySelector('input[name="csrf_token"]').value;
-
+    
     fetch('/procesar-pedido', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'X-CSRFToken': csrfToken
+            'X-CSRFToken': csrfToken 
         },
-        body: JSON.stringify({
-            lstDetallePedido: datosGalletas,
-            idPedido: idPedido
+        body: JSON.stringify({ 
+            lst_detalles: datos
         })
     })
-    .then(response => {
-        if (response.status === 415) {
-            throw new Error("Configuración incorrecta del Content-Type");
-        }
-        return response.json();
-    })
+    .then(response => response.json())
     .then(data => {
-        if (data.success) {
-            alert(data.message);
-        } else if (data.error) {
-            alert(data.message); 
-        }
-    })
-    .catch(error => {
-        console.error("Error silenciado:", error);
-        alert("Error al procesar (pero no se abrirán pestañas)");
+        if (data.success)
+            alert(data.message)
+            window.location = '/cocina-pedidos'
+        if (data.error)
+            alert(data.message)
     });
 }
 

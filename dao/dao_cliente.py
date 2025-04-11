@@ -74,4 +74,3 @@ class dao_cliente:
             return 1
         except Exception as exception:
             return -1
-        

@@ -1,18 +1,23 @@
 {% extends 'components/_estructura_admin.html' %}
 {% block titulo %}Agregar Receta{% endblock %}
 {% block contenido %}
+<nav class="navbar nav bg-dark bg-opacity-10 rounded mb-4">
+    <div class="container-fluid">
+      <span class="navbar-brand fs-3">Galletas</span>
+      <div class="d-flex">
+        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalGalleta">
+          Agregar galleta
+        </button>
+      </div>
+    </div>
+  </nav>
+
 <div class="container mt-5 text-center">
+    
 
     <div class="container d-flex align-items-center justify-content-center flex-column mt-5" style="width: 90%;">
         <div class="menu d-flex align-items-center justify-content-center flex-column w-100">
-            <div class="sub-header d-flex justify-content-between w-100">
-                <div class="sub-header-title">
-                    <h1 id="tituloHistorial">Galletas</h1>
-                </div>
-                <div class="sub-header-buttons d-flex align-items-center" style="width: 33%;">
-                    <a href="/galleta/agregar" class="btn btn-primary">Agregar galleta</a>
-                </div>
-            </div>
+           
             <hr class="w-100">
             <div class="data w-100">
                 <div class="table-responsive" style="max-height: 700px; overflow-y: auto;">
@@ -33,20 +38,23 @@
                             <tr>
                                 <th scope="row">{{loop.index}}</th>
                                 <td>
-                                    <img src="data:image/png;base64,{{ galleta.imagen_galleta }}" alt="" class="img-fluid"
-                                        style="height: 50px;">
+                                    <img src="data:image/png;base64,{{ galleta.imagen_galleta }}" alt=""
+                                        class="img-fluid" style="height: 50px;">
                                 </td>
                                 <td>{{galleta.nombre_galleta}}</td>
                                 <td>$ {{galleta.precio_galleta}}</td>
                                 <td>{{galleta.fecha_creacion.strftime('%Y-%m-%d')}}</td>
                                 <td>
-                                    <a href="/galleta/modificar/{{galleta.id_galleta}}" class="btn btn-warning">Modificar</a>
+                                    <a href="/galleta/modificar/{{galleta.id_galleta}}"
+                                        class="btn btn-warning">Modificar</a>
                                 </td>
                                 <td>
                                     {%if galleta.activo == False%}
-                                    <a href="/galleta/activar/{{galleta.id_galleta}}" class="btn btn-success">Activar</a>
+                                    <a href="/galleta/activar/{{galleta.id_galleta}}"
+                                        class="btn btn-success">Activar</a>
                                     {%else%}
-                                    <a href="/galleta/desactivar/{{galleta.id_galleta}}" class="btn btn-danger">Desactivar</a>
+                                    <a href="/galleta/desactivar/{{galleta.id_galleta}}"
+                                        class="btn btn-danger">Desactivar</a>
                                     {%endif%}
                                 </td>
                             </tr>
@@ -58,4 +66,86 @@
         </div>
     </div>
 </div>
+
+
+<!-- Modal Agregar Galleta -->
+<div class="modal fade" id="modalGalleta" tabindex="-1" aria-labelledby="modalGalletaLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <form method="POST" enctype="multipart/form-data">
+                {{ form.csrf_token }}
+
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="modalGalletaLabel">
+                        <i class="fas fa-plus-circle me-2"></i>Agregar Nueva Galleta
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="row g-3">
+                        <!-- Nombre -->
+                        <div class="col-md-12">
+                            <div class="form-floating">
+                                {{ form.nombre_galleta(class="form-control" + (" is-invalid" if
+                                form.nombre_galleta.errors else ""), placeholder=" ") }}
+                                {{ form.nombre_galleta.label(class="form-label") }}
+                                {% for error in form.nombre_galleta.errors %}
+                                <div class="invalid-feedback">{{ error }}</div>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <!-- Precio -->
+                        <div class="col-md-12">
+                            <div class="form-floating">
+                                {{ form.precio_galleta(class="form-control" + (" is-invalid" if
+                                form.precio_galleta.errors else ""), placeholder=" ", step="0.01") }}
+                                {{ form.precio_galleta.label(class="form-label") }}
+                                {% for error in form.precio_galleta.errors %}
+                                <div class="invalid-feedback">{{ error }}</div>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <!-- Descripción -->
+                        <div class="col-12">
+                            <div class="form-floating">
+                                {{ form.descripcion_galleta(class="form-control" + (" is-invalid" if
+                                form.descripcion_galleta.errors else ""), placeholder=" ", style="height: 100px") }}
+                                {{ form.descripcion_galleta.label(class="form-label") }}
+                                {% for error in form.descripcion_galleta.errors %}
+                                <div class="invalid-feedback">{{ error }}</div>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <!-- Imagen -->
+                        <div class="col-12">
+                            <div class="mb-3">
+                                <label for="{{ form.imagen_galleta.id }}" class="form-label">
+                                    <i class="fas fa-image me-2"></i>{{ form.imagen_galleta.label.text }}
+                                </label>
+                                {{ form.imagen_galleta(class="form-control" + (" is-invalid" if
+                                form.imagen_galleta.errors else "")) }}
+                                <div class="form-text">Formatos soportados: JPG, PNG, GIF (Max. 5MB)</div>
+                                {% for error in form.imagen_galleta.errors %}
+                                <div class="invalid-feedback">{{ error }}</div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-save me-1"></i> Guardar Galleta
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 {%endblock%}

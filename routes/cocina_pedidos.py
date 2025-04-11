@@ -35,11 +35,9 @@ def cocina_pedidos():
 def procesarPedido():
     if current_user.rol_user not in [0, 3]:
         abort(404)
-    data = request.get_json(silent=True)
-    os.system('cls') 
-    print(data)
-    idPedido = data.get('idPedido')
-    lstDetallePedido = data.get('lstDetallePedido')
+    os.system("clear")
+    data = request.json
+    lstDetallePedido = data.get('lst_detalles')
     
     #Proceso - Produccion
     objProduccion = Produccion()
@@ -55,16 +53,26 @@ def procesarPedido():
     
     for detalleProduccion in lstDetallePedido:
         objDetalleProduccion = DetalleProduccion()
+        cantidad = detalleProduccion["cantidad"]
+        tipoPedido = detalleProduccion["tipo_pedido"]
+        id_galleta = detalleProduccion["id_galleta"]
+        id_pedido = detalleProduccion["id_pedido"]
+
         objDetalleProduccion.id_produccion = objProduccion.id_produccion
-        objDetalleProduccion.id_galleta = detalleProduccion.get('id_galleta')
-        cantidad = int(detalleProduccion.get('cantidad'))
-        tipoPedido = detalleProduccion.get('tipo_pedido')
+        objDetalleProduccion.id_galleta = id_galleta
         objDetalleProduccion.cantidad = calculaPiezasTipoPedido(cantidad, tipoPedido)
         if objDetalleProduccion.cantidad == 0:
             continue
         
+        detalleProduccion = controller_detalle_produccion.agregarDetalleProduccion(objDetalleProduccion)
+        if detalleProduccion == -1:
+            return jsonify({
+                "error": True,
+                "message": "Hubo un problema al registrar el detalle de produccion!"
+            })
+
         #Proceso - Materia
-        materiaPrima = controller_materia_prima.descontarStock(detalleProduccion["id_galleta"], int(detalleProduccion["cantidad"]))
+        materiaPrima = controller_materia_prima.descontarStock(id_galleta, cantidad)
         if materiaPrima != 1:
             if materiaPrima == -1:
                 return jsonify({
@@ -76,25 +84,20 @@ def procesarPedido():
                     "error": True,
                     "message": "No tiene suficiente materia prima para producir!"
                 })
-
-        if controller_detalle_produccion.agregarDetalleProduccion(objDetalleProduccion) == -1:
-            return jsonify({
-                "error": True,
-                "message": "Hubo un problema al registrar el detalle de produccion!"
-            })
-        
+                    
         #Proceso - Stock
         objStock = Stock()
-        objStock.id_galleta = detalleProduccion["id_galleta"]
-        objStock.cantidad_galleta = int(detalleProduccion["cantidad"])
-        if controller_stock.agregarStock(objStock) != 1:
+        objStock.id_galleta = id_galleta
+        objStock.cantidad_galleta = cantidad
+        agregarStock = controller_stock.agregarStock(objStock)
+        if agregarStock != 1:
             return jsonify({
                 "error": True,
                 "message": "Hubo un problema al actualizar el stock!"
             })
     
     #Proceso - Pedido
-    if ClienteController.actualizarPedido(idPedido) != 1:
+    if ClienteController.actualizarPedido(id_pedido) != 1:
         return jsonify({
                 "error": True,
                 "message": "Hubo un problema al actualizar el pedido!"
@@ -123,7 +126,6 @@ def pedidosHistorial():
     fecha = request.args.get('fecha')
     if fecha == None:
         fecha = date.today().strftime('%Y-%m-%d')
-    print(fecha)
     pedidos = dao_produccion.obtenerPedidosProcesados(fecha)
     return render_template('pages/page-produccion/cocina-pedidos/historial.html', lstPedidos = pedidos, fecha = fecha)
 
@@ -138,7 +140,7 @@ def detallePedido():
     
     if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
         detalles = [{
-            'id_pedido': detalle.id_pedido,
+            'id_pedido': idPedido,
             'id_galleta': detalle.id_galleta,
             'nombre_galleta': detalle.nombre_galleta,
             'cantidad': detalle.cantidad,

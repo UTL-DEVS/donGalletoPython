@@ -18,8 +18,8 @@ from datetime import timedelta, datetime
 from funcs import captcha_info
 from flask import Flask, session
 from flask_session import Session
+from flask_cors import CORS
 
-# comando a ejecutar en terminal
 
 
 def crear_app():
@@ -31,6 +31,8 @@ def crear_app():
 
     db.init_app(app)
     mail.init_app(app)
+
+    CORS(app)
     
     app.register_blueprint(registro_bp)
     app.register_blueprint(login_bp)
