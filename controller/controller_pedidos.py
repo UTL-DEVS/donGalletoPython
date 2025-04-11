@@ -1,19 +1,28 @@
 from models.pedido import Pedido
 from models import Galleta
 from utils.db import db
+from sqlalchemy.exc import SQLAlchemyError
 
 class PedidoController:
     @staticmethod
     def obtener_pedidos_completados(id_usuario=None):
         try:
-            query = Pedido.query.filter_by(estatus='completado').order_by(Pedido.fecha_pedido.desc())
+            query = db.session.query(Pedido).filter_by(estatus='completado').order_by(Pedido.fecha_pedido.desc())
             if id_usuario:
                 query = query.filter_by(id_usuario=id_usuario)
+            
             pedidos = query.all()
             
+            if not pedidos:
+                return []
+                
             return pedidos
+        except SQLAlchemyError as e:
+            db.session.rollback()
+            print(f"Error de base de datos al obtener pedidos completados: {str(e)}")
+            return []
         except Exception as e:
-            print(f"Error al obtener pedidos completados: {str(e)}")
+            print(f"Error inesperado al obtener pedidos completados: {str(e)}")
             return []
 
     @staticmethod

@@ -237,21 +237,26 @@ def eliminar_item(index):
 @venta_bp.route('/obtener_pedidos_completados', methods=['GET'])
 @login_required
 def obtener_pedidos_completados():
-    if current_user.rol_user not in [0, 4]:  
-        abort(404)
-    
-    pedidos = PedidoController.obtener_pedidos_completados(current_user.id)
-    pedidos_data = []
-    
-    for pedido in pedidos:
-        pedidos_data.append({
-            'id_pedido': pedido.id_pedido,
-            'fecha_pedido': pedido.fecha_pedido.strftime('%d/%m/%Y %H:%M'),
-            'total': pedido.total,
-            'usuario': pedido.usuario.nombre if pedido.usuario else 'Anónimo'
-        })
-    
-    return jsonify(pedidos_data)
+    try:
+        if current_user.rol_user not in [0, 4]:  
+            abort(403)
+        
+        pedidos = PedidoController.obtener_pedidos_completados(current_user.id)
+        pedidos_data = []
+        
+        for pedido in pedidos:
+            pedidos_data.append({
+                'id_pedido': pedido.id_pedido,
+                'fecha_pedido': pedido.fecha_pedido.strftime('%d/%m/%Y %H:%M') if pedido.fecha_pedido else 'N/A',
+                'total': float(pedido.total) if pedido.total else 0.0,
+                'usuario': pedido.usuario.nombre if pedido.usuario and hasattr(pedido.usuario, 'nombre') else 'Anónimo'
+            })
+        
+        return jsonify(pedidos_data)
+        
+    except Exception as e:
+        print(f"Error en obtener_pedidos_completados: {str(e)}")
+        return jsonify({'error': 'Error al obtener pedidos'}), 500
 
 @venta_bp.route('/cargar_pedido/<int:id_pedido>', methods=['POST'])
 @login_required

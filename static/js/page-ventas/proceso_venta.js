@@ -45,7 +45,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const btnPedidos = document.getElementById('btn-pedidos');
     if (btnPedidos) {
         btnPedidos.addEventListener('click', function() {
-            const modal = new bootstrap.Modal(document.getElementById('pedidosModal'));
+            const modalElement = document.getElementById('pedidosModal');
+            modalElement.removeAttribute('aria-hidden');
+            
+            const modal = new bootstrap.Modal(modalElement);
             modal.show();
             
             cargarPedidosCompletados();
@@ -62,17 +65,27 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .then(response => {
             if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
+                return response.json().then(err => {
+                    throw new Error(err.error || `HTTP error! status: ${response.status}`);
+                });
             }
             return response.json();
         })
         .then(data => {
             if (!Array.isArray(data)) {
+                if (data.error) {
+                    throw new Error(data.error);
+                }
                 throw new Error('Respuesta inesperada del servidor');
             }
             
             const tbody = document.querySelector('#tablaPedidos tbody');
             tbody.innerHTML = '';
+            
+            if (data.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="5" class="text-center">No hay pedidos completados</td></tr>';
+                return;
+            }
             
             data.forEach(pedido => {
                 const tr = document.createElement('tr');
@@ -101,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('Error al cargar pedidos:', error);
             iziToast.error({
                 title: 'Error',
-                message: 'No se pudieron cargar los pedidos',
+                message: error.message || 'No se pudieron cargar los pedidos',
                 position: 'topRight'
             });
         });
@@ -115,7 +128,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 'X-CSRFToken': document.querySelector('meta[name="csrf-token"]').content
             }
         })
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                return response.json().then(err => {
+                    throw new Error(err.error || `HTTP error! status: ${response.status}`);
+                });
+            }
+            return response.json();
+        })
         .then(data => {
             if (data.success) {
                 iziToast.success({
@@ -124,9 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     position: 'topRight'
                 });
                 
-                if (data.carrito) {
-                    actualizarInterfazCarrito(data.carrito);
-                }
+                window.location.reload();
                 
                 const modal = bootstrap.Modal.getInstance(document.getElementById('pedidosModal'));
                 modal.hide();
@@ -142,7 +160,7 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('Error al cargar pedido:', error);
             iziToast.error({
                 title: 'Error',
-                message: 'Error al cargar el pedido',
+                message: error.message || 'Error al cargar el pedido',
                 position: 'topRight'
             });
         });
@@ -201,7 +219,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Función para mostrar mensajes con iziToast
     function showFlashMessage(message, category) {
         const toastType = 
             category === 'success' ? 'success' :
