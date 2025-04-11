@@ -1715,3 +1715,5 @@ Fecha: 2025-04-11 11:59:17.415125 - Usuario: KilllYourAss12$$ - Accion: http://1
 Fecha: 2025-04-11 12:00:37.300761 - Usuario: KilllYourAss12$$ - Accion: http://127.0.0.1:8080/galleta_home
 Fecha: 2025-04-11 12:00:37.355610 - Usuario: KilllYourAss12$$ - Accion: http://127.0.0.1:8080/galleta_home
 >>>>>>> 312cef696502d3c6b309767ef0153494fb58f40f
+Fecha: 2025-04-11 13:49:41.066597 - Usuario: andrea - Accion: http://127.0.0.1:8080/receta/1
+Fecha: 2025-04-11 13:49:58.781772 - Usuario: andrea - Accion: http://127.0.0.1:8080/economia/
