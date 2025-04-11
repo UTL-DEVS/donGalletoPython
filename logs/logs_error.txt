@@ -653,3 +653,51 @@ Fecha: 2025-04-11 01:34:13.747933 - Usuario: KilllYourAss12$$ - Accion: Error 40
 Fecha: 2025-04-11 01:34:19.104851 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
 Fecha: 2025-04-11 01:34:28.342076 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
 >>>>>>> 66b6232ae5590babfc0e4d5c4e9d54e00230bbe6
+Fecha: 2025-04-11 10:16:32.336852 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-11 10:20:46.256321 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-11 10:23:00.868259 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-11 10:25:18.009485 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-11 10:26:12.404964 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-11 10:32:12.768899 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/ventas/unidad | IP: 127.0.0.1
+Fecha: 2025-04-11 10:35:10.218472 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/tipo_venta | IP: 127.0.0.1
+Fecha: 2025-04-11 10:35:11.506152 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/tipo_venta | IP: 127.0.0.1
+Fecha: 2025-04-11 10:35:12.419325 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/tipo_venta | IP: 127.0.0.1
+Fecha: 2025-04-11 10:35:15.766199 - Usuario: KilllYourAss12$$ - Accion: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Fecha: 2025-04-11 10:35:15.794922 - Usuario: KilllYourAss12$$ - Accion: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Fecha: 2025-04-11 10:35:15.824502 - Usuario: KilllYourAss12$$ - Accion: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Fecha: 2025-04-11 10:35:15.855592 - Usuario: KilllYourAss12$$ - Accion: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Fecha: 2025-04-11 10:35:15.887603 - Usuario: KilllYourAss12$$ - Accion: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Fecha: 2025-04-11 10:35:15.920645 - Usuario: KilllYourAss12$$ - Accion: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Fecha: 2025-04-11 10:35:15.948970 - Usuario: KilllYourAss12$$ - Accion: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Fecha: 2025-04-11 10:35:15.971997 - Usuario: KilllYourAss12$$ - Accion: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Fecha: 2025-04-11 10:35:15.996021 - Usuario: KilllYourAss12$$ - Accion: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Fecha: 2025-04-11 10:35:16.019980 - Usuario: KilllYourAss12$$ - Accion: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Fecha: 2025-04-11 10:36:23.900726 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/insumos/insumo | IP: 127.0.0.1
+Fecha: 2025-04-11 10:36:25.634410 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/galleta_home | IP: 127.0.0.1
+Fecha: 2025-04-11 10:36:28.142004 - Usuario: KilllYourAss12$$ - Accion: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Fecha: 2025-04-11 10:36:28.166030 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/error | IP: 127.0.0.1
+Fecha: 2025-04-11 10:37:20.598374 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/cocina-pedidos | IP: 127.0.0.1
+Fecha: 2025-04-11 10:37:25.664131 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/cocina-pedidos | IP: 127.0.0.1
+Fecha: 2025-04-11 10:37:27.832458 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/pedidos-historial | IP: 127.0.0.1
+Fecha: 2025-04-11 10:37:34.129314 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/ventas/unidad | IP: 127.0.0.1
+Fecha: 2025-04-11 10:37:39.457462 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/insumos/insumo | IP: 127.0.0.1
+Fecha: 2025-04-11 10:37:41.232599 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/galleta_home | IP: 127.0.0.1
+Fecha: 2025-04-11 10:37:42.348813 - Usuario: KilllYourAss12$$ - Accion: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Fecha: 2025-04-11 10:37:42.376122 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/error | IP: 127.0.0.1
+Fecha: 2025-04-11 11:27:14.307579 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-11 11:27:18.932581 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-11 11:27:27.673586 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-11 11:27:32.448117 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-11 11:27:42.253227 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-11 11:28:42.997084 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-11 11:28:44.956675 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-11 11:32:27.339296 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/ventas/unidad | IP: 127.0.0.1
+Fecha: 2025-04-11 11:55:38.404012 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-11 11:55:41.661785 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-11 11:55:56.753471 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-11 11:56:03.682875 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-11 11:57:04.331020 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-11 11:57:06.126148 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-11 11:57:07.160888 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-11 12:01:28.970263 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-11 12:01:32.168406 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1

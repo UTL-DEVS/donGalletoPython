@@ -180,7 +180,7 @@
     window.location.href = "/tipo_venta";
   };
 </script>
-<div class="col-md-6 col-lg-4">
+<div class="col-md-12 col-lg-10 mx-auto">
   <div class="card">
     <div class="card-body">
       <h5 class="card-title">Paquetes disponibles</h5>
@@ -202,8 +202,33 @@
               value="{{ galleta.id_galleta }}"
               data-precio="{{ galleta.precio_galleta }}"
             >
-              {{ galleta.nombre_galleta }} (${{
-              "%.2f"|format(galleta.precio_galleta) }}/unidad)
+              <div class="d-flex align-items-center">
+                {% if galleta.imagen_galleta %}
+                <img
+                  src="data:image/png;base64,{{ galleta.imagen_galleta }}"
+                  alt="{{ galleta.nombre_galleta }}"
+                  style="
+                    width: 50px;
+                    height: 50px;
+                    object-fit: cover;
+                    margin-right: 10px;
+                  "
+                />
+                {% else %}
+                <div
+                  style="
+                    width: 50px;
+                    height: 50px;
+                    background-color: #ddd;
+                    margin-right: 10px;
+                  "
+                ></div>
+                {% endif %}
+                <div>
+                  {{ galleta.nombre_galleta }} (${{
+                  "%.2f"|format(galleta.precio_galleta) }}/unidad)
+                </div>
+              </div>
             </option>
             {% endfor %}
           </select>

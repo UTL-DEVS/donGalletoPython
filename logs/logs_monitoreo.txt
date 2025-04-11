@@ -1576,3 +1576,8 @@ Fecha: 2025-04-09 12:54:47.577757 - Usuario: joel123456 - Accion: http://localho
 Fecha: 2025-04-09 12:55:07.944973 - Usuario: joel123456 - Accion: http://localhost:8080/solicitar-insumos
 Fecha: 2025-04-09 12:55:09.488691 - Usuario: joel123456 - Accion: http://localhost:8080/cocina-insumos
 >>>>>>> 66b6232ae5590babfc0e4d5c4e9d54e00230bbe6
+Fecha: 2025-04-11 11:32:55.164053 - Usuario: KilllYourAss12$$ - Accion: http://127.0.0.1:8080/cocina-pedidos
+Fecha: 2025-04-11 11:57:31.335503 - Usuario: KilllYourAss12$$ - Accion: http://127.0.0.1:8080/galleta_home
+Fecha: 2025-04-11 11:59:17.415125 - Usuario: KilllYourAss12$$ - Accion: http://127.0.0.1:8080/galleta_home
+Fecha: 2025-04-11 12:00:37.300761 - Usuario: KilllYourAss12$$ - Accion: http://127.0.0.1:8080/galleta_home
+Fecha: 2025-04-11 12:00:37.355610 - Usuario: KilllYourAss12$$ - Accion: http://127.0.0.1:8080/galleta_home
