@@ -27,6 +27,8 @@ $(document).ready(function() {
     });
 });
 
+
+
 function actualizarTituloHistorial() {
     const fechaSeleccionada = document.getElementById('inpFecha').value;
     const tituloHistorial = document.getElementById('tituloHistorial');

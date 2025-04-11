@@ -1758,3 +1758,5 @@ Fecha: 2025-04-11 17:36:41.870513 - Usuario: andrea - Accion: http://127.0.0.1:8
 Fecha: 2025-04-11 17:36:43.466462 - Usuario: andrea - Accion: http://127.0.0.1:8080/economia/
 Fecha: 2025-04-11 17:38:01.575255 - Usuario: andrea - Accion: http://127.0.0.1:8080/economia/
 Fecha: 2025-04-11 17:38:06.174414 - Usuario: andrea - Accion: http://127.0.0.1:8080/economia/galletas
+Fecha: 2025-04-11 17:39:11.153955 - Usuario: andrea - Accion: http://127.0.0.1:8080/insumos/insumo
+Fecha: 2025-04-11 17:43:30.397802 - Usuario: andrea - Accion: http://127.0.0.1:8080/economia/

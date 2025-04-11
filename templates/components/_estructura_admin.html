@@ -377,6 +377,20 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="../../static/js/page-ventas/nabvar.js"></script>
   <script src="../../static/js/app.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.collapse').on('show.bs.collapse', function () {
+        // Solo colapsa hermanos directos que no contengan el colapso que se está abriendo
+        $('.collapse').not(this).each(function () {
+          // Si NO es ancestro del colapso que se está abriendo, lo cerramos
+          if (!$(this).find($(event.target)).length && !$(event.target).closest(this).length) {
+            $(this).collapse('hide');
+          }
+        });
+      });
+    });
+  </script>
+  
 </body>
 
 </html>

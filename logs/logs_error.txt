@@ -690,3 +690,8 @@ Fecha: 2025-04-11 17:14:02.493526 - Usuario: andrea - Accion: obtener_galletas_m
 Fecha: 2025-04-11 17:15:04.900874 - Usuario: andrea - Accion: type object 'Galleta' has no attribute 'nombre'
 Fecha: 2025-04-11 17:15:08.601161 - Usuario: andrea - Accion: type object 'Galleta' has no attribute 'nombre'
 Fecha: 2025-04-11 17:22:44.598264 - Usuario: andrea - Accion: 'f' is undefined
+Fecha: 2025-04-11 17:41:09.463379 - Usuario: andrea - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-11 17:41:11.624317 - Usuario: andrea - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-11 17:41:25.970078 - Usuario: andrea - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-11 17:43:22.878735 - Usuario: andrea - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-11 17:49:45.891296 - Usuario: andrea - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
