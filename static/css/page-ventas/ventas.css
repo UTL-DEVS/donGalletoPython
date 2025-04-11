@@ -145,3 +145,44 @@ h2 {
 .notificacion.error {
     background-color: #dc3545;
 }
+
+.iziToast {
+    font-family: inherit;
+    border-radius: 4px;
+}
+
+.iziToast-close {
+    background: none !important;
+    color: inherit !important;
+    opacity: 0.8;
+}
+
+.iziToast-title {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+#pedidosModal .table {
+    font-size: 0.9rem;
+}
+
+#pedidosModal .table th {
+    font-weight: 500;
+}
+
+.btn-cargar-pedido {
+    white-space: nowrap;
+}
+
+#btn-pedidos {
+    background-color: #17a2b8;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+#btn-pedidos:hover {
+    background-color: #138496;
+}

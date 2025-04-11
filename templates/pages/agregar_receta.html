@@ -1,5 +1,7 @@
 {% extends 'components/_estructura_admin.html' %}
+
 {% block titulo %}Agregar Receta{% endblock %}
+
 {% block contenido %}
 {% with messages = get_flashed_messages(with_categories=true) %}
   {% if messages %}
@@ -12,18 +14,17 @@
   {% endif %}
 {% endwith %}
 
-<nav class="navbar  nav">
+<nav class="navbar nav">
     <div class="container-fluid">
         <a class="navbar-brand fs-3" href="#">Agregar Receta</a>
-        <div class=" d-flex">
+        <div class="d-flex">
             <a href="/galleta/agregar" class="m-4 btn btn-success">Agregar Galleta</a>
             <a class="m-4 btn btn-warning" href="/receta">Regresar</a>
         </div>
     </div>
 </nav>
 
-<div class="container-fluid mt-">
-
+<div class="container-fluid mt-3">
     <div class="container py-5">
         <div class="row justify-content-center">
             <div class="col-lg-8">
@@ -36,35 +37,26 @@
                     <div class="card-body p-4">
                         <form method="POST" class="bg- bg-opacity-50">
                             {{ form.csrf_token }}
-
                             <div class="row g-3">
                                 <!-- Nombre -->
                                 <div class="col-md-12">
-                                    <div class="">
-                                        {{ form.nombre_receta.label(class="form-label")}}
-                                        {{ form.nombre_receta(class="form-control") }}
-                                    </div>
+                                    {{ form.nombre_receta.label(class="form-label") }}
+                                    {{ form.nombre_receta(class="form-control") }}
                                 </div>
 
                                 <div class="col-md-12">
-                                    <div class="">
-                                        {{ form.id_galleta.label(class="form-label")}}
-                                        {{ form.id_galleta(class="form-control") }}
-                                    </div>
+                                    {{ form.id_galleta.label(class="form-label") }}
+                                    {{ form.id_galleta(class="form-control") }}
                                 </div>
 
                                 <div class="col-md-12">
-                                    <div class="">
-                                        {{ form.id_materia.label(class="form-label") }}
-                                        {{ form.id_materia(class="form-control") }}
-                                    </div>
+                                    {{ form.id_materia.label(class="form-label") }}
+                                    {{ form.id_materia(class="form-control") }}
                                 </div>
 
                                 <div class="col-md-12">
-                                    <div class="">
-                                        {{ form.cantidad_insumo.label(class="form-label")}}
-                                        {{ form.cantidad_insumo(class="form-control") }}
-                                    </div>
+                                    {{ form.cantidad_insumo.label(class="form-label") }}
+                                    {{ form.cantidad_insumo(class="form-control") }}
                                 </div>
 
                                 <div class="form-group mt-3">
@@ -72,7 +64,10 @@
                                 </div>
                             </div>
                         </form>
-                    </div>
-                    
-
-                    {% endblock %}
+                    </div> <!-- Cierre de .card-body -->
+                </div> <!-- Cierre de .card -->
+            </div> <!-- Cierre de .col-lg-8 -->
+        </div> <!-- Cierre de .row -->
+    </div> <!-- Cierre de .container -->
+</div> <!-- Cierre de .container-fluid -->
+{% endblock %}

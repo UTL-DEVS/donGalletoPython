@@ -1,77 +1,70 @@
-{%extends 'components/_estructura_admin.html'%}
-{%block titulo%}Recetas{%endblock%}
-{%block contenido%}
+{% extends 'components/_estructura_admin.html' %}
+{% block titulo %}Recetas{% endblock %}
+{% block contenido %}
 
 {% with messages = get_flashed_messages(with_categories=true) %}
-{% if messages %}
-{% for category, message in messages %}
-<div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
-    {{ message }}
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
-{% endfor %}
-{% endif %}
+  {% if messages %}
+    {% for category, message in messages %}
+      <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {% endfor %}
+  {% endif %}
 {% endwith %}
 
-
-<title>Cocina</title>
 <style>
-    .table-fixed {
-        max-height: 500px;
-        overflow-y: auto;
-    }
-
-    .table-fixed thead {
-        position: sticky;
-        top: 0;
-        background-color: white;
-        z-index: 1;
-    }
+.table-fixed {
+    max-height: 500px;
+    overflow-y: auto;
+}
+.table-fixed thead {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 1;
+}
 </style>
+
+<nav class="navbar nav bg-dark bg-opacity-10 rounded mb-4">
+  <div class="container-fluid">
+    <span class="navbar-brand fs-3">Recetas</span>
+    <div class="d-flex">
+      
+      <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalAgregarReceta">
+        Agregar Receta
+    </button>
+    </div>
+  </div>
+</nav>
+
 <div class="container d-flex align-items-center justify-content-center flex-column mt-5" style="width: 90%;">
     <div class="menu d-flex align-items-center justify-content-center flex-column w-100">
-        <div class="sub-header d-flex justify-content-between w-100">
-            <div class="sub-header-title">
-                <h1 id="tituloHistorial">Recetas</h1>
-            </div>
-            <div class="sub-header-buttons d-flex align-items-center" style="width: 33%;">
-                <a href="/receta/agregar" class="btn btn-primary ms-auto">Agregar Receta</a>
-            </div>
-        </div>
-        <hr class="w-100">
+        
         <div class="data w-100">
             <div class="table-responsive" style="max-height: 700px; overflow-y: auto;">
                 <table class="table table-light table-hover mb-0">
                     <thead>
-                        <th scope="col">#</th>
-                        <th scope="col">Nombre Receta</th>
-                        <th scope="col"></th>
-                        <th scope="col"></th>
-                        
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nombre Receta</th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                        </tr>
                     </thead>
                     <tbody class="table-group-divider">
-                        {%for receta in recetas%}
+                        {% for receta in recetas %}
                         <tr>
-                            <th scope="row">
-                                {{loop.index}}
-                            </th>
-                            <td>
-                                {{receta.nombre_receta}}
-                            </td>
-                            <td>
-                                <a href="/receta/{{receta.id_receta}}" class="btn btn-warning">Ver detalles</a>
-                            </td>
-                            {%if receta.estado == '0'%}
-                            <td>
-                                <a href="/receta/activar/{{receta.id_receta}}" class="btn btn-success">Activar</a>
-                            </td>
-                            {%else%}
-                            <td>
-                                <a href="/receta/desactivar/{{receta.id_receta}}" class="btn btn-danger">Eliminar</a>
-                            </td>
-                            {%endif%}
+                            <th scope="row">{{ loop.index }}</th>
+                            <td>{{ receta.nombre_receta }}</td>
+                            <td><a href="/receta/{{ receta.id_receta }}" class="btn btn-warning">Ver detalles</a></td>
+                            {% if receta.estado == '0' %}
+                            <td><a href="/receta/activar/{{ receta.id_receta }}" class="btn btn-success">Activar</a></td>
+                            {% else %}
+                            <td><a href="/receta/desactivar/{{ receta.id_receta }}" class="btn btn-danger">Eliminar</a></td>
+                            {% endif %}
                         </tr>
-                        {%endfor%}
+                        {% endfor %}
                     </tbody>
                 </table>
             </div>
@@ -79,4 +72,45 @@
     </div>
 </div>
 
-        {%endblock%}
+<!-- Modal Agregar Receta -->
+<div class="modal fade" id="modalAgregarReceta" tabindex="-1" aria-labelledby="modalAgregarRecetaLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="card border-0 shadow-lg">
+        <div class="card-header bg-primary text-white py-3">
+          <h3 class="mb-0 text-center">
+            <i class="fas fa-plus-circle me-2"></i>Agregar Nueva Receta
+          </h3>
+        </div>
+        <div class="card-body p-4">
+          <form method="POST" action="{{ url_for('receta.agregar_receta') }}">
+            {{ form.csrf_token }}
+            <div class="row g-3">
+              <div class="col-md-12">
+                {{ form.nombre_receta.label(class="form-label") }}
+                {{ form.nombre_receta(class="form-control") }}
+              </div>
+              <div class="col-md-12">
+                {{ form.id_galleta.label(class="form-label") }}
+                {{ form.id_galleta(class="form-control") }}
+              </div>
+              <div class="col-md-12">
+                {{ form.id_materia.label(class="form-label") }}
+                {{ form.id_materia(class="form-control") }}
+              </div>
+              <div class="col-md-12">
+                {{ form.cantidad_insumo.label(class="form-label") }}
+                {{ form.cantidad_insumo(class="form-control") }}
+              </div>
+              <div class="form-group mt-3 text-center">
+                {{ form.submit(class="btn btn-primary") }}
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

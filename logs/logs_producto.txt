@@ -1,2 +1,10 @@
 [2025-04-08 16:08:03.714587] - Usuario: joel123456 - Insumo ID: 1 - Acción: CREACIÓN - Descripción: "leche", Precio: "30.0", Estatus: "1"
+<<<<<<< HEAD
 [2025-04-08 17:33:21.191523] - Usuario: Pruebas123* - Insumo ID: 3 - Acción: CREACIÓN - Descripción: "Harina de trigo", Precio: "1.0", Estatus: "1"
+=======
+[2025-04-09 12:23:53.956565] - Usuario: joel123456 - Insumo ID: 1 - Acción: MODIFICACIÓN - Campo: "cantidad_compra", Antes: "3.0", Después: "3000.0"
+[2025-04-09 12:23:53.957586] - Usuario: joel123456 - Insumo ID: 1 - Acción: MODIFICACIÓN - Campo: "unidad_medida_publico", Antes: "1", Después: "3"
+[2025-04-09 12:24:20.804092] - Usuario: joel123456 - Insumo ID: 1 - Acción: MODIFICACIÓN - Campo: "estatus", Antes: "1", Después: "0"
+[2025-04-09 12:24:28.100115] - Usuario: joel123456 - Insumo ID: 1 - Acción: MODIFICACIÓN - Campo: "estatus", Antes: "0", Después: "1"
+[2025-04-09 12:49:44.738073] - Usuario: joel123456 - Insumo ID: 2 - Acción: CREACIÓN - Descripción: "harina", Precio: "20.0", Estatus: "1"
+>>>>>>> 66b6232ae5590babfc0e4d5c4e9d54e00230bbe6
