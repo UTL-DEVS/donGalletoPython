@@ -676,3 +676,17 @@ Fecha: 2025-04-11 11:57:06.126148 - Usuario: KilllYourAss12$$ - Accion: Error 40
 Fecha: 2025-04-11 11:57:07.160888 - Usuario: KilllYourAss12$$ - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
 Fecha: 2025-04-11 12:01:28.970263 - Usuario: KilllYourAss12$$ - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
 Fecha: 2025-04-11 12:01:32.168406 - Usuario: KilllYourAss12$$ - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-11 15:19:34.441821 - Usuario: andrea - Accion: scoped_session.__call__() takes 1 positional argument but 2 were given
+Fecha: 2025-04-11 15:19:34.490071 - Usuario: andrea - Accion: scoped_session.__call__() takes 1 positional argument but 2 were given
+Fecha: 2025-04-11 15:19:34.716142 - Usuario: andrea - Accion: scoped_session.__call__() takes 1 positional argument but 2 were given
+Fecha: 2025-04-11 15:41:46.360601 - Usuario: andrea - Accion: obtener_ventas_galletas() missing 1 required positional argument: 'mes'
+Fecha: 2025-04-11 15:41:46.767265 - Usuario: andrea - Accion: obtener_ventas_galletas() missing 1 required positional argument: 'mes'
+Fecha: 2025-04-11 15:41:46.839204 - Usuario: andrea - Accion: obtener_ventas_galletas() missing 1 required positional argument: 'mes'
+Fecha: 2025-04-11 15:41:46.905067 - Usuario: andrea - Accion: obtener_ventas_galletas() missing 1 required positional argument: 'mes'
+Fecha: 2025-04-11 16:31:59.725104 - Usuario: andrea - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-economia/galletas.js | IP: 127.0.0.1
+Fecha: 2025-04-11 16:33:29.761456 - Usuario: andrea - Accion: Error 404: P�gina no encontrada en http://127.0.0.1:8080/static/js/page-economia/galletas.js | IP: 127.0.0.1
+Fecha: 2025-04-11 16:35:30.832312 - Usuario: andrea - Accion: name 'null' is not defined
+Fecha: 2025-04-11 17:14:02.493526 - Usuario: andrea - Accion: obtener_galletas_mas_vendidas_del_mes() missing 1 required positional argument: 'mes'
+Fecha: 2025-04-11 17:15:04.900874 - Usuario: andrea - Accion: type object 'Galleta' has no attribute 'nombre'
+Fecha: 2025-04-11 17:15:08.601161 - Usuario: andrea - Accion: type object 'Galleta' has no attribute 'nombre'
+Fecha: 2025-04-11 17:22:44.598264 - Usuario: andrea - Accion: 'f' is undefined

@@ -26,7 +26,6 @@ document.getElementById("mesGraficaVentasDiarias").addEventListener("input", fun
 
 
 function cargarGrafica(fechasVentas, totalesVentas) {
-  console.log('Ventas¿ 1: '+totalesVentas[0]);
 
   var options = {
     series: [{

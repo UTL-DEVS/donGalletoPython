@@ -1,4 +1,5 @@
 from utils import db, func,extract, func
+from collections import defaultdict
 from models import Nomina, Empleado, Persona, Galleta, DetalleVenta, GastoOperacion
 from models.ProcesoVenta import ProcesoVenta
 from datetime import datetime, timedelta
@@ -27,30 +28,6 @@ def obtener_ventas_por_mes(mes, dias):
     return resultados
 
 
-def obtener_galletas_mas_vendidas_del_mes(mes):
-    mes_numero, anio = map(int, mes.split('/'))
-    primer_dia = datetime(anio, mes_numero, 1)
-    if mes_numero == 12:
-        siguiente_mes = datetime(anio + 1, 1, 1)
-    else:
-        siguiente_mes = datetime(anio, mes_numero + 1, 1)
-    ultimo_dia = siguiente_mes - timedelta(seconds=1)
-
-    resultados = (
-        db.session.query(
-            DetalleVenta.galleta_id,
-            db.func.sum(DetalleVenta.cantidad).label('total_vendida'),
-            Galleta.nombre
-        )
-        .join(DetalleVenta.proceso_venta)
-        .join(DetalleVenta.galleta)
-        .filter(ProcesoVenta.fecha.between(primer_dia, ultimo_dia))
-        .group_by(DetalleVenta.galleta_id, Galleta.nombre)
-        .order_by(db.desc('total_vendida'))
-        .all()
-    )
-
-    return resultados
 
 
 def obtener_primera_fecha_venta():
@@ -166,3 +143,62 @@ def obtener_gastos_por_mes(mes):  # formato 'MM/YYYY'
     ).all()
     
 
+
+def obtener_galletas_mas_vendidas_del_mes(mes):
+    mes_numero, anio = map(int, mes.split('/'))
+    primer_dia = datetime(anio, mes_numero, 1)
+    if mes_numero == 12:
+        siguiente_mes = datetime(anio + 1, 1, 1)
+    else:
+        siguiente_mes = datetime(anio, mes_numero + 1, 1)
+    ultimo_dia = siguiente_mes - timedelta(seconds=1)
+
+    resultados = (
+        db.session.query(
+            DetalleVenta.galleta_id,
+            db.func.sum(DetalleVenta.subtotal).label('total_vendida'),
+            (Galleta.nombre_galleta).label('galleta')
+        )
+        .join(DetalleVenta.proceso_venta)
+        .join(DetalleVenta.galleta)
+        .filter(ProcesoVenta.fecha.between(primer_dia, ultimo_dia))
+        .group_by(DetalleVenta.galleta_id, Galleta.nombre_galleta)
+        .order_by(db.desc('total_vendida'))
+        .all()
+    )
+
+    return resultados
+
+def obtener_ventas_por_galleta_y_dia(mes, dias):
+    mes_numero, anio = map(int, mes.split('/'))
+    primer_dia = datetime(anio, mes_numero, 1)
+    ultimo_dia = primer_dia.replace(day=28) + timedelta(days=4)
+    ultimo_dia = ultimo_dia - timedelta(days=ultimo_dia.day)
+    primer_dia = ultimo_dia - timedelta(days=int(dias) - 1)
+
+    resultados = (
+        db.session.query(
+            Galleta.nombre_galleta,
+            func.date(ProcesoVenta.fecha).label("fecha"),
+            func.sum(DetalleVenta.subtotal).label("subtotal")
+        )
+        .join(DetalleVenta, Galleta.id_galleta == DetalleVenta.galleta_id)
+        .join(ProcesoVenta, ProcesoVenta.id == DetalleVenta.venta_id)
+        .filter(ProcesoVenta.fecha.between(primer_dia, ultimo_dia))
+        .group_by(Galleta.nombre_galleta, func.date(ProcesoVenta.fecha))
+        .all()
+    )
+
+    # Armar estructura
+    dias_del_mes = [(primer_dia + timedelta(days=i)).date() for i in range((ultimo_dia - primer_dia).days + 1)]
+    data_galletas = defaultdict(lambda: [0] * len(dias_del_mes))
+
+    fecha_to_index = {fecha: idx for idx, fecha in enumerate(dias_del_mes)}
+
+    for nombre, fecha, subtotal in resultados:
+        index = fecha_to_index.get(fecha)
+        if index is not None:
+            data_galletas[nombre][index] = subtotal
+
+    series = [{"name": nombre, "data": data} for nombre, data in data_galletas.items()]
+    return series

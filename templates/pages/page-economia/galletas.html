@@ -31,7 +31,7 @@
             </div>
             <div class="sub-header-buttons d-flex align-items-center" style="width: 33%;">
                 <p class="w-100 m-0 fw-bold">Seleccione una fecha: </p>
-                <input id="mesGraficaVentasDiarias" type="month" name="mes" class="form-control"
+                <input id="mesGraficaVentasGalletas" type="month" name="mes" class="form-control"
                     aria-describedby="basic-addon2" 
                     value="{{ mes_sel if mes_sel else '' }}">
             </div>
@@ -74,15 +74,15 @@
                     <table class="table table-light table-hover mb-0">
                         <thead>
                             <tr>
-                                <th>Fecha</th>
+                                <th>Galleta</th>
                                 <th>Monto</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {% for f in list %}
+                            {% for g in lista %}
                             <tr>
-                                <td>{{ f.fecha_venta }}</td>
-                                <td>${{ f.total_dia}}</td>
+                                <td>{{ g.galleta }}</td>
+                                <td>${{ g.total_vendida}}</td>
                             </tr>
                             {% endfor %}
                           
@@ -97,9 +97,10 @@
 
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="../../../static/js/page-economia/dashboard.js"></script>
+<script src="../../../static/js/page-economia/gallteas.js"></script>
 <script>
     let rangosFechasVentas = {{ rango_fechas_ventas| safe }};
-    let listasVentasDiarias = {{ lista_ventas| safe }};
+    let listasVentasGalletas = {{ ventas_galletas| safe }};
+    let mes_sel = "{{ mes| safe }}";
 </script>
 {%endblock%}

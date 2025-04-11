@@ -1,4 +1,4 @@
-document.getElementById("mesGraficaVentasDiarias").addEventListener("input", function () {
+document.getElementById("mesGraficaVentasGalletas").addEventListener("input", function () {
     let value = this.value; // "2025-04"
     let [anio, mes] = value.split("-");
   
@@ -19,81 +19,64 @@ document.getElementById("mesGraficaVentasDiarias").addEventListener("input", fun
       this.value = ""; // Borra la selección
     } else {
       let mesVentas = mes + '/' + anio;
-      window.location.assign('/economia/?mes_ventas=' + mesVentas + '&dias_ventas=28');
+      window.location.assign('/economia/galletas?mes_ventas=' + mesVentas + '&dias_ventas=28');
     }
   });
   
   
   
-  function cargarGrafica(fechasVentas, totalesVentas) {
-    console.log('Ventas¿ 1: '+totalesVentas[0]);
+  function cargarGrafica() {
   
     var options = {
-      series: [{
-        name: 'Ventas',
-        data: totalesVentas  // Usamos los totales de las ventas
-      }],
-      chart: {
+        series: listasVentasGalletas,
+        chart: {
         height: 350,
-        type: 'bar',
-        events: {
-          click: function (chart, w, e) {
-            console.log(chart, w, e)
-          }
+        type: 'line',
+        zoom: {
+          enabled: false
+        },
+        animations: {
+          enabled: false
         }
       },
-      plotOptions: {
-        bar: {
-          columnWidth: '45%',
-          distributed: true,
-        }
+      stroke: {
+        width: [5,5,4],
+        curve: 'smooth'
       },
-      dataLabels: {
-        enabled: false
-      },
-      legend: {
-        show: false
+      labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],
+      title: {
+        text: ''
       },
       xaxis: {
-        categories: fechasVentas,
-        labels: {
-          style: {
-            fontSize: '12px'
-          }
-        }
-      }
-    };
-  
-    var chart = new ApexCharts(document.querySelector("#galletasMasVendidas"), options);
-    chart.render();
+      },
+      };
+
+      var chart = new ApexCharts(document.querySelector("#galletasMasVendidas"), options);
+      chart.render();
+    
   }
   
   function obtenerDatosParaGrafica() {
-    if(typeof listasVentasDiarias == "undefined" ){
-      $('#galletasMasVendidas').text('No hay ventas para mostrar');
-      return;
-    }
-    // Extraer los días y totales de las ventas
-    let fechasVentas = listasVentasDiarias.map(venta => {
-      let fecha = new Date(venta.fecha_venta);  // Convierte la fecha en objeto Date
-      return fecha.getDate();  // Devuelve solo el día del mes
-    });
-    let totalesVentas = listasVentasDiarias.map(venta => venta.total);  // Extrae los totales
-  
-    cargarGrafica(fechasVentas, totalesVentas);
+    if(typeof listasVentasGalletas == "undefined" ){
+        $('#galletasMasVendidas').text('No hay datos para mostrar');
+        return;
+      }
+    cargarGrafica();
   
     const meses = [
       'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 
       'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
   ];
+  console.log(mes_sel);
   
-      let fecha = new Date(listasVentasDiarias[0].fecha_venta);  // Convierte la fecha en objeto Date
-      let mes = fecha.getMonth();  // El mes es 0-indexado, no hace falta sumarle 1
-      let anio = fecha.getFullYear();
+    let partes = mes_sel.split('/');  // ["04", "2025"]
+    let mes = parseInt(partes[0]) - 1;  // Restamos 1 porque enero = 0
+    let anio = parseInt(partes[1]);
     $('#fechaGrafica').text(`${meses[mes]} ${anio}`);
   
   }
   
   window.onload = function () {
+   
     obtenerDatosParaGrafica();
   };

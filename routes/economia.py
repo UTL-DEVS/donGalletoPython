@@ -23,11 +23,10 @@ def dashboard():
             else:
                 mes_venta = ((request.args.get('mes_ventas')))
                 dias =((request.args.get('dias_ventas')))
-    
             lista_ventas = controller_economia.obtener_ventas_diarias(mes_venta, dias)
             total_mes=0
             for v in lista_ventas: total_mes+=v.total_dia  
-            print(f'totalmes: {total_mes}')
+            #print(f'totalmes: {total_mes}')
             lista_ventas_json = json.dumps([
                 {
                     "fecha_venta": venta.fecha_venta.strftime("%Y-%m-%d"),  # Convertir datetime a string
@@ -166,4 +165,31 @@ def dashboard_gastos():
         crear_log_error(current_user.usuario, str(e))
         flash("Error al cargar el dashboard de gastos", "danger")
         return redirect(url_for('economia.dashboard'))
+    
+
+@economia_bp.route("/galletas", methods=['GET'])
+@login_required
+def dashboard_galletas():
+    try:
+        if current_user.rol_user != 0:
+            abort(404)
+        fechas_ventas = controller_economia.obtener_fechas_ventas()
+
+        if (fechas_ventas != None):
+            if(request.args.get('mes_ventas') == None):
+                mes_venta=json.loads(fechas_ventas)['ultima_venta']
+                dias = 30
+            else:
+                mes_venta = ((request.args.get('mes_ventas')))
+                dias =((request.args.get('dias_ventas')))
+            series = controller_economia.obtener_ventas_galletas(mes_venta, dias)
+            print(f'mes: {mes_venta}')
+            lista_ventas_gall=controller_economia.obtener_galletas_mas_vendidas_del_mes(mes_venta)
+            crear_log_user(current_user.usuario, request.url)
+        return render_template('pages/page-economia/galletas.html',lista=lista_ventas_gall,mes=str(mes_venta), rango_fechas_ventas=fechas_ventas, ventas_galletas=series)
+    except Exception as e:
+        crear_log_error(current_user.usuario, str(e))
+        flash("Error al cargar el panel económico", "danger")
+        return redirect('/economia')
+
     
