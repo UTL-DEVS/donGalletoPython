@@ -165,15 +165,14 @@ def procesar_venta():
             if not stock or stock.cantidad_galleta < unidades:
                 flash(f'Stock insuficiente para {item["nombre"]}', 'danger')
                 return redirect(url_for('venta.ventas', tipo=session.get('tipo_venta_actual', 'unidad')))
-        
         venta, ticket_path = ProcesoVentaController.procesar_venta(session)
+        
+        session['carrito'] = []
+        session.modified = True
         
         if not os.path.exists(ticket_path):
             flash('Error al generar el ticket', 'danger')
             return redirect(url_for('venta.ventas', tipo=session.get('tipo_venta_actual', 'unidad')))
-        
-        session.pop('carrito', None)
-        session.modified = True
         
         return send_file(
             ticket_path,
@@ -183,8 +182,12 @@ def procesar_venta():
         )
         
     except ValueError as e:
+        session['carrito'] = [] 
+        session.modified = True
         flash(str(e), 'danger')
     except Exception as e:
+        session['carrito'] = []
+        session.modified = True
         flash(f'Error al procesar la venta: {str(e)}', 'danger')
         db.session.rollback()
     

@@ -564,3 +564,20 @@ Fecha: 2025-04-09 12:51:57.523373 - Usuario: joel123456 - Accion: Error 404: Pág
 Fecha: 2025-04-09 12:54:21.372977 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
 Fecha: 2025-04-09 12:54:45.032224 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
 Fecha: 2025-04-09 12:55:09.726218 - Usuario: joel123456 - Accion: Error 404: Página no encontrada en http://localhost:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-10 23:25:18.915917 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-10 23:25:28.134320 - Usuario: Usuario anónimo - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/favicon.ico | IP: 127.0.0.1
+Fecha: 2025-04-10 23:27:15.677783 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-10 23:27:19.320219 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-10 23:27:23.704833 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-10 23:27:36.229036 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-10 23:27:39.063266 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-10 23:47:35.302780 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-10 23:47:38.524391 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-10 23:47:43.291642 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-10 23:47:45.727211 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-10 23:47:55.558707 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-10 23:47:59.688313 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-10 23:48:05.351105 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-10 23:48:14.754044 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-10 23:48:20.235893 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1
+Fecha: 2025-04-10 23:48:23.081425 - Usuario: KilllYourAss12$$ - Accion: Error 404: Página no encontrada en http://127.0.0.1:8080/static/js/page-ventas/navbar.js | IP: 127.0.0.1

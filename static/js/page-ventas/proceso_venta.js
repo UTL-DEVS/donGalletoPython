@@ -44,7 +44,47 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.getElementById('form-procesar-venta').addEventListener('submit', function(e) {
-    const btn = this.querySelector('button');
+    e.preventDefault();
+    
+    const btn = document.getElementById('btn-procesar-venta');
     btn.disabled = true;
     btn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Procesando...';
+    
+    fetch(this.action, {
+        method: 'POST',
+        body: new FormData(this),
+        headers: {
+            'X-CSRFToken': document.querySelector('input[name="csrf_token"]').value
+        }
+    })
+    .then(response => {
+        if (response.ok && response.headers.get('content-type')?.includes('application/pdf')) {
+            return response.blob().then(blob => {
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `ticket_venta_${new Date().getTime()}.pdf`;
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+                window.URL.revokeObjectURL(url);
+                
+                window.location.reload();
+            });
+        } else if (response.redirected) {
+            window.location.href = response.url;
+        } else {
+            return response.text().then(text => {
+                throw new Error(text || 'Error desconocido');
+            });
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Error al procesar la venta: ' + error.message);
+    })
+    .finally(() => {
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fas fa-cash-register me-2"></i> Procesar Venta';
+    });
 });

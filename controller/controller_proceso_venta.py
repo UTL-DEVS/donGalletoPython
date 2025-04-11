@@ -110,7 +110,6 @@ class ProcesoVentaController:
             raise ValueError("El carrito está vacío")
         
         try:
-            
             total = sum(item['subtotal'] for item in carrito)
             nueva_venta = ProcesoVenta(
                 total=total,
@@ -156,11 +155,14 @@ class ProcesoVentaController:
             db.session.commit()
             
             ticket_path = ProcesoVentaController.generar_ticket(nueva_venta)
+            
             session['carrito'] = []
             session.modified = True
             
             return nueva_venta, ticket_path
             
         except Exception as e:
+            session['carrito'] = []
+            session.modified = True
             db.session.rollback()
             raise e
