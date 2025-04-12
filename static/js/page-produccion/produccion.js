@@ -32,7 +32,7 @@ document.getElementById('btnProcesarProduccion').addEventListener('click', funct
         if (idGalleta && !isNaN(cantidad)) {
             datosGalletas.push({
                 id_galleta: idGalleta,
-                cantidad: cantidad
+                cantidad: (cantidad * 10)
             });
         }
     });

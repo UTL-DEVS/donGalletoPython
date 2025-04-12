@@ -103,9 +103,12 @@ def procesarPedido():
                 "message": "Hubo un problema al actualizar el pedido!"
             })
 
+    print(str(objProduccion.fecha_produccion))
+
     return jsonify({
                 "success": True,
-                "message": "Se envio correctamente a produccion!"
+                "message": "Se envio correctamente a produccion!",
+                "fecha":  str(objProduccion.fecha_produccion)
             })
 
 def calculaPiezasTipoPedido(cantidad, tipoPedido):

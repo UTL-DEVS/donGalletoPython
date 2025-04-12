@@ -177,7 +177,7 @@ function enviarAlServicio(datos) {
     .then(data => {
         if (data.success)
             alert(data.message)
-            window.location = '/cocina-pedidos'
+            window.location = `/pedidos-historial?fecha=${data.fecha}`
         if (data.error)
             alert(data.message)
     });
