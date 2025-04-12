@@ -1,8 +1,6 @@
 function revisarModalesAbiertos() {
-    
     if (parseInt(modalesAbiertos.detalles)) {
         $('#modalDetallesEmpleado').modal('show');
-        console.log('detalles');
     }
     if (parseInt(modalesAbiertos.editar)) {
         $('#modalEditarEmpleado').modal('show');

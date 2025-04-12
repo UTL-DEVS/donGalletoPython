@@ -1,4 +1,6 @@
-{% extends 'pages/pages-ventas/nav.html' %} {% block titulo %}Ventas del Día -
+{% if current_user.rol_user == 0 %} {% extends
+'components/_estructura_admin.html' %} {% else %} {% extends
+'pages/pages-ventas/nav.html' %} {% endif %} {% block titulo %}Ventas del Día -
 Don Galleto{% endblock %} {% block contenido %}
 <meta name="csrf-token" content="{{ csrf_token() }}" />
 <link

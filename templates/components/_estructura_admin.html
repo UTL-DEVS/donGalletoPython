@@ -124,16 +124,33 @@
             </button>
             <div class="collapse" id="economia-collapse">
               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1">
-                <li>
-                  <a href="/economia" class="d-inline-flex text-decoration-none rounded">
-                    <i class="bi bi-file-earmark-bar-graph me-1"></i> Dashboard ventas
-                  </a>
+
+                <li class="">
+                  <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0" data-bs-toggle="collapse"
+                    data-bs-target="#estadisticas-collapse" aria-expanded="false">
+                    <i class="bi bi-graph-up ms-3 me-1"></i> Estadísticas
+                  </button>
+                  <div class="collapse" id="estadisticas-collapse">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1">
+                      <li class="ms-3">
+                        <a href="/economia" class="d-inline-flex text-decoration-none rounded">
+                          <i class="bi bi-bar-chart me-2"></i> Ventas
+                        </a>
+                      </li>
+                      <li class="ms-3" >
+                        <a href="/economia/gastos_dashboard" class="d-inline-flex text-decoration-none rounded">
+                          <i class="bi bi-currency-dollar me-2"></i> Gastos
+                        </a>
+                      </li>
+                      <li class="ms-3" >
+                        <a href="/economia/galletas" class="d-inline-flex text-decoration-none rounded">
+                          <i class="bi bi-cookie me-2"></i> Galletas
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
                 </li>
-                <li>
-                  <a href="/economia/gastos_dashboard" class="d-inline-flex text-decoration-none rounded">
-                    <i class="bi bi-file-earmark-bar-graph me-1"></i> Gastos
-                  </a>
-                </li>
+                
                 <li>
                   <a href="/economia/nomina" class="d-inline-flex text-decoration-none rounded">
                     <i class="bi bi-credit-card-fill me-1"></i> Nómina
@@ -210,7 +227,7 @@
           <li class="mb-1">
             <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0" data-bs-toggle="collapse"
               data-bs-target="#ventas-collapse" aria-expanded="false">
-              <i class="bi bi-cash-stack me-1"></i> Ventas
+              <i class="bi bi-cart-dash-fill me-1"></i> Ventas
             </button>
             <div class="collapse" id="ventas-collapse">
               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1">
@@ -360,6 +377,20 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="../../static/js/page-ventas/nabvar.js"></script>
   <script src="../../static/js/app.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.collapse').on('show.bs.collapse', function () {
+        // Solo colapsa hermanos directos que no contengan el colapso que se está abriendo
+        $('.collapse').not(this).each(function () {
+          // Si NO es ancestro del colapso que se está abriendo, lo cerramos
+          if (!$(this).find($(event.target)).length && !$(event.target).closest(this).length) {
+            $(this).collapse('hide');
+          }
+        });
+      });
+    });
+  </script>
+  
 </body>
 
 </html>

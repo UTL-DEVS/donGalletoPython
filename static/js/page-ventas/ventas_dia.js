@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
       order: [[2, "desc"]],
       responsive: true,
       dom: '<"top"lf>rt<"bottom"ip>',
-      pageLength: 10,
+      pageLength: 5,
       scrollY: "400px",
       scrollCollapse: true,
       paging: true,

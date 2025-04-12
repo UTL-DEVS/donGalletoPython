@@ -1,0 +1,106 @@
+{%extends 'components/_estructura_admin.html'%}
+{%block titulo%}Economía{%endblock%}
+{%block contenido%}
+
+<div class="container mt-1">
+    <!-- Mensaje flash -->
+    <div class="row">
+        <div class="col-12">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            {% for category, message in messages %}
+            <div class="alert alert-{{ 'danger' if category == 'error' else 'success' }} alert-dismissible fade show"
+                style="font-size: 15px;" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+
+        </div>
+    </div>
+</div>
+
+
+<div class="container d-flex align-items-center justify-content-center flex-column mt-5" style="width: 90%;">
+    <div class="menu d-flex align-items-center justify-content-center flex-column w-100">
+        <div class="sub-header d-flex justify-content-between w-100">
+            <div class="sub-header-title">
+                <h1 id="tituloHistorial">Galletas más vendidas del mes</h1>
+            </div>
+            <div class="sub-header-buttons d-flex align-items-center" style="width: 33%;">
+                <p class="w-100 m-0 fw-bold">Seleccione una fecha: </p>
+                <input id="mesGraficaVentasGalletas" type="month" name="mes" class="form-control"
+                    aria-describedby="basic-addon2" 
+                    value="{{ mes_sel if mes_sel else '' }}">
+            </div>
+        </div>
+        <hr class="w-100">
+        <div class="data w-100">
+
+
+
+            <div id="galletasMasVendidas"></div>
+            <h4 id="fechaGrafica"></h4>
+
+
+
+            <!-- modal fecha no disponible -->
+            <div class="modal" tabindex="-1" id="alertaMesFueraDeRango">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Mes fuera de rango</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>El mes seleccionado está fuera de rango.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" data-bs-dismiss="modal" class="btn btn-primary">Aceptar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+        <div class="menu d-flex align-items-center justify-content-center flex-column w-100">
+           
+            <hr class="w-100">
+            <div class="data w-100">
+                <div class="table-responsive" style="max-height: 700px; overflow-y: auto;">
+                    <table class="table table-light table-hover mb-0">
+                        <thead>
+                            <tr>
+                                <th>Galleta</th>
+                                <th>Monto</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for g in lista %}
+                            <tr>
+                                <td>{{ g.galleta }}</td>
+                                <td>${{ g.total_vendida}}</td>
+                            </tr>
+                            {% endfor %}
+                          
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="../../../static/js/page-economia/gallteas.js"></script>
+<script>
+    let rangosFechasVentas = {{ rango_fechas_ventas| safe }};
+    let listasVentasGalletas = {{ ventas_galletas| safe }};
+    let mes_sel = "{{ mes| safe }}";
+</script>
+{%endblock%}

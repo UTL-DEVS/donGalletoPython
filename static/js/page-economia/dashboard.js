@@ -26,7 +26,6 @@ document.getElementById("mesGraficaVentasDiarias").addEventListener("input", fun
 
 
 function cargarGrafica(fechasVentas, totalesVentas) {
-  console.log('Ventas¿ 1: '+totalesVentas[0]);
 
   var options = {
     series: [{
@@ -79,9 +78,7 @@ function obtenerDatosParaGrafica() {
     return fecha.getDate();  // Devuelve solo el día del mes
   });
   let totalesVentas = listasVentasDiarias.map(venta => venta.total);  // Extrae los totales
-  console.log('totalv: ' + listasVentasDiarias[0].total)
-  console.log('fechas_' + fechasVentas);
-  console.log('totasles: ' + totalesVentas);
+
   cargarGrafica(fechasVentas, totalesVentas);
 
   const meses = [

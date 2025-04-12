@@ -137,7 +137,19 @@
         {% for d in detalles %}
         <tr>
             <td>{{ d.materia_prima.nombre_materia }}</td>
-            <td>{{ d.cantidad }}</td>
+            <td>{{ d.cantidad }}
+                {%if d.materia_prima.unidad_medida ==1%}
+                gr
+                {%elif (d.materia_prima.unidad_medida ==2)%}
+                costal
+                {%elif (d.materia_prima.unidad_medida ==3)%}
+                lt
+                {%elif (d.materia_prima.unidad_medida ==4)%}
+                kg
+                {%elif (d.materia_prima.unidad_medida ==5)%}
+                lata
+                {%endif%}
+            </td>
             <td>${{ d.precio_unitario }}</td>
             <td>${{ d.cantidad * d.precio_unitario }}</td>
         </tr>

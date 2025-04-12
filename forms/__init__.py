@@ -9,4 +9,5 @@ from forms.form_galleta import *
 from forms.form_proceso_venta import CarritoForm
 from forms.form_cliente import *
 from forms.form_empleado import *
+from forms.form_edit_emp import *
 from forms.form_insumo import InsumoForm

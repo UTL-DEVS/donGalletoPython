@@ -253,17 +253,14 @@
                 </div>
                 <div class="modal-body">
                     {%if (emp_sel)%}
-                    <div class="d-flex">
-                        <p class="fw-bold col-4 mx-2 d-flex">Nombre:</p>
-                        <div class="d-flex col-7">
-                            <div class="mx-2" id="nombreEmpleadoSel">{{emp_sel.persona.nombre}}
-                                {{emp_sel.persona.primerApellido}}
-                                {{emp_sel.persona.segundoApellido}}</div>
-                        </div>
-                    </div>
-
-                    {{macros.macro_campo_upd_proveedor(form_empleado.sueldo,emp_sel.sueldo_empleado)}}
-                    {{macros.macro_campo_upd_proveedor(form_empleado.dias_laborales,emp_sel.dias_laborales)}}
+                    
+                    {{macros.macro_campo_upd_proveedor(form_emp_edit.nombre, emp_sel.persona.nombre)}}
+                    {{macros.macro_campo_upd_proveedor(form_emp_edit.primer_apellido, emp_sel.persona.primerApellido)}}
+                    {{macros.macro_campo_upd_proveedor(form_emp_edit.segundo_apellido, emp_sel.persona.segundoApellido)}}
+                    {{macros.macro_campo_upd_proveedor(form_emp_edit.direccion, emp_sel.persona.direccion)}}
+                    {{macros.macro_campo_upd_proveedor(form_emp_edit.telefono, emp_sel.persona.telefono)}}
+                    {{macros.macro_campo_upd_proveedor(form_emp_edit.sueldo,emp_sel.sueldo_empleado)}}
+                    {{macros.macro_campo_select_dias_lab(emp_sel.dias_laborales)}}
 
                     {%endif%}
 

@@ -42,3 +42,10 @@ def agregar_gasto(tipo, monto, fecha, id_usuario):
 
 def obtener_gastos_por_mes(mes):
     return dao_economia.obtener_gastos_por_mes(mes)
+
+def obtener_galletas_mas_vendidas_del_mes(mes):
+    return dao_economia.obtener_galletas_mas_vendidas_del_mes(mes)
+
+def obtener_ventas_galletas(mes_venta, dias):
+    #print(f'Lista: {dao_economia.obtener_ventas_por_galleta_y_dia(mes_venta, dias)}')
+    return dao_economia.obtener_ventas_por_galleta_y_dia(mes_venta, dias)

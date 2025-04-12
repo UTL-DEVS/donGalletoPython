@@ -32,7 +32,7 @@
             <div class="sub-header-buttons d-flex align-items-center" style="width: 33%;">
                 <p class="w-100 m-0 fw-bold">Seleccione una fecha: </p>
                 <input id="mesGraficaVentasDiarias" type="month" name="mes" class="form-control"
-                    aria-describedby="basic-addon2" onchange="consultarVentas()"
+                    aria-describedby="basic-addon2"
                     value="{{ mes_sel if mes_sel else '' }}">
             </div>
         </div>
@@ -43,6 +43,7 @@
 
             <div id="ventasDiarias"></div>
             <h4 id="fechaGrafica"></h4>
+
 
 
             <!-- modal fecha no disponible -->
@@ -60,6 +61,36 @@
                             <button type="button" data-bs-dismiss="modal" class="btn btn-primary">Aceptar</button>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+        <div class="menu d-flex align-items-center justify-content-center flex-column w-100">
+           
+            <hr class="w-100">
+            <div class="data w-100">
+                <div class="table-responsive" style="max-height: 700px; overflow-y: auto;">
+                    <table class="table table-light table-hover mb-0">
+                        <thead>
+                            <tr>
+                                <th>Fecha</th>
+                                <th>Monto</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for f in list %}
+                            <tr>
+                                <td>{{ f.fecha_venta }}</td>
+                                <td>${{ f.total_dia}}</td>
+                            </tr>
+                            {% endfor %}
+                            <tr>
+                                <td class="fw-bold">TOTAL:</td> 
+                                <td class="fw-bold text-center">${{tot_mes}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
