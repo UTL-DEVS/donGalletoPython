@@ -1,4 +1,6 @@
-{% extends 'pages/pages-ventas/nav.html' %} {% block titulo %}ventas{% endblock
+{% if current_user.rol_user == 0 %} {% extends
+'components/_estructura_admin.html' %} {% else %} {% extends
+'pages/pages-ventas/nav.html' %} {% endif %} {% block titulo %}ventas{% endblock
 %} {% block contenido %}
 <link
   rel="stylesheet"
@@ -353,7 +355,7 @@
       endif
       %}
     >
-      Vaciar Carrito
+      <i class="fa-solid fa-trash me-2"></i> Vaciar Carrito
     </button>
   </form>
   <form
