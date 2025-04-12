@@ -112,14 +112,6 @@ def confirmarProduccion():
     lstDetalleProduccion = data.get('lstDetalleProduccion')
     id_produccion = data.get('id_produccion')
 
-    #Proceso - Produccion
-    produccion = controller_produccion.procesarProduccion(id_produccion)
-    if produccion != 1:
-        return jsonify({
-                "error": True,
-                "message": "Hubo un problema al buscar el pedido!"
-            })
-
     #Proceso - DetalleProduccion
     for detalleProduccion in lstDetalleProduccion:
         #Proceso - Materia
@@ -145,6 +137,14 @@ def confirmarProduccion():
             return jsonify({
                 "error": True,
                 "message": "Hubo un problema al actualizar el stock!"
+            })
+        
+    #Proceso - Produccion
+    produccion = controller_produccion.procesarProduccion(id_produccion)
+    if produccion != 1:
+        return jsonify({
+                "error": True,
+                "message": "Hubo un problema al buscar el pedido!"
             })
 
     return jsonify({

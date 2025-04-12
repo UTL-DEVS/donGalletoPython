@@ -1778,3 +1778,4 @@ Fecha: 2025-04-11 22:17:18.183074 - Usuario: KilllYourAss12$$ - Accion: http://1
 Fecha: 2025-04-11 22:18:15.550760 - Usuario: KilllYourAss12$$ - Accion: http://127.0.0.1:8080/galleta_home
 Fecha: 2025-04-11 22:18:15.594292 - Usuario: KilllYourAss12$$ - Accion: http://127.0.0.1:8080/galleta_home
 >>>>>>> 2ac9b27d398f28f48ddd80b770592fdafb867f63
+Fecha: 2025-04-12 09:48:00.522888 - Usuario: Pruebas123* - Accion: http://127.0.0.1:8080/cocina-pedidos
